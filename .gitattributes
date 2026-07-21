@@ -1,0 +1,9 @@
+# Normalise line endings so diffs stay clean across editors/platforms.
+* text=auto eol=lf
+
+# Binary / generated — never touch.
+*.db binary
+*.png binary
+*.jpg binary
+*.pdf binary
+package-lock.json -diff
