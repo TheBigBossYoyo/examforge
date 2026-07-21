@@ -44,6 +44,7 @@ Copy `.env.example` to `.env.local` and fill in what you want:
 
 | Area | What it does |
 | --- | --- |
+| **Full sections** | Sit a complete exam section at real length and timing. For the SAT this is genuinely adaptive: module 1 is scored, and module 2's difficulty is chosen from that result exactly as the real test does. Includes Mark for Review, the answer eliminator, highlights & notes, the on-screen reference sheet, a hideable timer with a 5-minute warning, the review screen, and Desmos in Math. |
 | **Dashboard** | Per-exam countdown, projected score ring (estimate), strengths/weaknesses, recent mistakes, and the single highest-leverage "next task". |
 | **Practice engine** | Paper-mode & drill-mode runner with a live timer, pace tracker, question navigator, per-question confidence, auto-marking for bank questions, hints (learning mode) and full review. |
 | **Review** | Per-question breakdown: your answer vs correct, time vs pace, solution + faster method, confidence calibration, and one-click **redo-wrong**. |
@@ -170,6 +171,18 @@ EXISTS` can never alter a table that already exists. Every change after that
 goes in `lib/migrations.ts` as a new numbered migration, applied once and
 recorded in `schema_migrations`. Never edit a migration that has already
 shipped; add another one. `npm run db:status` shows what a database has.
+
+### Exam structure
+
+Module counts, per-module timing, calculator rules and answer shape live in
+`lib/exam-format.ts` as data, not as `if (exam === "TMUA")` branches. Adding a
+third exam track means adding a format entry, not hunting for conditionals.
+`lib/routing.ts` holds the adaptive decision and question selection (pure),
+and `lib/test-session.ts` is the database lifecycle around them.
+
+Questions sent to the browser during a module are stripped of
+`correct_answer`, solutions and hints — marking happens server-side, so the
+answer key never reaches devtools.
 
 ### Tests
 

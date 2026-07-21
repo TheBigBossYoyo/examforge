@@ -29,6 +29,37 @@ export interface StartSectionInput {
   mode: AttemptMode;
 }
 
+/**
+ * A question as the browser is allowed to see it during a module.
+ *
+ * Deliberately omits correct_answer, solution_md, hints and faster_method:
+ * marking happens server-side in recordResponses(), so the client never needs
+ * them, and shipping them would put the answer key in devtools during an exam.
+ */
+export interface ExamQuestion {
+  id: number;
+  prompt_md: string;
+  choices: string[] | null;
+  difficulty: string | null;
+  topic_area?: string;
+  topic_subtopic?: string;
+  desmos_recommended: number;
+  desmos_state_json: string | null;
+}
+
+function toExamQuestion(q: QuestionView): ExamQuestion {
+  return {
+    id: q.id,
+    prompt_md: q.prompt_md,
+    choices: q.choices,
+    difficulty: q.difficulty,
+    topic_area: q.topic_area,
+    topic_subtopic: q.topic_subtopic,
+    desmos_recommended: q.desmos_recommended,
+    desmos_state_json: q.desmos_state_json,
+  };
+}
+
 export interface ModuleHandle {
   sessionId: number;
   attemptId: number;
@@ -39,7 +70,7 @@ export interface ModuleHandle {
   sectionLabel: string;
   /** 'easy' | 'hard' for a routed module 2; null for module 1 and TMUA. */
   moduleDifficulty: RouteDifficulty | null;
-  questions: QuestionView[];
+  questions: ExamQuestion[];
   timeLimitSec: number | null;
   allowCalculator: boolean;
   referenceSheet: boolean;
@@ -158,7 +189,7 @@ function buildHandle(args: {
     section: args.format.code,
     sectionLabel: args.format.label,
     moduleDifficulty: args.moduleDifficulty,
-    questions: args.questions,
+    questions: args.questions.map(toExamQuestion),
     timeLimitSec: args.timed ? args.mod.minutes * 60 : null,
     allowCalculator: args.format.allowCalculator,
     referenceSheet: args.format.referenceSheet,
