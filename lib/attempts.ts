@@ -16,6 +16,10 @@ export interface SubmittedResponse {
   secondsSpent: number;
   hintsUsed: number;
   confidence?: Confidence | null;
+  /** Bluebook "Mark for Review". */
+  flagged?: boolean;
+  /** Indices of choices crossed out with the answer eliminator. */
+  eliminated?: number[];
 }
 
 export interface SubmitAttemptInput {
@@ -82,6 +86,83 @@ export function recomputeTopicProgress(examId: number, topicId: number): void {
   );
 }
 
+export interface RecordedResponses {
+  correctCount: number;
+  /** Responses that carried an answer (blank submissions are not "wrong"). */
+  answeredCount: number;
+  total: number;
+}
+
+/**
+ * Mark and persist a set of responses against an existing attempt, updating
+ * topic progress and auto-logging mistakes.
+ *
+ * Split out of submitAttempt so an adaptive section can record each module as
+ * it is completed — the attempt row is created when the module starts, not
+ * when it is submitted.
+ */
+export function recordResponses(
+  attemptId: number,
+  examName: string,
+  examId: number,
+  responses: SubmittedResponse[],
+  autoLog = true,
+): RecordedResponses {
+  const touchedTopics = new Set<number>();
+  let correctCount = 0;
+  let answeredCount = 0;
+
+  for (const r of responses) {
+    const q = getQuestion(r.questionId);
+    if (!q) continue;
+    const answered = r.givenAnswer != null && String(r.givenAnswer).trim() !== "";
+    const correct = answered ? isAnswerCorrect(r.givenAnswer, q.correct_answer) : null;
+    if (answered) answeredCount++;
+    if (correct) correctCount++;
+
+    const responseId = execute(
+      `INSERT INTO responses
+         (attempt_id, question_id, given_answer, is_correct, seconds_spent,
+          hints_used, confidence, flagged, eliminated_json)
+       VALUES (?,?,?,?,?,?,?,?,?)`,
+      [
+        attemptId,
+        r.questionId,
+        r.givenAnswer ?? null,
+        correct === null ? null : correct ? 1 : 0,
+        Math.round(r.secondsSpent || 0),
+        r.hintsUsed || 0,
+        r.confidence ?? null,
+        r.flagged ? 1 : 0,
+        r.eliminated && r.eliminated.length > 0 ? JSON.stringify(r.eliminated) : null,
+      ],
+    ).lastInsertRowid;
+
+    if (q.topic_id) touchedTopics.add(q.topic_id);
+
+    // Auto-log a mistake row for wrong (or wrong-but-confident) answers.
+    if (autoLog && correct === false) {
+      execute(
+        `INSERT INTO mistakes (response_id, question_id, topic_id, error_type, note_md, resolved)
+         VALUES (?,?,?,?,?,0)`,
+        [
+          responseId,
+          r.questionId,
+          q.topic_id ?? null,
+          defaultErrorType(examName, r.confidence),
+          r.confidence === "confident"
+            ? "Auto-logged: answered confidently but incorrectly — likely a genuine gap."
+            : null,
+        ],
+      );
+    }
+  }
+
+  for (const topicId of touchedTopics) recomputeTopicProgress(examId, topicId);
+
+  return { correctCount, answeredCount, total: responses.length };
+}
+
 export function submitAttempt(input: SubmitAttemptInput): SubmitAttemptResult {
   const exam = getExamById(input.examId);
   if (!exam) throw new Error("Unknown exam");
@@ -100,50 +181,7 @@ export function submitAttempt(input: SubmitAttemptInput): SubmitAttemptResult {
       ],
     ).lastInsertRowid;
 
-    const touchedTopics = new Set<number>();
-    let correctCount = 0;
-
-    for (const r of input.responses) {
-      const q = getQuestion(r.questionId);
-      if (!q) continue;
-      const correct = r.givenAnswer != null ? isAnswerCorrect(r.givenAnswer, q.correct_answer) : null;
-      if (correct) correctCount++;
-
-      const responseId = execute(
-        `INSERT INTO responses (attempt_id, question_id, given_answer, is_correct, seconds_spent, hints_used, confidence)
-         VALUES (?,?,?,?,?,?,?)`,
-        [
-          attemptId,
-          r.questionId,
-          r.givenAnswer ?? null,
-          correct === null ? null : correct ? 1 : 0,
-          Math.round(r.secondsSpent || 0),
-          r.hintsUsed || 0,
-          r.confidence ?? null,
-        ],
-      ).lastInsertRowid;
-
-      if (q.topic_id) touchedTopics.add(q.topic_id);
-
-      // Auto-log a mistake row for wrong (or wrong-but-confident) answers.
-      if (autoLog && correct === false) {
-        execute(
-          `INSERT INTO mistakes (response_id, question_id, topic_id, error_type, note_md, resolved)
-           VALUES (?,?,?,?,?,0)`,
-          [
-            responseId,
-            r.questionId,
-            q.topic_id ?? null,
-            defaultErrorType(exam.name, r.confidence),
-            r.confidence === "confident"
-              ? "Auto-logged: answered confidently but incorrectly — likely a genuine gap."
-              : null,
-          ],
-        );
-      }
-    }
-
-    for (const topicId of touchedTopics) recomputeTopicProgress(input.examId, topicId);
+    const { correctCount } = recordResponses(attemptId, exam.name, input.examId, input.responses, autoLog);
 
     // ---- Scoring ----
     const total = input.responses.length;
