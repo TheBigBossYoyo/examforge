@@ -106,6 +106,8 @@ export interface Question {
   exam_id: number;
   topic_id: number | null;
   prompt_md: string;
+  /** Reading & Writing stimulus, separate from the question stem. */
+  passage_md: string | null;
   choices_json: string | null;
   correct_answer: string;
   solution_md: string | null;

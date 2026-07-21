@@ -11,6 +11,8 @@ export interface ImportQuestion {
   area: string;
   subtopic: string;
   prompt_md: string;
+  /** Optional Reading & Writing stimulus shown alongside the question. */
+  passage_md?: string | null;
   choices?: string[] | null;
   correct_answer: string;
   solution_md?: string | null;
@@ -69,14 +71,15 @@ export function insertQuestion(
 
   const res = execute(
     `INSERT INTO questions
-      (paper_id, exam_id, topic_id, prompt_md, choices_json, correct_answer,
+      (paper_id, exam_id, topic_id, prompt_md, passage_md, choices_json, correct_answer,
        solution_md, difficulty, source_label, origin, hint1_md, hint2_md, hint3_md,
        desmos_recommended, desmos_state_json, faster_method_md)
-     VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+     VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       examId,
       topicId ?? null,
       q.prompt_md,
+      q.passage_md ?? null,
       choicesJson,
       q.correct_answer,
       q.solution_md ?? null,
@@ -150,6 +153,7 @@ export function parseQuestionsCsv(csv: string): ImportQuestion[] {
       area: get("area"),
       subtopic: get("subtopic"),
       prompt_md: get("prompt_md"),
+      passage_md: get("passage_md") || null,
       choices: choicesRaw ? choicesRaw.split("|").map((c) => c.trim()) : null,
       correct_answer: get("correct_answer"),
       solution_md: get("solution_md") || null,

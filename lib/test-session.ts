@@ -39,6 +39,8 @@ export interface StartSectionInput {
 export interface ExamQuestion {
   id: number;
   prompt_md: string;
+  /** Reading & Writing stimulus, shown in the left pane. Null for Math. */
+  passage_md: string | null;
   choices: string[] | null;
   difficulty: string | null;
   topic_area?: string;
@@ -51,6 +53,7 @@ function toExamQuestion(q: QuestionView): ExamQuestion {
   return {
     id: q.id,
     prompt_md: q.prompt_md,
+    passage_md: q.passage_md ?? null,
     choices: q.choices,
     difficulty: q.difficulty,
     topic_area: q.topic_area,
@@ -202,11 +205,58 @@ function buildHandle(args: {
  * Submitting a module
  * ------------------------------------------------------------------ */
 
+/** A highlight or note made while sitting a module. */
+export interface SubmittedAnnotation {
+  questionId: number;
+  kind: "highlight" | "note";
+  quotedText?: string | null;
+  noteMd?: string | null;
+}
+
 export interface SubmitModuleInput {
   sessionId: number;
   attemptId: number;
   secondsTotal: number;
   responses: SubmittedResponse[];
+  annotations?: SubmittedAnnotation[];
+}
+
+/**
+ * Persist highlights and notes taken during a module so they are still there
+ * at review time. Silently ignores rows without usable content rather than
+ * failing a submission over an annotation.
+ */
+function saveAnnotations(attemptId: number, annotations: SubmittedAnnotation[]): void {
+  for (const a of annotations) {
+    if (!Number.isFinite(a.questionId)) continue;
+    const quoted = a.quotedText?.trim() || null;
+    const note = a.noteMd?.trim() || null;
+    if (!quoted && !note) continue;
+
+    execute(
+      `INSERT INTO annotations (attempt_id, question_id, kind, quoted_text, note_md)
+       VALUES (?,?,?,?,?)`,
+      [attemptId, a.questionId, a.kind === "note" ? "note" : "highlight", quoted, note],
+    );
+  }
+}
+
+export interface QuestionAnnotation {
+  id: number;
+  question_id: number;
+  kind: string;
+  quoted_text: string | null;
+  note_md: string | null;
+  created_at: string;
+}
+
+/** Every annotation made during an attempt, for the review screen. */
+export function getAttemptAnnotations(attemptId: number): QuestionAnnotation[] {
+  return query<QuestionAnnotation>(
+    `SELECT id, question_id, kind, quoted_text, note_md, created_at
+       FROM annotations WHERE attempt_id = ? ORDER BY id`,
+    [attemptId],
+  );
 }
 
 export interface SubmitModuleResult {
@@ -259,6 +309,8 @@ export function submitModule(input: SubmitModuleInput): SubmitModuleResult {
         WHERE id = ?`,
       [marked.correctCount, Math.round(input.secondsTotal), input.attemptId],
     );
+
+    if (input.annotations?.length) saveAnnotations(input.attemptId, input.annotations);
 
     const isLastModule = attempt.module_number >= format.modules.length;
 

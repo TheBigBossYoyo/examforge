@@ -6,7 +6,12 @@ import dynamic from "next/dynamic";
 import { Markdown } from "@/components/Markdown";
 import { ReferenceSheet } from "@/components/exam/ReferenceSheet";
 import { formatClock } from "@/lib/format";
-import type { ExamQuestion, ModuleHandle, SubmitModuleResult } from "@/lib/test-session";
+import type {
+  ExamQuestion,
+  ModuleHandle,
+  SubmittedAnnotation,
+  SubmitModuleResult,
+} from "@/lib/test-session";
 
 const DesmosCalculator = dynamic(
   () => import("@/components/Desmos").then((m) => m.DesmosCalculator),
@@ -106,6 +111,7 @@ export function ExamRunner({
   const [outcome, setOutcome] = useState<SubmitModuleResult | null>(null);
 
   const promptRef = useRef<HTMLDivElement>(null);
+  const passageRef = useRef<HTMLDivElement>(null);
   const currentRef = useRef(0);
   currentRef.current = current;
   const lastTick = useRef(Date.now());
@@ -165,6 +171,20 @@ export function ExamRunner({
             flagged: answers[i]?.flagged ?? false,
             eliminated: answers[i]?.eliminated ?? [],
           })),
+          // Highlights and notes persist so they are still there at review.
+          annotations: handle.questions.flatMap<SubmittedAnnotation>((qq, i) => {
+            const ans = answers[i];
+            if (!ans) return [];
+            const rows: SubmittedAnnotation[] = ans.highlights.map((quotedText) => ({
+              questionId: qq.id,
+              kind: "highlight",
+              quotedText,
+            }));
+            if (ans.note.trim()) {
+              rows.push({ questionId: qq.id, kind: "note", noteMd: ans.note.trim() });
+            }
+            return rows;
+          }),
         }),
       });
       const data = (await res.json()) as SubmitModuleResult & { error?: string };
@@ -425,7 +445,10 @@ export function ExamRunner({
         <div className="ml-auto flex items-center gap-2">
           <button
             onClick={() => {
-              const text = highlightSelection(promptRef.current);
+              // A selection can land in either pane; try the passage first
+              // since that is what gets highlighted most on Reading & Writing.
+              const text =
+                highlightSelection(passageRef.current) ?? highlightSelection(promptRef.current);
               if (text) update({ highlights: [...a.highlights, text] });
             }}
             className="text-xs text-ink-400 hover:text-ink-700"
@@ -588,15 +611,21 @@ export function ExamRunner({
       {/* ---- body ---- */}
       <main className="flex-1 py-5">
         {isRW ? (
-          // Reading & Writing puts the passage and the question side by side.
+          // Reading & Writing puts the passage on the left, question on the right.
           <div className="grid gap-6 lg:grid-cols-2 lg:divide-x lg:divide-ink-200">
-            <div className="lg:pr-6">{questionPane}</div>
-            <div className="hidden lg:block lg:pl-6">
-              <p className="text-xs text-ink-400">
-                On the real test the passage sits here, left of the question. Passages long enough
-                to need the split pane arrive with the Phase 2 content pipeline.
-              </p>
+            <div className="lg:pr-6">
+              {q.passage_md ? (
+                <div ref={passageRef} className="select-text">
+                  <Markdown className="text-[15px] leading-relaxed">{q.passage_md}</Markdown>
+                </div>
+              ) : (
+                <p className="text-xs text-ink-400">
+                  This question carries no separate passage — its stimulus is part of the question
+                  text on the right.
+                </p>
+              )}
             </div>
+            <div className="lg:pl-6">{questionPane}</div>
           </div>
         ) : (
           <div className="grid gap-6 lg:grid-cols-[1fr_auto]">

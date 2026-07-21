@@ -49,6 +49,7 @@ const GROUPS: NavGroup[] = [
       { href: "/sat/reading", label: "Reading", icon: "??" },
       { href: "/sat/writing", label: "Writing", icon: "?" },
       { href: "/sat/desmos", label: "Desmos Mastery", icon: "??" },
+      { href: "/sat/desmos/drills", label: "Desmos Drills", icon: "?" },
       { href: "/sat/theory", label: "Theory", icon: "??" },
     ],
   },

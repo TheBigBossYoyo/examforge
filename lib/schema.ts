@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS questions (
   exam_id           INTEGER NOT NULL REFERENCES exams(id) ON DELETE CASCADE,
   topic_id          INTEGER REFERENCES topics(id) ON DELETE SET NULL,
   prompt_md         TEXT NOT NULL,
+  passage_md        TEXT,                 -- RW stimulus, separate from the stem
   choices_json      TEXT,                 -- JSON array of strings (nullable for free-response)
   correct_answer    TEXT NOT NULL,
   solution_md       TEXT,

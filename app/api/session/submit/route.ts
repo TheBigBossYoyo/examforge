@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
       // clock-skewed value should not land in the database unbounded.
       secondsTotal: Math.max(0, Math.min(24 * 3600, Math.round(body.secondsTotal || 0))),
       responses: body.responses,
+      annotations: Array.isArray(body.annotations) ? body.annotations : [],
     });
 
     return NextResponse.json(result);

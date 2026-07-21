@@ -148,6 +148,32 @@ export const MIGRATIONS: Migration[] = [
       `);
     },
   },
+  {
+    version: 4,
+    name: "passages_and_desmos_drills",
+    up(db) {
+      // Reading & Writing questions are a passage plus a stem. Storing both in
+      // prompt_md made the split-pane layout impossible and muddled the
+      // question text with the material it refers to.
+      ensureColumn(db, "questions", "passage_md", "passage_md TEXT");
+
+      // Desmos fluency is a timed skill, so drills are scored on speed as well
+      // as correctness. Kept separate from `responses`: a drill is not an exam
+      // question and must never enter section scoring or the mistake notebook.
+      db.exec(`
+        CREATE TABLE IF NOT EXISTS desmos_drill_attempts (
+          id          INTEGER PRIMARY KEY AUTOINCREMENT,
+          drill_code  TEXT NOT NULL,
+          correct     INTEGER NOT NULL,
+          seconds     REAL NOT NULL,
+          par_seconds INTEGER NOT NULL,
+          created_at  TEXT NOT NULL DEFAULT (datetime('now'))
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_drill_code ON desmos_drill_attempts(drill_code, created_at);
+      `);
+    },
+  },
 ];
 
 /** Apply every migration newer than the database's current version. */
