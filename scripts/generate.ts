@@ -14,9 +14,11 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { getDb, queryOne } from "../lib/db";
+import { getDb, query, queryOne } from "../lib/db";
 import { TMUA_TOPICS, SAT_TOPICS, type SeedTopic } from "../lib/seed/taxonomy";
 import { importQuestions, type ImportQuestion } from "../lib/importer";
+import { identityText, screenBatch } from "../lib/question-quality";
+import { parseModelArray } from "../lib/llm-json";
 
 // ---- Minimal .env loader (no new dependency) ----------------------------
 function loadEnv() {
@@ -109,18 +111,51 @@ function parseArgs(argv: string[]): Args {
 // ---- Prompt building ----------------------------------------------------
 const EXAM_GUIDANCE: Record<string, string> = {
   TMUA:
-    "TMUA is a non-calculator pure-maths admissions test. NEVER set desmos_recommended to true for TMUA. " +
+    "TMUA is a non-calculator pure-maths admissions test. NEVER set desmos_recommended to true for TMUA, " +
+    "and NEVER produce a free-response question — every TMUA item is multiple choice. " +
     "Paper 1 (area 'P1') tests applications of mathematical knowledge (algebra, calculus, trig, logs, " +
     "sequences, coordinate geometry, number, combinatorics). Paper 2 (area 'P2') tests mathematical " +
     "reasoning and logic (proof techniques, necessary vs sufficient, quantifiers, flawed proofs, " +
-    "counterexamples). Questions are 5-option multiple choice in the real test; use 4-5 plausible options.",
+    "counterexamples).",
   SAT:
-    "Digital SAT. For area 'Math', a graphing calculator (Desmos) is allowed on ALL questions: when Desmos " +
-    "meaningfully speeds up the solve, set desmos_recommended to true, add a faster_method_md describing the " +
-    "Desmos approach, and where useful include a desmos_state_json (a JSON string of an expressions list). " +
-    "For area 'RW' (Reading & Writing) NEVER recommend Desmos; these are language questions — include a short " +
-    "self-contained passage inside prompt_md when needed. Use 4 options (SAT style).",
+    "Digital SAT. For area 'Math', a graphing calculator (Desmos) is available on EVERY question. " +
+    "For area 'RW' (Reading & Writing) there is no calculator and every item is multiple choice with " +
+    "exactly 4 options.",
 };
+
+/** Per-area shape requirements, mirroring how each section really works. */
+function shapeRules(exam: string, topic: SeedTopic, n: number): string[] {
+  const rules: string[] = [];
+
+  if (exam === "SAT" && topic.area === "Math") {
+    // ~25% of real digital SAT Math is student-produced response.
+    const spr = Math.max(1, Math.round(n * 0.25));
+    rules.push(
+      `- Make exactly ${spr} of the ${n} questions STUDENT-PRODUCED RESPONSE: set "choices" to null and`,
+      `  give "correct_answer" as a plain number ("7", "-3", "0.5" or "1/2"). No units, no % or $ signs.`,
+      `  The remaining ${n - spr} are multiple choice with exactly 4 options.`,
+      `- For every question where a graphing calculator genuinely saves time, set "desmos_recommended": true`,
+      `  AND supply "faster_method_md" describing the keystroke-level Desmos route (what to type, what to`,
+      `  click). A question with "desmos_recommended": true and no "faster_method_md" will be REJECTED.`,
+      `- Aim for at least half the questions to carry a "faster_method_md".`,
+    );
+  } else if (exam === "SAT" && topic.area === "RW") {
+    rules.push(
+      `- Every question is multiple choice with exactly 4 options; "choices" must never be null.`,
+      `- Put the stimulus in "passage_md" and ONLY the question stem in "prompt_md". Do not repeat the`,
+      `  passage inside prompt_md.`,
+      `- "passage_md" must be a realistic 50-150 word passage in the style of the digital SAT.`,
+      `- "desmos_recommended" must be false.`,
+    );
+  } else {
+    rules.push(
+      `- Every question is multiple choice. Use 4-5 plausible options; "choices" must never be null.`,
+      `- "desmos_recommended" must be false.`,
+    );
+  }
+
+  return rules;
+}
 
 function buildPrompt(exam: string, topic: SeedTopic, n: number): string {
   return [
@@ -135,14 +170,18 @@ function buildPrompt(exam: string, topic: SeedTopic, n: number): string {
     `- Output ONLY a JSON array (no prose, no markdown fences) of ${n} objects.`,
     `- Each object MUST have these keys: "exam", "area", "subtopic", "prompt_md", "choices",`,
     `  "correct_answer", "solution_md", "difficulty", "desmos_recommended", "hint1_md",`,
-    `  "hint2_md", "hint3_md". Optional: "faster_method_md", "desmos_state_json".`,
+    `  "hint2_md", "hint3_md". Optional: "passage_md", "faster_method_md", "desmos_state_json".`,
     `- "exam" must equal "${exam}", "area" must equal "${topic.area}", "subtopic" must equal "${topic.subtopic}".`,
-    `- "choices" is an array of 4-5 strings. "correct_answer" MUST be EXACTLY one of the strings in "choices".`,
-    `- Use LaTeX in $...$ for all maths (e.g. "$x^2 - 6x + 5$").`,
-    `- "difficulty" is one of: "easy", "med", "hard", "1600level", "real".`,
-    `- "solution_md" gives a correct, concise worked solution. VERIFY the answer key is correct.`,
+    ...shapeRules(exam, topic, n),
+    `- When "choices" is provided, "correct_answer" MUST be EXACTLY one of those strings, and the four`,
+    `  options must all be DIFFERENT values. Repeated options are rejected.`,
+    `- Use LaTeX in $...$ for all maths (e.g. "$x^2 - 6x + 5$"). Every $ must be paired.`,
+    `- "difficulty" is one of: "easy", "med", "hard", "1600level".`,
+    `- "solution_md" must be a real worked solution of at least 25 characters showing the steps.`,
+    `  VERIFY the answer key is actually correct by working the problem through.`,
     `- hint1/2/3 are a graduated ladder of nudges (general -> specific), not the full answer.`,
-    `- Questions must be ORIGINAL — do NOT copy real past-paper questions.`,
+    `- Questions must be ORIGINAL — do NOT copy real past-paper questions, and do NOT produce`,
+    `  variations of the same problem with different numbers. Each must test something distinct.`,
     `- Spread difficulty across the ${n} questions (some easy, some hard).`,
     `Return the JSON array now.`,
   ].join("\n");
@@ -169,31 +208,46 @@ async function callModel(cfg: ProviderConfig, prompt: string): Promise<string> {
         { role: "user", content: prompt },
       ],
       temperature: 0.7,
-      max_tokens: 4096,
+      // A batch of 10 questions with LaTeX solutions and three hints each runs
+      // well past 4k, and newer models spend part of the budget on reasoning
+      // tokens before emitting anything.
+      max_tokens: 16384,
     }),
   });
   if (!res.ok) {
     const txt = await res.text();
-    throw new Error(`${cfg.provider} API error (${res.status}): ${txt.slice(0, 300)}`);
+    const hint =
+      res.status === 429
+        ? "\n    Quota exhausted for this model. Try --model gemini-flash-latest, or wait for the daily free-tier reset."
+        : res.status === 404
+          ? "\n    That model is not available to this key. Run with a different --model."
+          : "";
+    throw new Error(`${cfg.provider} API error (${res.status}): ${txt.slice(0, 200)}${hint}`);
   }
-  const data = (await res.json()) as { choices: { message: { content: string } }[] };
-  return data.choices?.[0]?.message?.content ?? "";
+
+  const data = (await res.json()) as {
+    choices: { message: { content: string }; finish_reason?: string }[];
+  };
+  const choice = data.choices?.[0];
+
+  // A truncated reply surfaces as a JSON syntax error hundreds of characters
+  // in, which reads like a malformed model rather than an exhausted budget.
+  // Name it here instead.
+  if (choice?.finish_reason === "length") {
+    throw new Error(
+      "model response was truncated (finish_reason=length) — lower --per-topic, " +
+        "or the model spent its budget on reasoning tokens",
+    );
+  }
+
+  return choice?.message?.content ?? "";
 }
 
+// Extraction and LaTeX-safe repair live in lib/llm-json.ts, where they are
+// unit-tested. See the note there on why `\frac` needs rescuing even though it
+// parses "successfully" as JSON.
 function extractJsonArray(raw: string): unknown[] {
-  let text = raw.trim();
-  // Strip ```json ... ``` fences if present.
-  const fence = text.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  if (fence) text = fence[1].trim();
-  // Fall back to the first '[' .. last ']' slice.
-  if (!text.startsWith("[")) {
-    const start = text.indexOf("[");
-    const end = text.lastIndexOf("]");
-    if (start !== -1 && end > start) text = text.slice(start, end + 1);
-  }
-  const parsed = JSON.parse(text);
-  if (!Array.isArray(parsed)) throw new Error("Model did not return a JSON array");
-  return parsed;
+  return parseModelArray(raw).items;
 }
 
 function coerce(
@@ -204,9 +258,10 @@ function coerce(
   const str = (v: unknown) => (typeof v === "string" ? v : v == null ? "" : String(v));
   const prompt_md = str(obj.prompt_md).trim();
   const correct_answer = str(obj.correct_answer).trim();
-  const choices = Array.isArray(obj.choices) ? obj.choices.map(str) : null;
+  // An empty array means "no choices" (free response), not "zero options".
+  const rawChoices = Array.isArray(obj.choices) ? obj.choices.map(str) : null;
+  const choices = rawChoices && rawChoices.length > 0 ? rawChoices : null;
   if (!prompt_md || !correct_answer) return null;
-  if (choices && !choices.includes(correct_answer)) return null; // key must be a choice
   const desmos =
     exam === "SAT" && topic.area === "Math" ? Boolean(obj.desmos_recommended) : false;
   return {
@@ -214,10 +269,13 @@ function coerce(
     area: topic.area,
     subtopic: topic.subtopic,
     prompt_md,
+    passage_md: obj.passage_md ? str(obj.passage_md) : null,
     choices,
     correct_answer,
     solution_md: obj.solution_md ? str(obj.solution_md) : null,
-    faster_method_md: desmos && obj.faster_method_md ? str(obj.faster_method_md) : null,
+    // Keep the Desmos route whenever the model supplies one, not only when it
+    // also set the flag — a dual-solution breakdown is useful either way.
+    faster_method_md: obj.faster_method_md ? str(obj.faster_method_md) : null,
     difficulty: str(obj.difficulty) || "med",
     desmos_recommended: desmos,
     desmos_state_json: desmos && obj.desmos_state_json ? str(obj.desmos_state_json) : null,
@@ -259,6 +317,8 @@ async function main() {
 
   let inserted = 0;
   let failed = 0;
+  let rejectedTotal = 0;
+  const rejectionCounts: Record<string, number> = {};
   for (const { exam, topic } of selected) {
     const label = `${exam}/${topic.area}/${topic.subtopic}`;
     // Skip topics with no DB row (DB not seeded for this exam/topic).
@@ -279,19 +339,51 @@ async function main() {
         }
       }
       if (rows.length === 0) {
-        console.warn(`  ! ${label}: model returned no valid questions.`);
+        console.warn(`  ! ${label}: model returned no parseable questions.`);
         failed += args.perTopic;
         continue;
       }
+
+      // Screen against the quality gate, de-duplicating within the batch and
+      // against everything already banked for this topic.
+      const existing = query<{ prompt_md: string; passage_md: string | null }>(
+        `SELECT q.prompt_md, q.passage_md FROM questions q
+           JOIN topics t ON t.id = q.topic_id
+          WHERE t.exam_id = ? AND t.area = ? AND t.subtopic = ?`,
+        [examRow.id, topic.area, topic.subtopic],
+      ).map((r) => identityText(r));
+
+      const report = screenBatch(rows, existing);
+      rejectedTotal += report.rejected.length;
+      for (const [code, n] of Object.entries(report.byCode)) {
+        rejectionCounts[code] = (rejectionCounts[code] ?? 0) + n;
+      }
+
+      const reasons = Object.entries(report.byCode)
+        .map(([c, n]) => `${c}×${n}`)
+        .join(", ");
+
+      if (report.accepted.length === 0) {
+        console.warn(`  ! ${label}: all ${rows.length} rejected (${reasons}).`);
+        failed += args.perTopic;
+        continue;
+      }
+
       if (args.dryRun) {
-        console.log(`  • ${label}: ${rows.length} valid questions (dry-run, not inserted).`);
-        inserted += rows.length;
+        console.log(
+          `  • ${label}: ${report.accepted.length} accepted` +
+            (reasons ? `, ${report.rejected.length} rejected (${reasons})` : "") +
+            " (dry-run, not inserted).",
+        );
+        inserted += report.accepted.length;
       } else {
-        const res = importQuestions(rows, "ai_generated");
+        const res = importQuestions(report.accepted, "ai_generated");
         inserted += res.inserted;
-        if (res.rejected.length)
-          console.warn(`  ! ${label}: ${res.rejected.length} rejected (${res.rejected[0]?.reason}).`);
-        console.log(`  ✓ ${label}: +${res.inserted}`);
+        console.log(
+          `  ✓ ${label}: +${res.inserted}` +
+            (reasons ? ` · ${report.rejected.length} rejected (${reasons})` : "") +
+            (res.rejected.length ? ` · ${res.rejected.length} unmapped` : ""),
+        );
       }
     } catch (err) {
       failed += args.perTopic;
@@ -301,9 +393,17 @@ async function main() {
 
   console.log(
     `\n${args.dryRun ? "Dry-run" : "Done"}: ${inserted} questions ${
-      args.dryRun ? "valid" : "inserted"
-    }${failed ? `, ~${failed} not produced` : ""}.`,
+      args.dryRun ? "accepted" : "inserted"
+    }${rejectedTotal ? `, ${rejectedTotal} rejected by the quality gate` : ""}${
+      failed ? `, ~${failed} not produced` : ""
+    }.`,
   );
+  if (rejectedTotal > 0) {
+    console.log("  Rejections by reason:");
+    for (const [code, n] of Object.entries(rejectionCounts).sort((a, b) => b[1] - a[1])) {
+      console.log(`    ${String(n).padStart(4)}  ${code}`);
+    }
+  }
 }
 
 main().catch((err) => {
