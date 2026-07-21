@@ -82,6 +82,72 @@ export const MIGRATIONS: Migration[] = [
       `);
     },
   },
+  {
+    version: 3,
+    name: "test_sessions_modules_annotations",
+    // Phase 1. A digital SAT section is two timed modules where module 2's
+    // difficulty depends on module 1 performance. That was unrepresentable:
+    // `attempts` had no module or section column, so satSectionScore()'s
+    // routing logic had nothing to operate on and was never called.
+    //
+    // A test_session owns one or more attempts (one per module). Deliberately
+    // free-text `section` and `kind` rather than CHECK constraints, so a third
+    // exam track does not need a migration to add its own section codes.
+    up(db) {
+      db.exec(`
+        CREATE TABLE IF NOT EXISTS test_sessions (
+          id                INTEGER PRIMARY KEY AUTOINCREMENT,
+          exam_id           INTEGER NOT NULL REFERENCES exams(id) ON DELETE CASCADE,
+          section           TEXT NOT NULL,        -- 'Math'|'RW' (SAT), 'P1'|'P2' (TMUA)
+          kind              TEXT NOT NULL,        -- 'adaptive_section' | 'single_paper'
+          mode              TEXT NOT NULL,        -- mirrors attempts.mode
+          started_at        TEXT NOT NULL DEFAULT (datetime('now')),
+          finished_at       TEXT,
+          routed_difficulty TEXT,                 -- 'easy'|'hard' once module 1 is marked
+          raw_score         REAL,
+          scaled_score      REAL,
+          seconds_total     INTEGER
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_sessions_exam ON test_sessions(exam_id, started_at);
+      `);
+
+      // One attempt per module, linked back to the owning session.
+      ensureColumn(db, "attempts", "session_id", "session_id INTEGER REFERENCES test_sessions(id) ON DELETE CASCADE");
+      ensureColumn(db, "attempts", "module_number", "module_number INTEGER");
+      ensureColumn(db, "attempts", "section", "section TEXT");
+      // Which module-2 variant was actually served ('easy'|'hard'), so a past
+      // attempt can still be interpreted after the routing rules change.
+      ensureColumn(db, "attempts", "module_difficulty", "module_difficulty TEXT");
+
+      db.exec("CREATE INDEX IF NOT EXISTS idx_attempts_session ON attempts(session_id, module_number)");
+
+      // Bluebook parity: Mark for Review and the answer eliminator are part of
+      // how the test is taken, so they belong with the response, not in UI state.
+      ensureColumn(db, "responses", "flagged", "flagged INTEGER NOT NULL DEFAULT 0");
+      ensureColumn(db, "responses", "eliminated_json", "eliminated_json TEXT");
+
+      // Highlights & notes. attempt_id is nullable so an annotation can also be
+      // made while reviewing, outside any attempt.
+      db.exec(`
+        CREATE TABLE IF NOT EXISTS annotations (
+          id           INTEGER PRIMARY KEY AUTOINCREMENT,
+          attempt_id   INTEGER REFERENCES attempts(id) ON DELETE CASCADE,
+          question_id  INTEGER NOT NULL REFERENCES questions(id) ON DELETE CASCADE,
+          kind         TEXT NOT NULL CHECK (kind IN ('highlight','note')),
+          quoted_text  TEXT,
+          start_offset INTEGER,
+          end_offset   INTEGER,
+          color        TEXT,
+          note_md      TEXT,
+          created_at   TEXT NOT NULL DEFAULT (datetime('now'))
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_annotations_question ON annotations(question_id);
+        CREATE INDEX IF NOT EXISTS idx_annotations_attempt  ON annotations(attempt_id);
+      `);
+    },
+  },
 ];
 
 /** Apply every migration newer than the database's current version. */
