@@ -14,6 +14,7 @@ import { DatabaseSync } from "node:sqlite";
 import path from "node:path";
 import fs from "node:fs";
 import { SCHEMA_SQL } from "./schema";
+import { runMigrations } from "./migrations";
 
 const DB_DIR = path.join(process.cwd(), "data");
 const DB_PATH = process.env.EXAMFORGE_DB_PATH || path.join(DB_DIR, "examforge.db");
@@ -27,24 +28,8 @@ function createConnection(): DatabaseSync {
   }
   const conn = new DatabaseSync(DB_PATH);
   conn.exec(SCHEMA_SQL);
-  migrate(conn);
+  runMigrations(conn);
   return conn;
-}
-
-/**
- * Lightweight, idempotent column migrations for databases created before a
- * schema column existed. `CREATE TABLE IF NOT EXISTS` never alters an existing
- * table, so additive columns are applied here, guarded by PRAGMA table_info.
- */
-function migrate(conn: DatabaseSync): void {
-  const ensureColumn = (table: string, column: string, ddl: string) => {
-    const cols = conn.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[];
-    if (!cols.some((c) => c.name === column)) {
-      conn.exec(`ALTER TABLE ${table} ADD COLUMN ${ddl}`);
-    }
-  };
-  ensureColumn("study_plan", "session_code", "session_code TEXT");
-  ensureColumn("study_plan", "start_time", "start_time TEXT");
 }
 
 /** The shared database handle. Schema is applied lazily on first access. */

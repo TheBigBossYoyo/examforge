@@ -10,7 +10,8 @@
     "lint": "next lint",
     "seed": "tsx scripts/seed.ts",
     "generate": "tsx scripts/generate.ts",
-    "load:bank": "tsx scripts/load-bank.ts"
+    "load:bank": "tsx scripts/load-bank.ts",
+    "db:status": "tsx scripts/db-status.ts"
   },
   "dependencies": {
     "katex": "^0.16.11",
