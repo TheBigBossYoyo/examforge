@@ -9,7 +9,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { getDb, execute, queryOne, transaction } from "../lib/db";
+import { getDb, execute, query, queryOne, transaction } from "../lib/db";
 import { TMUA_TOPICS, SAT_TOPICS } from "../lib/seed/taxonomy";
 import {
   STATIC_RESOURCES,
@@ -82,17 +82,67 @@ function main() {
     const satId = ensureExam("SAT", 1600, "2026-08-22", 400, 1600);
 
     // ---- Reset reference tables (NOT user data) ----
+    //
+    // `resources` is the ONLY table safe to wipe: nothing references it, so
+    // recreating rows cannot orphan anything.
+    //
+    // topics / papers / sources are deliberately NOT deleted. They are the
+    // targets of ON DELETE SET NULL foreign keys (questions.topic_id,
+    // questions.paper_id, attempts.paper_id, ...), so deleting and reinserting
+    // them silently nulls those columns and permanently detaches the question
+    // bank from its taxonomy — which is exactly what the old seeder did on
+    // every re-run. They are upserted on their natural keys instead, which
+    // preserves row IDs and therefore every existing reference.
     execute("DELETE FROM resources");
-    execute("DELETE FROM papers");
-    execute("DELETE FROM topics");
-    execute("DELETE FROM sources");
 
     // ---- Topics (taxonomy D) ----
-    const topicInsert =
-      "INSERT INTO topics (exam_id, area, subtopic, parent_id) VALUES (?,?,?,NULL)";
+    // Upsert on the natural key so IDs survive a re-seed.
+    const topicInsert = `
+      INSERT INTO topics (exam_id, area, subtopic, parent_id) VALUES (?,?,?,NULL)
+      ON CONFLICT(exam_id, area, subtopic) DO NOTHING`;
     for (const t of TMUA_TOPICS) execute(topicInsert, [tmuaId, t.area, t.subtopic]);
     for (const t of SAT_TOPICS) execute(topicInsert, [satId, t.area, t.subtopic]);
-    console.log(`  ✓ Topics: ${TMUA_TOPICS.length} TMUA + ${SAT_TOPICS.length} SAT`);
+
+    // Drop taxonomy entries that are no longer in the seed list — but only when
+    // nothing points at them, so a renamed topic never takes user data with it.
+    const validTopicIds = new Set<number>();
+    for (const [examId, list] of [
+      [tmuaId, TMUA_TOPICS],
+      [satId, SAT_TOPICS],
+    ] as const) {
+      for (const t of list) {
+        const row = queryOne<{ id: number }>(
+          "SELECT id FROM topics WHERE exam_id = ? AND area = ? AND subtopic = ?",
+          [examId, t.area, t.subtopic],
+        );
+        if (row) validTopicIds.add(row.id);
+      }
+    }
+    let prunedTopics = 0;
+    let keptStaleTopics = 0;
+    for (const { id } of query<{ id: number }>("SELECT id FROM topics")) {
+      if (validTopicIds.has(id)) continue;
+      const refs =
+        queryOne<{ n: number }>(
+          `SELECT (SELECT COUNT(*) FROM questions  WHERE topic_id = ?)
+                + (SELECT COUNT(*) FROM mistakes   WHERE topic_id = ?)
+                + (SELECT COUNT(*) FROM study_plan WHERE topic_id = ?)
+                + (SELECT COUNT(*) FROM progress   WHERE topic_id = ?)
+                + (SELECT COUNT(*) FROM srs_cards  WHERE topic_id = ?) AS n`,
+          [id, id, id, id, id],
+        )?.n ?? 0;
+      if (refs === 0) {
+        execute("DELETE FROM topics WHERE id = ?", [id]);
+        prunedTopics += 1;
+      } else {
+        keptStaleTopics += 1;
+      }
+    }
+    console.log(
+      `  ✓ Topics: ${TMUA_TOPICS.length} TMUA + ${SAT_TOPICS.length} SAT` +
+        (prunedTopics ? `; pruned ${prunedTopics} stale` : "") +
+        (keptStaleTopics ? `; kept ${keptStaleTopics} stale but referenced` : ""),
+    );
 
     // ---- Resources (E) ----
     const examIdByName = { TMUA: tmuaId, SAT: satId } as const;
@@ -139,12 +189,24 @@ function main() {
     let pastPaperResourceCount = 0;
     for (const y of TMUA_YEARS) {
       // Two paper rows per year (Paper 1 + Paper 2) for paper mode.
+      // Upsert on (exam_id, title): keeps the paper's id stable so questions
+      // and attempts already linked to it stay linked across re-seeds.
       const mk = (which: 1 | 2, pdf: string) =>
         execute(
           `INSERT INTO papers
             (source_id, exam_id, title, year, kind, time_limit_min, num_questions,
              difficulty, pdf_url, relevance_to_target, note)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?)`,
+           VALUES (?,?,?,?,?,?,?,?,?,?,?)
+           ON CONFLICT(exam_id, title) DO UPDATE SET
+             source_id           = excluded.source_id,
+             year                = excluded.year,
+             kind                = excluded.kind,
+             time_limit_min      = excluded.time_limit_min,
+             num_questions       = excluded.num_questions,
+             difficulty          = excluded.difficulty,
+             pdf_url             = excluded.pdf_url,
+             relevance_to_target = excluded.relevance_to_target,
+             note                = excluded.note`,
           [
             tmuaSourceId,
             tmuaId,
@@ -218,11 +280,28 @@ function main() {
     console.log(`  ✓ Schedule blocks: ${blockCount} fixed weekly blocks`);
   });
 
-  // ---- Sample questions (J) — only if the bank is empty of imports ----
-  const existing = queryOne<{ n: number }>(
-    "SELECT COUNT(*) AS n FROM questions WHERE source_label LIKE 'Original (sample)%'",
-  );
-  if ((existing?.n ?? 0) === 0) {
+  // ---- Sample questions (J) ----
+  // Re-imported on every seed. Un-attempted sample rows are cleared first so a
+  // re-seed also HEALS rows that the old delete-topics behaviour orphaned
+  // (topic_id nulled, and therefore invisible to drills, mastery and
+  // analytics). Sample questions you have actually answered are never touched
+  // — losing a response is worse than leaving one row untagged.
+  {
+    const del = execute(
+      `DELETE FROM questions
+       WHERE source_label LIKE 'Original (sample)%'
+         AND id NOT IN (SELECT DISTINCT question_id FROM responses)`,
+    );
+    const kept = queryOne<{ n: number }>(
+      "SELECT COUNT(*) AS n FROM questions WHERE source_label LIKE 'Original (sample)%'",
+    )?.n ?? 0;
+    if (del.changes > 0 || kept > 0) {
+      console.log(
+        `  • Sample questions: cleared ${del.changes} un-attempted` +
+          (kept ? `, kept ${kept} already-attempted` : ""),
+      );
+    }
+
     const jsonPath = path.join(process.cwd(), "samples", "questions.sample.json");
     const csvPath = path.join(process.cwd(), "samples", "questions.sample.csv");
     let total = 0;
@@ -242,8 +321,6 @@ function main() {
         console.warn("  ! CSV rejected:", JSON.stringify(res.rejected, null, 2));
     }
     console.log(`  ✓ Sample questions imported: ${total}`);
-  } else {
-    console.log("  • Sample questions already present — skipped");
   }
 
   console.log("✓ Seed complete.");
