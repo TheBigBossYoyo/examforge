@@ -47,9 +47,10 @@ function loadEnv() {
 // ---- Provider resolution (mirrors app/api/tutor/route.ts) ----------------
 const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
 const OPENAI_URL = "https://api.openai.com/v1/chat/completions";
+const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 interface ProviderConfig {
-  provider: "gemini" | "openai";
+  provider: "gemini" | "openai" | "openrouter";
   url: string;
   apiKey: string;
   model: string;
@@ -59,9 +60,20 @@ function resolveProvider(modelOverride?: string): ProviderConfig | null {
   const provider = (process.env.AI_PROVIDER ?? "").trim().toLowerCase();
   const geminiKey = process.env.GEMINI_API_KEY ?? process.env.GOOGLE_API_KEY;
   const openaiKey = process.env.OPENAI_API_KEY;
+  const openrouterKey = process.env.OPENROUTER_API_KEY;
   const genericKey = process.env.AI_API_KEY;
   const model = (m: string) => modelOverride || process.env.AI_MODEL || m;
 
+  if (provider === "openrouter") {
+    const apiKey = openrouterKey ?? genericKey;
+    if (!apiKey) return null;
+    return {
+      provider: "openrouter",
+      url: OPENROUTER_URL,
+      apiKey,
+      model: model("nvidia/nemotron-3-ultra-550b-a55b:free"),
+    };
+  }
   if (provider === "gemini" || provider === "google") {
     const apiKey = geminiKey ?? genericKey;
     if (!apiKey) return null;
@@ -72,6 +84,13 @@ function resolveProvider(modelOverride?: string): ProviderConfig | null {
     if (!apiKey) return null;
     return { provider: "openai", url: OPENAI_URL, apiKey, model: model("gpt-4o-mini") };
   }
+  if (openrouterKey)
+    return {
+      provider: "openrouter",
+      url: OPENROUTER_URL,
+      apiKey: openrouterKey,
+      model: model("nvidia/nemotron-3-ultra-550b-a55b:free"),
+    };
   if (geminiKey) return { provider: "gemini", url: GEMINI_URL, apiKey: geminiKey, model: model("gemini-2.0-flash") };
   if (openaiKey) return { provider: "openai", url: OPENAI_URL, apiKey: openaiKey, model: model("gpt-4o-mini") };
   if (genericKey) return { provider: "openai", url: OPENAI_URL, apiKey: genericKey, model: model("gpt-4o-mini") };
@@ -85,10 +104,14 @@ interface Args {
   topicFilter?: string;
   model?: string;
   dryRun: boolean;
+  /** Seconds to wait between topics, to stay under free-tier rate limits. */
+  delay: number;
+  /** Retries on a rate-limit response before giving up on a topic. */
+  retries: number;
 }
 
 function parseArgs(argv: string[]): Args {
-  const args: Args = { exam: "all", perTopic: 10, dryRun: false };
+  const args: Args = { exam: "all", perTopic: 10, dryRun: false, delay: 3, retries: 3 };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     const next = () => argv[++i];
@@ -101,6 +124,10 @@ function parseArgs(argv: string[]): Args {
       args.topicFilter = (next() ?? "").toLowerCase();
     } else if (a === "--model") {
       args.model = next();
+    } else if (a === "--delay") {
+      args.delay = Math.max(0, Number(next() ?? "3") || 0);
+    } else if (a === "--retries") {
+      args.retries = Math.max(0, parseInt(next() ?? "3", 10) || 0);
     } else if (a === "--dry-run") {
       args.dryRun = true;
     }
@@ -194,6 +221,10 @@ async function callModel(cfg: ProviderConfig, prompt: string): Promise<string> {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${cfg.apiKey}`,
+      // OpenRouter attributes requests to an app; harmless elsewhere.
+      ...(cfg.provider === "openrouter"
+        ? { "HTTP-Referer": "https://github.com/local/examforge", "X-Title": "ExamForge" }
+        : {}),
     },
     body: JSON.stringify({
       model: cfg.model,
@@ -212,6 +243,12 @@ async function callModel(cfg: ProviderConfig, prompt: string): Promise<string> {
       // well past 4k, and newer models spend part of the budget on reasoning
       // tokens before emitting anything.
       max_tokens: 16384,
+      // Reasoning models on OpenRouter bill their scratchpad against the same
+      // budget as the answer. Nemotron Ultra spent 14k thinking and returned an
+      // EMPTY content field at default effort. Low effort keeps the reasoning
+      // benefit while leaving room to actually emit the questions. Models that
+      // do not reason ignore this.
+      ...(cfg.provider === "openrouter" ? { reasoning: { effort: "low" } } : {}),
     }),
   });
   if (!res.ok) {
@@ -226,8 +263,18 @@ async function callModel(cfg: ProviderConfig, prompt: string): Promise<string> {
   }
 
   const data = (await res.json()) as {
-    choices: { message: { content: string }; finish_reason?: string }[];
+    choices?: { message: { content: string; reasoning?: string }; finish_reason?: string }[];
+    error?: { message?: string; code?: number };
   };
+
+  // OpenRouter returns upstream provider failures as a 200 with an error body.
+  if (data.error) {
+    throw new Error(
+      `${cfg.provider}: ${data.error.message ?? "upstream error"}` +
+        (data.error.code ? ` (${data.error.code})` : ""),
+    );
+  }
+
   const choice = data.choices?.[0];
 
   // A truncated reply surfaces as a JSON syntax error hundreds of characters
@@ -240,7 +287,17 @@ async function callModel(cfg: ProviderConfig, prompt: string): Promise<string> {
     );
   }
 
-  return choice?.message?.content ?? "";
+  const content = choice?.message?.content ?? "";
+  if (!content.trim()) {
+    const reasoned = (choice?.message?.reasoning ?? "").length;
+    throw new Error(
+      reasoned > 0
+        ? `model returned an empty answer after ${reasoned} characters of reasoning — ` +
+          `it spent the whole budget thinking. Try a lower --per-topic or a non-reasoning model.`
+        : "model returned empty content",
+    );
+  }
+  return content;
 }
 
 // Extraction and LaTeX-safe repair live in lib/llm-json.ts, where they are
@@ -286,6 +343,38 @@ function coerce(
   };
 }
 
+const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
+
+/**
+ * Call the model, backing off on rate limits and transient upstream failures.
+ *
+ * Free-tier endpoints rate-limit aggressively and shared providers return 502
+ * "worker limit reached" under load. Both are worth waiting out; a bad prompt
+ * is not, so only these are retried.
+ */
+async function callWithRetry(
+  cfg: ProviderConfig,
+  prompt: string,
+  retries: number,
+  label: string,
+): Promise<string> {
+  let lastErr: unknown;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      return await callModel(cfg, prompt);
+    } catch (err) {
+      lastErr = err;
+      const msg = err instanceof Error ? err.message : String(err);
+      const transient = /\b(429|502|503|rate.?limit|ResourceExhausted|temporarily)\b/i.test(msg);
+      if (!transient || attempt === retries) throw err;
+      const wait = Math.round(5 * 2 ** attempt);
+      console.log(`    · ${label}: ${msg.slice(0, 70)}… retrying in ${wait}s`);
+      await sleep(wait * 1000);
+    }
+  }
+  throw lastErr;
+}
+
 // ---- Main ---------------------------------------------------------------
 async function main() {
   loadEnv();
@@ -329,7 +418,12 @@ async function main() {
       continue;
     }
     try {
-      const raw = await callModel(cfg, buildPrompt(exam, topic, args.perTopic));
+      const raw = await callWithRetry(
+        cfg,
+        buildPrompt(exam, topic, args.perTopic),
+        args.retries,
+        label,
+      );
       const arr = extractJsonArray(raw);
       const rows: ImportQuestion[] = [];
       for (const item of arr) {
@@ -389,6 +483,8 @@ async function main() {
       failed += args.perTopic;
       console.warn(`  ! ${label}: ${err instanceof Error ? err.message : String(err)}`);
     }
+
+    if (args.delay > 0) await sleep(args.delay * 1000);
   }
 
   console.log(

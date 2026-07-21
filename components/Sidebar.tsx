@@ -25,6 +25,7 @@ const GROUPS: NavGroup[] = [
       { href: "/exam", label: "Full Sections", icon: "?" },
       { href: "/schedule", label: "Weekly Schedule", icon: "??" },
       { href: "/analytics", label: "Analytics", icon: "??" },
+      { href: "/insights", label: "Insights", icon: "?" },
       { href: "/planner", label: "Study Planner", icon: "??" },
       { href: "/mistakes", label: "Mistake Notebook", icon: "??" },
       { href: "/resources", label: "Resource Library", icon: "??" },

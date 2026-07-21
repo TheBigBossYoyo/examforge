@@ -86,11 +86,31 @@ export function stripTrailingCommas(text: string): string {
   return text.replace(/,(\s*[}\]])/g, "$1");
 }
 
+/**
+ * Strip a reasoning model's scratchpad.
+ *
+ * Reasoning models emit their working in `<think>…</think>` before the answer.
+ * That working is full of brackets and quotes, so slicing "first [ to last ]"
+ * across it produces garbage. An unterminated block (the reply was cut off
+ * mid-thought) is dropped to the end.
+ */
+export function stripReasoningBlocks(text: string): string {
+  return text
+    .replace(/<think>[\s\S]*?<\/think>/gi, "")
+    .replace(/<think>[\s\S]*$/i, "")
+    .replace(/<\/?(?:thinking|reasoning)>/gi, "")
+    .trim();
+}
+
 /** Pull the outermost JSON array out of a reply that may be fenced or chatty. */
 export function extractArrayText(raw: string): string {
-  let text = raw.trim();
+  let text = stripReasoningBlocks(raw.trim());
 
-  const fence = text.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  // Prefer a fenced block that actually contains an array — a reasoning model
+  // may fence a fragment earlier in its reply.
+  const fences = [...text.matchAll(/```(?:json)?\s*([\s\S]*?)```/gi)];
+  const arrayFence = fences.find((m) => m[1].trim().startsWith("["));
+  const fence = arrayFence ?? fences[0];
   if (fence) text = fence[1].trim();
 
   if (!text.startsWith("[")) {

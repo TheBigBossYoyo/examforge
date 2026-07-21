@@ -3,6 +3,7 @@ import {
   escapeLatexBackslashes,
   extractArrayText,
   parseModelArray,
+  stripReasoningBlocks,
   stripTrailingCommas,
 } from "./llm-json";
 
@@ -58,7 +59,32 @@ describe("stripTrailingCommas", () => {
   });
 });
 
+describe("stripReasoningBlocks", () => {
+  it("removes a closed think block", () => {
+    expect(stripReasoningBlocks("<think>let me see [1,2]</think>[3,4]")).toBe("[3,4]");
+  });
+
+  it("removes an unterminated think block", () => {
+    // Reply cut off mid-thought — everything after the tag is scratchpad.
+    expect(stripReasoningBlocks("[1]<think>still thinking...")).toBe("[1]");
+  });
+
+  it("leaves ordinary replies alone", () => {
+    expect(stripReasoningBlocks("[1,2]")).toBe("[1,2]");
+  });
+});
+
 describe("extractArrayText", () => {
+  it("skips a fenced fragment that is not the array", () => {
+    const raw = "Consider:\n```\nx + 1\n```\nHere is the output:\n```json\n[{\"a\":1}]\n```";
+    expect(extractArrayText(raw)).toBe('[{"a":1}]');
+  });
+
+  it("ignores brackets inside a reasoning block", () => {
+    const raw = '<think>maybe [9,9,9] works?</think>```json\n[{"a":1}]\n```';
+    expect(JSON.parse(extractArrayText(raw))).toEqual([{ a: 1 }]);
+  });
+
   it("unwraps a fenced block", () => {
     expect(extractArrayText('```json\n[1,2]\n```')).toBe("[1,2]");
     expect(extractArrayText('```\n[1,2]\n```')).toBe("[1,2]");

@@ -174,6 +174,25 @@ export const MIGRATIONS: Migration[] = [
       `);
     },
   },
+  {
+    version: 5,
+    name: "mistake_root_cause",
+    up(db) {
+      // `error_type` is a fine-grained, exam-specific label (trap_answer,
+      // grammar_rule_unknown, ...). What drives study decisions is the coarse
+      // reason: did you not know it, or did you know it and slip? Those need
+      // different responses — content review versus checking procedure — so
+      // they are recorded separately rather than inferred from the detail label.
+      ensureColumn(db, "mistakes", "root_cause", "root_cause TEXT");
+      // Whether the student has actually triaged this, as opposed to the
+      // system's guess. An untriaged guess must not be presented as fact.
+      ensureColumn(db, "mistakes", "triaged", "triaged INTEGER NOT NULL DEFAULT 0");
+
+      db.exec(
+        "CREATE INDEX IF NOT EXISTS idx_mistakes_root ON mistakes(root_cause, resolved, created_at)",
+      );
+    },
+  },
 ];
 
 /** Apply every migration newer than the database's current version. */

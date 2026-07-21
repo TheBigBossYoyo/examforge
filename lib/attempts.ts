@@ -3,7 +3,9 @@ import { execute, queryOne, query, transaction } from "./db";
 import { getExamById, getQuestion } from "./queries";
 import { tmuaPaperBand, satSectionFromAccuracy } from "./scoring";
 import { loadSatConfig, loadTmuaBandTable } from "./scoring-config";
-import type { AttemptMode, Confidence } from "./types";
+import type { AttemptMode, Confidence, ExamName } from "./types";
+import { suggestRootCause } from "./error-log";
+import { paceBudgetFor } from "./insights";
 import { isAnswerCorrect } from "./answer";
 
 // Marking now lives in lib/answer.ts, where it is unit-tested. Re-exported so
@@ -140,19 +142,27 @@ export function recordResponses(
 
     if (q.topic_id) touchedTopics.add(q.topic_id);
 
-    // Auto-log a mistake row for wrong (or wrong-but-confident) answers.
+    // Auto-log a mistake row for wrong answers, with a SUGGESTED root cause.
+    // triaged stays 0: this is the system's guess, and the dashboard must not
+    // present it as the student's own judgement until they confirm it.
     if (autoLog && correct === false) {
+      const suggestion = suggestRootCause({
+        secondsSpent: r.secondsSpent || 0,
+        paceBudget: paceBudgetFor(examName as ExamName, q.topic_area ?? null),
+        confidence: r.confidence,
+      });
+
       execute(
-        `INSERT INTO mistakes (response_id, question_id, topic_id, error_type, note_md, resolved)
-         VALUES (?,?,?,?,?,0)`,
+        `INSERT INTO mistakes
+           (response_id, question_id, topic_id, error_type, root_cause, triaged, note_md, resolved)
+         VALUES (?,?,?,?,?,0,?,0)`,
         [
           responseId,
           r.questionId,
           q.topic_id ?? null,
           defaultErrorType(examName, r.confidence),
-          r.confidence === "confident"
-            ? "Auto-logged: answered confidently but incorrectly — likely a genuine gap."
-            : null,
+          suggestion.cause,
+          `Suggested: ${suggestion.reason}`,
         ],
       );
     }
