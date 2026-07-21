@@ -13,7 +13,8 @@
     "load:bank": "tsx scripts/load-bank.ts",
     "db:status": "tsx scripts/db-status.ts",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "calibrate": "tsx scripts/calibrate.ts"
   },
   "dependencies": {
     "katex": "^0.16.11",

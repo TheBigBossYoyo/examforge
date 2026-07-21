@@ -1,17 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { generatePlan, setTaskDone, REALLOCATE_KEY } from "@/lib/planner";
+import { generatePlan, replanIfDrifted, setTaskDone, REALLOCATE_KEY } from "@/lib/planner";
 import { setSetting } from "@/lib/queries";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 interface PlanBody {
-  action: "generate" | "toggle" | "reallocate";
+  action: "generate" | "toggle" | "reallocate" | "replan";
   examId?: number;
   daysAhead?: number;
   id?: number;
   done?: boolean;
   confirmed?: boolean;
+  force?: boolean;
 }
 
 export async function POST(req: NextRequest) {
@@ -22,6 +23,16 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "examId required" }, { status: 400 });
       }
       const result = generatePlan(body.examId, { daysAhead: body.daysAhead });
+      return NextResponse.json({ ok: true, ...result });
+    }
+
+    if (body.action === "replan") {
+      // Regenerates only when the plan has drifted far enough to mislead,
+      // unless forced. Reports the assessment either way.
+      if (!body.examId) {
+        return NextResponse.json({ error: "examId required" }, { status: 400 });
+      }
+      const result = replanIfDrifted(body.examId, Boolean(body.force));
       return NextResponse.json({ ok: true, ...result });
     }
 

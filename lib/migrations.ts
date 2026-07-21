@@ -193,6 +193,50 @@ export const MIGRATIONS: Migration[] = [
       );
     },
   },
+  {
+    version: 6,
+    name: "observed_difficulty_and_flashcards",
+    up(db) {
+      // Observed difficulty is kept SEPARATE from the asserted `difficulty`.
+      // See lib/calibration.ts: the asserted label drives module routing so a
+      // simulated section still resembles the real exam, while the observed one
+      // drives personal drilling. Merging them would make "hard module 2" mean
+      // "questions this student gets wrong" and flatter the predicted score.
+      ensureColumn(db, "questions", "observed_p_value", "observed_p_value REAL");
+      ensureColumn(db, "questions", "observed_attempts", "observed_attempts INTEGER NOT NULL DEFAULT 0");
+      ensureColumn(db, "questions", "calibrated_difficulty", "calibrated_difficulty TEXT");
+      ensureColumn(db, "questions", "calibrated_at", "calibrated_at TEXT");
+
+      // Vocab and formula flashcards: a lighter content type than a practice
+      // question, with no choices, no marking and no place in section scoring.
+      db.exec(`
+        CREATE TABLE IF NOT EXISTS flashcards (
+          id         INTEGER PRIMARY KEY AUTOINCREMENT,
+          exam_id    INTEGER NOT NULL REFERENCES exams(id) ON DELETE CASCADE,
+          topic_id   INTEGER REFERENCES topics(id) ON DELETE SET NULL,
+          kind       TEXT NOT NULL CHECK (kind IN ('vocab','formula')),
+          front_md   TEXT NOT NULL,
+          back_md    TEXT NOT NULL,
+          hint_md    TEXT,
+          source     TEXT,
+          created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        );
+
+        CREATE UNIQUE INDEX IF NOT EXISTS ux_flashcards_front
+          ON flashcards(exam_id, kind, front_md);
+        CREATE INDEX IF NOT EXISTS idx_flashcards_exam ON flashcards(exam_id, kind);
+      `);
+
+      // Let an SRS card point at a flashcard as well as a question.
+      ensureColumn(
+        db,
+        "srs_cards",
+        "flashcard_id",
+        "flashcard_id INTEGER REFERENCES flashcards(id) ON DELETE CASCADE",
+      );
+      db.exec("CREATE INDEX IF NOT EXISTS idx_srs_flashcard ON srs_cards(flashcard_id)");
+    },
+  },
 ];
 
 /** Apply every migration newer than the database's current version. */

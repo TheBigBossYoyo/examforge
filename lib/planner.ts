@@ -17,6 +17,7 @@ import {
   SCHEDULE_DEFAULT_SESSION,
   type SessionSlot,
 } from "@/lib/sessions";
+import { assessDrift, type DriftAssessment } from "@/lib/drift";
 import type { ExamName, ScheduleBlock, StudyPlanItem, StudyTaskType, Topic } from "@/lib/types";
 
 export interface AgendaItem extends StudyPlanItem {
@@ -254,6 +255,59 @@ export function generatePlan(examId: number, opts: { daysAhead?: number } = {}):
 
     return { created, cleared };
   });
+}
+
+/**
+ * Average daily study minutes from the fixed weekly schedule, used to convert
+ * a backlog of minutes into "days behind".
+ */
+function avgDailyStudyMinutes(category: "SAT" | "TMUA"): number {
+  const blocks = getStudyBlocks(category);
+  if (blocks.length === 0) return 120;
+  const weekly = blocks.reduce((s, b) => s + minutesBetween(b.start_time, b.end_time), 0);
+  const studyDays = new Set(blocks.map((b) => b.day_of_week)).size || 1;
+  return Math.max(1, weekly / studyDays);
+}
+
+/** How far the plan has drifted from what actually happened. */
+export function getDrift(examId: number): DriftAssessment {
+  const exam = getExamById(examId);
+  if (!exam) throw new Error("Exam not found");
+
+  // Look back far enough to catch a sustained slip, not just yesterday.
+  const from = addDaysIso(todayIso(), -21);
+  const rows = query<{ date: string; est_minutes: number | null; done: number }>(
+    `SELECT date, est_minutes, done FROM study_plan
+      WHERE exam_id = ? AND date >= ?`,
+    [examId, from],
+  );
+
+  return assessDrift(
+    rows.map((r) => ({ date: r.date, estMinutes: r.est_minutes ?? 0, done: r.done === 1 })),
+    todayIso(),
+    avgDailyStudyMinutes(exam.name),
+  );
+}
+
+export interface ReplanResult extends DriftAssessment {
+  replanned: boolean;
+  created: number;
+  cleared: number;
+}
+
+/**
+ * Regenerate the plan when it has drifted far enough to be misleading.
+ *
+ * Only future tasks are rewritten — generatePlan deletes from today forward —
+ * so history stays intact and a completed task is never un-completed.
+ */
+export function replanIfDrifted(examId: number, force = false): ReplanResult {
+  const drift = getDrift(examId);
+  if (!drift.shouldReplan && !force) {
+    return { ...drift, replanned: false, created: 0, cleared: 0 };
+  }
+  const { created, cleared } = generatePlan(examId);
+  return { ...drift, replanned: true, created, cleared };
 }
 
 export function setTaskDone(id: number, done: boolean): void {

@@ -25,6 +25,7 @@ import {
   DEFAULT_SAT_MATH,
 } from "../lib/scoring";
 import { seedScheduleBlocks } from "../lib/schedule";
+import { seedFlashcards } from "../lib/flashcards";
 
 function setSetting(key: string, value: string) {
   execute(
@@ -322,6 +323,15 @@ function main() {
     }
     console.log(`  ✓ Sample questions imported: ${total}`);
   }
+
+  // ---- Formula / vocabulary flashcards ----
+  // Idempotent via the unique index: re-seeding adds only new cards and never
+  // resets spaced-repetition progress on the ones already being reviewed.
+  const deck = seedFlashcards();
+  console.log(
+    `  ✓ Flashcards: ${deck.inserted} new card${deck.inserted === 1 ? "" : "s"}` +
+      `${deck.scheduled ? `, ${deck.scheduled} scheduled for review` : " (deck already current)"}`,
+  );
 
   console.log("✓ Seed complete.");
 }

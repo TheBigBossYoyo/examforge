@@ -29,6 +29,7 @@ const GROUPS: NavGroup[] = [
       { href: "/analytics", label: "Analytics", icon: "chart" },
       { href: "/insights", label: "Insights", icon: "insights" },
       { href: "/planner", label: "Study Planner", icon: "list" },
+      { href: "/flashcards", label: "Formulas & Vocab", icon: "book" },
       { href: "/mistakes", label: "Mistake Notebook", icon: "flag" },
       { href: "/resources", label: "Resource Library", icon: "book" },
     ],

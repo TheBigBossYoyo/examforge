@@ -5,7 +5,8 @@ import { Badge, Card, EmptyState, LinkButton, ProgressRing, SectionHeader, StatC
 import { effectiveExamDate, getExams } from "@/lib/queries";
 import { countDue, getDueCards } from "@/lib/srs";
 import { formatDate } from "@/lib/format";
-import { getAgenda, getPhaseInfo } from "@/lib/planner";
+import { getAgenda, getDrift, getPhaseInfo } from "@/lib/planner";
+import { DriftBanner, type DriftView } from "@/components/DriftBanner";
 
 export const dynamic = "force-dynamic";
 
@@ -26,6 +27,17 @@ export default function PlannerPage() {
 
   const agenda = getAgenda(undefined, 28);
   const phase = getPhaseInfo();
+  const drifts: DriftView[] = exams.map((exam) => {
+    const d = getDrift(exam.id);
+    return {
+      examId: exam.id,
+      examName: exam.name,
+      status: d.status,
+      reason: d.reason,
+      backlogMinutes: d.backlogMinutes,
+      netDays: d.netDays,
+    };
+  });
   const dueCards = getDueCards(undefined, 24);
   const dueCount = countDue();
   const completed = agenda.filter((item) => item.done === 1).length;
@@ -33,6 +45,9 @@ export default function PlannerPage() {
 
   return (
     <div className="space-y-6">
+      {drifts.map((d) => (
+        <DriftBanner key={d.examId} drift={d} />
+      ))}
       <SectionHeader
         title="Study planner + spaced repetition"
         subtitle="Daily agenda first, due-card review beside it. Every workload number here is an estimate."
