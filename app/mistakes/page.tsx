@@ -106,9 +106,11 @@ export default function MistakesPage({
         <div className="space-y-3">
           {mistakes.map((m) => {
             const examName = exams.find((e) => e.id === m.exam_id)?.name ?? "TMUA";
-            const opts = examName === "SAT" ? [...SAT_ERROR_TYPES] : [...TMUA_ERROR_TYPES];
+            // widened to string[]: error_type is free-text in the DB, so a row may
+            // legitimately carry a value from the other exam's set (or a legacy one).
+            const opts: string[] = examName === "SAT" ? [...SAT_ERROR_TYPES] : [...TMUA_ERROR_TYPES];
             // ensure current value is selectable even if cross-set
-            if (!opts.includes(m.error_type as never)) opts.unshift(m.error_type);
+            if (!opts.includes(m.error_type)) opts.unshift(m.error_type);
             return (
               <Card key={m.id} className={m.resolved ? "opacity-70" : ""}>
                 <div className="mb-2 flex flex-wrap items-center gap-2">
