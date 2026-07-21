@@ -23,3 +23,9 @@ npm-debug.log*
 /.vscode
 *.tsbuildinfo
 next-env.d.ts.bak
+
+# Stray dev-server log captures
+/data/devlog.txt
+
+# Stray root database (the real one lives in data/)
+/examforge.db

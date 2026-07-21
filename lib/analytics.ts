@@ -16,11 +16,9 @@ import {
   tmuaOverall,
   satSectionFromAccuracy,
   satTotal,
-  DEFAULT_SAT_MATH,
-  DEFAULT_SAT_RW,
-  type SatSectionConfig,
   type SatTotalResult,
 } from "@/lib/scoring";
+import { loadSatConfig, loadTmuaBandTable } from "@/lib/scoring-config";
 
 /* ------------------------------------------------------------------ */
 /* Shared types                                                          */
@@ -224,21 +222,6 @@ interface OverallRow {
   correct: number;
 }
 
-function loadSatConfig(section: "math" | "rw"): SatSectionConfig {
-  const key = section === "math" ? "sat_math_config" : "sat_rw_config";
-  const fallback = section === "math" ? DEFAULT_SAT_MATH : DEFAULT_SAT_RW;
-  try {
-    const raw = getSetting(key);
-    if (raw) {
-      const parsed = JSON.parse(raw) as SatSectionConfig;
-      return parsed;
-    }
-  } catch {
-    // ignore, use fallback
-  }
-  return fallback;
-}
-
 function overallAccRow(examId: number, area?: string): { total: number; correct: number } {
   const params: unknown[] = [examId];
   const areaClause = area ? "AND t.area = ?" : "";
@@ -261,7 +244,7 @@ export function scorePrediction(examId: number, examName: "TMUA" | "SAT"): Score
     if (total === 0) return null;
     const acc = correct / total;
     const rawEstimate = Math.round(acc * 20);
-    const paperBand = tmuaPaperBand(rawEstimate);
+    const paperBand = tmuaPaperBand(rawEstimate, loadTmuaBandTable());
     const band = tmuaOverall(paperBand, paperBand);
     return {
       kind: "tmua",
@@ -276,8 +259,7 @@ export function scorePrediction(examId: number, examName: "TMUA" | "SAT"): Score
   const hasData = mathAcc.total + rwAcc.total > 0;
   if (!hasData) return null;
 
-  const mathCfg = loadSatConfig("math");
-  const rwCfg = loadSatConfig("rw");
+  const { math: mathCfg, rw: rwCfg } = loadSatConfig();
 
   const mathAccFrac = mathAcc.total > 0 ? mathAcc.correct / mathAcc.total : 0.5;
   const rwAccFrac = rwAcc.total > 0 ? rwAcc.correct / rwAcc.total : 0.5;

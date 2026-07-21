@@ -159,6 +159,23 @@ solution_md, hint1..3_md, difficulty, desmos_recommended, desmos_state_json, fas
 | `npm run seed` | Create & populate the local database (idempotent) |
 | `npm run load:bank` | Import the shipped AI-original starter bank (`samples/bank/*.json`) |
 | `npm run generate` | Generate AI-original questions per topic (needs an AI key) |
+| `npm run db:status` | Migrations applied, row counts, and integrity checks |
+| `npm test` | Run the unit tests (`npm run test:watch` to watch) |
 | `npm run lint` | Lint |
+
+### Schema changes
+
+`lib/schema.ts` bootstraps a **fresh** database only — `CREATE TABLE IF NOT
+EXISTS` can never alter a table that already exists. Every change after that
+goes in `lib/migrations.ts` as a new numbered migration, applied once and
+recorded in `schema_migrations`. Never edit a migration that has already
+shipped; add another one. `npm run db:status` shows what a database has.
+
+### Tests
+
+Scoring and marking are unit-tested (`lib/*.test.ts`) because a scoring bug is
+worse than a missing feature. `lib/scoring.ts` is deliberately pure — the
+database-backed table overrides live in `lib/scoring-config.ts` — so the maths
+can be tested without a database.
 
 Built for one student, two boulders. Roll them daily.

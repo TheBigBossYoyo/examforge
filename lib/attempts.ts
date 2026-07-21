@@ -1,14 +1,14 @@
 // Server-side attempt lifecycle: marking, scoring, progress + mistake updates.
 import { execute, queryOne, query, transaction } from "./db";
 import { getExamById, getQuestion } from "./queries";
-import {
-  tmuaPaperBand,
-  satSectionFromAccuracy,
-  DEFAULT_SAT_MATH,
-  DEFAULT_SAT_RW,
-  type SatSectionConfig,
-} from "./scoring";
+import { tmuaPaperBand, satSectionFromAccuracy } from "./scoring";
+import { loadSatConfig, loadTmuaBandTable } from "./scoring-config";
 import type { AttemptMode, Confidence } from "./types";
+import { isAnswerCorrect } from "./answer";
+
+// Marking now lives in lib/answer.ts, where it is unit-tested. Re-exported so
+// existing importers of this module keep working.
+export { isAnswerCorrect };
 
 export interface SubmittedResponse {
   questionId: number;
@@ -37,30 +37,6 @@ export interface SubmitAttemptResult {
   scaledLabel: string;
 }
 
-/** Normalise an answer string for tolerant comparison. */
-function normAnswer(s: string | null | undefined): string {
-  return (s ?? "")
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, " ")
-    .replace(/[$\\]/g, "")
-    .replace(/[.,](?=$)/, "");
-}
-
-export function isAnswerCorrect(given: string | null, correct: string): boolean {
-  if (given == null) return false;
-  const g = normAnswer(given);
-  const c = normAnswer(correct);
-  if (g === c) return true;
-  // numeric tolerance
-  const gn = Number(g.replace(/[^0-9.\-]/g, ""));
-  const cn = Number(c.replace(/[^0-9.\-]/g, ""));
-  if (!Number.isNaN(gn) && !Number.isNaN(cn) && g !== "" && c !== "") {
-    return Math.abs(gn - cn) < 1e-6;
-  }
-  return false;
-}
-
 /** Default error_type heuristic from confidence + exam, for auto-logged mistakes. */
 function defaultErrorType(examName: string, confidence: Confidence | null | undefined): string {
   if (examName === "TMUA") {
@@ -72,21 +48,6 @@ function defaultErrorType(examName: string, confidence: Confidence | null | unde
   if (confidence === "confident") return "content_gap";
   if (confidence === "guessed") return "poor_elimination";
   return "misread";
-}
-
-function loadSatConfig(): { math: SatSectionConfig; rw: SatSectionConfig } {
-  const parse = (key: string, fb: SatSectionConfig): SatSectionConfig => {
-    const row = queryOne<{ value: string }>("SELECT value FROM settings WHERE key = ?", [key]);
-    try {
-      return row?.value ? (JSON.parse(row.value) as SatSectionConfig) : fb;
-    } catch {
-      return fb;
-    }
-  };
-  return {
-    math: parse("sat_math_config", DEFAULT_SAT_MATH),
-    rw: parse("sat_rw_config", DEFAULT_SAT_RW),
-  };
 }
 
 /** Recompute a topic's progress row from all responses to that topic. */
@@ -192,7 +153,7 @@ export function submitAttempt(input: SubmitAttemptInput): SubmitAttemptResult {
     if (exam.name === "TMUA") {
       // Scale raw to a /20-equivalent then band it.
       const rawOutOf20 = total > 0 ? Math.round((correctCount / total) * 20) : 0;
-      const band = tmuaPaperBand(rawOutOf20);
+      const band = tmuaPaperBand(rawOutOf20, loadTmuaBandTable());
       scaledScore = band;
       scaledLabel = `${band.toFixed(1)} / 9.0 (estimate)`;
     } else {
@@ -244,7 +205,7 @@ export function recordManualScore(input: ManualScoreInput): SubmitAttemptResult 
   let scaledLabel = "—";
   if (exam.name === "TMUA") {
     const rawOutOf20 = Math.round((raw / input.maxRaw) * 20);
-    const band = tmuaPaperBand(rawOutOf20);
+    const band = tmuaPaperBand(rawOutOf20, loadTmuaBandTable());
     scaledScore = band;
     scaledLabel = `${band.toFixed(1)} / 9.0 (estimate)`;
   } else {

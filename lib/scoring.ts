@@ -2,9 +2,13 @@
  * Scoring models (section G1). Every value is labelled an ESTIMATE — real
  * conversions are norm-referenced per sitting and vary. Tables are editable
  * (persisted in `settings`, overriding these defaults).
+ *
+ * This module is deliberately PURE: no database access, no I/O. Conversion
+ * tables arrive as arguments. The database-backed overrides live in
+ * lib/scoring-config.ts, so scoring stays unit-testable — a scoring bug is
+ * more expensive than a missing feature, and untestable scoring is how one
+ * survives.
  */
-
-import { queryOne } from "./db";
 
 /* ------------------------------------------------------------------ *
  * TMUA: raw /20 per paper -> 1.0–9.0 band.
@@ -35,26 +39,14 @@ export const DEFAULT_TMUA_BAND_TABLE: number[] = [
   9.0, // 20  <- top tail
 ];
 
-function loadTmuaTable(): number[] {
-  const row = queryOne<{ value: string }>(
-    "SELECT value FROM settings WHERE key = 'tmua_band_table'",
-  );
-  if (row?.value) {
-    try {
-      const t = JSON.parse(row.value);
-      if (Array.isArray(t) && t.length === 21) return t.map(Number);
-    } catch {
-      /* fall through to default */
-    }
-  }
-  return DEFAULT_TMUA_BAND_TABLE;
-}
-
-/** Convert a single TMUA paper raw score (0..20) to a 1.0–9.0 band estimate. */
-export function tmuaPaperBand(raw: number): number {
-  const table = loadTmuaTable();
+/**
+ * Convert a single TMUA paper raw score (0..20) to a 1.0–9.0 band estimate.
+ * Pass the user's edited table from lib/scoring-config.ts; omit it for the
+ * shipped default.
+ */
+export function tmuaPaperBand(raw: number, table: number[] = DEFAULT_TMUA_BAND_TABLE): number {
   const clamped = Math.max(0, Math.min(20, Math.round(raw)));
-  return table[clamped];
+  return table[clamped] ?? DEFAULT_TMUA_BAND_TABLE[clamped];
 }
 
 /** Combine two paper bands into an overall TMUA estimate (rounded to 0.1). */
