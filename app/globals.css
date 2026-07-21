@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-50 text-ink-900;
+  font-family: var(--font-sans);
+}
+
+/* ----- Reusable component classes ----- */
+@layer components {
+  .card {
+    @apply rounded-[24px] bg-white shadow-card border border-ink-200/60 p-5 lg:p-6 relative overflow-hidden;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lift hover:-translate-y-1 hover:border-ink-200;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-[14px] font-bold tracking-wide
+           transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] shadow-sm;
+  }
+  .btn-primary {
+    @apply btn bg-ink-900 text-white hover:bg-ink-800 hover:shadow-md focus-visible:ring-ink-400;
+  }
+  .btn-tmua {
+    @apply btn bg-tmua text-white hover:bg-tmua-dark hover:shadow-md focus-visible:ring-tmua-soft shadow-innerTone;
+  }
+  .btn-sat {
+    @apply btn bg-sat text-white hover:bg-sat-dark hover:shadow-md focus-visible:ring-sat-soft shadow-innerTone;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-ink-600 hover:bg-ink-100 hover:text-ink-900 shadow-none;
+  }
+  .btn-outline {
+    @apply btn border border-ink-200 bg-white text-ink-700 hover:border-ink-300 hover:bg-ink-50 shadow-sm;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[11px] font-extrabold tracking-widest uppercase transition-colors;
+  }
+  .input {
+    @apply w-full rounded-xl border border-ink-200 bg-white px-4 py-2.5 text-[14px] text-ink-900 shadow-sm
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-ink-200 focus:border-ink-400
+           hover:border-ink-300;
+  }
+  .label {
+    @apply block text-[13px] font-extrabold tracking-wide uppercase text-ink-500 mb-1.5;
+  }
+  .section-title {
+    @apply text-xl font-extrabold tracking-tight text-ink-900;
+  }
+}
+
+/* KaTeX sizing tweak inside prose */
+.katex { font-size: 1.05em; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-ink-200 rounded-full border-[2px] border-solid border-transparent bg-clip-padding; }
+::-webkit-scrollbar-thumb:hover { @apply bg-ink-300; }
+
+/* Print: mistake notebook */
+@media print {
+  .no-print { display: none !important; }
+  body { @apply bg-white; }
+  .card { box-shadow: none; border-color: #ddd; }
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "If $f(x)=2x+3$, what is $f(4)$?",
+    "choices": ["$7$", "$8$", "$11$", "$14$"],
+    "correct_answer": "$11$",
+    "solution_md": "$f(4)=2(4)+3=8+3=11$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Substitute $x=4$.", "hint2_md": "Compute $2\\times 4$ first.", "hint3_md": "$8+3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "Solve $x^2-5x+6=0$.",
+    "choices": ["$x=2$ or $x=3$", "$x=-2$ or $x=-3$", "$x=1$ or $x=6$", "$x=2$ or $x=-3$"],
+    "correct_answer": "$x=2$ or $x=3$",
+    "solution_md": "Factor: $(x-2)(x-3)=0$, so $x=2$ or $x=3$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Look for two numbers multiplying to $6$ and adding to $5$.", "hint2_md": "They are $2$ and $3$.", "hint3_md": "$(x-2)(x-3)=0$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "Find the remainder when $x^3-2x+1$ is divided by $(x-2)$.",
+    "choices": ["$1$", "$3$", "$5$", "$9$"],
+    "correct_answer": "$5$",
+    "solution_md": "By the remainder theorem the remainder is $f(2)=8-4+1=5$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Use the remainder theorem.", "hint2_md": "Evaluate the cubic at $x=2$.", "hint3_md": "$8-4+1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "What is the range of $f(x)=x^2-4x+7$ over the real numbers?",
+    "choices": ["$f(x)\\ge 3$", "$f(x)\\ge 7$", "$f(x)\\le 3$", "all real numbers"],
+    "correct_answer": "$f(x)\\ge 3$",
+    "solution_md": "Complete the square: $f(x)=(x-2)^2+3$, so the minimum is $3$ and $f(x)\\ge 3$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Complete the square.", "hint2_md": "$(x-2)^2+c$.", "hint3_md": "The minimum value is $c=3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "Solve $|2x-1|=5$.",
+    "choices": ["$x=3$ or $x=-2$", "$x=3$ or $x=2$", "$x=-3$ or $x=2$", "$x=2$ only"],
+    "correct_answer": "$x=3$ or $x=-2$",
+    "solution_md": "$2x-1=5\\Rightarrow x=3$; $2x-1=-5\\Rightarrow x=-2$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Split into two cases.", "hint2_md": "$2x-1=5$ and $2x-1=-5$.", "hint3_md": "Solve each linear equation.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "For which value of $x$ is $f(x)=\\dfrac{2x+1}{x-3}$ undefined?",
+    "choices": ["$x=3$", "$x=-3$", "$x=\\tfrac12$", "$x=0$"],
+    "correct_answer": "$x=3$",
+    "solution_md": "The function is undefined where the denominator is zero: $x-3=0\\Rightarrow x=3$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Where is the denominator zero?", "hint2_md": "Set $x-3=0$.", "hint3_md": "$x=3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "Let $f(x)=x^2$ and $g(x)=x-1$. Solve $f(g(x))=g(f(x))$.",
+    "choices": ["$x=0$", "$x=1$", "$x=2$", "no solution"],
+    "correct_answer": "$x=1$",
+    "solution_md": "$f(g(x))=(x-1)^2$ and $g(f(x))=x^2-1$. Setting equal: $x^2-2x+1=x^2-1\\Rightarrow -2x+1=-1\\Rightarrow x=1$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Form both compositions.", "hint2_md": "$(x-1)^2$ versus $x^2-1$.", "hint3_md": "Cancel $x^2$ and solve.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "A function satisfies $f(x)+2f(1-x)=x$ for all real $x$. Find $f(0)$.",
+    "choices": ["$\\tfrac13$", "$\\tfrac23$", "$-\\tfrac13$", "$0$"],
+    "correct_answer": "$\\tfrac23$",
+    "solution_md": "Put $x=0$: $f(0)+2f(1)=0$. Put $x=1$: $f(1)+2f(0)=1$. Let $a=f(0),b=f(1)$: $a+2b=0$ and $b+2a=1$. Then $a=-2b$ gives $b-4b=1\\Rightarrow b=-\\tfrac13$, $a=\\tfrac23$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Substitute two convenient values of $x$.", "hint2_md": "Use $x=0$ and $x=1$.", "hint3_md": "Solve the simultaneous equations in $f(0),f(1)$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "How many real solutions does $x^4-5x^2+4=0$ have?",
+    "choices": ["$0$", "$2$", "$3$", "$4$"],
+    "correct_answer": "$4$",
+    "solution_md": "Let $u=x^2$: $u^2-5u+4=0\\Rightarrow u=1,4$. Then $x=\\pm1,\\pm2$ — four real roots.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Substitute $u=x^2$.", "hint2_md": "Solve the quadratic in $u$.", "hint3_md": "Each positive $u$ gives two real $x$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Algebra & functions",
+    "prompt_md": "What is the minimum value of $2x^2+8x+3$?",
+    "choices": ["$-5$", "$3$", "$-8$", "$-2$"],
+    "correct_answer": "$-5$",
+    "solution_md": "$2x^2+8x+3=2(x+2)^2-5$, so the minimum value is $-5$ at $x=-2$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Factor $2$ from the quadratic terms.", "hint2_md": "Complete the square inside.", "hint3_md": "$2(x+2)^2-5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "An arithmetic sequence has first term $3$ and common difference $4$. What is the $10$th term?",
+    "choices": ["$36$", "$39$", "$40$", "$43$"],
+    "correct_answer": "$39$",
+    "solution_md": "$a_{10}=a_1+9d=3+9(4)=39$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Use $a_n=a_1+(n-1)d$.", "hint2_md": "Here $n=10$.", "hint3_md": "$3+9\\times4$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "What is the sum $1+2+3+\\cdots+20$?",
+    "choices": ["$190$", "$200$", "$210$", "$420$"],
+    "correct_answer": "$210$",
+    "solution_md": "$\\sum_{k=1}^{20}k=\\tfrac{20\\cdot21}{2}=210$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Use $\\tfrac{n(n+1)}{2}$.", "hint2_md": "Here $n=20$.", "hint3_md": "$\\tfrac{20\\cdot21}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "A geometric series has first term $5$ and common ratio $\\tfrac12$. What is its sum to infinity?",
+    "choices": ["$2.5$", "$5$", "$10$", "$15$"],
+    "correct_answer": "$10$",
+    "solution_md": "$S_\\infty=\\dfrac{a}{1-r}=\\dfrac{5}{1-\\tfrac12}=10$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Use $S_\\infty=\\tfrac{a}{1-r}$.", "hint2_md": "$1-r=\\tfrac12$.", "hint3_md": "$5\\div\\tfrac12$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "What is the coefficient of $x^2$ in the expansion of $(1+x)^5$?",
+    "choices": ["$5$", "$10$", "$15$", "$20$"],
+    "correct_answer": "$10$",
+    "solution_md": "The coefficient is $\\binom{5}{2}=10$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Use $\\binom{5}{k}$.", "hint2_md": "Here $k=2$.", "hint3_md": "$\\binom{5}{2}=10$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "What is the coefficient of $x^3$ in the expansion of $(2+x)^4$?",
+    "choices": ["$4$", "$8$", "$12$", "$16$"],
+    "correct_answer": "$8$",
+    "solution_md": "Term: $\\binom{4}{3}2^{1}x^3=4\\cdot2\\,x^3=8x^3$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "General term $\\binom{4}{k}2^{4-k}x^k$.", "hint2_md": "Set $k=3$.", "hint3_md": "$\\binom{4}{3}\\cdot2^1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "In an arithmetic sequence the $3$rd term is $7$ and the $7$th term is $19$. What is the first term?",
+    "choices": ["$0$", "$1$", "$2$", "$3$"],
+    "correct_answer": "$1$",
+    "solution_md": "$d=\\tfrac{19-7}{7-3}=3$. Then $a_1=a_3-2d=7-6=1$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Find $d$ from the two given terms.", "hint2_md": "$d=\\tfrac{19-7}{4}$.", "hint3_md": "$a_1=7-2d$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "What is the value of $1+3+5+\\cdots+99$ (the sum of the first $50$ odd numbers)?",
+    "choices": ["$2450$", "$2500$", "$5000$", "$9900$"],
+    "correct_answer": "$2500$",
+    "solution_md": "The sum of the first $n$ odd numbers is $n^2$; here $n=50$, so $50^2=2500$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "There are $50$ terms.", "hint2_md": "Sum of first $n$ odds is $n^2$.", "hint3_md": "$50^2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "What is the constant term in the expansion of $\\left(x+\\dfrac{1}{x}\\right)^6$?",
+    "choices": ["$1$", "$6$", "$15$", "$20$"],
+    "correct_answer": "$20$",
+    "solution_md": "General term $\\binom{6}{k}x^{6-2k}$. Constant when $6-2k=0\\Rightarrow k=3$, giving $\\binom{6}{3}=20$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Write the general term.", "hint2_md": "Need the power of $x$ to be $0$.", "hint3_md": "$k=3$, so $\\binom{6}{3}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "A geometric sequence of positive terms has $2$nd term $6$ and $5$th term $48$. What is the sum of the first four terms?",
+    "choices": ["$30$", "$39$", "$45$", "$48$"],
+    "correct_answer": "$45$",
+    "solution_md": "$r^3=\\tfrac{48}{6}=8\\Rightarrow r=2$, $a=\\tfrac{6}{2}=3$. Terms $3,6,12,24$ sum to $45$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Use $a_5/a_2=r^3$.", "hint2_md": "$r=2$, then find $a$.", "hint3_md": "Add $3+6+12+24$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Sequences & series (incl. binomial)",
+    "prompt_md": "A geometric series has sum to infinity $9$ and first term $6$. What is the common ratio?",
+    "choices": ["$\\tfrac14$", "$\\tfrac13$", "$\\tfrac12$", "$\\tfrac23$"],
+    "correct_answer": "$\\tfrac13$",
+    "solution_md": "$9=\\dfrac{6}{1-r}\\Rightarrow 1-r=\\tfrac{2}{3}\\Rightarrow r=\\tfrac13$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Use $S_\\infty=\\tfrac{a}{1-r}$.", "hint2_md": "$1-r=\\tfrac{6}{9}$.", "hint3_md": "$r=1-\\tfrac23$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "What is the gradient of the line through $(1,2)$ and $(3,8)$?",
+    "choices": ["$2$", "$3$", "$4$", "$6$"],
+    "correct_answer": "$3$",
+    "solution_md": "Gradient $=\\dfrac{8-2}{3-1}=\\dfrac{6}{2}=3$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Use rise over run.", "hint2_md": "$\\tfrac{8-2}{3-1}$.", "hint3_md": "$\\tfrac{6}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "What is the midpoint of the segment joining $(2,4)$ and $(6,10)$?",
+    "choices": ["$(4,7)$", "$(4,6)$", "$(8,14)$", "$(2,3)$"],
+    "correct_answer": "$(4,7)$",
+    "solution_md": "Midpoint $=\\left(\\tfrac{2+6}{2},\\tfrac{4+10}{2}\\right)=(4,7)$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Average the coordinates.", "hint2_md": "$\\tfrac{2+6}{2}$ and $\\tfrac{4+10}{2}$.", "hint3_md": "$(4,7)$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "What is the distance between $(0,0)$ and $(6,8)$?",
+    "choices": ["$10$", "$14$", "$48$", "$\\sqrt{14}$"],
+    "correct_answer": "$10$",
+    "solution_md": "$\\sqrt{6^2+8^2}=\\sqrt{36+64}=\\sqrt{100}=10$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Use the distance formula.", "hint2_md": "$\\sqrt{6^2+8^2}$.", "hint3_md": "$\\sqrt{100}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "What is the equation of the line through $(0,3)$ parallel to $y=2x-1$?",
+    "choices": ["$y=2x+3$", "$y=2x-3$", "$y=-\\tfrac12 x+3$", "$y=3x+2$"],
+    "correct_answer": "$y=2x+3$",
+    "solution_md": "Parallel lines share gradient $2$; the $y$-intercept is $3$, giving $y=2x+3$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Parallel means equal gradient.", "hint2_md": "Gradient is $2$.", "hint3_md": "Intercept is $3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "What is the equation of the line through the origin perpendicular to $y=2x+1$?",
+    "choices": ["$y=-\\tfrac12 x$", "$y=2x$", "$y=\\tfrac12 x$", "$y=-2x$"],
+    "correct_answer": "$y=-\\tfrac12 x$",
+    "solution_md": "Perpendicular gradient is $-\\tfrac{1}{2}$; through the origin gives $y=-\\tfrac12 x$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Perpendicular gradients multiply to $-1$.", "hint2_md": "Negative reciprocal of $2$.", "hint3_md": "$-\\tfrac12$, through $(0,0)$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "What is the centre of the circle $x^2+y^2-6x+4y-3=0$?",
+    "choices": ["$(3,-2)$", "$(-3,2)$", "$(6,-4)$", "$(3,2)$"],
+    "correct_answer": "$(3,-2)$",
+    "solution_md": "Complete the square: $(x-3)^2+(y+2)^2=16$, so the centre is $(3,-2)$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Complete the square in $x$ and $y$.", "hint2_md": "$x^2-6x=(x-3)^2-9$.", "hint3_md": "Centre is $(3,-2)$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "What is the radius of the circle $x^2+y^2-6x+4y-3=0$?",
+    "choices": ["$2$", "$4$", "$16$", "$\\sqrt{3}$"],
+    "correct_answer": "$4$",
+    "solution_md": "$(x-3)^2+(y+2)^2=3+9+4=16$, so $r=4$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Complete the square first.", "hint2_md": "Right-hand side becomes $16$.", "hint3_md": "$r=\\sqrt{16}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "The point $(k,2k)$ lies on the line $3x+y=10$. What is $k$?",
+    "choices": ["$-2$", "$1$", "$2$", "$5$"],
+    "correct_answer": "$2$",
+    "solution_md": "$3k+2k=10\\Rightarrow 5k=10\\Rightarrow k=2$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Substitute $x=k,\\ y=2k$.", "hint2_md": "$3k+2k=10$.", "hint3_md": "$5k=10$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "A line $y=mx+c$ passes through $(1,4)$ and $(3,10)$. What is $c$?",
+    "choices": ["$-1$", "$1$", "$3$", "$4$"],
+    "correct_answer": "$1$",
+    "solution_md": "$m=\\tfrac{10-4}{3-1}=3$. Then $4=3(1)+c\\Rightarrow c=1$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Find the gradient first.", "hint2_md": "$m=3$.", "hint3_md": "Use a point to find $c$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Coordinate geometry",
+    "prompt_md": "What is the area of the triangle with vertices $(0,0)$, $(4,0)$ and $(0,3)$?",
+    "choices": ["$5$", "$6$", "$7$", "$12$"],
+    "correct_answer": "$6$",
+    "solution_md": "Right triangle with legs $4$ and $3$: area $=\\tfrac12\\cdot4\\cdot3=6$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "The legs lie on the axes.", "hint2_md": "Base $4$, height $3$.", "hint3_md": "$\\tfrac12\\cdot4\\cdot3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "What is $\\log_2 8$?",
+    "choices": ["$2$", "$3$", "$4$", "$8$"],
+    "correct_answer": "$3$",
+    "solution_md": "$2^3=8$, so $\\log_2 8=3$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "What power of $2$ gives $8$?", "hint2_md": "$2^3=8$.", "hint3_md": "Answer is $3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "Solve $2^x=16$.",
+    "choices": ["$3$", "$4$", "$5$", "$8$"],
+    "correct_answer": "$4$",
+    "solution_md": "$16=2^4$, so $x=4$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Write $16$ as a power of $2$.", "hint2_md": "$16=2^4$.", "hint3_md": "$x=4$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "What is $\\log_3 81$?",
+    "choices": ["$3$", "$4$", "$9$", "$27$"],
+    "correct_answer": "$4$",
+    "solution_md": "$3^4=81$, so $\\log_3 81=4$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "What power of $3$ gives $81$?", "hint2_md": "$3^4=81$.", "hint3_md": "Answer is $4$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "Evaluate $\\dfrac{\\log 8}{\\log 2}$ (logarithms to any common base).",
+    "choices": ["$3$", "$4$", "$6$", "$\\log 6$"],
+    "correct_answer": "$3$",
+    "solution_md": "$\\dfrac{\\log 8}{\\log 2}=\\log_2 8=3$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "This is the change-of-base formula.", "hint2_md": "It equals $\\log_2 8$.", "hint3_md": "$2^3=8$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "Solve $\\log_2 x=5$.",
+    "choices": ["$10$", "$25$", "$32$", "$64$"],
+    "correct_answer": "$32$",
+    "solution_md": "$x=2^5=32$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Rewrite in exponential form.", "hint2_md": "$x=2^5$.", "hint3_md": "$2^5=32$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "What is $e^{\\ln 7}$?",
+    "choices": ["$1$", "$7$", "$\\ln 7$", "$e^7$"],
+    "correct_answer": "$7$",
+    "solution_md": "$e^{\\ln x}=x$, so $e^{\\ln 7}=7$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "$e^x$ and $\\ln x$ are inverses.", "hint2_md": "They cancel.", "hint3_md": "Answer is $7$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "Solve $\\log_2 x+\\log_2(x-2)=3$.",
+    "choices": ["$-2$", "$2$", "$4$", "$8$"],
+    "correct_answer": "$4$",
+    "solution_md": "$\\log_2[x(x-2)]=3\\Rightarrow x(x-2)=8\\Rightarrow x^2-2x-8=0\\Rightarrow (x-4)(x+2)=0$. Reject $x=-2$ (domain), so $x=4$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Combine the logs.", "hint2_md": "$x(x-2)=2^3$.", "hint3_md": "Discard the root that breaks the domain.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "If $\\log_a 2=0.3$, what is $\\log_a 8$?",
+    "choices": ["$0.3$", "$0.6$", "$0.9$", "$2.4$"],
+    "correct_answer": "$0.9$",
+    "solution_md": "$\\log_a 8=\\log_a 2^3=3\\log_a 2=3(0.3)=0.9$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "$8=2^3$.", "hint2_md": "Bring the power down.", "hint3_md": "$3\\times0.3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "Solve $3^{2x}=27$.",
+    "choices": ["$1.5$", "$2$", "$3$", "$9$"],
+    "correct_answer": "$1.5$",
+    "solution_md": "$27=3^3$, so $2x=3\\Rightarrow x=1.5$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Write $27$ as a power of $3$.", "hint2_md": "$2x=3$.", "hint3_md": "$x=1.5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Exponentials & logarithms",
+    "prompt_md": "Evaluate $\\log_5 10+\\log_5 2.5$.",
+    "choices": ["$1$", "$2$", "$3$", "$\\log_5 12.5$"],
+    "correct_answer": "$2$",
+    "solution_md": "$\\log_5(10\\times2.5)=\\log_5 25=2$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Add logs by multiplying arguments.", "hint2_md": "$10\\times2.5=25$.", "hint3_md": "$\\log_5 25=2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "What is the exact value of $\\sin 30^\\circ$?",
+    "choices": ["$\\tfrac12$", "$\\tfrac{\\sqrt3}{2}$", "$\\tfrac{\\sqrt2}{2}$", "$1$"],
+    "correct_answer": "$\\tfrac12$",
+    "solution_md": "$\\sin 30^\\circ=\\tfrac12$ (standard exact value).",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "A standard angle.", "hint2_md": "From the $30$-$60$-$90$ triangle.", "hint3_md": "$\\tfrac12$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "What is the exact value of $\\cos 60^\\circ$?",
+    "choices": ["$0$", "$\\tfrac12$", "$\\tfrac{\\sqrt3}{2}$", "$1$"],
+    "correct_answer": "$\\tfrac12$",
+    "solution_md": "$\\cos 60^\\circ=\\tfrac12$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "A standard angle.", "hint2_md": "Equal to $\\sin 30^\\circ$.", "hint3_md": "$\\tfrac12$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "What is the exact value of $\\tan 45^\\circ$?",
+    "choices": ["$0$", "$1$", "$\\sqrt3$", "undefined"],
+    "correct_answer": "$1$",
+    "solution_md": "$\\tan 45^\\circ=\\dfrac{\\sin 45^\\circ}{\\cos 45^\\circ}=1$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "$\\sin 45^\\circ=\\cos 45^\\circ$.", "hint2_md": "Their ratio is $1$.", "hint3_md": "$1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "Solve $\\sin\\theta=\\tfrac12$ for $0^\\circ\\le\\theta<360^\\circ$.",
+    "choices": ["$30^\\circ,150^\\circ$", "$30^\\circ,210^\\circ$", "$60^\\circ,120^\\circ$", "$30^\\circ$ only"],
+    "correct_answer": "$30^\\circ,150^\\circ$",
+    "solution_md": "$\\sin$ is positive in quadrants I and II: $\\theta=30^\\circ$ and $180^\\circ-30^\\circ=150^\\circ$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Principal value is $30^\\circ$.", "hint2_md": "Second solution is $180^\\circ-30^\\circ$.", "hint3_md": "$30^\\circ$ and $150^\\circ$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "Simplify $\\sin^2\\theta+\\cos^2\\theta$.",
+    "choices": ["$0$", "$1$", "$2$", "$\\tan\\theta$"],
+    "correct_answer": "$1$",
+    "solution_md": "This is the Pythagorean identity: $\\sin^2\\theta+\\cos^2\\theta=1$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "A fundamental identity.", "hint2_md": "Pythagorean identity.", "hint3_md": "$1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "Which expression equals $\\cos 2\\theta$?",
+    "choices": ["$2\\cos^2\\theta-1$", "$1-2\\cos^2\\theta$", "$2\\sin^2\\theta-1$", "$\\cos^2\\theta-1$"],
+    "correct_answer": "$2\\cos^2\\theta-1$",
+    "solution_md": "A standard double-angle identity is $\\cos 2\\theta=2\\cos^2\\theta-1$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Use a double-angle formula.", "hint2_md": "Express in terms of $\\cos\\theta$.", "hint3_md": "$2\\cos^2\\theta-1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "What is the exact value of $\\sin 90^\\circ$?",
+    "choices": ["$0$", "$\\tfrac12$", "$1$", "undefined"],
+    "correct_answer": "$1$",
+    "solution_md": "$\\sin 90^\\circ=1$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Maximum value of sine.", "hint2_md": "Occurs at $90^\\circ$.", "hint3_md": "$1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "How many solutions does $\\cos\\theta=0$ have for $0^\\circ\\le\\theta<360^\\circ$?",
+    "choices": ["$1$", "$2$", "$3$", "$4$"],
+    "correct_answer": "$2$",
+    "solution_md": "$\\cos\\theta=0$ at $\\theta=90^\\circ$ and $270^\\circ$ — two solutions.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Where is cosine zero?", "hint2_md": "At $90^\\circ$ and $270^\\circ$.", "hint3_md": "Two values.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "Find the smallest positive $\\theta$ with $\\sin 2\\theta=\\tfrac{\\sqrt3}{2}$.",
+    "choices": ["$15^\\circ$", "$30^\\circ$", "$45^\\circ$", "$60^\\circ$"],
+    "correct_answer": "$30^\\circ$",
+    "solution_md": "$\\sin 2\\theta=\\tfrac{\\sqrt3}{2}\\Rightarrow 2\\theta=60^\\circ\\Rightarrow \\theta=30^\\circ$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Let $u=2\\theta$.", "hint2_md": "$\\sin u=\\tfrac{\\sqrt3}{2}\\Rightarrow u=60^\\circ$.", "hint3_md": "$\\theta=30^\\circ$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Trigonometry",
+    "prompt_md": "In a right-angled triangle, an angle has opposite side $3$ and hypotenuse $5$. What is the cosine of that angle?",
+    "choices": ["$\\tfrac35$", "$\\tfrac45$", "$\\tfrac34$", "$\\tfrac53$"],
+    "correct_answer": "$\\tfrac45$",
+    "solution_md": "The adjacent side is $\\sqrt{5^2-3^2}=4$, so $\\cos=\\tfrac{4}{5}$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Find the adjacent side by Pythagoras.", "hint2_md": "$\\sqrt{25-9}=4$.", "hint3_md": "$\\cos=\\tfrac{\\text{adj}}{\\text{hyp}}$.",
+    "source_label": "AI Original"
+  }
+]

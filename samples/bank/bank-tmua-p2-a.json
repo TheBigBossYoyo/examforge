@@ -1,0 +1,502 @@
+[
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "What is the truth value of the statement \"$\\text{T} \\land \\text{F}$\" (True AND False)?",
+    "choices": ["False", "True", "Undefined", "Both"],
+    "correct_answer": "False",
+    "solution_md": "A conjunction ($\\land$) is true only when both parts are true. Since one part is false, the whole statement is false.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "AND needs both parts true.", "hint2_md": "One part here is false.", "hint3_md": "So the result is False.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "What is the truth value of the statement \"$\\text{T} \\lor \\text{F}$\" (True OR False)?",
+    "choices": ["True", "False", "Undefined", "Neither"],
+    "correct_answer": "True",
+    "solution_md": "A disjunction ($\\lor$) is true when at least one part is true. Here one part is true, so the result is true.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "OR needs at least one true part.", "hint2_md": "One part here is true.", "hint3_md": "So the result is True.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "By De Morgan's laws, $\\neg(P \\land Q)$ is logically equivalent to which statement?",
+    "choices": ["$\\neg P \\lor \\neg Q$", "$\\neg P \\land \\neg Q$", "$P \\lor Q$", "$\\neg P \\land Q$"],
+    "correct_answer": "$\\neg P \\lor \\neg Q$",
+    "solution_md": "De Morgan's law: the negation of a conjunction is the disjunction of the negations, $\\neg(P\\land Q)\\equiv \\neg P\\lor\\neg Q$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Use De Morgan's laws.", "hint2_md": "AND becomes OR when negated.", "hint3_md": "Negate each part.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "By De Morgan's laws, $\\neg(P \\lor Q)$ is logically equivalent to which statement?",
+    "choices": ["$\\neg P \\land \\neg Q$", "$\\neg P \\lor \\neg Q$", "$P \\land Q$", "$\\neg P \\lor Q$"],
+    "correct_answer": "$\\neg P \\land \\neg Q$",
+    "solution_md": "De Morgan's law: the negation of a disjunction is the conjunction of the negations, $\\neg(P\\lor Q)\\equiv \\neg P\\land\\neg Q$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Use De Morgan's laws.", "hint2_md": "OR becomes AND when negated.", "hint3_md": "Negate each part.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "The implication $P \\implies Q$ is false in exactly which case?",
+    "choices": ["$P$ true and $Q$ false", "$P$ false and $Q$ true", "$P$ true and $Q$ true", "$P$ false and $Q$ false"],
+    "correct_answer": "$P$ true and $Q$ false",
+    "solution_md": "An implication is false only when the hypothesis is true but the conclusion is false. In all other cases it is true.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "When does a promise get broken?", "hint2_md": "Hypothesis holds but conclusion fails.", "hint3_md": "$P$ true, $Q$ false.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "Simplify $\\neg(\\neg P)$.",
+    "choices": ["$P$", "$\\neg P$", "$P \\land \\neg P$", "$P \\lor \\neg P$"],
+    "correct_answer": "$P$",
+    "solution_md": "Double negation cancels: $\\neg(\\neg P)\\equiv P$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Two negations.", "hint2_md": "They cancel out.", "hint3_md": "You get $P$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "Which connective produces a statement that is true only when both of its parts are true?",
+    "choices": ["Conjunction ($\\land$)", "Disjunction ($\\lor$)", "Implication ($\\implies$)", "Negation ($\\neg$)"],
+    "correct_answer": "Conjunction ($\\land$)",
+    "solution_md": "The conjunction $\\land$ (AND) is true precisely when both operands are true.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Which one means AND?", "hint2_md": "It requires both true.", "hint3_md": "Conjunction.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "What is the truth value of $\\text{F} \\implies \\text{T}$ (False implies True)?",
+    "choices": ["True", "False", "Undefined", "Depends"],
+    "correct_answer": "True",
+    "solution_md": "An implication with a false hypothesis is vacuously true, regardless of the conclusion.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Implications are only false when the hypothesis is true.", "hint2_md": "Here the hypothesis is false.", "hint3_md": "So it is vacuously True.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "The implication $P \\implies Q$ is logically equivalent to which expression?",
+    "choices": ["$\\neg P \\lor Q$", "$P \\lor \\neg Q$", "$\\neg P \\land Q$", "$P \\land Q$"],
+    "correct_answer": "$\\neg P \\lor Q$",
+    "solution_md": "By definition $P\\implies Q$ is equivalent to $\\neg P\\lor Q$ (it fails only when $P$ is true and $Q$ is false).",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Rewrite the implication using OR.", "hint2_md": "Negate the hypothesis.", "hint3_md": "$\\neg P\\lor Q$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Logic & connectives",
+    "prompt_md": "What is the truth value of the exclusive-or $\\text{T} \\oplus \\text{T}$ (True XOR True)?",
+    "choices": ["False", "True", "Undefined", "Both"],
+    "correct_answer": "False",
+    "solution_md": "Exclusive-or is true only when the two parts differ. Since both are true (the same), the result is false.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "XOR means 'exactly one is true'.", "hint2_md": "Here both are true.", "hint3_md": "So XOR is False.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "Given that $x>5 \\implies x>0$, the condition \"$x>5$\" is what kind of condition for \"$x>0$\"?",
+    "choices": ["Sufficient", "Necessary", "Necessary and sufficient", "Neither"],
+    "correct_answer": "Sufficient",
+    "solution_md": "Since $x>5$ guarantees $x>0$, it is a sufficient condition. It is not necessary, since $x=1$ gives $x>0$ without $x>5$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Which condition guarantees the other?", "hint2_md": "$x>5$ forces $x>0$.", "hint3_md": "That makes it sufficient.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "Given that $x>5 \\implies x>0$, the condition \"$x>0$\" is what kind of condition for \"$x>5$\"?",
+    "choices": ["Necessary", "Sufficient", "Necessary and sufficient", "Neither"],
+    "correct_answer": "Necessary",
+    "solution_md": "Whenever $x>5$ holds, $x>0$ must also hold, so $x>0$ is necessary for $x>5$. It is not sufficient ($x=1$ shows this).",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Which condition must hold whenever the other does?", "hint2_md": "$x>5$ requires $x>0$.", "hint3_md": "So $x>0$ is necessary.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "\"A shape is a square\" is what kind of condition for \"the shape is a rectangle\"?",
+    "choices": ["Sufficient but not necessary", "Necessary but not sufficient", "Necessary and sufficient", "Neither necessary nor sufficient"],
+    "correct_answer": "Sufficient but not necessary",
+    "solution_md": "Every square is a rectangle, so being a square is sufficient. But rectangles need not be squares, so it is not necessary.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Does being a square force being a rectangle?", "hint2_md": "Yes — that's sufficiency.", "hint3_md": "But non-square rectangles exist, so not necessary.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "\"$n$ is divisible by $4$\" is what kind of condition for \"$n$ is even\"?",
+    "choices": ["Sufficient but not necessary", "Necessary but not sufficient", "Necessary and sufficient", "Neither"],
+    "correct_answer": "Sufficient but not necessary",
+    "solution_md": "If $4\\mid n$ then $n$ is even, so it is sufficient. But $n=2$ is even without being divisible by $4$, so it is not necessary.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Divisible by 4 guarantees even.", "hint2_md": "That's sufficiency.", "hint3_md": "But $2$ is even and not divisible by $4$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "If $P \\iff Q$ (P if and only if Q), then $P$ is what kind of condition for $Q$?",
+    "choices": ["Necessary and sufficient", "Sufficient but not necessary", "Necessary but not sufficient", "Neither"],
+    "correct_answer": "Necessary and sufficient",
+    "solution_md": "A biconditional means each implies the other, so $P$ is both necessary and sufficient for $Q$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Biconditional means both directions hold.", "hint2_md": "Each condition implies the other.", "hint3_md": "So it is necessary and sufficient.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "\"A triangle is equilateral\" is what kind of condition for \"the triangle is isosceles\"?",
+    "choices": ["Sufficient but not necessary", "Necessary but not sufficient", "Necessary and sufficient", "Neither"],
+    "correct_answer": "Sufficient but not necessary",
+    "solution_md": "Every equilateral triangle is isosceles, so it is sufficient. But isosceles triangles need not be equilateral, so it is not necessary.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Equilateral triangles have all sides equal.", "hint2_md": "So they are automatically isosceles (sufficient).", "hint3_md": "But not every isosceles triangle is equilateral.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "Consider \"if it rains, then the ground is wet.\" Rain is a ___ condition for the ground being wet.",
+    "choices": ["Sufficient", "Necessary", "Necessary and sufficient", "Neither"],
+    "correct_answer": "Sufficient",
+    "solution_md": "Rain guarantees wet ground, so it is sufficient. It is not necessary, because the ground could be wet from other causes.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Rain guarantees wet ground.", "hint2_md": "Guaranteeing means sufficient.", "hint3_md": "Other causes can also wet the ground.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "\"$x=2$\" is what kind of condition for \"$x^2=4$\"?",
+    "choices": ["Sufficient but not necessary", "Necessary but not sufficient", "Necessary and sufficient", "Neither"],
+    "correct_answer": "Sufficient but not necessary",
+    "solution_md": "If $x=2$ then $x^2=4$, so it is sufficient. But $x=-2$ also gives $x^2=4$, so $x=2$ is not necessary.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "$x=2$ forces $x^2=4$.", "hint2_md": "That's sufficiency.", "hint3_md": "But $x=-2$ also works, so not necessary.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "\"$n$ is even\" is what kind of condition for \"$n$ is divisible by $6$\"?",
+    "choices": ["Necessary but not sufficient", "Sufficient but not necessary", "Necessary and sufficient", "Neither"],
+    "correct_answer": "Necessary but not sufficient",
+    "solution_md": "Every multiple of $6$ is even, so being even is necessary. But $n=2$ is even and not divisible by $6$, so it is not sufficient.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Multiples of $6$ are always even.", "hint2_md": "So even is required (necessary).", "hint3_md": "But $2$ is even and not a multiple of $6$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Necessary vs sufficient",
+    "prompt_md": "A club rule states: \"You may enter only if you have a membership card.\" Having a card is a ___ condition for entry.",
+    "choices": ["Necessary", "Sufficient", "Necessary and sufficient", "Neither"],
+    "correct_answer": "Necessary",
+    "solution_md": "\"Only if\" introduces a necessary condition: entry requires a card, but having a card alone may not guarantee entry.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "'Only if' signals a necessary condition.", "hint2_md": "You cannot enter without a card.", "hint3_md": "So a card is necessary.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "What is the converse of the implication $P \\implies Q$?",
+    "choices": ["$Q \\implies P$", "$\\neg Q \\implies \\neg P$", "$\\neg P \\implies \\neg Q$", "$P \\implies \\neg Q$"],
+    "correct_answer": "$Q \\implies P$",
+    "solution_md": "The converse swaps hypothesis and conclusion: $Q\\implies P$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "The converse swaps the two parts.", "hint2_md": "Hypothesis and conclusion change places.", "hint3_md": "$Q\\implies P$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "What is the contrapositive of the implication $P \\implies Q$?",
+    "choices": ["$\\neg Q \\implies \\neg P$", "$Q \\implies P$", "$\\neg P \\implies \\neg Q$", "$\\neg P \\implies Q$"],
+    "correct_answer": "$\\neg Q \\implies \\neg P$",
+    "solution_md": "The contrapositive negates and swaps: $\\neg Q\\implies\\neg P$. It is logically equivalent to the original.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Negate both parts and swap them.", "hint2_md": "Start from $\\neg Q$.", "hint3_md": "$\\neg Q\\implies\\neg P$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "What is the contrapositive of \"If it rains, then the ground is wet\"?",
+    "choices": ["If the ground is not wet, then it is not raining", "If the ground is wet, then it is raining", "If it is not raining, then the ground is not wet", "If it rains, then the ground is not wet"],
+    "correct_answer": "If the ground is not wet, then it is not raining",
+    "solution_md": "Contrapositive: negate both and swap. \"Not wet $\\implies$ not raining.\"",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Negate both parts and swap.", "hint2_md": "Start with 'the ground is not wet'.", "hint3_md": "Conclude 'it is not raining'.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "Which statement is always logically equivalent to $P \\implies Q$?",
+    "choices": ["Its contrapositive", "Its converse", "Its inverse", "Its negation"],
+    "correct_answer": "Its contrapositive",
+    "solution_md": "An implication and its contrapositive always have the same truth value. The converse and inverse need not.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Which transformation preserves truth value?", "hint2_md": "Not the converse or inverse.", "hint3_md": "The contrapositive.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "What is the converse of \"If $x>2$ then $x>0$\"?",
+    "choices": ["If $x>0$ then $x>2$", "If $x\\le 0$ then $x\\le 2$", "If $x\\le 2$ then $x\\le 0$", "If $x>2$ then $x\\le 0$"],
+    "correct_answer": "If $x>0$ then $x>2$",
+    "solution_md": "The converse swaps hypothesis and conclusion: \"If $x>0$ then $x>2$\" (which happens to be false).",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Swap the two parts.", "hint2_md": "Hypothesis becomes $x>0$.", "hint3_md": "Conclusion becomes $x>2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "What is the inverse of the implication $P \\implies Q$?",
+    "choices": ["$\\neg P \\implies \\neg Q$", "$\\neg Q \\implies \\neg P$", "$Q \\implies P$", "$P \\implies \\neg Q$"],
+    "correct_answer": "$\\neg P \\implies \\neg Q$",
+    "solution_md": "The inverse negates both parts without swapping: $\\neg P\\implies\\neg Q$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Negate both parts but keep the order.", "hint2_md": "Start with $\\neg P$.", "hint3_md": "$\\neg P\\implies\\neg Q$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "The converse of \"If a number is divisible by $4$ then it is even\" is which statement, and is it true?",
+    "choices": ["\"If even then divisible by $4$\" — false", "\"If even then divisible by $4$\" — true", "\"If not even then not divisible by $4$\" — true", "\"If divisible by $4$ then odd\" — false"],
+    "correct_answer": "\"If even then divisible by $4$\" — false",
+    "solution_md": "The converse swaps the parts: \"if even then divisible by $4$.\" This is false, e.g. $6$ is even but not divisible by $4$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Swap hypothesis and conclusion.", "hint2_md": "Test it with $n=6$.", "hint3_md": "$6$ is even but not divisible by $4$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "What is the contrapositive of \"If $n$ is odd then $n^2$ is odd\"?",
+    "choices": ["If $n^2$ is even then $n$ is even", "If $n^2$ is odd then $n$ is odd", "If $n$ is even then $n^2$ is even", "If $n$ is odd then $n^2$ is even"],
+    "correct_answer": "If $n^2$ is even then $n$ is even",
+    "solution_md": "Negate both parts and swap: \"if $n^2$ is even then $n$ is even.\"",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Negate 'odd' to 'even' for both parts.", "hint2_md": "Swap the order.", "hint3_md": "Start from '$n^2$ is even'.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "An implication is false but its converse is true. Which related statement must also be true?",
+    "choices": ["Its inverse", "Its contrapositive", "The original implication", "None of these"],
+    "correct_answer": "Its inverse",
+    "solution_md": "The inverse is the contrapositive of the converse, so it shares the converse's truth value. Since the converse is true, the inverse is true.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "The inverse and converse are contrapositives of each other.", "hint2_md": "Contrapositives share truth values.", "hint3_md": "So the inverse is true.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Converse & contrapositive",
+    "prompt_md": "Write \"All cats are mammals\" as \"If it is a cat then it is a mammal.\" What is its converse?",
+    "choices": ["If it is a mammal then it is a cat", "If it is not a mammal then it is not a cat", "If it is not a cat then it is not a mammal", "If it is a cat then it is not a mammal"],
+    "correct_answer": "If it is a mammal then it is a cat",
+    "solution_md": "The converse swaps the two parts: \"if it is a mammal then it is a cat\" (which is false).",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Swap hypothesis and conclusion.", "hint2_md": "Start with 'it is a mammal'.", "hint3_md": "Conclude 'it is a cat'.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "To prove a statement $S$ by contradiction, what do you assume at the start?",
+    "choices": ["$\\neg S$ (that $S$ is false)", "$S$ (that $S$ is true)", "Nothing", "Both $S$ and $\\neg S$"],
+    "correct_answer": "$\\neg S$ (that $S$ is false)",
+    "solution_md": "Proof by contradiction begins by assuming the negation of the statement, then derives a contradiction.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "You suppose the opposite.", "hint2_md": "Assume the statement fails.", "hint3_md": "Assume $\\neg S$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "In the classic proof that $\\sqrt{2}$ is irrational by contradiction, what is the initial assumption?",
+    "choices": ["$\\sqrt{2}$ is rational", "$\\sqrt{2}$ is irrational", "$\\sqrt{2}=1.5$", "$2$ is irrational"],
+    "correct_answer": "$\\sqrt{2}$ is rational",
+    "solution_md": "We assume the opposite of what we want to prove, namely that $\\sqrt{2}$ is rational, i.e. $\\sqrt{2}=a/b$ in lowest terms.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Assume the negation of 'irrational'.", "hint2_md": "The opposite of irrational is rational.", "hint3_md": "Assume $\\sqrt{2}$ is rational.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "In a proof by contradiction, the contradiction is reached when you derive which of the following?",
+    "choices": ["A statement and its negation (both $R$ and $\\neg R$)", "A true statement", "The original claim", "A new definition"],
+    "correct_answer": "A statement and its negation (both $R$ and $\\neg R$)",
+    "solution_md": "A contradiction is a situation where some statement $R$ and its negation $\\neg R$ both hold, which is impossible.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "A contradiction means something impossible.", "hint2_md": "Two opposite statements both holding.", "hint3_md": "$R$ and $\\neg R$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "To prove \"there are infinitely many primes\" by contradiction, what do you assume?",
+    "choices": ["There are finitely many primes", "There are infinitely many primes", "Every number is prime", "There are no primes"],
+    "correct_answer": "There are finitely many primes",
+    "solution_md": "Assume the negation: that there are only finitely many primes. Euclid's argument then constructs a new prime, a contradiction.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Negate 'infinitely many'.", "hint2_md": "Suppose the list of primes is finite.", "hint3_md": "Finitely many primes.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "To prove \"if $n^2$ is even then $n$ is even\" by contradiction, what do you assume?",
+    "choices": ["$n^2$ is even and $n$ is odd", "$n^2$ is odd and $n$ is even", "$n$ is even", "$n^2$ is odd"],
+    "correct_answer": "$n^2$ is even and $n$ is odd",
+    "solution_md": "To contradict $P\\implies Q$, assume $P$ true and $Q$ false: $n^2$ even and $n$ odd. Then $n$ odd gives $n^2$ odd, a contradiction.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Assume the hypothesis but deny the conclusion.", "hint2_md": "Keep $n^2$ even.", "hint3_md": "Suppose $n$ is odd.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "To prove $P \\implies Q$ by contradiction, which assumption do you make?",
+    "choices": ["$P$ is true and $Q$ is false", "$P$ is false and $Q$ is true", "Both $P$ and $Q$ are true", "Both $P$ and $Q$ are false"],
+    "correct_answer": "$P$ is true and $Q$ is false",
+    "solution_md": "The only way $P\\implies Q$ can fail is $P$ true, $Q$ false; assume that and derive a contradiction.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "When is an implication false?", "hint2_md": "Hypothesis true, conclusion false.", "hint3_md": "$P$ true, $Q$ false.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "Once a contradiction has been derived from assuming $\\neg S$, what can you conclude?",
+    "choices": ["$S$ is true", "$S$ is false", "Nothing", "$\\neg S$ is true"],
+    "correct_answer": "$S$ is true",
+    "solution_md": "If assuming $\\neg S$ leads to a contradiction, then $\\neg S$ must be false, so $S$ is true.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "The assumption led to impossibility.", "hint2_md": "So the assumption $\\neg S$ is false.", "hint3_md": "Therefore $S$ is true.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "To prove \"there is no largest integer\" by contradiction, what do you assume?",
+    "choices": ["There is a largest integer", "There is no largest integer", "Integers are finite", "Every integer is negative"],
+    "correct_answer": "There is a largest integer",
+    "solution_md": "Assume the negation: that some integer $N$ is the largest. Then $N+1>N$ is also an integer, a contradiction.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Negate the claim.", "hint2_md": "Suppose a largest integer $N$ exists.", "hint3_md": "Then consider $N+1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "Proof by contradiction relies on which logical principle?",
+    "choices": ["A statement and its negation cannot both be true", "Every statement is true", "All statements are equivalent", "Implications are always true"],
+    "correct_answer": "A statement and its negation cannot both be true",
+    "solution_md": "The method works because of the law of non-contradiction: $R$ and $\\neg R$ cannot both hold.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Why is a contradiction impossible?", "hint2_md": "Something cannot be both true and false.", "hint3_md": "Law of non-contradiction.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by contradiction",
+    "prompt_md": "In proving $\\sqrt{2}=a/b$ leads to a contradiction, the key contradiction is that $a$ and $b$ turn out to:",
+    "choices": ["share a common factor of $2$, contradicting 'lowest terms'", "both be odd", "both be prime", "be equal"],
+    "correct_answer": "share a common factor of $2$, contradicting 'lowest terms'",
+    "solution_md": "Assuming $a/b$ is in lowest terms, the argument shows both $a$ and $b$ are even, so they share the factor $2$ — contradicting that the fraction was fully reduced.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Recall the fraction was assumed fully reduced.", "hint2_md": "The proof shows both $a$ and $b$ are even.", "hint3_md": "That gives a common factor of $2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "To prove a statement holds for every integer $n$ by considering parity, which two cases do you use?",
+    "choices": ["$n$ even and $n$ odd", "$n>0$ and $n<0$", "$n$ prime and $n$ composite", "$n=0$ and $n\\ne 0$"],
+    "correct_answer": "$n$ even and $n$ odd",
+    "solution_md": "Every integer is either even or odd, so these two exhaustive cases cover all integers.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Use parity.", "hint2_md": "Every integer falls into one of two parity classes.", "hint3_md": "Even or odd.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "To prove $|x|\\ge 0$ for all real $x$ by cases, which split is natural?",
+    "choices": ["$x\\ge 0$ and $x<0$", "$x$ rational and $x$ irrational", "$x$ integer and $x$ non-integer", "$x=0$ only"],
+    "correct_answer": "$x\\ge 0$ and $x<0$",
+    "solution_md": "The absolute value is defined piecewise by the sign of $x$, so split into $x\\ge 0$ and $x<0$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Absolute value depends on the sign of $x$.", "hint2_md": "Split by sign.", "hint3_md": "$x\\ge 0$ and $x<0$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "For a proof by cases to be valid, the cases must be:",
+    "choices": ["Exhaustive (cover every possibility)", "Mutually exclusive only", "Exactly two in number", "Chosen at random"],
+    "correct_answer": "Exhaustive (cover every possibility)",
+    "solution_md": "The cases must together cover all possibilities; otherwise the proof has a gap.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "What ensures no situation is missed?", "hint2_md": "The cases must cover everything.", "hint3_md": "They must be exhaustive.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "To prove that $n^2+n$ is even for every integer $n$ using cases, which cases do you check?",
+    "choices": ["$n$ even and $n$ odd", "$n$ positive and $n$ negative", "$n$ prime and $n$ not prime", "$n<10$ and $n\\ge 10$"],
+    "correct_answer": "$n$ even and $n$ odd",
+    "solution_md": "Split by parity. If $n$ is even, $n^2+n$ is even; if $n$ is odd, $n^2$ is odd and $n$ is odd, so their sum is even.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Parity controls evenness.", "hint2_md": "Check even $n$ and odd $n$.", "hint3_md": "Both give an even result.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "To prove a statement involving $|x-3|$ by cases, the natural breakpoint is at:",
+    "choices": ["$x=3$", "$x=0$", "$x=-3$", "$x=1$"],
+    "correct_answer": "$x=3$",
+    "solution_md": "$|x-3|$ changes definition where $x-3=0$, i.e. at $x=3$. Split into $x\\ge 3$ and $x<3$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The expression inside the bars changes sign somewhere.", "hint2_md": "Set $x-3=0$.", "hint3_md": "$x=3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "How many cases are needed to check all truth-value combinations of two propositions $P$ and $Q$?",
+    "choices": ["$4$", "$2$", "$3$", "$8$"],
+    "correct_answer": "$4$",
+    "solution_md": "Each proposition has $2$ values, so there are $2\\times 2=4$ combinations.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Each variable is true or false.", "hint2_md": "Two variables, two values each.", "hint3_md": "$2\\times 2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "In a proof by cases, what must be shown in each individual case?",
+    "choices": ["The desired conclusion holds in that case", "The case is impossible", "The other cases are false", "The conclusion fails"],
+    "correct_answer": "The desired conclusion holds in that case",
+    "solution_md": "Each case must independently establish the conclusion; only then does the result hold in all cases.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "What is the goal within a case?", "hint2_md": "Prove the statement there.", "hint3_md": "The conclusion must hold in each case.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "To prove a statement about the remainder of $n$ when divided by $3$, how many cases are natural?",
+    "choices": ["$3$ (remainders $0$, $1$, $2$)", "$2$", "$4$", "$1$"],
+    "correct_answer": "$3$ (remainders $0$, $1$, $2$)",
+    "solution_md": "Division by $3$ leaves a remainder of $0$, $1$, or $2$, giving three exhaustive cases.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "What remainders are possible mod $3$?", "hint2_md": "They range from $0$ to $2$.", "hint3_md": "Three cases.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "Why must the cases in a proof by cases be exhaustive?",
+    "choices": ["So that no possibility is left unproven", "So there are exactly two cases", "So the cases overlap", "So the proof is shorter"],
+    "correct_answer": "So that no possibility is left unproven",
+    "solution_md": "If the cases miss a possibility, the statement is not established for that possibility, leaving the proof incomplete.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Think about a missed possibility.", "hint2_md": "Any gap leaves something unproven.", "hint3_md": "Cases must cover everything.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Proof by cases",
+    "prompt_md": "To prove \"every integer is even or odd\" the proof naturally uses how many cases?",
+    "choices": ["Two", "Three", "One", "Four"],
+    "correct_answer": "Two",
+    "solution_md": "The statement itself splits integers into two classes — even and odd — so two cases are used.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "The statement names the classes.", "hint2_md": "Even and odd.", "hint3_md": "Two cases.",
+    "source_label": "AI Original"
+  }
+]

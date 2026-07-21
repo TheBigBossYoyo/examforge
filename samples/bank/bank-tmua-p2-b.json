@@ -1,0 +1,402 @@
+[
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "In a proof by mathematical induction, what is established in the base case?",
+    "choices": ["The statement holds for the first value (e.g. $n=1$)", "The statement holds for all $n$", "The statement is false for $n=1$", "The inductive step"],
+    "correct_answer": "The statement holds for the first value (e.g. $n=1$)",
+    "solution_md": "The base case verifies the statement for the starting value, usually $n=1$ (or $n=0$).",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "It is the starting point.", "hint2_md": "Check the smallest value.", "hint3_md": "Usually $n=1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "In the inductive step, what is assumed (the inductive hypothesis)?",
+    "choices": ["The statement holds for $n=k$", "The statement holds for all $n$", "The statement is false", "The base case fails"],
+    "correct_answer": "The statement holds for $n=k$",
+    "solution_md": "The inductive hypothesis assumes the statement is true for some $n=k$, then shows it for $n=k+1$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "It is an assumption about one value.", "hint2_md": "Assume truth at $n=k$.", "hint3_md": "Then prove it for $k+1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "In the inductive step, what must you prove using the inductive hypothesis?",
+    "choices": ["The statement holds for $n=k+1$", "The statement holds for $n=1$", "The statement is false for $n=k$", "Nothing further"],
+    "correct_answer": "The statement holds for $n=k+1$",
+    "solution_md": "Assuming the statement for $n=k$, you must deduce it for $n=k+1$ to complete the induction.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "You move from $k$ to the next value.", "hint2_md": "Prove the next case.", "hint3_md": "$n=k+1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "Which of the following statements is most naturally proved by induction?",
+    "choices": ["$1+2+\\cdots+n=\\tfrac{n(n+1)}{2}$ for all $n\\ge 1$", "$2+2=4$", "$\\sqrt{2}$ is irrational", "$x^2\\ge 0$ for all real $x$"],
+    "correct_answer": "$1+2+\\cdots+n=\\tfrac{n(n+1)}{2}$ for all $n\\ge 1$",
+    "solution_md": "A statement asserting a formula for every positive integer $n$ is the classic target for induction.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Induction proves statements indexed by $n$.", "hint2_md": "Look for 'for all $n$'.", "hint3_md": "The summation formula.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "Why is the base case essential in a proof by induction?",
+    "choices": ["Without it, the chain of implications has no starting truth", "It proves the statement for all $n$ directly", "It replaces the inductive step", "It is not actually needed"],
+    "correct_answer": "Without it, the chain of implications has no starting truth",
+    "solution_md": "The inductive step only passes truth from $k$ to $k+1$; without a true base case there is nothing to propagate.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "The inductive step is conditional.", "hint2_md": "It needs a true starting point.", "hint3_md": "That is the base case.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "A proof shows $P(1)$ is true and that $P(k)\\implies P(k+1)$ for all $k\\ge 1$. What may you conclude?",
+    "choices": ["$P(n)$ is true for all $n\\ge 1$", "$P(n)$ is true only for $n=1$", "$P(n)$ is false for large $n$", "Nothing"],
+    "correct_answer": "$P(n)$ is true for all $n\\ge 1$",
+    "solution_md": "With a valid base case and inductive step, the principle of induction gives $P(n)$ for every $n\\ge 1$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Both parts of induction are present.", "hint2_md": "Base case plus inductive step.", "hint3_md": "So it holds for all $n\\ge 1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "A student proves $P(k)\\implies P(k+1)$ but forgets the base case. What is wrong?",
+    "choices": ["The conclusion 'for all $n$' is not justified", "Nothing is wrong", "The inductive step is invalid", "The statement must be false"],
+    "correct_answer": "The conclusion 'for all $n$' is not justified",
+    "solution_md": "Without a verified base case, the implications form a chain with no anchor, so 'true for all $n$' does not follow.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "The inductive step alone is conditional.", "hint2_md": "It needs a true starting value.", "hint3_md": "The missing base case breaks the conclusion.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "In strong induction, the inductive hypothesis assumes the statement holds for:",
+    "choices": ["All values up to $k$", "Only $k$", "Only $k-1$", "No values"],
+    "correct_answer": "All values up to $k$",
+    "solution_md": "Strong induction assumes $P(1),P(2),\\dots,P(k)$ all hold, then proves $P(k+1)$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "'Strong' means more is assumed.", "hint2_md": "Assume truth for everything up to $k$.", "hint3_md": "All values $\\le k$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "Which sequence of steps correctly describes a proof by induction?",
+    "choices": ["Prove base case, then prove $P(k)\\implies P(k+1)$", "Prove $P(k)\\implies P(k+1)$ only", "Prove base case only", "Assume $P(n)$ for all $n$"],
+    "correct_answer": "Prove base case, then prove $P(k)\\implies P(k+1)$",
+    "solution_md": "Induction requires both a base case and the inductive step $P(k)\\implies P(k+1)$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Induction has two parts.", "hint2_md": "A starting case and a step.", "hint3_md": "Base case then inductive step.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Induction (recognition)",
+    "prompt_md": "To prove a statement holds for all integers $n\\ge 3$, the base case should verify:",
+    "choices": ["$n=3$", "$n=1$", "$n=0$", "$n=2$"],
+    "correct_answer": "$n=3$",
+    "solution_md": "The base case is the smallest value in the claim's range, here $n=3$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Start at the smallest value claimed.", "hint2_md": "The range begins at $3$.", "hint3_md": "$n=3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "Which single counterexample disproves \"every prime number is odd\"?",
+    "choices": ["$2$", "$3$", "$9$", "$15$"],
+    "correct_answer": "$2$",
+    "solution_md": "$2$ is prime but even, so it disproves the claim that every prime is odd.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Find a prime that is even.", "hint2_md": "There is exactly one.", "hint3_md": "$2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "To disprove a universal statement \"for all $x$, $P(x)$\", it suffices to find:",
+    "choices": ["One $x$ for which $P(x)$ is false", "All $x$ for which $P(x)$ is true", "Two $x$ for which $P(x)$ is true", "Nothing"],
+    "correct_answer": "One $x$ for which $P(x)$ is false",
+    "solution_md": "A single counterexample where the property fails disproves a universal claim.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Universal claims fall to one exception.", "hint2_md": "Find a single failure.", "hint3_md": "One counterexample suffices.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "Which value of $n$ is a counterexample to \"$n^2-n+11$ is always prime for positive integers $n$\"?",
+    "choices": ["$n=11$", "$n=1$", "$n=2$", "$n=3$"],
+    "correct_answer": "$n=11$",
+    "solution_md": "At $n=11$, $n^2-n+11=121-11+11=121=11^2$, which is not prime.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Try $n$ equal to the constant term.", "hint2_md": "At $n=11$ the expression factors.", "hint3_md": "$121=11^2$ is not prime.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "Which counterexample disproves \"if $x^2>x$ then $x>1$\" for real $x$?",
+    "choices": ["$x=-2$", "$x=2$", "$x=1$", "$x=0$"],
+    "correct_answer": "$x=-2$",
+    "solution_md": "At $x=-2$, $x^2=4>-2=x$, so the hypothesis holds, but $x=-2$ is not greater than $1$, so the conclusion fails.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Look for negative $x$.", "hint2_md": "Negative numbers satisfy $x^2>x$.", "hint3_md": "$x=-2$ works.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "Which counterexample disproves \"the sum of two irrational numbers is always irrational\"?",
+    "choices": ["$\\sqrt{2}+(-\\sqrt{2})=0$", "$\\sqrt{2}+\\sqrt{3}$", "$\\pi+1$", "$\\sqrt{2}+\\sqrt{2}$"],
+    "correct_answer": "$\\sqrt{2}+(-\\sqrt{2})=0$",
+    "solution_md": "$\\sqrt{2}$ and $-\\sqrt{2}$ are both irrational, but their sum is $0$, which is rational.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Choose two irrationals whose sum cancels.", "hint2_md": "Use a number and its negative.", "hint3_md": "$\\sqrt{2}+(-\\sqrt{2})=0$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "Which counterexample disproves \"every even number is divisible by $4$\"?",
+    "choices": ["$6$", "$8$", "$12$", "$16$"],
+    "correct_answer": "$6$",
+    "solution_md": "$6$ is even but $6/4$ is not an integer, so $6$ is not divisible by $4$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Find an even number not a multiple of $4$.", "hint2_md": "Try small even numbers.", "hint3_md": "$6$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "Which counterexample disproves \"if $a<b$ then $a^2<b^2$\" for real numbers?",
+    "choices": ["$a=-3,\\ b=2$", "$a=1,\\ b=2$", "$a=2,\\ b=3$", "$a=0,\\ b=1$"],
+    "correct_answer": "$a=-3,\\ b=2$",
+    "solution_md": "Here $-3<2$ but $(-3)^2=9$ is not less than $2^2=4$, so the claim fails.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Use a negative number with large magnitude.", "hint2_md": "Squaring can reverse the order.", "hint3_md": "$a=-3,b=2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "How many counterexamples are needed to disprove a universally quantified statement?",
+    "choices": ["One", "Two", "All possible", "Infinitely many"],
+    "correct_answer": "One",
+    "solution_md": "A single valid counterexample is enough to disprove a 'for all' statement.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Universal statements are fragile.", "hint2_md": "One exception breaks them.", "hint3_md": "One counterexample.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "Which counterexample disproves \"$n^2+n+41$ is prime for every non-negative integer $n$\"?",
+    "choices": ["$n=41$", "$n=0$", "$n=1$", "$n=2$"],
+    "correct_answer": "$n=41$",
+    "solution_md": "At $n=41$, $n^2+n+41=41^2+41+41=41(41+1+1)=41\\cdot 43$, which is composite.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Try $n$ equal to the constant $41$.", "hint2_md": "Then $41$ is a common factor.", "hint3_md": "$41\\cdot 43$ is not prime.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Counterexamples",
+    "prompt_md": "A counterexample to \"for all $x$, $P(x)\\implies Q(x)$\" must be an $x$ such that:",
+    "choices": ["$P(x)$ is true and $Q(x)$ is false", "$P(x)$ is false", "$Q(x)$ is true", "Both $P(x)$ and $Q(x)$ are true"],
+    "correct_answer": "$P(x)$ is true and $Q(x)$ is false",
+    "solution_md": "The implication fails exactly when the hypothesis holds but the conclusion does not, so a counterexample has $P(x)$ true and $Q(x)$ false.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "When does an implication fail?", "hint2_md": "Hypothesis true, conclusion false.", "hint3_md": "$P(x)$ true and $Q(x)$ false.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A 'proof' that $1=2$ divides both sides of an equation by $(a-b)$ where $a=b$. What is the flaw?",
+    "choices": ["Division by zero, since $a-b=0$", "Multiplying by zero", "A sign error", "Using induction wrongly"],
+    "correct_answer": "Division by zero, since $a-b=0$",
+    "solution_md": "When $a=b$, the factor $a-b$ equals $0$, and dividing by zero is undefined — the classic flaw in such 'proofs'.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Look at the divisor.", "hint2_md": "$a=b$ makes $a-b=0$.", "hint3_md": "Division by zero.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A 'proof' takes the square root of both sides of $(x)^2=(y)^2$ and writes $x=y$. What is the error?",
+    "choices": ["Ignoring the negative root: $x=\\pm y$", "Dividing by zero", "A multiplication error", "Using the wrong base case"],
+    "correct_answer": "Ignoring the negative root: $x=\\pm y$",
+    "solution_md": "From $x^2=y^2$ one can only conclude $x=\\pm y$. Assuming $x=y$ drops the negative possibility.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Square roots have two signs.", "hint2_md": "$x^2=y^2$ gives $|x|=|y|$.", "hint3_md": "So $x=\\pm y$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A proof assumes the statement it is trying to prove as one of its steps. This error is called:",
+    "choices": ["Circular reasoning (begging the question)", "Proof by contradiction", "A counterexample", "Induction"],
+    "correct_answer": "Circular reasoning (begging the question)",
+    "solution_md": "Using the conclusion as a premise is circular reasoning, which proves nothing.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The conclusion is assumed.", "hint2_md": "The argument loops back on itself.", "hint3_md": "Circular reasoning.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A proof by induction verifies the inductive step but uses a base case that is actually false. The proof is:",
+    "choices": ["Invalid, because the chain has no true starting point", "Valid", "Valid only for even $n$", "A correct proof by contradiction"],
+    "correct_answer": "Invalid, because the chain has no true starting point",
+    "solution_md": "If the base case is false, there is no true value to launch the induction, so the conclusion does not follow.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Induction needs a true base case.", "hint2_md": "A false base breaks everything.", "hint3_md": "The proof is invalid.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A proof concludes $P\\implies Q$ is true by showing only that $Q$ is true. What is wrong?",
+    "choices": ["It never uses or addresses the hypothesis $P$ correctly", "It divides by zero", "It assumes $P$ is false", "Nothing — this is valid"],
+    "correct_answer": "It never uses or addresses the hypothesis $P$ correctly",
+    "solution_md": "Although $Q$ being true does make $P\\implies Q$ true, a genuine proof of the implication must derive $Q$ from $P$, not assert $Q$ independently; presenting it as a derivation is misleading/flawed reasoning.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "A proof of an implication should use the hypothesis.", "hint2_md": "Here $P$ is ignored.", "hint3_md": "The reasoning does not connect $P$ to $Q$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A 'proof' that all horses are the same colour uses induction but fails because the inductive step breaks for which value?",
+    "choices": ["$n=1$ to $n=2$ (the overlap argument fails)", "$n=100$", "The base case", "It never fails"],
+    "correct_answer": "$n=1$ to $n=2$ (the overlap argument fails)",
+    "solution_md": "The flawed step relies on overlapping subsets that only overlap when $n\\ge 3$; the transition from $1$ to $2$ has no overlap, breaking the argument.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "The overlap trick needs enough elements.", "hint2_md": "Check the very first step.", "hint3_md": "From $n=1$ to $n=2$ there is no overlap.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A proof claims \"$x>0$, therefore $x^2>x$.\" Why is this flawed?",
+    "choices": ["It fails for $0<x<1$, e.g. $x=\\tfrac{1}{2}$", "It divides by zero", "It is circular", "It is actually correct"],
+    "correct_answer": "It fails for $0<x<1$, e.g. $x=\\tfrac{1}{2}$",
+    "solution_md": "For $0<x<1$, squaring makes the number smaller: $(\\tfrac{1}{2})^2=\\tfrac{1}{4}<\\tfrac{1}{2}$. So the claim is false.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Test a fraction between $0$ and $1$.", "hint2_md": "Squaring fractions makes them smaller.", "hint3_md": "$x=\\tfrac{1}{2}$ breaks it.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A proof multiplies both sides of the inequality $-1<2$ by $-1$ and keeps the direction: $1<-2$. What is the error?",
+    "choices": ["Multiplying an inequality by a negative reverses the sign", "Dividing by zero", "A base-case error", "Nothing is wrong"],
+    "correct_answer": "Multiplying an inequality by a negative reverses the sign",
+    "solution_md": "Multiplying or dividing an inequality by a negative number reverses the inequality, so the direction should flip to $1>-2$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Negative multipliers affect inequalities.", "hint2_md": "The direction must flip.", "hint3_md": "It should be $1>-2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A proof establishes the converse of a statement and claims it has proved the original. The flaw is:",
+    "choices": ["The converse is not logically equivalent to the original", "It divided by zero", "It used too many cases", "It is valid"],
+    "correct_answer": "The converse is not logically equivalent to the original",
+    "solution_md": "Proving $Q\\implies P$ does not establish $P\\implies Q$; the converse can have a different truth value.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Compare a statement with its converse.", "hint2_md": "They need not be equivalent.", "hint3_md": "Proving the converse is not enough.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Identifying flawed proofs",
+    "prompt_md": "A proof generalises from the single example $n=2$ (where $2^2=2\\cdot 2$) to claim $n^2=2n$ for all $n$. The flaw is:",
+    "choices": ["One example does not prove a universal statement", "Division by zero", "Reversed inequality", "A false base case"],
+    "correct_answer": "One example does not prove a universal statement",
+    "solution_md": "A single case cannot establish a 'for all' claim. Indeed $n^2=2n$ only at $n=0$ and $n=2$, failing elsewhere.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Examples cannot prove universals.", "hint2_md": "Check another value like $n=3$.", "hint3_md": "$9\\ne 6$, so the claim fails.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "What is the negation of \"for all $x$, $P(x)$\"?",
+    "choices": ["There exists $x$ such that $\\neg P(x)$", "For all $x$, $\\neg P(x)$", "There exists $x$ such that $P(x)$", "For all $x$, $P(x)$"],
+    "correct_answer": "There exists $x$ such that $\\neg P(x)$",
+    "solution_md": "Negating a universal gives an existential of the negation: $\\neg(\\forall x\\,P(x))\\equiv \\exists x\\,\\neg P(x)$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "'For all' negates to 'there exists'.", "hint2_md": "And the inner statement is negated.", "hint3_md": "$\\exists x\\,\\neg P(x)$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "What is the negation of \"there exists $x$ such that $P(x)$\"?",
+    "choices": ["For all $x$, $\\neg P(x)$", "There exists $x$ such that $\\neg P(x)$", "For all $x$, $P(x)$", "There exists $x$ such that $P(x)$"],
+    "correct_answer": "For all $x$, $\\neg P(x)$",
+    "solution_md": "Negating an existential gives a universal of the negation: $\\neg(\\exists x\\,P(x))\\equiv \\forall x\\,\\neg P(x)$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "'There exists' negates to 'for all'.", "hint2_md": "And the inner statement is negated.", "hint3_md": "$\\forall x\\,\\neg P(x)$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "The symbol $\\forall$ represents which quantifier?",
+    "choices": ["Universal ('for all')", "Existential ('there exists')", "Negation", "Implication"],
+    "correct_answer": "Universal ('for all')",
+    "solution_md": "$\\forall$ is the universal quantifier, read 'for all'.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "It is an upside-down A.", "hint2_md": "A for 'All'.", "hint3_md": "Universal quantifier.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "The symbol $\\exists$ represents which quantifier?",
+    "choices": ["Existential ('there exists')", "Universal ('for all')", "Negation", "Conjunction"],
+    "correct_answer": "Existential ('there exists')",
+    "solution_md": "$\\exists$ is the existential quantifier, read 'there exists'.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "It is a backwards E.", "hint2_md": "E for 'Exists'.", "hint3_md": "Existential quantifier.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "What is the negation of \"every student passed the exam\"?",
+    "choices": ["At least one student did not pass", "No student passed", "Every student failed", "All students passed"],
+    "correct_answer": "At least one student did not pass",
+    "solution_md": "Negating 'every ... passed' gives 'there exists a student who did not pass', i.e. at least one student failed.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "'Every' negates to 'at least one ... not'.", "hint2_md": "You need just one exception.", "hint3_md": "At least one did not pass.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "What is the negation of \"some number is both even and prime\"?",
+    "choices": ["Every number is not both even and prime", "Some number is odd and prime", "No number is even", "Every number is even and prime"],
+    "correct_answer": "Every number is not both even and prime",
+    "solution_md": "Negating 'some $x$ has property $R$' gives 'every $x$ does not have property $R$'.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "'Some' negates to 'every ... not'.", "hint2_md": "The inner property is negated.", "hint3_md": "Every number is not both even and prime.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "What is the negation of \"$\\forall x\\,(x>0 \\implies P(x))$\"?",
+    "choices": ["$\\exists x\\,(x>0 \\land \\neg P(x))$", "$\\forall x\\,(x>0 \\land \\neg P(x))$", "$\\exists x\\,(x\\le 0 \\land P(x))$", "$\\forall x\\,(x>0 \\implies \\neg P(x))$"],
+    "correct_answer": "$\\exists x\\,(x>0 \\land \\neg P(x))$",
+    "solution_md": "Negate the universal to an existential, and negate the implication $x>0\\implies P(x)$ to $x>0\\land\\neg P(x)$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "$\\forall$ becomes $\\exists$.", "hint2_md": "Negate the implication: $A\\implies B$ becomes $A\\land\\neg B$.", "hint3_md": "$\\exists x\\,(x>0\\land\\neg P(x))$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "What is the negation of \"there is a real number $x$ with $x^2<0$\"?",
+    "choices": ["For all real $x$, $x^2\\ge 0$", "There is a real $x$ with $x^2\\ge 0$", "For all real $x$, $x^2<0$", "For all real $x$, $x^2>0$"],
+    "correct_answer": "For all real $x$, $x^2\\ge 0$",
+    "solution_md": "Negating the existential gives a universal with the negated inequality: for all real $x$, $x^2\\ge 0$ (which is in fact true).",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "$\\exists$ becomes $\\forall$.", "hint2_md": "Negate $x^2<0$ to $x^2\\ge 0$.", "hint3_md": "For all real $x$, $x^2\\ge 0$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "In the statement \"$\\forall x\\, \\exists y\\,(x+y=0)$\", swapping the quantifiers to \"$\\exists y\\, \\forall x\\,(x+y=0)$\" changes the meaning. The second statement is:",
+    "choices": ["False (no single $y$ works for all $x$)", "True", "Equivalent to the first", "Always true"],
+    "correct_answer": "False (no single $y$ works for all $x$)",
+    "solution_md": "The first is true (take $y=-x$). The second claims one fixed $y$ satisfies $x+y=0$ for every $x$, which is impossible, so it is false. Quantifier order matters.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Order of quantifiers matters.", "hint2_md": "The second fixes $y$ before $x$.", "hint3_md": "No single $y$ cancels every $x$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P2", "subtopic": "Quantifiers & their negation",
+    "prompt_md": "What is the negation of \"all primes are odd\"?",
+    "choices": ["There exists a prime that is even", "No prime is odd", "All primes are even", "Some prime is odd"],
+    "correct_answer": "There exists a prime that is even",
+    "solution_md": "Negating 'all primes are odd' gives 'there exists a prime that is not odd', i.e. an even prime (namely $2$).",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "'All' negates to 'there exists ... not'.", "hint2_md": "Not odd means even.", "hint3_md": "There exists an even prime.",
+    "source_label": "AI Original"
+  }
+]

@@ -1,0 +1,502 @@
+[
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "If $f(x)=x^3$, find $f'(x)$.",
+    "choices": ["$3x^2$", "$x^2$", "$3x$", "$\\tfrac{1}{4}x^4$"],
+    "correct_answer": "$3x^2$",
+    "solution_md": "Using the power rule $\\frac{d}{dx}x^n=nx^{n-1}$, we get $f'(x)=3x^2$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Apply the power rule.", "hint2_md": "Multiply by the exponent, then reduce it by $1$.", "hint3_md": "$3x^{3-1}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "Differentiate $5x^2-3x+2$ with respect to $x$.",
+    "choices": ["$10x-3$", "$10x-3x$", "$5x-3$", "$10x+2$"],
+    "correct_answer": "$10x-3$",
+    "solution_md": "Differentiate term by term: $\\frac{d}{dx}(5x^2)=10x$, $\\frac{d}{dx}(-3x)=-3$, and the constant differentiates to $0$. So the answer is $10x-3$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Differentiate each term separately.", "hint2_md": "The derivative of a constant is $0$.", "hint3_md": "$10x-3+0$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "Find the gradient of the curve $y=x^2$ at the point where $x=3$.",
+    "choices": ["$6$", "$9$", "$3$", "$2$"],
+    "correct_answer": "$6$",
+    "solution_md": "$\\frac{dy}{dx}=2x$. At $x=3$ the gradient is $2(3)=6$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Differentiate to get the gradient function.", "hint2_md": "$\\frac{dy}{dx}=2x$.", "hint3_md": "Substitute $x=3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "What is $\\frac{d}{dx}(\\sin x)$?",
+    "choices": ["$\\cos x$", "$-\\cos x$", "$-\\sin x$", "$\\tan x$"],
+    "correct_answer": "$\\cos x$",
+    "solution_md": "The derivative of $\\sin x$ is $\\cos x$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "This is a standard derivative.", "hint2_md": "Sine differentiates to cosine.", "hint3_md": "$\\cos x$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "Find the $x$-coordinate of the stationary point of $y=x^2-6x+5$.",
+    "choices": ["$x=3$", "$x=6$", "$x=-3$", "$x=5$"],
+    "correct_answer": "$x=3$",
+    "solution_md": "At a stationary point $\\frac{dy}{dx}=0$. Here $\\frac{dy}{dx}=2x-6=0$, so $x=3$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Set the derivative equal to $0$.", "hint2_md": "$2x-6=0$.", "hint3_md": "Solve for $x$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "If $f(x)=x^4-2x$, find $f'(1)$.",
+    "choices": ["$2$", "$4$", "$0$", "$-1$"],
+    "correct_answer": "$2$",
+    "solution_md": "$f'(x)=4x^3-2$. At $x=1$, $f'(1)=4(1)-2=2$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Differentiate first, then substitute.", "hint2_md": "$f'(x)=4x^3-2$.", "hint3_md": "$4(1)^3-2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "Find $\\frac{d}{dx}(e^{2x})$.",
+    "choices": ["$2e^{2x}$", "$e^{2x}$", "$\\tfrac{1}{2}e^{2x}$", "$2xe^{2x-1}$"],
+    "correct_answer": "$2e^{2x}$",
+    "solution_md": "By the chain rule, $\\frac{d}{dx}e^{2x}=e^{2x}\\cdot 2=2e^{2x}$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Use the chain rule.", "hint2_md": "The derivative of $e^{kx}$ is $ke^{kx}$.", "hint3_md": "Here $k=2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "What is $\\frac{d}{dx}(\\ln x)$ for $x>0$?",
+    "choices": ["$\\frac{1}{x}$", "$\\ln x$", "$x\\ln x$", "$-\\frac{1}{x^2}$"],
+    "correct_answer": "$\\frac{1}{x}$",
+    "solution_md": "The derivative of $\\ln x$ is $\\frac{1}{x}$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "This is a standard derivative.", "hint2_md": "It is a reciprocal.", "hint3_md": "$\\frac{1}{x}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "If $y=x^3-x$, find the value of $\\frac{d^2y}{dx^2}$ at $x=2$.",
+    "choices": ["$12$", "$6$", "$11$", "$24$"],
+    "correct_answer": "$12$",
+    "solution_md": "$\\frac{dy}{dx}=3x^2-1$ and $\\frac{d^2y}{dx^2}=6x$. At $x=2$ this is $6(2)=12$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Differentiate twice.", "hint2_md": "The second derivative is $6x$.", "hint3_md": "Substitute $x=2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Differentiation",
+    "prompt_md": "Find $\\frac{d}{dx}\\left(\\frac{1}{x}\\right)$.",
+    "choices": ["$-\\frac{1}{x^2}$", "$\\frac{1}{x^2}$", "$\\ln x$", "$-\\frac{1}{x}$"],
+    "correct_answer": "$-\\frac{1}{x^2}$",
+    "solution_md": "Write $\\frac{1}{x}=x^{-1}$. Then the derivative is $-1\\cdot x^{-2}=-\\frac{1}{x^2}$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Rewrite as a power: $x^{-1}$.", "hint2_md": "Apply the power rule.", "hint3_md": "$-x^{-2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Find $\\int 2x\\,dx$.",
+    "choices": ["$x^2+C$", "$2x^2+C$", "$x^2$", "$2+C$"],
+    "correct_answer": "$x^2+C$",
+    "solution_md": "Increase the power by $1$ and divide: $\\int 2x\\,dx=\\frac{2x^2}{2}+C=x^2+C$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Reverse the power rule.", "hint2_md": "Add $1$ to the exponent and divide by the new exponent.", "hint3_md": "Don't forget $+C$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Find $\\int 3x^2\\,dx$.",
+    "choices": ["$x^3+C$", "$3x^3+C$", "$6x+C$", "$x^3$"],
+    "correct_answer": "$x^3+C$",
+    "solution_md": "$\\int 3x^2\\,dx=\\frac{3x^3}{3}+C=x^3+C$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Reverse the power rule.", "hint2_md": "$\\frac{3x^3}{3}$.", "hint3_md": "Add $+C$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Evaluate $\\int_0^2 x\\,dx$.",
+    "choices": ["$2$", "$4$", "$1$", "$\\tfrac{1}{2}$"],
+    "correct_answer": "$2$",
+    "solution_md": "$\\int_0^2 x\\,dx=\\left[\\tfrac{x^2}{2}\\right]_0^2=\\tfrac{4}{2}-0=2$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Integrate to get $\\tfrac{x^2}{2}$.", "hint2_md": "Evaluate at the limits.", "hint3_md": "$\\tfrac{4}{2}-0$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Find $\\int \\cos x\\,dx$.",
+    "choices": ["$\\sin x+C$", "$-\\sin x+C$", "$\\cos x+C$", "$-\\cos x+C$"],
+    "correct_answer": "$\\sin x+C$",
+    "solution_md": "The integral of $\\cos x$ is $\\sin x+C$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "What differentiates to $\\cos x$?", "hint2_md": "$\\sin x$ differentiates to $\\cos x$.", "hint3_md": "$\\sin x+C$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Evaluate $\\int_0^1 (2x+1)\\,dx$.",
+    "choices": ["$2$", "$3$", "$1$", "$\\tfrac{3}{2}$"],
+    "correct_answer": "$2$",
+    "solution_md": "$\\int_0^1 (2x+1)\\,dx=\\left[x^2+x\\right]_0^1=(1+1)-0=2$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Integrate term by term.", "hint2_md": "You get $x^2+x$.", "hint3_md": "Evaluate from $0$ to $1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Find $\\int e^x\\,dx$.",
+    "choices": ["$e^x+C$", "$xe^{x-1}+C$", "$\\tfrac{e^x}{x}+C$", "$e^{x+1}+C$"],
+    "correct_answer": "$e^x+C$",
+    "solution_md": "The exponential $e^x$ is its own integral (up to the constant): $\\int e^x\\,dx=e^x+C$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "$e^x$ differentiates to itself.", "hint2_md": "So it also integrates to itself.", "hint3_md": "$e^x+C$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Find $\\int \\frac{1}{x}\\,dx$ for $x>0$.",
+    "choices": ["$\\ln x+C$", "$-\\frac{1}{x^2}+C$", "$\\frac{1}{x^2}+C$", "$x\\ln x+C$"],
+    "correct_answer": "$\\ln x+C$",
+    "solution_md": "The integral of $\\frac{1}{x}$ is $\\ln x+C$ (for $x>0$).",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "What differentiates to $\\frac{1}{x}$?", "hint2_md": "It is a logarithm.", "hint3_md": "$\\ln x+C$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Evaluate $\\int_1^3 2\\,dx$.",
+    "choices": ["$4$", "$2$", "$6$", "$3$"],
+    "correct_answer": "$4$",
+    "solution_md": "$\\int_1^3 2\\,dx=[2x]_1^3=6-2=4$. (It is the area of a rectangle of height $2$ and width $2$.)",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Integrating a constant $k$ gives $kx$.", "hint2_md": "$[2x]_1^3$.", "hint3_md": "$6-2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Evaluate $\\int_0^3 x^2\\,dx$.",
+    "choices": ["$9$", "$27$", "$3$", "$6$"],
+    "correct_answer": "$9$",
+    "solution_md": "$\\int_0^3 x^2\\,dx=\\left[\\tfrac{x^3}{3}\\right]_0^3=\\tfrac{27}{3}-0=9$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Integrate to get $\\tfrac{x^3}{3}$.", "hint2_md": "Evaluate at $x=3$.", "hint3_md": "$\\tfrac{27}{3}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Integration",
+    "prompt_md": "Find the area under the line $y=x$ between $x=0$ and $x=4$.",
+    "choices": ["$8$", "$16$", "$4$", "$12$"],
+    "correct_answer": "$8$",
+    "solution_md": "Area $=\\int_0^4 x\\,dx=\\left[\\tfrac{x^2}{2}\\right]_0^4=\\tfrac{16}{2}=8$. (It is a triangle of base $4$ and height $4$.)",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Area is the definite integral.", "hint2_md": "$\\int_0^4 x\\,dx$.", "hint3_md": "$\\tfrac{16}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "How is the graph of $y=f(x)+3$ related to the graph of $y=f(x)$?",
+    "choices": ["Translated up by $3$", "Translated down by $3$", "Translated right by $3$", "Stretched vertically by $3$"],
+    "correct_answer": "Translated up by $3$",
+    "solution_md": "Adding a constant to the output shifts the graph vertically; $+3$ moves it up by $3$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Adding outside $f$ affects the $y$-values.", "hint2_md": "Positive means upward.", "hint3_md": "Up by $3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "How is the graph of $y=f(x-2)$ related to the graph of $y=f(x)$?",
+    "choices": ["Translated right by $2$", "Translated left by $2$", "Translated up by $2$", "Translated down by $2$"],
+    "correct_answer": "Translated right by $2$",
+    "solution_md": "Replacing $x$ with $x-2$ shifts the graph horizontally to the right by $2$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Changes inside $f$ affect the $x$-direction.", "hint2_md": "$x-2$ moves it the opposite way you might expect.", "hint3_md": "Right by $2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "The graph of $y=-f(x)$ is obtained from $y=f(x)$ by which transformation?",
+    "choices": ["Reflection in the $x$-axis", "Reflection in the $y$-axis", "Translation down", "Vertical stretch"],
+    "correct_answer": "Reflection in the $x$-axis",
+    "solution_md": "Negating the output reflects each point across the $x$-axis.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "The minus sign is outside $f$.", "hint2_md": "It changes the sign of $y$.", "hint3_md": "Reflection in the $x$-axis.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "The graph of $y=f(-x)$ is obtained from $y=f(x)$ by which transformation?",
+    "choices": ["Reflection in the $y$-axis", "Reflection in the $x$-axis", "Translation left", "Horizontal stretch"],
+    "correct_answer": "Reflection in the $y$-axis",
+    "solution_md": "Negating the input reflects the graph across the $y$-axis.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The minus sign is inside $f$.", "hint2_md": "It changes the sign of $x$.", "hint3_md": "Reflection in the $y$-axis.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "The graph of $y=2f(x)$ is obtained from $y=f(x)$ by which transformation?",
+    "choices": ["Vertical stretch, factor $2$", "Horizontal stretch, factor $2$", "Translation up by $2$", "Reflection in the $x$-axis"],
+    "correct_answer": "Vertical stretch, factor $2$",
+    "solution_md": "Multiplying the output by $2$ stretches the graph vertically by a factor of $2$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The factor multiplies $f$ on the outside.", "hint2_md": "Outside changes affect $y$.", "hint3_md": "Vertical stretch by $2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "The graph of $y=f(2x)$ is obtained from $y=f(x)$ by which transformation?",
+    "choices": ["Horizontal stretch, factor $\\tfrac{1}{2}$", "Horizontal stretch, factor $2$", "Vertical stretch, factor $2$", "Translation right by $2$"],
+    "correct_answer": "Horizontal stretch, factor $\\tfrac{1}{2}$",
+    "solution_md": "Replacing $x$ by $2x$ compresses the graph horizontally by factor $\\tfrac{1}{2}$.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "The factor is inside $f$, affecting $x$.", "hint2_md": "Inside factors act inversely.", "hint3_md": "Stretch factor $\\tfrac{1}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "The graph of $y=(x-1)^2$ is the graph of $y=x^2$ translated how?",
+    "choices": ["Right by $1$", "Left by $1$", "Up by $1$", "Down by $1$"],
+    "correct_answer": "Right by $1$",
+    "solution_md": "$(x-1)^2$ replaces $x$ with $x-1$, shifting the parabola right by $1$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Look at the change inside the square.", "hint2_md": "$x-1$ shifts horizontally.", "hint3_md": "Right by $1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "What are the coordinates of the minimum point of $y=x^2+4$?",
+    "choices": ["$(0,4)$", "$(4,0)$", "$(0,-4)$", "$(2,0)$"],
+    "correct_answer": "$(0,4)$",
+    "solution_md": "$y=x^2+4$ is $y=x^2$ shifted up $4$; its vertex (minimum) is at $(0,4)$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "$x^2$ has its minimum at $x=0$.", "hint2_md": "The $+4$ raises the minimum value.", "hint3_md": "$(0,4)$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "What are the coordinates of the minimum point of $y=|x|-2$?",
+    "choices": ["$(0,-2)$", "$(0,2)$", "$(-2,0)$", "$(2,0)$"],
+    "correct_answer": "$(0,-2)$",
+    "solution_md": "$y=|x|$ has its minimum at $(0,0)$; subtracting $2$ lowers it to $(0,-2)$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "$|x|$ has its minimum at $x=0$.", "hint2_md": "The $-2$ shifts it down.", "hint3_md": "$(0,-2)$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Graphs & transformations",
+    "prompt_md": "The graph of $y=f(x)-5$ is the graph of $y=f(x)$ translated how?",
+    "choices": ["Down by $5$", "Up by $5$", "Left by $5$", "Right by $5$"],
+    "correct_answer": "Down by $5$",
+    "solution_md": "Subtracting $5$ from the output shifts the whole graph down by $5$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "The $-5$ is outside $f$.", "hint2_md": "Outside changes move the graph vertically.", "hint3_md": "Down by $5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "What is the greatest common divisor of $12$ and $18$?",
+    "choices": ["$6$", "$3$", "$12$", "$2$"],
+    "correct_answer": "$6$",
+    "solution_md": "$12=2^2\\cdot 3$ and $18=2\\cdot 3^2$. The common factors give $\\gcd=2\\cdot 3=6$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "List the factors of each.", "hint2_md": "Find the largest shared factor.", "hint3_md": "$6$ divides both.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "What is the lowest common multiple of $4$ and $6$?",
+    "choices": ["$12$", "$24$", "$10$", "$6$"],
+    "correct_answer": "$12$",
+    "solution_md": "Multiples of $4$: $4,8,12,\\dots$; multiples of $6$: $6,12,\\dots$. The smallest common one is $12$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "List multiples of each.", "hint2_md": "Find the first shared multiple.", "hint3_md": "$12$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "Which of the following is a prime number?",
+    "choices": ["$29$", "$21$", "$27$", "$33$"],
+    "correct_answer": "$29$",
+    "solution_md": "$21=3\\cdot 7$, $27=3^3$, $33=3\\cdot 11$, but $29$ has no factors other than $1$ and itself, so it is prime.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Check divisibility by small primes.", "hint2_md": "Three of these are divisible by $3$.", "hint3_md": "$29$ is prime.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "What is the remainder when $100$ is divided by $7$?",
+    "choices": ["$2$", "$3$", "$1$", "$4$"],
+    "correct_answer": "$2$",
+    "solution_md": "$7\\times 14=98$, and $100-98=2$, so the remainder is $2$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Find the largest multiple of $7$ below $100$.", "hint2_md": "$7\\times 14=98$.", "hint3_md": "$100-98$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "How many positive divisors does $12$ have?",
+    "choices": ["$6$", "$4$", "$5$", "$12$"],
+    "correct_answer": "$6$",
+    "solution_md": "The divisors of $12$ are $1,2,3,4,6,12$ — that is $6$ divisors.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "List all numbers dividing $12$.", "hint2_md": "Pair them: $1\\times 12$, $2\\times 6$, $3\\times 4$.", "hint3_md": "That gives $6$ divisors.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "What is the value of $2^5$?",
+    "choices": ["$32$", "$25$", "$16$", "$64$"],
+    "correct_answer": "$32$",
+    "solution_md": "$2^5=2\\times2\\times2\\times2\\times2=32$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Multiply $2$ by itself five times.", "hint2_md": "$2^4=16$.", "hint3_md": "$16\\times 2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "Is $91$ a prime number? Choose the correct statement.",
+    "choices": ["No, $91=7\\times 13$", "Yes, $91$ is prime", "No, $91=3\\times 31$", "No, $91=9\\times 11$"],
+    "correct_answer": "No, $91=7\\times 13$",
+    "solution_md": "$91=7\\times 13$, so it is composite, not prime.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Test small primes like $7$.", "hint2_md": "$7\\times 13=91$.", "hint3_md": "So $91$ is not prime.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "What is the units digit of $7^2$?",
+    "choices": ["$9$", "$7$", "$4$", "$1$"],
+    "correct_answer": "$9$",
+    "solution_md": "$7^2=49$, whose units digit is $9$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Compute $7^2$.", "hint2_md": "$7\\times 7=49$.", "hint3_md": "Look at the last digit.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "What is the greatest common divisor of $24$ and $36$?",
+    "choices": ["$12$", "$6$", "$8$", "$24$"],
+    "correct_answer": "$12$",
+    "solution_md": "$24=2^3\\cdot 3$ and $36=2^2\\cdot 3^2$. The common part is $2^2\\cdot 3=12$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Use prime factorisation.", "hint2_md": "Take the lowest power of each shared prime.", "hint3_md": "$2^2\\cdot 3=12$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Number & divisibility",
+    "prompt_md": "What is the sum of the first $5$ positive integers, $1+2+3+4+5$?",
+    "choices": ["$15$", "$10$", "$14$", "$20$"],
+    "correct_answer": "$15$",
+    "solution_md": "Using $\\frac{n(n+1)}{2}$ with $n=5$ gives $\\frac{5\\cdot 6}{2}=15$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Add them directly or use a formula.", "hint2_md": "$\\frac{n(n+1)}{2}$.", "hint3_md": "$\\frac{30}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "In how many ways can $3$ distinct books be arranged in a row?",
+    "choices": ["$6$", "$3$", "$9$", "$8$"],
+    "correct_answer": "$6$",
+    "solution_md": "The number of arrangements is $3!=3\\times 2\\times 1=6$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Use factorials.", "hint2_md": "$3!$.", "hint3_md": "$3\\times 2\\times 1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "Evaluate $\\binom{5}{2}$.",
+    "choices": ["$10$", "$20$", "$5$", "$25$"],
+    "correct_answer": "$10$",
+    "solution_md": "$\\binom{5}{2}=\\frac{5!}{2!\\,3!}=\\frac{5\\times 4}{2}=10$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "$\\binom{n}{r}=\\frac{n!}{r!(n-r)!}$.", "hint2_md": "$\\frac{5\\times 4}{2\\times 1}$.", "hint3_md": "$\\frac{20}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "A fair coin is tossed once. What is the probability of getting heads?",
+    "choices": ["$\\tfrac{1}{2}$", "$\\tfrac{1}{4}$", "$1$", "$\\tfrac{1}{3}$"],
+    "correct_answer": "$\\tfrac{1}{2}$",
+    "solution_md": "There are two equally likely outcomes, so $P(\\text{heads})=\\tfrac{1}{2}$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Two equally likely outcomes.", "hint2_md": "Heads is one of them.", "hint3_md": "$\\tfrac{1}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "A fair six-sided die is rolled. What is the probability of getting an even number?",
+    "choices": ["$\\tfrac{1}{2}$", "$\\tfrac{1}{3}$", "$\\tfrac{1}{6}$", "$\\tfrac{2}{3}$"],
+    "correct_answer": "$\\tfrac{1}{2}$",
+    "solution_md": "The even outcomes are $2,4,6$ — that is $3$ of $6$ outcomes, so $\\tfrac{3}{6}=\\tfrac{1}{2}$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Count the even faces.", "hint2_md": "$2,4,6$ out of $6$.", "hint3_md": "$\\tfrac{3}{6}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "How many ordered pairs of distinct letters can be formed from $\\{A,B,C\\}$ (no letter repeated)?",
+    "choices": ["$6$", "$3$", "$9$", "$8$"],
+    "correct_answer": "$6$",
+    "solution_md": "This is $P(3,2)=3\\times 2=6$ (choose the first letter $3$ ways, the second $2$ ways).",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Order matters here.", "hint2_md": "$3$ choices then $2$ choices.", "hint3_md": "$3\\times 2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "A bag contains $3$ red and $2$ blue balls. One ball is drawn at random. What is the probability it is red?",
+    "choices": ["$\\tfrac{3}{5}$", "$\\tfrac{2}{5}$", "$\\tfrac{1}{2}$", "$\\tfrac{3}{2}$"],
+    "correct_answer": "$\\tfrac{3}{5}$",
+    "solution_md": "There are $5$ balls in total and $3$ are red, so $P(\\text{red})=\\tfrac{3}{5}$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Total balls $=5$.", "hint2_md": "Favourable $=3$.", "hint3_md": "$\\tfrac{3}{5}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "Evaluate $5!$.",
+    "choices": ["$120$", "$25$", "$60$", "$720$"],
+    "correct_answer": "$120$",
+    "solution_md": "$5!=5\\times 4\\times 3\\times 2\\times 1=120$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Multiply all integers from $1$ to $5$.", "hint2_md": "$5\\times 4=20$, then $\\times 3\\times 2$.", "hint3_md": "$120$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "Evaluate $\\binom{6}{0}$.",
+    "choices": ["$1$", "$0$", "$6$", "$720$"],
+    "correct_answer": "$1$",
+    "solution_md": "There is exactly one way to choose nothing from a set, so $\\binom{6}{0}=1$.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "$\\binom{n}{0}$ is always the same value.", "hint2_md": "Choosing zero items.", "hint3_md": "$1$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "Two fair six-sided dice are rolled. What is the probability that the sum is $7$?",
+    "choices": ["$\\tfrac{1}{6}$", "$\\tfrac{1}{12}$", "$\\tfrac{1}{9}$", "$\\tfrac{7}{36}$"],
+    "correct_answer": "$\\tfrac{1}{6}$",
+    "solution_md": "There are $6$ ways to make $7$ out of $36$ outcomes, so $\\tfrac{6}{36}=\\tfrac{1}{6}$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "List pairs summing to $7$.", "hint2_md": "$(1,6),(2,5),\\dots,(6,1)$ — six of them.", "hint3_md": "$\\tfrac{6}{36}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "TMUA", "area": "P1", "subtopic": "Combinatorics & probability",
+    "prompt_md": "In how many ways can $3$ items be chosen from $4$ distinct items (order does not matter)?",
+    "choices": ["$4$", "$12$", "$6$", "$24$"],
+    "correct_answer": "$4$",
+    "solution_md": "$\\binom{4}{3}=\\binom{4}{1}=4$.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Use a binomial coefficient.", "hint2_md": "Choosing $3$ is the same as leaving out $1$.", "hint3_md": "$\\binom{4}{1}=4$.",
+    "source_label": "AI Original"
+  }
+]

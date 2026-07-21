@@ -1,0 +1,972 @@
+[
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "The axolotl, a salamander native to lakes near Mexico City, has captivated scientists for its remarkable ability to regenerate lost limbs, parts of its heart, and even portions of its brain. Unlike most amphibians, the axolotl never fully metamorphoses, retaining its juvenile features throughout its life. This permanent larval state, combined with its regenerative powers, has made it a focus of medical research.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "The axolotl is valuable to researchers because of its unusual biological traits.",
+      "The axolotl is the only amphibian capable of regenerating its limbs.",
+      "Scientists have successfully used axolotls to cure human diseases.",
+      "The lakes near Mexico City are an ideal habitat for amphibians."
+    ],
+    "correct_answer": "The axolotl is valuable to researchers because of its unusual biological traits.",
+    "solution_md": "The passage emphasizes the axolotl's regeneration and permanent larval state, then states these make it a focus of medical research. The main idea ties its unusual traits to its research value.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Find the sentence that explains why the axolotl matters to scientists.",
+    "hint2_md": "Watch for overly broad claims ('only', 'cure') not supported by the text.",
+    "hint3_md": "The last sentence links its traits to medical research.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "Composer Florence Price became, in 1933, the first Black woman to have a symphony performed by a major American orchestra. Though celebrated in her lifetime, her music faded from public memory for decades. In 2009, a trove of her manuscripts was discovered in an abandoned house, sparking renewed interest. Today, orchestras worldwide are once again programming her works.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "Florence Price's reputation declined and then revived after a key discovery.",
+      "Florence Price wrote more symphonies than any other American composer.",
+      "Most of Florence Price's manuscripts remain lost to this day.",
+      "American orchestras in the 1930s rarely performed new symphonies."
+    ],
+    "correct_answer": "Florence Price's reputation declined and then revived after a key discovery.",
+    "solution_md": "The text traces an arc: early fame, decades of obscurity, then a 2009 manuscript discovery that revived interest. The main idea captures this rise-fall-revival pattern.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Track how Price's standing changes over time.",
+    "hint2_md": "The discovery in 2009 is the turning point.",
+    "hint3_md": "Avoid choices stating facts the text does not support.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "Coral reefs cover less than one percent of the ocean floor, yet they support roughly a quarter of all marine species. These ecosystems provide shelter, breeding grounds, and feeding areas for countless organisms. Because so much marine biodiversity depends on them, the decline of reefs due to warming waters has consequences that extend far beyond the reefs themselves.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "Coral reefs support a disproportionate share of marine life, so their decline is broadly consequential.",
+      "Coral reefs occupy less than one percent of the ocean floor.",
+      "Warming waters are the only threat facing coral reefs today.",
+      "Most marine species can survive without coral reefs."
+    ],
+    "correct_answer": "Coral reefs support a disproportionate share of marine life, so their decline is broadly consequential.",
+    "solution_md": "The passage contrasts reefs' tiny area with the huge share of species they support, then notes their decline has wide consequences. The main idea joins these points.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Note the contrast between reef size and biodiversity supported.",
+    "hint2_md": "The final sentence states why their decline matters.",
+    "hint3_md": "A single supporting detail is not the main idea.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "In the 1800s, lighthouse keepers led isolated lives, often stationed for months on remote rocks far from any town. Their duty was unrelenting: the lamp had to be lit every night and tended until dawn, regardless of weather or illness. A single lapse could mean disaster for passing ships. The role demanded not glamour but a quiet, persistent reliability.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "The work of nineteenth-century lighthouse keepers required steady, dependable dedication.",
+      "Lighthouse keepers in the 1800s were frequently praised as heroes.",
+      "Most shipwrecks in the 1800s were caused by careless keepers.",
+      "Lighthouse keepers preferred isolation to life in busy towns."
+    ],
+    "correct_answer": "The work of nineteenth-century lighthouse keepers required steady, dependable dedication.",
+    "solution_md": "The passage stresses isolation, unrelenting duty, and the high cost of any lapse, concluding the role demanded 'quiet, persistent reliability.' The main idea reflects this.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The last sentence summarizes what the job demanded.",
+    "hint2_md": "Look for the trait emphasized throughout: reliability.",
+    "hint3_md": "Avoid choices the text does not claim (heroism, preference).",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "Mycorrhizal fungi form partnerships with plant roots, threading through the soil to deliver water and nutrients the plant cannot reach on its own. In return, the plant supplies the fungi with sugars produced through photosynthesis. This exchange benefits both organisms, allowing each to thrive in conditions it could not endure alone.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "Mycorrhizal fungi and plants engage in a mutually beneficial exchange.",
+      "Mycorrhizal fungi can survive in soil without any plant partners.",
+      "Plants produce more sugar than they require for survival.",
+      "Soil nutrients are evenly distributed throughout most ecosystems."
+    ],
+    "correct_answer": "Mycorrhizal fungi and plants engage in a mutually beneficial exchange.",
+    "solution_md": "The passage describes fungi delivering nutrients to plants and plants supplying sugars to fungi, calling it an exchange that benefits both. The main idea is this mutual benefit.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Notice what each organism gives and receives.",
+    "hint2_md": "The phrase 'benefits both organisms' is key.",
+    "hint3_md": "Choose the option describing reciprocity.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "The Voyager 1 spacecraft, launched in 1977, was designed for a four-year mission to study Jupiter and Saturn. Yet decades later it continues to transmit data, having crossed into interstellar space in 2012. Operating far beyond its original purpose, the probe still sends faint signals across billions of miles, offering scientists a unique window into the space between stars.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "Voyager 1 has far outlasted its planned mission and now provides rare interstellar data.",
+      "Voyager 1 was the first spacecraft ever to reach Jupiter.",
+      "Scientists expected Voyager 1 to operate for many decades.",
+      "Voyager 1 stopped transmitting data after leaving the solar system."
+    ],
+    "correct_answer": "Voyager 1 has far outlasted its planned mission and now provides rare interstellar data.",
+    "solution_md": "The text contrasts the planned four-year mission with decades of continued operation and interstellar data. The main idea captures both longevity and scientific value.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Compare the original mission length to actual operation.",
+    "hint2_md": "Note what the probe offers scientists now.",
+    "hint3_md": "Reject choices contradicted by the text (e.g., 'stopped transmitting').",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "Author Zora Neale Hurston traveled through the rural American South in the 1920s and 1930s, collecting folktales, songs, and customs that might otherwise have vanished unrecorded. Trained as an anthropologist, she treated these stories not as quaint curiosities but as a living cultural archive. Her fieldwork preserved a wealth of oral tradition for future generations.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "Hurston's fieldwork preserved an important body of oral cultural tradition.",
+      "Hurston was the first anthropologist to study the American South.",
+      "Folktales collected by Hurston were later proven to be fictional.",
+      "Hurston abandoned writing to focus solely on anthropology."
+    ],
+    "correct_answer": "Hurston's fieldwork preserved an important body of oral cultural tradition.",
+    "solution_md": "The passage describes Hurston collecting folktales and treating them as a 'living cultural archive,' preserving oral tradition. The main idea reflects this preservation.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Focus on what Hurston's work accomplished.",
+    "hint2_md": "The final sentence names the outcome: preservation.",
+    "hint3_md": "Avoid claims the text does not make ('first', 'fictional').",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "Bioluminescence, the production of light by living organisms, occurs across a startling range of life: fireflies, deep-sea fish, fungi, and certain plankton all glow. Despite their differences, these organisms use light for similar purposes, such as attracting mates, luring prey, or startling predators. The same tool, evolved independently many times, serves a common set of needs.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "Diverse organisms independently evolved bioluminescence to serve similar survival functions.",
+      "Bioluminescence is found only in deep-sea fish and fireflies.",
+      "Most bioluminescent organisms use light primarily to communicate distress.",
+      "Bioluminescence evolved once and spread among many species."
+    ],
+    "correct_answer": "Diverse organisms independently evolved bioluminescence to serve similar survival functions.",
+    "solution_md": "The passage lists varied organisms that glow, notes shared purposes, and says the tool 'evolved independently many times.' The main idea unites diversity, independent evolution, and common function.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Combine the range of organisms with their shared purposes.",
+    "hint2_md": "'Evolved independently many times' rules out a single origin.",
+    "hint3_md": "Pick the option covering both diversity and shared function.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "When the printing press spread across Europe in the late 1400s, it did more than speed up the copying of books. By making texts cheaper and more uniform, it allowed ideas to circulate among people who had never had access to written knowledge. Scholars in distant cities could now read identical editions, compare findings, and build on one another's work.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "The printing press broadened access to knowledge and enabled scholarly collaboration.",
+      "The printing press was invented in Europe in the late 1400s.",
+      "Books before the printing press contained more errors than later editions.",
+      "Most Europeans in the 1400s could already read and write."
+    ],
+    "correct_answer": "The printing press broadened access to knowledge and enabled scholarly collaboration.",
+    "solution_md": "The text says the press made texts cheaper and uniform, spreading ideas and letting scholars compare and build on work. The main idea joins access and collaboration.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The text says the press did 'more than' speed copying — what more?",
+    "hint2_md": "Note both wider access and scholarly comparison.",
+    "hint3_md": "A single detail (invention date) is not the main idea.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Central ideas & details",
+    "prompt_md": "Octopuses possess a distributed nervous system: about two-thirds of their neurons lie in their arms rather than their central brain. This arrangement allows each arm to taste, touch, and react somewhat independently, even solving small problems without direct instruction from the brain. The octopus thus 'thinks' in a way unlike that of most other animals.\\n\\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "The octopus's distributed nervous system gives its arms unusual independent capability.",
+      "Octopuses have more neurons than any other ocean animal.",
+      "An octopus's central brain controls every movement of its arms.",
+      "Octopuses are unable to solve problems of any kind."
+    ],
+    "correct_answer": "The octopus's distributed nervous system gives its arms unusual independent capability.",
+    "solution_md": "The passage explains that most neurons are in the arms, enabling independent sensing and problem-solving. The main idea highlights this distributed, independent capability.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Where are most of the octopus's neurons located?",
+    "hint2_md": "Note what that location lets the arms do.",
+    "hint3_md": "Reject the choice claiming central control of every movement.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "A student is researching how city design affects walking habits. She claims that neighborhoods with interconnected street grids encourage residents to walk more than neighborhoods with winding, dead-end streets.\\n\\nWhich finding, if true, would most directly support the student's claim?",
+    "choices": [
+      "Residents of grid-pattern neighborhoods recorded, on average, more daily walking trips than residents of dead-end-street neighborhoods.",
+      "Grid-pattern neighborhoods tend to have older housing than winding-street neighborhoods.",
+      "Many residents say they enjoy the visual variety of winding streets.",
+      "Dead-end streets generally carry less automobile traffic than grid streets."
+    ],
+    "correct_answer": "Residents of grid-pattern neighborhoods recorded, on average, more daily walking trips than residents of dead-end-street neighborhoods.",
+    "solution_md": "The claim links grid layouts to more walking. Direct support compares walking trips between the two layouts and finds grids higher — exactly the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Find evidence that directly measures walking by street type.",
+    "hint2_md": "Support must connect grid layout to more walking.",
+    "hint3_md": "Facts about housing age or traffic do not address walking amounts.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "Researchers hypothesize that playing a musical instrument in childhood improves a person's ability to focus attention later in life. They studied adults who had and had not learned instruments as children.\\n\\nWhich finding, if true, would most strongly support the researchers' hypothesis?",
+    "choices": [
+      "Adults who learned instruments as children performed better on sustained-attention tasks than those who did not.",
+      "Adults who learned instruments as children reported enjoying music more than other adults.",
+      "Children who learn instruments often come from families that value education.",
+      "Most adults who learned an instrument no longer play regularly."
+    ],
+    "correct_answer": "Adults who learned instruments as children performed better on sustained-attention tasks than those who did not.",
+    "solution_md": "The hypothesis links childhood instrument learning to later attention. The strongest support shows better attention-task performance among those who learned instruments — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Match the evidence to the outcome being claimed: attention.",
+    "hint2_md": "Enjoying music is not the same as focusing attention.",
+    "hint3_md": "Family background is a confounder, not direct support.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "An ecologist argues that reintroducing beavers to a river valley will reduce downstream flooding, because beaver dams slow the flow of water and store it in ponds and wetlands.\\n\\nWhich finding, if true, would most directly support the ecologist's argument?",
+    "choices": [
+      "After beavers were reintroduced to a comparable valley, downstream flood peaks measurably declined.",
+      "Beavers reintroduced to the valley built more dams than ecologists expected.",
+      "Local residents reported seeing more wildlife after the beavers arrived.",
+      "Beaver fur was once a valuable commodity in the region."
+    ],
+    "correct_answer": "After beavers were reintroduced to a comparable valley, downstream flood peaks measurably declined.",
+    "solution_md": "The argument is that beavers reduce flooding. Direct support shows reduced flood peaks after reintroduction — the first choice. Other options note activity or unrelated facts.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The conclusion is about reduced flooding — find evidence of that outcome.",
+    "hint2_md": "Building many dams shows activity, not the flooding result.",
+    "hint3_md": "Wildlife sightings and fur history are off-topic.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "A historian contends that a medieval town's prosperity came chiefly from its position on a major trade route rather than from its local farmland, which was poor and rocky.\\n\\nWhich finding, if true, would most directly support the historian's contention?",
+    "choices": [
+      "Town records show that most of its wealth came from tolls and fees charged to passing merchants.",
+      "The town's population grew steadily over several centuries.",
+      "Nearby towns with better farmland were also prosperous.",
+      "The town built impressive stone walls during this period."
+    ],
+    "correct_answer": "Town records show that most of its wealth came from tolls and fees charged to passing merchants.",
+    "solution_md": "The claim is that trade, not farming, drove prosperity. Records showing wealth came from merchant tolls directly support trade as the source — the first choice.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Support must point to trade as the wealth source.",
+    "hint2_md": "Population growth alone does not identify the cause.",
+    "hint3_md": "Other towns' farmland says nothing about this town's source.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "A team of biologists proposes that a certain frog species uses its bright coloration to warn predators that it is toxic, rather than to attract mates.\\n\\nWhich finding, if true, would most strongly support the biologists' proposal?",
+    "choices": [
+      "Predators that attacked the brightly colored frogs quickly learned to avoid them after becoming ill.",
+      "Both male and female frogs of the species display the bright coloration.",
+      "The frogs are most active during daylight hours.",
+      "The species lays its eggs in shallow ponds."
+    ],
+    "correct_answer": "Predators that attacked the brightly colored frogs quickly learned to avoid them after becoming ill.",
+    "solution_md": "The proposal is that color warns predators of toxicity. Evidence that predators got sick and learned to avoid the frogs directly supports a warning function — the first choice.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The claim is about warning predators — find predator-related evidence.",
+    "hint2_md": "Both sexes being colorful weakens, not supports, a mate-attraction role but does not prove warning by itself.",
+    "hint3_md": "Activity time and egg-laying are irrelevant to the warning function.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "An economist claims that offering free public transit in a city would reduce traffic congestion, because some drivers would switch from cars to buses and trains.\\n\\nWhich finding, if true, would most directly support the economist's claim?",
+    "choices": [
+      "In a city that made transit free, the number of cars on major roads dropped noticeably.",
+      "Free transit programs are popular with city residents who already use buses.",
+      "Bus and train operators would need additional funding under a free-transit plan.",
+      "Most cities charge fares to help cover the cost of running transit systems."
+    ],
+    "correct_answer": "In a city that made transit free, the number of cars on major roads dropped noticeably.",
+    "solution_md": "The claim ties free transit to less congestion via drivers switching. A real case showing fewer cars after free transit directly supports it — the first choice.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Look for evidence of fewer cars after free transit.",
+    "hint2_md": "Popularity among existing riders does not show drivers switching.",
+    "hint3_md": "Funding needs and fare practices do not address congestion.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "A literary scholar argues that a nineteenth-century novelist revised her early chapters extensively to make her heroine appear more independent, reflecting the author's evolving views on women's roles.\\n\\nWhich finding, if true, would most directly support the scholar's argument?",
+    "choices": [
+      "Surviving manuscript drafts show the heroine's submissive lines being replaced with assertive ones.",
+      "The novelist published several other books during her career.",
+      "The novel sold well among middle-class readers of the period.",
+      "The novelist corresponded frequently with her publisher."
+    ],
+    "correct_answer": "Surviving manuscript drafts show the heroine's submissive lines being replaced with assertive ones.",
+    "solution_md": "The argument concerns revisions making the heroine more independent. Drafts showing submissive lines replaced by assertive ones directly support that — the first choice.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Support must show the specific revision toward independence.",
+    "hint2_md": "Sales and other books do not reveal revision choices.",
+    "hint3_md": "The drafts are the direct evidence of changed characterization.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "A nutrition researcher hypothesizes that eating a protein-rich breakfast helps people feel full longer and therefore eat fewer calories at lunch.\\n\\nWhich finding, if true, would most strongly support the researcher's hypothesis?",
+    "choices": [
+      "Participants who ate high-protein breakfasts consumed fewer calories at lunch than those who ate low-protein breakfasts.",
+      "High-protein breakfasts are generally more expensive than low-protein ones.",
+      "Participants rated high-protein breakfasts as tastier than low-protein ones.",
+      "Many participants normally skip breakfast on busy mornings."
+    ],
+    "correct_answer": "Participants who ate high-protein breakfasts consumed fewer calories at lunch than those who ate low-protein breakfasts.",
+    "solution_md": "The hypothesis links protein breakfast to fewer lunch calories. The first choice directly measures lunch calories by breakfast type and matches the prediction.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Match evidence to the predicted outcome: fewer lunch calories.",
+    "hint2_md": "Taste and cost do not measure fullness or calories.",
+    "hint3_md": "Skipping breakfast is unrelated to the comparison.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "An archaeologist suggests that an ancient settlement was abandoned because of a prolonged drought rather than warfare, as some had assumed.\\n\\nWhich finding, if true, would most directly support the archaeologist's suggestion?",
+    "choices": [
+      "Soil and tree-ring records from the site reveal a severe, decades-long dry period ending around the time of abandonment.",
+      "Pottery found at the site resembles styles used by neighboring peoples.",
+      "The settlement contained several large, well-built houses.",
+      "Trade goods from distant regions were discovered in the ruins."
+    ],
+    "correct_answer": "Soil and tree-ring records from the site reveal a severe, decades-long dry period ending around the time of abandonment.",
+    "solution_md": "The suggestion favors drought over warfare. Climate records showing a long dry period at the time of abandonment directly support drought — the first choice.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Look for evidence about climate, not culture or trade.",
+    "hint2_md": "Pottery, houses, and trade goods do not indicate drought.",
+    "hint3_md": "Tree-ring and soil data are direct climate evidence.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (textual)",
+    "prompt_md": "A psychologist proposes that taking brief breaks during study sessions improves long-term memory of the material, compared with studying continuously for the same total time.\\n\\nWhich finding, if true, would most strongly support the psychologist's proposal?",
+    "choices": [
+      "On a test a week later, students who took breaks while studying recalled more than students who studied straight through.",
+      "Students who took breaks reported feeling less tired after studying.",
+      "Most students prefer to study in shorter sessions.",
+      "Students who studied continuously finished their sessions sooner."
+    ],
+    "correct_answer": "On a test a week later, students who took breaks while studying recalled more than students who studied straight through.",
+    "solution_md": "The proposal concerns long-term memory. A delayed test showing break-takers recall more directly supports better long-term memory — the first choice.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The claim is about long-term memory — find a delayed-recall result.",
+    "hint2_md": "Feeling less tired is not the same as remembering more.",
+    "hint3_md": "Preferences and finishing time do not measure memory.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "A study measured average daily water use per person in four neighborhoods. The results were: Neighborhood A, 120 liters; Neighborhood B, 95 liters; Neighborhood C, 150 liters; Neighborhood D, 110 liters.\\n\\nA researcher claims that Neighborhood C used the most water per person. Which choice best uses the data to support this claim?",
+    "choices": [
+      "Neighborhood C's 150 liters per person was the highest of the four figures reported.",
+      "Neighborhood B used only 95 liters per person, the lowest figure.",
+      "Neighborhoods A and D used 120 and 110 liters per person, respectively.",
+      "The four neighborhoods together averaged about 119 liters per person."
+    ],
+    "correct_answer": "Neighborhood C's 150 liters per person was the highest of the four figures reported.",
+    "solution_md": "The claim is that C used the most. The supporting statement must cite C's value as highest. 150 liters exceeds 120, 95, and 110, so the first choice supports the claim.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Support must reference Neighborhood C being highest.",
+    "hint2_md": "Compare 150 to the other three values.",
+    "hint3_md": "Statements about B, A/D, or the average do not back the claim about C.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "A survey recorded the percentage of students who biked to school in three years: 2010, 8 percent; 2015, 14 percent; 2020, 22 percent.\\n\\nA writer concludes that the share of students biking to school rose across the period. Which choice best uses the data to support this conclusion?",
+    "choices": [
+      "The percentage increased from 8 percent in 2010 to 14 percent in 2015 to 22 percent in 2020.",
+      "In 2020, more than three-quarters of students did not bike to school.",
+      "The largest single jump occurred between 2015 and 2020.",
+      "In 2010, fewer than one in ten students biked to school."
+    ],
+    "correct_answer": "The percentage increased from 8 percent in 2010 to 14 percent in 2015 to 22 percent in 2020.",
+    "solution_md": "The conclusion is that biking rose across the period. Citing the steady increase 8 to 14 to 22 percent directly supports it — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Support should show values rising over all three years.",
+    "hint2_md": "A single year or single jump shows only part of the trend.",
+    "hint3_md": "The first choice traces the full upward path.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "A table reports the number of books checked out from a library by genre in one month: Mystery, 320; Science Fiction, 210; Romance, 280; History, 90.\\n\\nA librarian states that Mystery and Romance together accounted for more than half of the books checked out that month. The total checkouts were 900. Which choice best uses the data to support this statement?",
+    "choices": [
+      "Mystery and Romance together totaled 600 checkouts, which is two-thirds of the 900 total.",
+      "History had the fewest checkouts at 90 books.",
+      "Science Fiction accounted for 210 of the 900 checkouts.",
+      "Mystery alone had more checkouts than History and Science Fiction combined."
+    ],
+    "correct_answer": "Mystery and Romance together totaled 600 checkouts, which is two-thirds of the 900 total.",
+    "solution_md": "Mystery (320) + Romance (280) = 600, which is 600/900 = two-thirds, more than half. The first choice supplies this calculation, supporting the statement.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Add Mystery and Romance, then compare to half of 900.",
+    "hint2_md": "320 + 280 = 600; half of 900 is 450.",
+    "hint3_md": "Only the first choice ties the combined total to more than half.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "A graph shows average monthly rainfall in a city: spring, 90 mm; summer, 40 mm; autumn, 75 mm; winter, 110 mm.\\n\\nA report claims the city receives the least rainfall in summer. Which choice best uses the data to support this claim?",
+    "choices": [
+      "Summer's 40 mm was lower than spring's 90 mm, autumn's 75 mm, and winter's 110 mm.",
+      "Winter received the most rainfall at 110 mm.",
+      "Spring and autumn together received 165 mm of rainfall.",
+      "The four seasons averaged about 79 mm of rainfall."
+    ],
+    "correct_answer": "Summer's 40 mm was lower than spring's 90 mm, autumn's 75 mm, and winter's 110 mm.",
+    "solution_md": "The claim is that summer is lowest. Showing 40 mm is below all other seasons directly supports it — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Support must show summer below every other season.",
+    "hint2_md": "Compare 40 to 90, 75, and 110.",
+    "hint3_md": "Statements about winter, sums, or averages don't address summer being lowest.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "A study tracked the survival rate of tree seedlings under two watering schedules. With daily watering, 85 percent survived; with weekly watering, 60 percent survived.\\n\\nA researcher concludes that daily watering improved seedling survival. Which choice best uses the data to support this conclusion?",
+    "choices": [
+      "Survival was 85 percent with daily watering, compared with 60 percent with weekly watering.",
+      "Weekly watering required less labor than daily watering.",
+      "Most seedlings in both groups survived the study period.",
+      "Daily watering used more water overall than weekly watering."
+    ],
+    "correct_answer": "Survival was 85 percent with daily watering, compared with 60 percent with weekly watering.",
+    "solution_md": "The conclusion is that daily watering improved survival. The first choice directly contrasts 85 percent versus 60 percent, supporting it.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Support should compare survival rates between schedules.",
+    "hint2_md": "85 percent versus 60 percent shows the improvement.",
+    "hint3_md": "Labor and water use do not address survival.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "A table lists average commute times by transportation mode: car, 28 minutes; bus, 45 minutes; bicycle, 22 minutes; walking, 38 minutes.\\n\\nA planner argues that, among these modes, bicycling offered the shortest average commute. Which choice best uses the data to support this argument?",
+    "choices": [
+      "Bicycling averaged 22 minutes, less than car (28), walking (38), and bus (45).",
+      "Bus commutes averaged 45 minutes, the longest of the four modes.",
+      "Car and walking commutes differed by 10 minutes on average.",
+      "The four modes had an average commute of about 33 minutes."
+    ],
+    "correct_answer": "Bicycling averaged 22 minutes, less than car (28), walking (38), and bus (45).",
+    "solution_md": "The argument is that bicycling was shortest. Showing 22 minutes is below all other modes directly supports it — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Support must show bicycling lowest among all modes.",
+    "hint2_md": "Compare 22 to 28, 38, and 45.",
+    "hint3_md": "Claims about the bus, differences, or averages don't support bicycling being shortest.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "A chart shows the number of solar panel installations in a county over four years: 2018, 200; 2019, 350; 2020, 500; 2021, 800.\\n\\nA journalist claims that installations more than doubled from 2018 to 2020. Which choice best uses the data to support this claim?",
+    "choices": [
+      "Installations rose from 200 in 2018 to 500 in 2020, an increase of 2.5 times.",
+      "Installations reached 800 in 2021, the highest annual total.",
+      "Between 2019 and 2020, installations grew by 150.",
+      "The county averaged about 463 installations per year."
+    ],
+    "correct_answer": "Installations rose from 200 in 2018 to 500 in 2020, an increase of 2.5 times.",
+    "solution_md": "The claim covers 2018 to 2020. Going from 200 to 500 is 2.5 times, which is more than double. The first choice cites exactly these figures.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Use only the 2018 and 2020 figures.",
+    "hint2_md": "500 divided by 200 is 2.5, more than double.",
+    "hint3_md": "The 2021 total and yearly average are outside the claimed range.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "Researchers compared test scores of students who slept at least 8 hours versus fewer than 6 hours before an exam. The well-rested group averaged 82 points; the sleep-deprived group averaged 71 points.\\n\\nA writer concludes that more sleep was associated with higher scores. Which choice best uses the data to support this conclusion?",
+    "choices": [
+      "The well-rested group averaged 82 points, 11 points higher than the sleep-deprived group's 71.",
+      "Both groups took the same version of the exam.",
+      "Some students in each group scored above 90 points.",
+      "The exam was scored on a scale from 0 to 100 points."
+    ],
+    "correct_answer": "The well-rested group averaged 82 points, 11 points higher than the sleep-deprived group's 71.",
+    "solution_md": "The conclusion links more sleep to higher scores. Contrasting 82 with 71 (an 11-point gap) directly supports it — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Support should compare the two groups' averages.",
+    "hint2_md": "82 versus 71 shows the higher score with more sleep.",
+    "hint3_md": "Test version, top scorers, and scale do not show the association.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "A table shows the recycling rates of four cities: City W, 35 percent; City X, 50 percent; City Y, 42 percent; City Z, 28 percent.\\n\\nAn analyst states that City X's recycling rate was higher than the average of the other three cities. Which choice best uses the data to support this statement?",
+    "choices": [
+      "City X's rate of 50 percent exceeded the 35 percent average of cities W, Y, and Z.",
+      "City Z had the lowest recycling rate at 28 percent.",
+      "Cities W and Y differed in recycling rate by 7 percentage points.",
+      "All four cities recycled at least one-quarter of their waste."
+    ],
+    "correct_answer": "City X's rate of 50 percent exceeded the 35 percent average of cities W, Y, and Z.",
+    "solution_md": "The average of W (35), Y (42), Z (28) is (35+42+28)/3 = 105/3 = 35 percent. City X at 50 percent exceeds 35. The first choice provides this comparison.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Average the three other cities, then compare to City X.",
+    "hint2_md": "(35 + 42 + 28) / 3 = 35 percent.",
+    "hint3_md": "Only the first choice compares X to that average.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Command of evidence (quantitative)",
+    "prompt_md": "A graph displays a store's monthly sales of umbrellas: January, 40; February, 30; March, 65; April, 90.\\n\\nA manager claims umbrella sales increased every month from February onward. Which choice best uses the data to support this claim?",
+    "choices": [
+      "Sales rose from 30 in February to 65 in March to 90 in April.",
+      "January sales were 40 umbrellas.",
+      "April had the highest sales at 90 umbrellas.",
+      "The four months averaged about 56 umbrellas sold."
+    ],
+    "correct_answer": "Sales rose from 30 in February to 65 in March to 90 in April.",
+    "solution_md": "The claim covers February onward. Tracing 30 to 65 to 90 shows an increase each month, supporting the claim — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Focus on February, March, and April values.",
+    "hint2_md": "30 to 65 to 90 increases each step.",
+    "hint3_md": "January, a single peak, or the average doesn't show the monthly trend.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "Despite arriving at the laboratory before sunrise and leaving long after dark, Dr. Reyes rarely spoke of her schedule. When colleagues praised her dedication, she would only shrug and say that the work itself was reward enough. To her, the late hours were not a sacrifice but simply ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "a natural extension of her genuine enthusiasm for the research.",
+      "a burden she resented but felt obligated to bear.",
+      "a way to impress her supervisors and earn promotions.",
+      "an unfortunate consequence of poor time management."
+    ],
+    "correct_answer": "a natural extension of her genuine enthusiasm for the research.",
+    "solution_md": "The text says the work itself was 'reward enough' and the hours were 'not a sacrifice.' This implies her long hours flow from genuine enthusiasm — the first choice.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Note the phrases 'reward enough' and 'not a sacrifice.'",
+    "hint2_md": "The blank should match positive, intrinsic motivation.",
+    "hint3_md": "Reject options implying resentment, ambition, or poor planning.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "The new bridge was designed to carry far more traffic than the old one, yet within a year drivers complained that congestion had hardly improved. Engineers eventually realized that the wider bridge had encouraged more people to drive, so that the added capacity was quickly ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "consumed by the increased number of vehicles it attracted.",
+      "reserved for emergency vehicles and public transit.",
+      "praised by commuters for easing their daily travel.",
+      "reduced by ongoing repairs to the bridge surface."
+    ],
+    "correct_answer": "consumed by the increased number of vehicles it attracted.",
+    "solution_md": "The wider bridge drew more drivers, so congestion barely improved. The added capacity was thus 'consumed' by the extra traffic — the first choice fits the logic.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "If more people drove, what happened to the extra capacity?",
+    "hint2_md": "The blank should explain why congestion didn't improve.",
+    "hint3_md": "Repairs and transit are not mentioned as causes.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "Archaeologists found that the ancient city's granaries were built with thick walls, raised floors, and narrow ventilation slots. These features would have kept stored grain cool and dry, protecting it from moisture and pests. The design therefore suggests that the city's builders ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "understood how to preserve food over long periods.",
+      "had little interest in storing surplus crops.",
+      "relied entirely on trade for their food supply.",
+      "built their granaries hastily and without planning."
+    ],
+    "correct_answer": "understood how to preserve food over long periods.",
+    "solution_md": "Thick walls, raised floors, and ventilation kept grain cool and dry, protecting it. This implies the builders knew how to preserve food — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "What do the design features accomplish?",
+    "hint2_md": "Cool, dry, pest-free storage points to preservation knowledge.",
+    "hint3_md": "Reject options that contradict the careful design.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "In her memoir, the violinist recalls that her first instrument was a battered, secondhand violin with a warped neck and worn strings. She practiced on it for years before she could afford a better one. Looking back, she insists she is grateful for that flawed instrument, because struggling with its imperfections ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "forced her to develop unusually precise technique.",
+      "convinced her to abandon music altogether.",
+      "made her performances impossible to enjoy.",
+      "guaranteed her immediate success as a soloist."
+    ],
+    "correct_answer": "forced her to develop unusually precise technique.",
+    "solution_md": "She is 'grateful' for the flawed violin, implying a benefit. Struggling with imperfections plausibly sharpened her technique — the first choice matches the positive framing.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The word 'grateful' signals a benefit from the flawed violin.",
+    "hint2_md": "The blank should describe a positive outcome of struggle.",
+    "hint3_md": "Reject negative or implausible outcomes.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "The species of beetle was thought to be extinct for nearly a century, with no confirmed sightings recorded. Then a single living specimen was photographed on a remote island. While one beetle does not prove a thriving population, the discovery does at least demonstrate that the species ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "has survived somewhere despite the long absence of sightings.",
+      "has fully recovered to its former population levels.",
+      "was never actually in any danger of extinction.",
+      "can only be found in laboratory collections."
+    ],
+    "correct_answer": "has survived somewhere despite the long absence of sightings.",
+    "solution_md": "A living specimen, though not proof of a large population, shows the species is not extinct — it survives somewhere. The first choice fits this limited but real inference.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Note the qualifier: one beetle is not a thriving population.",
+    "hint2_md": "The minimum the photo proves is continued survival.",
+    "hint3_md": "Reject overclaims (full recovery) and contradictions.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "The novelist was famous for revising obsessively, sometimes rewriting a single page dozens of times. Friends who saw his crossed-out drafts assumed he found writing painful. Yet he described revision as his favorite part of the craft, claiming that each new version brought him ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "closer to the sentence he had imagined.",
+      "further from any hope of finishing.",
+      "deeper into a frustration he could not escape.",
+      "less interested in the story he was telling."
+    ],
+    "correct_answer": "closer to the sentence he had imagined.",
+    "solution_md": "He called revision his 'favorite part,' contradicting the assumption it was painful. So each version brought a positive result — moving closer to his ideal sentence. The first choice fits.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "His attitude toward revision is positive ('favorite part').",
+    "hint2_md": "The blank should reflect a benefit of each new version.",
+    "hint3_md": "Reject negative completions that match the friends' wrong assumption.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "Unlike many plants that close their flowers at night, this desert shrub blooms only after dark, when temperatures fall. Its pale flowers reflect moonlight, and its strong scent travels far in the cool night air. These traits strongly suggest that the shrub is pollinated chiefly by ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "creatures active during the nighttime hours.",
+      "insects that feed only in bright sunlight.",
+      "birds that forage in the early afternoon.",
+      "wind currents rather than any animal."
+    ],
+    "correct_answer": "creatures active during the nighttime hours.",
+    "solution_md": "Night blooming, moonlight-reflecting flowers, and night-traveling scent all point to nocturnal pollinators. The first choice follows directly.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "When does the shrub bloom and release scent?",
+    "hint2_md": "Night-time features imply night-active pollinators.",
+    "hint3_md": "Reject daytime or wind-based options.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "The committee had expected the public hearing to be sparsely attended, so they booked a small room. Instead, hundreds of residents arrived, spilling into the hallways and demanding to be heard. The overwhelming turnout made it clear that the proposed development was ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "a matter of intense concern to the community.",
+      "of little interest to local residents.",
+      "already approved without any objections.",
+      "unknown to nearly everyone in the area."
+    ],
+    "correct_answer": "a matter of intense concern to the community.",
+    "solution_md": "Hundreds arrived, overflowing the room and demanding to be heard. This large, vocal turnout implies the development was a matter of intense concern — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "What does a huge, demanding turnout reveal about interest?",
+    "hint2_md": "The blank should match strong community engagement.",
+    "hint3_md": "Reject options implying indifference or ignorance.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "Economists studying the small town noted that when its only factory closed, not only did the laid-off workers lose income, but local shops, restaurants, and services soon reported falling sales as well. This pattern indicates that the factory's wages had ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "circulated through much of the town's wider economy.",
+      "been saved rather than spent by most workers.",
+      "had no measurable effect on local businesses.",
+      "come entirely from outside the town's borders."
+    ],
+    "correct_answer": "circulated through much of the town's wider economy.",
+    "solution_md": "When the factory closed, shops and services also lost sales, showing the wages had been spent locally and circulated through the economy. The first choice fits.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Why would other businesses lose sales when the factory closed?",
+    "hint2_md": "Falling sales elsewhere imply the wages were spent locally.",
+    "hint3_md": "Reject options claiming no effect or no local spending.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Inferences",
+    "prompt_md": "The translator faced a difficult choice. A literal, word-for-word rendering would preserve the poem's exact meaning but lose its music and rhythm. A looser translation would capture the sound and feeling but stray from the original wording. Whichever path she chose, she knew that something would inevitably be ____\\n\\nWhich choice most logically completes the text?",
+    "choices": [
+      "lost in carrying the poem from one language to another.",
+      "added to improve upon the original poem.",
+      "preserved perfectly regardless of her approach.",
+      "ignored by readers familiar with both languages."
+    ],
+    "correct_answer": "lost in carrying the poem from one language to another.",
+    "solution_md": "Each option sacrifices something — meaning or music. The text says 'whichever path,' so something is inevitably lost in translation. The first choice fits.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Both options involve a trade-off — a sacrifice.",
+    "hint2_md": "'Whichever path' implies an unavoidable loss.",
+    "hint3_md": "Reject options claiming perfect preservation or improvement.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"novel\\\" most nearly mean?\\n\\nThe engineer proposed a novel solution to the cooling problem, one that no previous team had ever considered.",
+    "choices": ["new", "fictional", "lengthy", "complicated"],
+    "correct_answer": "new",
+    "solution_md": "The clause 'no previous team had ever considered' signals originality. 'Novel' here means new. 'Fictional' is the unrelated noun sense.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Use the clue 'no previous team had ever considered.'",
+    "hint2_md": "The word describes an original idea.",
+    "hint3_md": "Avoid the 'book' meaning of 'novel.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"check\\\" most nearly mean?\\n\\nThe dam was built to check the river's flow during the rainy season, preventing it from flooding the valley below.",
+    "choices": ["restrain", "inspect", "verify", "abandon"],
+    "correct_answer": "restrain",
+    "solution_md": "The dam prevents flooding by holding back water, so 'check' means restrain or hold back. 'Inspect' and 'verify' are other senses that don't fit.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The dam prevents flooding — what does it do to the flow?",
+    "hint2_md": "Think of 'check' as in 'hold back.'",
+    "hint3_md": "'Inspect' or 'verify' don't suit controlling a river.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"reservations\\\" most nearly mean?\\n\\nAlthough the board ultimately approved the plan, several members voiced serious reservations about its cost.",
+    "choices": ["misgivings", "bookings", "territories", "supplies"],
+    "correct_answer": "misgivings",
+    "solution_md": "'Although... approved... voiced serious reservations about its cost' signals doubts or concerns. 'Misgivings' fits. 'Bookings' is the unrelated sense.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The word 'although' signals doubt despite approval.",
+    "hint2_md": "Reservations 'about cost' means concerns.",
+    "hint3_md": "Avoid the 'restaurant booking' meaning.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"command\\\" most nearly mean?\\n\\nHer command of three languages allowed her to negotiate easily with delegates from many countries.",
+    "choices": ["mastery", "order", "view", "authority"],
+    "correct_answer": "mastery",
+    "solution_md": "'Command of three languages' that lets her negotiate easily means skill or mastery. 'Order' and 'authority' are different senses of 'command.'",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "What kind of 'command' lets someone negotiate in languages?",
+    "hint2_md": "Think of skillful control of a subject.",
+    "hint3_md": "It is not a military 'order' here.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"arrest\\\" most nearly mean?\\n\\nThe new medication did not cure the disease, but it did arrest its progress, keeping the patient stable for years.",
+    "choices": ["halt", "detain", "capture", "accelerate"],
+    "correct_answer": "halt",
+    "solution_md": "Keeping the disease from progressing means stopping it; 'arrest' here means halt. 'Detain' and 'capture' are the law-enforcement senses; 'accelerate' is the opposite.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The drug kept the disease from advancing.",
+    "hint2_md": "'Arrest its progress' means stop it.",
+    "hint3_md": "Avoid the 'police' meaning and the opposite, 'accelerate.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"discriminating\\\" most nearly mean?\\n\\nA discriminating critic, she could detect subtle differences in tone that escaped less attentive listeners.",
+    "choices": ["perceptive", "prejudiced", "hesitant", "generous"],
+    "correct_answer": "perceptive",
+    "solution_md": "Detecting subtle differences others miss describes keen perception; 'discriminating' here means perceptive or discerning. 'Prejudiced' is the negative sense that doesn't fit.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "She notices subtle differences others miss.",
+    "hint2_md": "Here 'discriminating' is a compliment about discernment.",
+    "hint3_md": "Avoid the 'biased' meaning.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"yield\\\" most nearly mean?\\n\\nAfter months of resistance, the company finally yielded to public pressure and recalled the faulty product.",
+    "choices": ["gave in", "produced", "earned", "measured"],
+    "correct_answer": "gave in",
+    "solution_md": "After resisting, the company 'yielded to public pressure,' meaning it gave in. 'Produced' and 'earned' are the other senses of 'yield' that don't fit here.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The phrase 'after months of resistance' signals surrender.",
+    "hint2_md": "'Yielded to pressure' means submitted.",
+    "hint3_md": "Avoid the 'crop output' meaning.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"qualify\\\" most nearly mean?\\n\\nThe scientist was careful to qualify her conclusion, noting that it held only under specific laboratory conditions.",
+    "choices": ["limit", "certify", "describe", "strengthen"],
+    "correct_answer": "limit",
+    "solution_md": "Noting the conclusion 'held only under specific conditions' restricts its scope; 'qualify' here means limit or modify. 'Certify' and 'strengthen' don't fit the cautious tone.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "She narrows when her conclusion applies.",
+    "hint2_md": "'Qualify' here adds a restriction.",
+    "hint3_md": "It is not 'strengthen' — she's adding caution.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"sound\\\" most nearly mean?\\n\\nThe inspector declared the old bridge structurally sound, finding no cracks or weaknesses in its supports.",
+    "choices": ["solid", "noisy", "deep", "musical"],
+    "correct_answer": "solid",
+    "solution_md": "Finding no cracks or weaknesses means the bridge is solid and reliable; 'sound' here means solid. The other choices reflect unrelated senses of 'sound.'",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "No cracks or weaknesses describes the bridge's condition.",
+    "hint2_md": "'Sound' here means in good, firm condition.",
+    "hint3_md": "It is not the 'noise' meaning.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Words in context",
+    "prompt_md": "As used in the following sentence, what does the word \\\"economy\\\" most nearly mean?\\n\\nThe poet was admired for the economy of her language, conveying complex emotions in just a few carefully chosen words.",
+    "choices": ["sparingness", "wealth", "marketplace", "efficiency of trade"],
+    "correct_answer": "sparingness",
+    "solution_md": "Conveying much in 'a few carefully chosen words' describes restraint or sparingness of language. 'Economy' here means thrift/sparingness, not finance.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "She uses very few words to say a lot.",
+    "hint2_md": "'Economy' of language means restraint or thrift.",
+    "hint3_md": "Avoid the financial 'economy' meanings.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "Many people assume that the Great Wall of China is a single, continuous structure. In reality, it is a network of many walls, built by different dynasties over roughly two thousand years, with gaps, branches, and overlapping sections. Some portions are made of stone, others of packed earth, and many have crumbled entirely.\\n\\nWhich choice best describes the main purpose of the text?",
+    "choices": [
+      "To correct a common misconception about the Great Wall.",
+      "To argue that the Great Wall should be restored.",
+      "To compare the Great Wall with other ancient walls.",
+      "To explain how the Great Wall was used in warfare."
+    ],
+    "correct_answer": "To correct a common misconception about the Great Wall.",
+    "solution_md": "The text opens with what people 'assume,' then says 'in reality' it is a network of many walls. Its purpose is to correct that misconception — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Notice the 'assume... in reality' structure.",
+    "hint2_md": "The text replaces a false belief with facts.",
+    "hint3_md": "It doesn't argue for restoration or discuss warfare.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "The first paragraph of the article describes a coastal town thriving on its fishing industry. The second paragraph explains how overfishing gradually emptied the waters. The third paragraph shows the town today, its harbor quiet and its young people leaving for cities.\\n\\nWhich choice best describes the overall structure of the article?",
+    "choices": [
+      "It traces a decline from prosperity to hardship over time.",
+      "It contrasts two towns with opposite economic fortunes.",
+      "It lists unrelated facts about coastal communities.",
+      "It argues that fishing should be banned entirely."
+    ],
+    "correct_answer": "It traces a decline from prosperity to hardship over time.",
+    "solution_md": "The three paragraphs move from thriving, to overfishing, to a quiet emptied town — a chronological decline. The first choice captures this structure.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Track how the town changes across the three paragraphs.",
+    "hint2_md": "The movement is prosperity then decline.",
+    "hint3_md": "Only one town is discussed, so it's not a contrast of two.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "The author begins by acknowledging that solar power once seemed prohibitively expensive. She then presents a series of statistics showing how sharply panel prices have fallen over the past decade. She concludes that solar energy is now competitive with fossil fuels in many regions.\\n\\nWhich choice best describes the main purpose of the text?",
+    "choices": [
+      "To show how changing costs have made solar power viable.",
+      "To warn that solar power remains too costly for most uses.",
+      "To describe the technical workings of a solar panel.",
+      "To recount the history of fossil fuel production."
+    ],
+    "correct_answer": "To show how changing costs have made solar power viable.",
+    "solution_md": "The text moves from 'once expensive' through falling-price statistics to the conclusion that solar is now competitive. Its purpose is to show solar became viable through cost changes — the first choice.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Follow the arc: once costly, prices fell, now competitive.",
+    "hint2_md": "The conclusion drives the purpose.",
+    "hint3_md": "It is not warning against solar or explaining panel mechanics.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "In the passage, the narrator describes her grandmother's hands in minute detail: the calluses earned from decades of farm work, the crooked finger never properly healed, the way they moved deftly while shelling peas. Only at the end does she reveal that these hands are her clearest memory of a woman she lost as a child.\\n\\nWhat is the main rhetorical effect of withholding the final detail until the end?",
+    "choices": [
+      "It gives emotional weight to the physical description that precedes it.",
+      "It suggests that the narrator dislikes her grandmother.",
+      "It indicates that the grandmother is still alive.",
+      "It implies the description was largely invented."
+    ],
+    "correct_answer": "It gives emotional weight to the physical description that precedes it.",
+    "solution_md": "Revealing at the end that these hands are her clearest memory of a lost grandmother recasts the detailed description as a tribute, lending it emotional weight — the first choice.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Consider how the final reveal changes the earlier details.",
+    "hint2_md": "Loss revealed last deepens the emotion of the description.",
+    "hint3_md": "Nothing suggests dislike, survival, or invention.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "The report opens by stating a surprising claim: that planting trees in cities can lower summer temperatures by several degrees. It then explains the mechanism, describing how leaves provide shade and release water vapor that cools the surrounding air. It ends by recommending that cities expand their tree-planting programs.\\n\\nWhich choice best describes the structure of the report?",
+    "choices": [
+      "A claim is stated, explained, and then used to support a recommendation.",
+      "Two competing theories are presented and left unresolved.",
+      "A personal anecdote leads into a broad historical survey.",
+      "A problem is described, but no solution is offered."
+    ],
+    "correct_answer": "A claim is stated, explained, and then used to support a recommendation.",
+    "solution_md": "The report states a claim, explains the cooling mechanism, then recommends more tree planting. The first choice matches this claim-explanation-recommendation structure.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Identify the three moves: claim, explanation, recommendation.",
+    "hint2_md": "The ending gives advice, so a solution is offered.",
+    "hint3_md": "There are no competing theories or anecdotes.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "The essay devotes its first half to praising the convenience of online shopping, listing its speed, variety, and low prices. In the second half, however, the author shifts to examining the hidden costs: shuttered local stores, lost jobs, and the environmental toll of constant shipping.\\n\\nWhich choice best describes the structure of the essay?",
+    "choices": [
+      "It presents benefits and then weighs them against drawbacks.",
+      "It argues that online shopping has no real advantages.",
+      "It compares two different online shopping platforms.",
+      "It traces the historical origins of online commerce."
+    ],
+    "correct_answer": "It presents benefits and then weighs them against drawbacks.",
+    "solution_md": "The first half praises conveniences; the second half ('however') examines hidden costs. The structure presents benefits then drawbacks — the first choice.",
+    "difficulty": "easy", "desmos_recommended": false,
+    "hint1_md": "Note the pivot 'however' between the halves.",
+    "hint2_md": "First benefits, then costs.",
+    "hint3_md": "The essay does grant advantages, so 'no advantages' is wrong.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "The biography's chapter on the inventor's youth lingers on a single childhood episode: dismantling the family clock to see how it worked, then painstakingly reassembling it. The author returns to this image repeatedly in later chapters whenever describing the inventor's approach to engineering problems.\\n\\nWhat is the main purpose of repeatedly returning to the clock image?",
+    "choices": [
+      "To establish a recurring motif that characterizes the inventor's method.",
+      "To suggest that the inventor never solved any real problems.",
+      "To criticize the inventor for damaging family property.",
+      "To imply that the childhood episode was unimportant."
+    ],
+    "correct_answer": "To establish a recurring motif that characterizes the inventor's method.",
+    "solution_md": "By returning to the clock image whenever describing the inventor's approach, the author makes it a motif symbolizing his take-apart-and-rebuild method. The first choice fits.",
+    "difficulty": "hard", "desmos_recommended": false,
+    "hint1_md": "Why repeat the same image across chapters?",
+    "hint2_md": "A repeated image tied to his method is a motif.",
+    "hint3_md": "The repetition signals importance, not criticism.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "The article first defines 'food deserts' as areas with little access to fresh, affordable food. It then provides examples of such neighborhoods, describes the health problems linked to them, and finally outlines several community programs working to address the issue.\\n\\nWhich choice best describes the structure of the article?",
+    "choices": [
+      "It defines a problem, illustrates its effects, and presents responses to it.",
+      "It tells a single family's story from beginning to end.",
+      "It compares food deserts in two different countries.",
+      "It questions whether food deserts truly exist."
+    ],
+    "correct_answer": "It defines a problem, illustrates its effects, and presents responses to it.",
+    "solution_md": "The article defines food deserts, gives examples and health effects, then describes programs addressing them. The first choice matches this definition-effects-responses structure.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "List the article's moves in order.",
+    "hint2_md": "Definition, effects, then solutions.",
+    "hint3_md": "It affirms the problem rather than questioning it.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "The passage opens with a vivid scene of a crowded nineteenth-century train station, full of noise and motion. The author uses this scene not as the subject of the essay but as a way to introduce a broader argument about how railways transformed people's sense of time and distance.\\n\\nWhat is the main purpose of the opening scene?",
+    "choices": [
+      "To draw readers in before introducing the essay's larger argument.",
+      "To provide a complete history of railway construction.",
+      "To argue that train stations were poorly designed.",
+      "To describe the author's personal travel experiences."
+    ],
+    "correct_answer": "To draw readers in before introducing the essay's larger argument.",
+    "solution_md": "The text says the scene is 'not the subject' but a way to introduce a broader argument. Its purpose is to engage readers before the main argument — the first choice.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "The passage states the scene's role explicitly.",
+    "hint2_md": "It is a hook leading to a bigger argument.",
+    "hint3_md": "It is not a full history or a complaint about design.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "RW", "subtopic": "Text structure & purpose",
+    "prompt_md": "Throughout the speech, the mayor repeats the phrase 'We rebuilt this' at the start of each section, before describing a different recovered part of the city: its schools, its parks, its flooded downtown. Each repetition introduces a new example of the community's resilience.\\n\\nWhat is the main rhetorical effect of repeating the phrase 'We rebuilt this'?",
+    "choices": [
+      "It emphasizes the community's collective effort across many areas.",
+      "It signals the mayor's uncertainty about the recovery.",
+      "It lists problems the city has failed to solve.",
+      "It questions whether the rebuilding was worthwhile."
+    ],
+    "correct_answer": "It emphasizes the community's collective effort across many areas.",
+    "solution_md": "The repeated 'We rebuilt this' before each recovered area stresses shared accomplishment and resilience across the city. The first choice captures this effect.",
+    "difficulty": "med", "desmos_recommended": false,
+    "hint1_md": "Consider what the repeated 'We' stresses.",
+    "hint2_md": "Each repetition adds another success.",
+    "hint3_md": "The tone is affirming, not uncertain or critical.",
+    "source_label": "AI Original"
+  }
+]

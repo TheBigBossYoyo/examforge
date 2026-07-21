@@ -1,0 +1,402 @@
+[
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "What is the area of a rectangle with length $8$ and width $5$?",
+    "choices": ["$40$", "$26$", "$13$", "$45$"],
+    "correct_answer": "$40$",
+    "solution_md": "Area $=\\text{length}\\times\\text{width}=8\\times 5=40$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Multiply length by width.", "hint2_md": "$8\\times 5$.", "hint3_md": "$40$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "What is the area of a triangle with base $10$ and height $6$?",
+    "choices": ["$30$", "$60$", "$16$", "$15$"],
+    "correct_answer": "$30$",
+    "solution_md": "Area $=\\tfrac{1}{2}bh=\\tfrac{1}{2}(10)(6)=30$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Use $\\tfrac{1}{2}bh$.", "hint2_md": "$\\tfrac{1}{2}\\times 10\\times 6$.", "hint3_md": "$30$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "What is the area of a circle with radius $3$? (Leave in terms of $\\pi$.)",
+    "choices": ["$9\\pi$", "$6\\pi$", "$3\\pi$", "$12\\pi$"],
+    "correct_answer": "$9\\pi$",
+    "solution_md": "Area $=\\pi r^2=\\pi(3)^2=9\\pi$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Use $\\pi r^2$.", "hint2_md": "$r=3$.", "hint3_md": "$\\pi\\times 9$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "What is the volume of a cube with side length $4$?",
+    "choices": ["$64$", "$16$", "$48$", "$12$"],
+    "correct_answer": "$64$",
+    "solution_md": "Volume $=s^3=4^3=64$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Cube the side length.", "hint2_md": "$4^3$.", "hint3_md": "$64$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "What is the volume of a rectangular box $2\\times 3\\times 5$?",
+    "choices": ["$30$", "$10$", "$25$", "$15$"],
+    "correct_answer": "$30$",
+    "solution_md": "Volume $=lwh=2\\times 3\\times 5=30$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Multiply all three dimensions.", "hint2_md": "$2\\times 3\\times 5$.", "hint3_md": "$30$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "A cylinder has radius $2$ and height $5$. What is its volume? (In terms of $\\pi$.)",
+    "choices": ["$20\\pi$", "$10\\pi$", "$40\\pi$", "$7\\pi$"],
+    "correct_answer": "$20\\pi$",
+    "solution_md": "Volume $=\\pi r^2 h=\\pi(2)^2(5)=20\\pi$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Use $\\pi r^2 h$.", "hint2_md": "$r^2=4$.", "hint3_md": "$\\pi\\times 4\\times 5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "The circumference of a circle is $10\\pi$. What is its radius?",
+    "choices": ["$5$", "$10$", "$2.5$", "$20$"],
+    "correct_answer": "$5$",
+    "solution_md": "Circumference $=2\\pi r=10\\pi$, so $r=5$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Use $C=2\\pi r$.", "hint2_md": "$2\\pi r=10\\pi$.", "hint3_md": "Divide by $2\\pi$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "The area of a square is $49$. What is its perimeter?",
+    "choices": ["$28$", "$14$", "$49$", "$196$"],
+    "correct_answer": "$28$",
+    "solution_md": "Side $=\\sqrt{49}=7$, so perimeter $=4\\times 7=28$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Find the side from the area.", "hint2_md": "$\\sqrt{49}=7$.", "hint3_md": "$4\\times 7$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "A trapezoid has parallel sides $6$ and $10$ and height $4$. What is its area?",
+    "choices": ["$32$", "$40$", "$24$", "$60$"],
+    "correct_answer": "$32$",
+    "solution_md": "Area $=\\tfrac{1}{2}(b_1+b_2)h=\\tfrac{1}{2}(6+10)(4)=\\tfrac{1}{2}(16)(4)=32$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Use $\\tfrac{1}{2}(b_1+b_2)h$.", "hint2_md": "$b_1+b_2=16$.", "hint3_md": "$\\tfrac{1}{2}\\times 16\\times 4$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Area & volume",
+    "prompt_md": "A sphere has radius $3$. What is its volume? (In terms of $\\pi$.)",
+    "choices": ["$36\\pi$", "$27\\pi$", "$12\\pi$", "$9\\pi$"],
+    "correct_answer": "$36\\pi$",
+    "solution_md": "Volume $=\\tfrac{4}{3}\\pi r^3=\\tfrac{4}{3}\\pi(27)=36\\pi$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Use $\\tfrac{4}{3}\\pi r^3$.", "hint2_md": "$r^3=27$.", "hint3_md": "$\\tfrac{4}{3}\\times 27=36$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "Two angles are supplementary and one is $110^\\circ$. What is the other?",
+    "choices": ["$70^\\circ$", "$80^\\circ$", "$90^\\circ$", "$110^\\circ$"],
+    "correct_answer": "$70^\\circ$",
+    "solution_md": "Supplementary angles sum to $180^\\circ$, so the other is $180-110=70^\\circ$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Supplementary angles sum to $180^\\circ$.", "hint2_md": "$180-110$.", "hint3_md": "$70^\\circ$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "Two angles are complementary and one is $35^\\circ$. What is the other?",
+    "choices": ["$55^\\circ$", "$65^\\circ$", "$145^\\circ$", "$45^\\circ$"],
+    "correct_answer": "$55^\\circ$",
+    "solution_md": "Complementary angles sum to $90^\\circ$, so the other is $90-35=55^\\circ$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Complementary angles sum to $90^\\circ$.", "hint2_md": "$90-35$.", "hint3_md": "$55^\\circ$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "Two angles of a triangle are $50^\\circ$ and $60^\\circ$. What is the third angle?",
+    "choices": ["$70^\\circ$", "$80^\\circ$", "$110^\\circ$", "$60^\\circ$"],
+    "correct_answer": "$70^\\circ$",
+    "solution_md": "Triangle angles sum to $180^\\circ$: $180-50-60=70^\\circ$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Triangle angles sum to $180^\\circ$.", "hint2_md": "$50+60=110$.", "hint3_md": "$180-110$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "In an isosceles triangle, the two base angles are equal and the apex angle is $40^\\circ$. What is each base angle?",
+    "choices": ["$70^\\circ$", "$80^\\circ$", "$40^\\circ$", "$50^\\circ$"],
+    "correct_answer": "$70^\\circ$",
+    "solution_md": "The two base angles sum to $180-40=140^\\circ$, so each is $70^\\circ$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Subtract the apex from $180^\\circ$.", "hint2_md": "$180-40=140$.", "hint3_md": "Divide by $2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "When two lines intersect, the angle vertical (opposite) to a $65^\\circ$ angle measures:",
+    "choices": ["$65^\\circ$", "$115^\\circ$", "$25^\\circ$", "$90^\\circ$"],
+    "correct_answer": "$65^\\circ$",
+    "solution_md": "Vertical angles are equal, so the opposite angle is also $65^\\circ$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Vertical angles are congruent.", "hint2_md": "Opposite angles match.", "hint3_md": "$65^\\circ$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "A straight line is divided into two angles. One is $3$ times the other. What is the smaller angle?",
+    "choices": ["$45^\\circ$", "$60^\\circ$", "$30^\\circ$", "$90^\\circ$"],
+    "correct_answer": "$45^\\circ$",
+    "solution_md": "If the smaller is $x$, then $x+3x=180$, so $4x=180$ and $x=45^\\circ$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Angles on a line sum to $180^\\circ$.", "hint2_md": "$x+3x=180$.", "hint3_md": "$4x=180$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "Two parallel lines are cut by a transversal. A pair of corresponding angles are:",
+    "choices": ["Equal", "Supplementary", "Complementary", "Always right angles"],
+    "correct_answer": "Equal",
+    "solution_md": "Corresponding angles formed by a transversal across parallel lines are equal.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Recall parallel-line angle rules.", "hint2_md": "Corresponding angles match.", "hint3_md": "Equal.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "An exterior angle of a triangle equals $120^\\circ$. The two remote interior angles sum to:",
+    "choices": ["$120^\\circ$", "$60^\\circ$", "$180^\\circ$", "$90^\\circ$"],
+    "correct_answer": "$120^\\circ$",
+    "solution_md": "An exterior angle equals the sum of the two remote interior angles, so they sum to $120^\\circ$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Use the exterior angle theorem.", "hint2_md": "Exterior $=$ sum of remote interiors.", "hint3_md": "$120^\\circ$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "Two triangles are similar with ratio $2:3$. If a side of the smaller is $4$, the corresponding side of the larger is:",
+    "choices": ["$6$", "$8$", "$5$", "$9$"],
+    "correct_answer": "$6$",
+    "solution_md": "Corresponding sides scale by $3/2$: $4\\times\\tfrac{3}{2}=6$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Similar triangles scale by the ratio.", "hint2_md": "Multiply by $\\tfrac{3}{2}$.", "hint3_md": "$4\\times 1.5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Lines/angles/triangles",
+    "prompt_md": "The angles of a triangle are in ratio $1:2:3$. What is the largest angle?",
+    "choices": ["$90^\\circ$", "$60^\\circ$", "$30^\\circ$", "$120^\\circ$"],
+    "correct_answer": "$90^\\circ$",
+    "solution_md": "The parts sum to $6$, so one unit $=180/6=30^\\circ$. The largest is $3\\times 30=90^\\circ$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Add the ratio parts: $1+2+3=6$.", "hint2_md": "One unit $=180/6=30^\\circ$.", "hint3_md": "Largest $=3$ units.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "A right triangle has legs $3$ and $4$. What is the length of the hypotenuse?",
+    "choices": ["$5$", "$7$", "$6$", "$\\sqrt{7}$"],
+    "correct_answer": "$5$",
+    "solution_md": "By the Pythagorean theorem, $\\sqrt{3^2+4^2}=\\sqrt{25}=5$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Use $a^2+b^2=c^2$.", "hint2_md": "$9+16=25$.", "hint3_md": "$\\sqrt{25}=5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "In a right triangle, the side opposite the angle $\\theta$ is $3$ and the hypotenuse is $5$. What is $\\sin\\theta$?",
+    "choices": ["$\\tfrac{3}{5}$", "$\\tfrac{4}{5}$", "$\\tfrac{3}{4}$", "$\\tfrac{5}{3}$"],
+    "correct_answer": "$\\tfrac{3}{5}$",
+    "solution_md": "$\\sin\\theta=\\frac{\\text{opposite}}{\\text{hypotenuse}}=\\frac{3}{5}$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "$\\sin=\\frac{\\text{opp}}{\\text{hyp}}$.", "hint2_md": "Opposite $=3$, hypotenuse $=5$.", "hint3_md": "$\\frac{3}{5}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "In a right triangle, the adjacent side to angle $\\theta$ is $4$ and the hypotenuse is $5$. What is $\\cos\\theta$?",
+    "choices": ["$\\tfrac{4}{5}$", "$\\tfrac{3}{5}$", "$\\tfrac{4}{3}$", "$\\tfrac{5}{4}$"],
+    "correct_answer": "$\\tfrac{4}{5}$",
+    "solution_md": "$\\cos\\theta=\\frac{\\text{adjacent}}{\\text{hypotenuse}}=\\frac{4}{5}$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "$\\cos=\\frac{\\text{adj}}{\\text{hyp}}$.", "hint2_md": "Adjacent $=4$, hypotenuse $=5$.", "hint3_md": "$\\frac{4}{5}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "In a right triangle, opposite $=3$ and adjacent $=4$. What is $\\tan\\theta$?",
+    "choices": ["$\\tfrac{3}{4}$", "$\\tfrac{4}{3}$", "$\\tfrac{3}{5}$", "$\\tfrac{5}{4}$"],
+    "correct_answer": "$\\tfrac{3}{4}$",
+    "solution_md": "$\\tan\\theta=\\frac{\\text{opposite}}{\\text{adjacent}}=\\frac{3}{4}$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "$\\tan=\\frac{\\text{opp}}{\\text{adj}}$.", "hint2_md": "Opposite $=3$, adjacent $=4$.", "hint3_md": "$\\frac{3}{4}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "What is $\\sin 30^\\circ$?",
+    "choices": ["$\\tfrac{1}{2}$", "$\\tfrac{\\sqrt{3}}{2}$", "$1$", "$\\tfrac{\\sqrt{2}}{2}$"],
+    "correct_answer": "$\\tfrac{1}{2}$",
+    "solution_md": "$\\sin 30^\\circ=\\tfrac{1}{2}$ is a standard value.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Recall the special angle values.", "hint2_md": "$30^\\circ$ is a standard angle.", "hint3_md": "$\\tfrac{1}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "A right triangle has hypotenuse $13$ and one leg $5$. What is the other leg?",
+    "choices": ["$12$", "$8$", "$\\sqrt{18}$", "$18$"],
+    "correct_answer": "$12$",
+    "solution_md": "$\\sqrt{13^2-5^2}=\\sqrt{169-25}=\\sqrt{144}=12$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Use $c^2-a^2=b^2$.", "hint2_md": "$169-25=144$.", "hint3_md": "$\\sqrt{144}=12$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "In a 45-45-90 right triangle, each leg is $1$. What is the hypotenuse?",
+    "choices": ["$\\sqrt{2}$", "$2$", "$1$", "$\\tfrac{\\sqrt{2}}{2}$"],
+    "correct_answer": "$\\sqrt{2}$",
+    "solution_md": "Hypotenuse $=\\sqrt{1^2+1^2}=\\sqrt{2}$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Apply the Pythagorean theorem.", "hint2_md": "$1^2+1^2=2$.", "hint3_md": "$\\sqrt{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "What is $\\cos 60^\\circ$?",
+    "choices": ["$\\tfrac{1}{2}$", "$\\tfrac{\\sqrt{3}}{2}$", "$1$", "$0$"],
+    "correct_answer": "$\\tfrac{1}{2}$",
+    "solution_md": "$\\cos 60^\\circ=\\tfrac{1}{2}$ is a standard value.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Recall special angle values.", "hint2_md": "$\\cos 60^\\circ=\\sin 30^\\circ$.", "hint3_md": "$\\tfrac{1}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "In a 30-60-90 triangle, the side opposite $30^\\circ$ is $1$. The side opposite $60^\\circ$ is:",
+    "choices": ["$\\sqrt{3}$", "$2$", "$1$", "$\\tfrac{1}{2}$"],
+    "correct_answer": "$\\sqrt{3}$",
+    "solution_md": "In a 30-60-90 triangle the sides are in ratio $1:\\sqrt{3}:2$, so the side opposite $60^\\circ$ is $\\sqrt{3}$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Use the $1:\\sqrt{3}:2$ ratio.", "hint2_md": "Opposite $30^\\circ$ is $1$.", "hint3_md": "Opposite $60^\\circ$ is $\\sqrt{3}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Right-triangle trig",
+    "prompt_md": "If $\\tan\\theta=1$ in a right triangle, then $\\theta$ equals:",
+    "choices": ["$45^\\circ$", "$30^\\circ$", "$60^\\circ$", "$90^\\circ$"],
+    "correct_answer": "$45^\\circ$",
+    "solution_md": "$\\tan 45^\\circ=1$ since the opposite and adjacent sides are equal.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "When are opposite and adjacent equal?", "hint2_md": "That happens at $45^\\circ$.", "hint3_md": "$45^\\circ$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "A circle has radius $7$. What is its diameter?",
+    "choices": ["$14$", "$7$", "$49$", "$3.5$"],
+    "correct_answer": "$14$",
+    "solution_md": "Diameter $=2r=2\\times 7=14$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Diameter is twice the radius.", "hint2_md": "$2\\times 7$.", "hint3_md": "$14$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "What is the circumference of a circle with radius $5$? (In terms of $\\pi$.)",
+    "choices": ["$10\\pi$", "$25\\pi$", "$5\\pi$", "$20\\pi$"],
+    "correct_answer": "$10\\pi$",
+    "solution_md": "Circumference $=2\\pi r=2\\pi(5)=10\\pi$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Use $C=2\\pi r$.", "hint2_md": "$r=5$.", "hint3_md": "$2\\pi\\times 5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "The equation of a circle is $x^2+y^2=16$. What is its radius?",
+    "choices": ["$4$", "$16$", "$8$", "$2$"],
+    "correct_answer": "$4$",
+    "solution_md": "For $x^2+y^2=r^2$, here $r^2=16$, so $r=4$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Compare with $x^2+y^2=r^2$.", "hint2_md": "$r^2=16$.", "hint3_md": "$r=4$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "A circle has center $(2,-3)$ and radius $5$. Which is its equation?",
+    "choices": ["$(x-2)^2+(y+3)^2=25$", "$(x+2)^2+(y-3)^2=25$", "$(x-2)^2+(y-3)^2=5$", "$(x+2)^2+(y+3)^2=5$"],
+    "correct_answer": "$(x-2)^2+(y+3)^2=25$",
+    "solution_md": "The standard form is $(x-h)^2+(y-k)^2=r^2$ with $(h,k)=(2,-3)$ and $r^2=25$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Use $(x-h)^2+(y-k)^2=r^2$.", "hint2_md": "$k=-3$ gives $(y+3)$.", "hint3_md": "$r^2=25$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "A central angle of $90^\\circ$ in a circle subtends an arc that is what fraction of the circumference?",
+    "choices": ["$\\tfrac{1}{4}$", "$\\tfrac{1}{2}$", "$\\tfrac{1}{3}$", "$\\tfrac{1}{8}$"],
+    "correct_answer": "$\\tfrac{1}{4}$",
+    "solution_md": "$\\frac{90}{360}=\\frac{1}{4}$ of the circumference.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Compare the angle to $360^\\circ$.", "hint2_md": "$\\frac{90}{360}$.", "hint3_md": "$\\frac{1}{4}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "The area of a sector with central angle $90^\\circ$ in a circle of radius $4$ is: (In terms of $\\pi$.)",
+    "choices": ["$4\\pi$", "$16\\pi$", "$8\\pi$", "$2\\pi$"],
+    "correct_answer": "$4\\pi$",
+    "solution_md": "Sector area $=\\frac{90}{360}\\pi r^2=\\frac{1}{4}\\pi(16)=4\\pi$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Sector area is a fraction of the circle's area.", "hint2_md": "$\\frac{90}{360}=\\frac{1}{4}$.", "hint3_md": "$\\frac{1}{4}\\times 16\\pi$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "An arc length of a $60^\\circ$ sector in a circle of radius $6$ is: (In terms of $\\pi$.)",
+    "choices": ["$2\\pi$", "$6\\pi$", "$\\pi$", "$12\\pi$"],
+    "correct_answer": "$2\\pi$",
+    "solution_md": "Arc length $=\\frac{60}{360}\\cdot 2\\pi r=\\frac{1}{6}\\cdot 12\\pi=2\\pi$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Arc length is a fraction of the circumference.", "hint2_md": "$\\frac{60}{360}=\\frac{1}{6}$.", "hint3_md": "$\\frac{1}{6}\\times 12\\pi$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "An inscribed angle subtends the same arc as a central angle of $80^\\circ$. What is the inscribed angle?",
+    "choices": ["$40^\\circ$", "$80^\\circ$", "$160^\\circ$", "$20^\\circ$"],
+    "correct_answer": "$40^\\circ$",
+    "solution_md": "An inscribed angle is half the central angle subtending the same arc: $80/2=40^\\circ$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Inscribed angle is half the central angle.", "hint2_md": "$\\frac{80}{2}$.", "hint3_md": "$40^\\circ$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "The area of a circle is $36\\pi$. What is its radius?",
+    "choices": ["$6$", "$36$", "$18$", "$9$"],
+    "correct_answer": "$6$",
+    "solution_md": "$\\pi r^2=36\\pi$ gives $r^2=36$, so $r=6$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Use $A=\\pi r^2$.", "hint2_md": "$r^2=36$.", "hint3_md": "$r=6$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Circles",
+    "prompt_md": "A circle in the $xy$-plane has equation $(x-3)^2+(y+2)^2=25$. What is the length of its diameter?",
+    "choices": ["$10$", "$5$", "$25$", "$50$"],
+    "correct_answer": "$10$",
+    "solution_md": "The equation $(x-h)^2+(y-k)^2=r^2$ has $r^2=25$, so $r=5$ and the diameter is $2r=10$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Compare to $(x-h)^2+(y-k)^2=r^2$.", "hint2_md": "$r^2=25\\Rightarrow r=5$.", "hint3_md": "Diameter $=2r$.",
+    "source_label": "AI Original"
+  }
+]

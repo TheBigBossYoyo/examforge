@@ -1,0 +1,1002 @@
+[
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nUrban green spaces, such as community gardens and parks, provide essential cooling effects in dense cities. By reducing the heat island effect, these areas lower energy costs for surrounding buildings and improve public health. City planners should prioritize the expansion of these spaces to mitigate the rising temperatures caused by climate change.\\n\\nText 2\\nWhile the cooling benefits of urban vegetation are well documented, the implementation of community gardens often leads to unintended consequences. In many cases, these gardens become precursors to gentrification, as they increase property values and displace the very low income residents they were intended to serve. Without strict rent controls, the environmental benefits of greening projects can come at a high social cost.\\n\\nBased on the texts, how would the author of Text 2 most likely respond to the recommendation in Text 1?",
+    "choices": [
+      "By arguing that urban green spaces do not actually provide the cooling benefits described.",
+      "By suggesting that the focus on public health is misplaced in the context of city planning.",
+      "By asserting that the plan should include measures to prevent the displacement of residents.",
+      "By claiming that rising temperatures are a less urgent concern than energy costs."
+    ],
+    "correct_answer": "By asserting that the plan should include measures to prevent the displacement of residents.",
+    "solution_md": "Text 1 recommends expanding green spaces for cooling. Text 2 points out that such projects can cause gentrification and displacement. Therefore, the author of Text 2 would likely respond by emphasizing the need for protections (like rent control) to prevent these negative social outcomes.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Look for the central concern in Text 2 that qualifies the recommendation in Text 1.",
+    "hint2_md": "Text 2 mentions displacement and the need for rent controls.",
+    "hint3_md": "Eliminate choices that deny the cooling benefits, as Text 2 acknowledges they are well documented.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nHistorians often view the 1920s as a decade of reckless consumption and superficial change. The focus on jazz, flappers, and the stock market boom ignores the deep seated agricultural distress and the persistence of traditional values in rural areas. This narrow perspective fails to capture the complexity of the era.\\n\\nText 2\\nThe cultural shifts of the 1920s represented a genuine break from the past. The rise of mass media, the automobile, and new roles for women were not just superficial trends, they were transformative forces that reshaped American identity. Even if these changes were most visible in cities, their influence eventually permeated the entire nation.\\n\\nWhich choice best describes the relationship between the two texts?",
+    "choices": [
+      "Text 2 provides specific evidence that supports the general claims made in Text 1.",
+      "Text 2 offers a more positive interpretation of the cultural changes that Text 1 describes as superficial.",
+      "Text 1 and Text 2 agree that the rural agricultural crisis was the most important event of the decade.",
+      "Text 1 argues that the decade was defined by mass media, while Text 2 focuses on rural distress."
+    ],
+    "correct_answer": "Text 2 offers a more positive interpretation of the cultural changes that Text 1 describes as superficial.",
+    "solution_md": "Text 1 characterizes the changes of the 1920s as superficial and a narrow focus. Text 2 argues that these changes were transformative and reshaped identity, presenting a more positive and significant view of them.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "Compare how each author evaluates the significance of the decade's cultural changes.",
+    "hint2_md": "Text 1 uses words like 'superficial' and 'narrow,' while Text 2 uses 'transformative.'",
+    "hint3_md": "Avoid choices that claim they agree on rural issues, as Text 2 barely mentions them.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nBiologist Elena Rossi argues that the rapid decline of honeybee populations is primarily due to the widespread use of neonicotinoid pesticides. These chemicals impair the bees' ability to navigate and forage, leading to colony collapse. Rossi suggests that a total ban on these pesticides is necessary to save the species.\\n\\nText 2\\nWhile pesticides certainly play a role in bee mortality, focusing solely on neonicotinoids oversimplifies a complex issue. Factors such as habitat loss, climate change, and the spread of Varroa mites are equally significant contributors to the decline. Banning one class of chemicals without addressing these other stressors is unlikely to result in a meaningful recovery.\\n\\nBased on the texts, how would the author of Text 2 most likely characterize the solution proposed in Text 1?",
+    "choices": [
+      "As a vital first step that will solve the majority of the problem.",
+      "As an extreme measure that is not supported by scientific evidence.",
+      "As a potentially helpful but insufficient approach to the crisis.",
+      "As a misguided attempt that ignores the benefits of pesticides."
+    ],
+    "correct_answer": "As a potentially helpful but insufficient approach to the crisis.",
+    "solution_md": "Text 2 acknowledges that pesticides play a role (so it's not totally misguided) but argues that the issue is complex and involves other factors like habitat loss and mites. Therefore, Text 2 would view a pesticide ban as insufficient on its own.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "What does Text 2 say about the complexity of the problem?",
+    "hint2_md": "Text 2 lists multiple causes, suggesting one solution is not enough.",
+    "hint3_md": "Eliminate choices that say the solution is 'extreme' or 'ignores benefits,' as Text 2 doesn't make those points.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nIn the late nineteenth century, the Impressionist movement was met with harsh criticism from the established art academies. Critics mocked the visible brushstrokes and the focus on fleeting light, calling the works unfinished. Today, however, these very qualities are celebrated as the birth of modern art, proving that radical innovation is often misunderstood in its own time.\\n\\nText 2\\nIt is a common myth that Impressionism was universally hated upon its debut. While some traditionalists were vocal in their dissent, many contemporary critics and collectors recognized the skill and vision of artists like Monet and Renoir. The narrative of the struggling, unappreciated artist is a romanticized exaggeration that ignores the movement's early commercial successes.\\n\\nBased on the texts, how would the author of Text 2 most likely respond to the claim in Text 1 that Impressionism was met with harsh criticism?",
+    "choices": [
+      "By agreeing that the criticism was the primary factor in the movement's delay in gaining popularity.",
+      "By arguing that the criticism was actually a deliberate marketing strategy used by the artists.",
+      "By pointing out that the criticism was not as widespread or universal as Text 1 suggests.",
+      "By suggesting that the critics were right to call the works unfinished by the standards of the time."
+    ],
+    "correct_answer": "By pointing out that the criticism was not as widespread or universal as Text 1 suggests.",
+    "solution_md": "Text 1 presents the criticism as a defining, universal reaction. Text 2 calls this a 'myth' and notes that many critics and collectors recognized the artists' skill early on, suggesting the negative reaction was less pervasive than traditionally thought.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "Look for how Text 2 qualifies the 'harsh criticism' mentioned in Text 1.",
+    "hint2_md": "Text 2 uses the word 'myth' regarding the universal hatred of the movement.",
+    "hint3_md": "The author of Text 2 focuses on the existence of positive reception.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nDigital archives have revolutionized historical research by making millions of primary sources accessible to anyone with an internet connection. This democratization of information allows students and amateur historians to conduct high level research that was once reserved for those with the resources to travel to physical archives.\\n\\nText 2\\nThe ease of access provided by digital archives can be deceptive. Without the physical context of a document, its materiality, its smell, its placement within a larger box of records, researchers can lose a sense of the document's history. Furthermore, the digital medium encourages a keyword search approach that can lead to cherry picking evidence rather than engaging in deep, contextual reading.\\n\\nHow would the author of Text 2 most likely respond to the 'democratization of information' mentioned in Text 1?",
+    "choices": [
+      "By arguing that it has made professional historians redundant.",
+      "By celebrating the fact that physical archives are no longer necessary.",
+      "By suggesting that it may lead to a superficial understanding of historical materials.",
+      "By asserting that digital archives are more expensive to maintain than physical ones."
+    ],
+    "correct_answer": "By suggesting that it may lead to a superficial understanding of historical materials.",
+    "solution_md": "Text 2 warns that digital access can be 'deceptive' and lead to 'cherry picking' rather than 'deep, contextual reading.' This implies that the democratization mentioned in Text 1 might come at the cost of depth and accuracy.",
+    "difficulty": "1600level",
+    "desmos_recommended": false,
+    "hint1_md": "Identify the drawbacks Text 2 associates with digital research methods.",
+    "hint2_md": "Text 2 mentions 'cherry picking' and losing 'physical context.'",
+    "hint3_md": "Does Text 2 think the democratization is purely positive? No, it highlights risks of being 'deceptive.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nThe concept of the 'multiverse' is a fascinating consequence of certain theories in physics, such as string theory and cosmic inflation. If these theories are correct, our universe is just one of an infinite number, each with different physical laws. This would explain why our universe seems so perfectly tuned for life, it is simply one of the few where life is possible.\\n\\nText 2\\nMany scientists remain skeptical of the multiverse because it is currently untestable. A theory that can explain any possible observation by simply invoking an infinite number of other universes is not a scientific theory in the traditional sense. Without empirical evidence or a way to falsify the claim, the multiverse remains in the realm of philosophy rather than physics.\\n\\nBased on the texts, how would the author of Text 2 most likely respond to the 'fine tuning' argument presented in Text 1?",
+    "choices": [
+      "By accepting it as the most logical explanation for the existence of life.",
+      "By arguing that the laws of physics are the same in every potential universe.",
+      "By asserting that the argument is based on a theory that lacks empirical validation.",
+      "By suggesting that the fine tuning of our universe is an illusion caused by poor measurements."
+    ],
+    "correct_answer": "By asserting that the argument is based on a theory that lacks empirical validation.",
+    "solution_md": "Text 2's primary criticism is that the multiverse theory is 'untestable' and lacks 'empirical evidence.' Therefore, the author would reject any argument (like the fine-tuning one) that relies on this unproven framework.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "What is the main reason for skepticism in Text 2?",
+    "hint2_md": "Text 2 focuses on the lack of 'empirical evidence' and 'testability.'",
+    "hint3_md": "Look for a choice that mirrors the 'untestable' or 'unfalsifiable' nature of the theory.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nDeep-sea hydrothermal vents are home to unique ecosystems that thrive in complete darkness, relying on chemosynthesis rather than photosynthesis. Studying these organisms provides insights into the limits of life on Earth and helps scientists predict where life might exist on icy moons like Europa or Enceladus.\\n\\nText 2\\nWhile hydrothermal vents are undoubtedly significant, we must be cautious about using them as a direct analog for extraterrestrial life. The chemical compositions of the oceans on Europa and Enceladus are still largely unknown. What works in the volcanic vents of Earth's Pacific Ocean may be entirely impossible in the high pressure, saline environments of a distant moon.\\n\\nWhich choice best describes the relationship between the two texts?",
+    "choices": [
+      "Text 2 challenges the assumption that Earth's deep-sea life can reliably predict conditions on other worlds.",
+      "Text 2 provides additional evidence that life on Europa is likely based on chemosynthesis.",
+      "Text 1 and Text 2 agree that the chemical composition of Europa's ocean is identical to Earth's.",
+      "Text 1 argues that deep-sea vents are the only place where life could exist on icy moons."
+    ],
+    "correct_answer": "Text 2 challenges the assumption that Earth's deep-sea life can reliably predict conditions on other worlds.",
+    "solution_md": "Text 1 suggests that studying Earth's vents helps predict life on icy moons. Text 2 warns against this, noting that we don't know the chemical composition of those moons and that Earth's model might not apply.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "How does Text 2 qualify the optimism of Text 1?",
+    "hint2_md": "Text 2 uses the phrase 'cautious about using them as a direct analog.'",
+    "hint3_md": "The disagreement centers on whether Earthly life is a good model for space life.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nThe 'Great Man' theory of history suggests that the course of human events is determined by the actions of a few extraordinary individuals. According to this view, without figures like Napoleon or Lincoln, the world would be unrecognizable. History is, essentially, the biography of these powerful leaders.\\n\\nText 2\\nHistory is driven by broad social, economic, and technological forces, not by the whims of individuals. Leaders are often just the visible symbols of movements that were already in motion. If Napoleon had not existed, the social tensions of post revolutionary France would likely have produced a similar figure to fulfill the same historical role.\\n\\nBased on the texts, how would the author of Text 2 most likely respond to the claim in Text 1 that history is the 'biography of powerful leaders'?",
+    "choices": [
+      "By agreeing that individuals are the primary drivers of technological change.",
+      "By arguing that those leaders are products of their time rather than creators of it.",
+      "By suggesting that only certain leaders, like Lincoln, truly changed history.",
+      "By claiming that the biographies of ordinary people are more important than those of leaders."
+    ],
+    "correct_answer": "By arguing that those leaders are products of their time rather than creators of it.",
+    "solution_md": "Text 2 argues that 'broad social, economic, and technological forces' drive history and that leaders are just 'symbols of movements.' This directly counters Text 1's idea that leaders create history.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "What does Text 2 say about the role of individuals in history?",
+    "hint2_md": "Text 2 suggests that if one leader didn't exist, another would have taken their place due to social forces.",
+    "hint3_md": "The focus is on the 'forces' versus the 'individuals.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nRestoring apex predators, such as wolves, to their natural habitats can trigger a 'trophic cascade' that benefits the entire ecosystem. By controlling herbivore populations, predators allow vegetation to recover, which in turn provides habitat for birds, beavers, and other species. These efforts are essential for biodiversity.\\n\\nText 2\\nThe impact of reintroducing apex predators is often exaggerated. In many ecosystems, the relationships between species are too complex to be governed by a single predator. Factors like soil quality, water availability, and local climate have a much greater influence on vegetation than the presence or absence of wolves.\\n\\nBased on the texts, how would the author of Text 2 most likely character the 'trophic cascade' described in Text 1?",
+    "choices": [
+      "As a scientifically proven law that applies to all environments.",
+      "As a minor phenomenon that is less important than abiotic factors.",
+      "As a dangerous process that can lead to the extinction of herbivores.",
+      "As the primary reason why biodiversity has increased in recent years."
+    ],
+    "correct_answer": "As a minor phenomenon that is less important than abiotic factors.",
+    "solution_md": "Text 2 argues that the impact is 'exaggerated' and that factors like 'soil quality' and 'water' (abiotic factors) have a 'much greater influence' than predators. This minimizes the importance of the trophic cascade.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "What factors does Text 2 prioritize over the predator's role?",
+    "hint2_md": "Soil, water, and climate are cited as more influential.",
+    "hint3_md": "The word 'exaggerated' in Text 2 is a key indicator of the author's stance.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Cross-text connections",
+    "prompt_md": "Text 1\\nPsychologist Sarah Jenkins argues that 'multitasking' is a myth. The human brain cannot focus on two complex tasks simultaneously, instead, it rapidly switches between them. This switching cost reduces efficiency and increases the likelihood of errors. To be truly productive, one must focus on a single task at a time.\\n\\nText 2\\nWhile deep focus is necessary for certain types of work, many modern jobs require a degree of 'attentional flexibility.' The ability to monitor multiple streams of information and respond to changing priorities is a skill in itself. In fast paced environments, those who can manage multiple tasks effectively often outperform those who can only focus on one thing.\\n\\nWhich choice best describes the relationship between the two texts?",
+    "choices": [
+      "Text 2 agrees with Text 1 that multitasking increases errors but argues it is still necessary.",
+      "Text 2 challenges the idea that focusing on a single task is always the most effective strategy.",
+      "Text 1 provides a theoretical framework that explains the successes described in Text 2.",
+      "Text 1 and Text 2 both recommend that workers ignore digital distractions."
+    ],
+    "correct_answer": "Text 2 challenges the idea that focusing on a single task is always the most effective strategy.",
+    "solution_md": "Text 1 claims one 'must focus on a single task' for productivity. Text 2 counters this by arguing that 'attentional flexibility' and managing multiple tasks is a skill that can lead to better performance in certain environments.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "Look for the disagreement on what constitutes the 'most effective strategy.'",
+    "hint2_md": "Text 1 says 'focus on a single task,' while Text 2 says 'manage multiple tasks effectively.'",
+    "hint3_md": "Text 2 uses the term 'attentional flexibility' as a positive counterpoint to Text 1's focus.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   The Venus flytrap (Dionaea muscipula) is a carnivorous plant native to the wetlands of North and South Carolina.\\n*   It captures its prey using specialized leaves that act as a trap.\\n*   When an insect touches the sensitive hairs on the leaf, the trap snaps shut in less than a second.\\n*   The plant then secretes enzymes to digest the insect and absorb its nutrients.\\n*   This allows the Venus flytrap to survive in nutrient poor soil where other plants struggle.\\n\\nThe student wants to emphasize how the Venus flytrap's physical mechanisms allow it to thrive in its environment. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "Native to the Carolinas, the Venus flytrap is a unique carnivorous plant found in wetlands.",
+      "By snapping its specialized leaves shut on insects and digesting them with enzymes, the Venus flytrap obtains the nutrients it needs to survive in poor soil.",
+      "The Venus flytrap has sensitive hairs on its leaves that trigger a trap when touched by an insect.",
+      "In nutrient poor wetlands, the Venus flytrap captures prey because it cannot get enough nutrients from the soil alone."
+    ],
+    "correct_answer": "By snapping its specialized leaves shut on insects and digesting them with enzymes, the Venus flytrap obtains the nutrients it needs to survive in poor soil.",
+    "solution_md": "The goal is to emphasize how physical mechanisms (snapping leaves, enzymes) allow it to thrive in its environment (nutrient poor soil). Choice B connects the mechanism directly to the environmental survival.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Identify the 'physical mechanisms' and the 'environment' in the notes.",
+    "hint2_md": "Mechanism: snapping leaves, enzymes. Environment: nutrient poor soil.",
+    "hint3_md": "Choose the option that links these two specific elements together.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   The Harlem Renaissance was a cultural and intellectual movement in the 1920s.\\n*   It was centered in the Harlem neighborhood of New York City.\\n*   Key figures included Langston Hughes (poetry), Zora Neale Hurston (literature), and Duke Ellington (jazz).\\n*   The movement celebrated African American heritage and challenged racial stereotypes through art.\\n*   It had a profound impact on later civil rights movements.\\n\\nThe student wants to provide an overview of the movement's artistic diversity and its social purpose. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "Centered in New York in the 1920s, the Harlem Renaissance was a movement that later influenced civil rights.",
+      "The Harlem Renaissance featured artists like Langston Hughes and Duke Ellington, who celebrated African American heritage and challenged stereotypes.",
+      "Through poetry, literature, and jazz, the Harlem Renaissance used diverse art forms to celebrate African American culture and confront racial prejudice.",
+      "Langston Hughes and Zora Neale Hurston were two of the most famous writers of the Harlem Renaissance cultural movement."
+    ],
+    "correct_answer": "Through poetry, literature, and jazz, the Harlem Renaissance used diverse art forms to celebrate African American culture and confront racial prejudice.",
+    "solution_md": "The goal is to show artistic diversity (poetry, literature, jazz) and social purpose (celebrating culture, confronting prejudice). Choice C covers both accurately.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Find the notes that list different art forms and the notes that explain 'why' they did it.",
+    "hint2_md": "Diversity: Hughes, Hurston, Ellington. Purpose: celebrate heritage, challenge stereotypes.",
+    "hint3_md": "Look for the most comprehensive summary of these specific points.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   Exoplanets are planets that orbit stars outside our solar system.\\n*   The Transit Method is a common technique used to find exoplanets.\\n*   It involves monitoring a star's brightness over time.\\n*   When a planet passes in front of the star, it blocks a small amount of light, causing a dip in brightness.\\n*   The size and duration of the dip help scientists determine the planet's size and orbital period.\\n\\nThe student wants to explain how the Transit Method works to a general audience. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "Scientists use the Transit Method to find exoplanets, which are planets located outside our solar system.",
+      "By measuring how a star's light dims when a planet passes in front of it, the Transit Method allows scientists to calculate the planet's size.",
+      "The Transit Method is the most effective way to find planets that orbit stars other than the sun.",
+      "Monitoring a star's brightness is essential for determining the orbital period of distant exoplanets in the galaxy."
+    ],
+    "correct_answer": "By measuring how a star's light dims when a planet passes in front of it, the Transit Method allows scientists to calculate the planet's size.",
+    "solution_md": "The goal is to explain 'how it works.' Choice B describes the mechanism (measuring light dimming as a planet passes) and the result (calculating size).",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "Look for the sequence of events in the Transit Method.",
+    "hint2_md": "Planet passes -> light dims -> scientists measure dip.",
+    "hint3_md": "Find the choice that captures this 'cause and effect' clearly.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   Ada Lovelace was a nineteenth century mathematician.\\n*   She worked with Charles Babbage on his proposed mechanical computer, the Analytical Engine.\\n*   Lovelace wrote an algorithm for the machine to calculate Bernoulli numbers.\\n*   This algorithm is considered the first computer program ever written.\\n*   She envisioned that computers could one day create music and art, not just do math.\\n\\nThe student wants to highlight Lovelace's foresight regarding the potential of computing. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "Ada Lovelace, a mathematician who worked with Charles Babbage, wrote the first computer program in history.",
+      "Lovelace is famous for writing an algorithm to calculate Bernoulli numbers for the Analytical Engine.",
+      "Beyond writing the first computer program, Lovelace remarkably predicted that computers would eventually be used for creative tasks like music and art.",
+      "As a nineteenth century mathematician, Ada Lovelace helped develop the early concepts of mechanical computing."
+    ],
+    "correct_answer": "Beyond writing the first computer program, Lovelace remarkably predicted that computers would eventually be used for creative tasks like music and art.",
+    "solution_md": "The goal is to highlight 'foresight' (predicting the future). Choice C mentions her prediction about music and art, which demonstrates her vision beyond the technology of her time.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Which note describes Lovelace thinking about the future possibilities of computers?",
+    "hint2_md": "The note about music and art is the key to her 'foresight.'",
+    "hint3_md": "Look for the choice that emphasizes her 'vision' or 'prediction.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   The Great Barrier Reef is the world's largest coral reef system.\\n*   It is located in the Coral Sea, off the coast of Queensland, Australia.\\n*   The reef is composed of over 2,900 individual reefs and 900 islands.\\n*   Climate change has led to increased water temperatures, causing coral bleaching.\\n*   Bleaching occurs when corals expel the algae living in their tissues, turning them white and making them vulnerable to disease.\\n\\nThe student wants to explain the cause and effect of coral bleaching on the reef. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "The Great Barrier Reef, located off the coast of Australia, consists of thousands of individual reefs and islands.",
+      "Increased water temperatures from climate change cause corals to expel their algae, resulting in bleaching that leaves the reef white and vulnerable.",
+      "Coral bleaching is a major threat to the world's largest reef system, which is found in the Coral Sea.",
+      "When corals turn white, it is because they have been affected by climate change and are now susceptible to various diseases."
+    ],
+    "correct_answer": "Increased water temperatures from climate change cause corals to expel their algae, resulting in bleaching that leaves the reef white and vulnerable.",
+    "solution_md": "The goal is to explain 'cause and effect' of bleaching. Choice B correctly identifies the cause (increased temperatures) and the effect (expelling algae, turning white, vulnerability).",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Identify the chain of events that leads to coral bleaching.",
+    "hint2_md": "Climate change -> warmer water -> algae expelled -> white coral.",
+    "hint3_md": "Select the choice that best explains this sequence.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   The Voyager 1 spacecraft was launched by NASA in 1977.\\n*   Its primary mission was to fly by Jupiter and Saturn.\\n*   In 2012, it became the first human made object to enter interstellar space.\\n*   It carries a Golden Record containing sounds and images from Earth.\\n*   The record is intended as a message to any extraterrestrial life that might find it.\\n\\nThe student wants to emphasize the dual nature of the Voyager 1 mission as both a scientific and a communicative endeavor. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "Launched in 1977, Voyager 1 successfully entered interstellar space in 2012 after visiting Jupiter and Saturn.",
+      "Voyager 1 was designed to study the outer planets of our solar system using advanced scientific instruments.",
+      "While Voyager 1 conducted scientific flybys of Jupiter and Saturn, it also carries a Golden Record meant to communicate with extraterrestrial life.",
+      "The Golden Record on Voyager 1 contains images and sounds from Earth to show aliens what our planet is like."
+    ],
+    "correct_answer": "While Voyager 1 conducted scientific flybys of Jupiter and Saturn, it also carries a Golden Record meant to communicate with extraterrestrial life.",
+    "solution_md": "The goal is to show the 'dual nature' (scientific and communicative). Choice C contrasts the scientific flybys with the communicative Golden Record.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "Find one note about science and one note about communication.",
+    "hint2_md": "Science: flybys of Jupiter/Saturn. Communication: Golden Record for aliens.",
+    "hint3_md": "The word 'While' or 'In addition' can help signal a dual purpose.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   Manga are comics or graphic novels originating from Japan.\\n*   They are read from right to left, following traditional Japanese writing conventions.\\n*   The medium covers a wide range of genres, including action, romance, and horror.\\n*   Tezuka Osamu is often called the 'God of Manga' for his influence on the art style.\\n*   Manga has become a global phenomenon, with millions of fans outside of Japan.\\n\\nThe student wants to emphasize the global reach of Manga despite its specific cultural origins. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "Manga, which originated in Japan and follows traditional right to left reading, has now gained millions of fans worldwide.",
+      "Traditional Japanese writing conventions mean that Manga is read from right to left, unlike Western comics.",
+      "Tezuka Osamu was a key figure in developing the art style of Manga, which is now popular in many genres.",
+      "Although Manga covers genres like horror and action, it is most famous for its unique Japanese origins."
+    ],
+    "correct_answer": "Manga, which originated in Japan and follows traditional right to left reading, has now gained millions of fans worldwide.",
+    "solution_md": "The goal is to show 'global reach' (millions of fans worldwide) despite 'cultural origins' (originated in Japan, right to left reading). Choice A combines these elements.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Identify the origin details and the popularity details.",
+    "hint2_md": "Origin: Japan, right-to-left. Reach: global phenomenon, millions of fans.",
+    "hint3_md": "Look for a sentence that bridges the 'local' start and 'global' current status.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   The Library of Alexandria was one of the largest and most significant libraries of the ancient world.\\n*   It was located in Egypt and founded in the third century BCE.\\n*   The library aimed to collect all the world's knowledge in the form of papyrus scrolls.\\n*   It served as a major center for scholarship and scientific research.\\n*   The library was eventually destroyed, leading to the loss of countless irreplaceable works.\\n\\nThe student wants to highlight the library's ambitious goal and the impact of its destruction. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "Founded in Egypt, the Library of Alexandria was a major center for scholars to conduct research on papyrus scrolls.",
+      "The Library of Alexandria ambitiously sought to collect all human knowledge, but its eventual destruction resulted in the loss of many unique works.",
+      "As one of the largest libraries in the ancient world, the Library of Alexandria contained thousands of scrolls before it was destroyed.",
+      "The loss of irreplaceable works was a tragedy that occurred when the Library of Alexandria was burned in ancient times."
+    ],
+    "correct_answer": "The Library of Alexandria ambitiously sought to collect all human knowledge, but its eventual destruction resulted in the loss of many unique works.",
+    "solution_md": "The goal is to show the 'ambitious goal' (collect all knowledge) and the 'impact of destruction' (loss of unique works). Choice B covers both specific requirements.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Find the notes that describe 'what they wanted to do' and 'what happened when it was gone.'",
+    "hint2_md": "Goal: collect all world's knowledge. Impact: loss of irreplaceable works.",
+    "hint3_md": "The choice should connect the grand vision to the tragic end.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   Graphene is a single layer of carbon atoms arranged in a hexagonal lattice.\\n*   It is incredibly strong, yet flexible and lightweight.\\n*   Graphene is an excellent conductor of heat and electricity.\\n*   Potential applications include faster electronics, stronger materials, and better batteries.\\n*   Producing high quality graphene at a large scale remains a major challenge for engineers.\\n\\nThe student wants to contrast graphene's potential with the current difficulty of using it. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "Graphene is a lightweight carbon material that is stronger than steel and conducts electricity very well.",
+      "Engineers are excited about graphene because it could lead to better batteries and faster electronics.",
+      "Although graphene has transformative potential for electronics and materials, large scale production of the material is still difficult to achieve.",
+      "Because it is a single layer of atoms, graphene is both flexible and strong, making it ideal for new technologies."
+    ],
+    "correct_answer": "Although graphene has transformative potential for electronics and materials, large scale production of the material is still difficult to achieve.",
+    "solution_md": "The goal is to 'contrast' (potential vs difficulty). Choice C uses 'Although' to set up the contrast between its 'transformative potential' and the 'difficulty' of production.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Look for the word that signals a contrast, like 'although' or 'however.'",
+    "hint2_md": "Contrast: great applications vs production challenges.",
+    "hint3_md": "Make sure both the 'good' and the 'bad' aspects are in the final choice.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Rhetorical synthesis",
+    "prompt_md": "While researching a topic, a student has taken the following notes:\\n\\n*   The Rosetta Stone is a granodiorite stele discovered in 1799.\\n*   It features the same decree written in three scripts: Ancient Egyptian hieroglyphs, Demotic script, and Ancient Greek.\\n*   Because scholars could already read Ancient Greek, the stone provided the key to deciphering hieroglyphs.\\n*   Thomas Young and Jean Francois Champollion were the primary researchers who cracked the code.\\n*   The stone is currently housed in the British Museum.\\n\\nThe student wants to emphasize the scientific importance of the Rosetta Stone. Which choice most effectively uses information from the given notes to accomplish this goal?",
+    "choices": [
+      "Discovered in 1799 and now in the British Museum, the Rosetta Stone contains writing in three different scripts.",
+      "By providing a Greek translation of Egyptian hieroglyphs, the Rosetta Stone enabled scholars to finally decipher a previously lost language.",
+      "Thomas Young and Jean Francois Champollion used their knowledge of Ancient Greek to study the Rosetta Stone.",
+      "The Rosetta Stone is a large piece of rock that features a decree written by ancient priests in three scripts."
+    ],
+    "correct_answer": "By providing a Greek translation of Egyptian hieroglyphs, the Rosetta Stone enabled scholars to finally decipher a previously lost language.",
+    "solution_md": "The goal is to show 'scientific importance.' Choice B explains how it was used to 'decipher a previously lost language,' which is its primary importance to history and linguistics.",
+    "difficulty": "1600level",
+    "desmos_recommended": false,
+    "hint1_md": "What was the result of discovering the Rosetta Stone?",
+    "hint2_md": "Deciphering hieroglyphs is the key scientific achievement.",
+    "hint3_md": "Look for the choice that explains 'why' it matters to scholars.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "Many species of octopuses are known for their remarkable ability to camouflage. They can change not only their color but also the texture of their skin to match their surroundings perfectly. [BLANK], some researchers have observed octopuses mimicking the shapes of rocks or coral to further evade predators.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "In contrast",
+      "Furthermore",
+      "Nevertheless",
+      "Conversely"
+    ],
+    "correct_answer": "Furthermore",
+    "solution_md": "The passage discusses one aspect of camouflage (color and texture change) and then adds another related behavior (mimicking shapes). 'Furthermore' is used to add information that supports or extends the previous point.",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "Is the second sentence adding information or contradicting the first?",
+    "hint2_md": "It's adding another way they camouflage.",
+    "hint3_md": "Choose the addition transition.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "The government's new policy was intended to reduce carbon emissions by providing subsidies for electric vehicles. [BLANK], recent data suggests that the lack of charging infrastructure has prevented many citizens from making the switch, leaving emission levels largely unchanged.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "However",
+      "Similarly",
+      "Therefore",
+      "For instance"
+    ],
+    "correct_answer": "However",
+    "solution_md": "The first sentence describes a goal (reducing emissions). The second sentence describes a failure to meet that goal (emissions unchanged). This requires a contrast transition like 'However.'",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Do the two sentences agree or disagree on the outcome of the policy?",
+    "hint2_md": "They disagree: the goal was reduction, but the result was no change.",
+    "hint3_md": "Contrast transitions are needed for shifts in outcome.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "Early astronomers believed that the Earth was the center of the universe, a view known as the geocentric model. [BLANK], the work of Nicolaus Copernicus and Galileo Galilei provided evidence for the heliocentric model, which places the Sun at the center.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "As a result",
+      "In addition",
+      "Subsequently",
+      "Specifically"
+    ],
+    "correct_answer": "Subsequently",
+    "solution_md": "The passage describes an early belief and then moves to later work that changed that belief. 'Subsequently' correctly signals the chronological progression and the shift in scientific understanding.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "How does the timing of the two events relate?",
+    "hint2_md": "One happened after the other.",
+    "hint3_md": "'Subsequently' means 'afterward.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "The chef insisted on using only the freshest, locally sourced ingredients in every dish. [BLANK], he visited the farmer's market every morning to personally select the produce and meat for the day's menu.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "Consequently",
+      "Nevertheless",
+      "Regardless",
+      "Alternatively"
+    ],
+    "correct_answer": "Consequently",
+    "solution_md": "The first sentence states a principle (using fresh ingredients). The second sentence describes an action taken because of that principle (visiting the market). 'Consequently' shows this cause-and-effect relationship.",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "Is the second sentence an example of the first, or a result of it?",
+    "hint2_md": "It's a result of the chef's insistence.",
+    "hint3_md": "'Consequently' links a cause to its effect.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "In his latest novel, the author explores the themes of isolation and memory in a post apocalyptic setting. [BLANK], he uses a non linear narrative structure to mirror the fragmented thoughts of the protagonist.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "By contrast",
+      "Moreover",
+      "In summary",
+      "Granted"
+    ],
+    "correct_answer": "Moreover",
+    "solution_md": "The passage lists one feature of the novel (themes) and then another (narrative structure). 'Moreover' is an addition transition that fits here.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Does the second sentence contradict or expand on the first?",
+    "hint2_md": "It adds more detail about the book's style.",
+    "hint3_md": "Use an addition transition like 'Moreover' or 'Furthermore.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "The marathon was incredibly challenging, with steep hills and high humidity that exhausted many of the participants. [BLANK], nearly all of the runners who started the race managed to cross the finish line.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "Thus",
+      "Specifically",
+      "Even so",
+      "Likewise"
+    ],
+    "correct_answer": "Even so",
+    "solution_md": "The first sentence describes difficult conditions that might lead one to expect a low completion rate. The second sentence shows a high completion rate despite those conditions. 'Even so' is a contrast transition that fits this 'despite' context.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "What is the expected outcome of a difficult race?",
+    "hint2_md": "Many people quitting.",
+    "hint3_md": "Since they didn't quit, use a contrast word like 'Even so' or 'Nevertheless.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "Research has shown that students who participate in music programs often perform better in mathematics and science. [BLANK], learning to read music and play an instrument develops spatial temporal reasoning skills that are crucial for understanding complex scientific concepts.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "Instead",
+      "Indeed",
+      "However",
+      "Still"
+    ],
+    "correct_answer": "Indeed",
+    "solution_md": "The first sentence makes a general claim. The second sentence provides a more detailed explanation or reinforcement of that claim. 'Indeed' is used to emphasize or further support a previous statement.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "How does the second sentence relate to the claim in the first?",
+    "hint2_md": "It explains why the claim is true.",
+    "hint3_md": "'Indeed' acts as an emphatic connector for supporting details.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "The company decided to implement a four day work week in an attempt to improve employee morale and productivity. [BLANK], the results were overwhelmingly positive, with staff reporting higher job satisfaction and no decline in overall output.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "Ultimately",
+      "Conversely",
+      "Otherwise",
+      "For instance"
+    ],
+    "correct_answer": "Ultimately",
+    "solution_md": "The passage describes an action and its final result. 'Ultimately' is a transition that signals the final outcome or conclusion of a process.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Is the second sentence the result of the experiment described in the first?",
+    "hint2_md": "Yes, it shows the end result.",
+    "hint3_md": "'Ultimately' works well for describing the final outcome.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "Some historians argue that the industrial revolution was the most significant event in modern history. [BLANK], others point to the invention of the printing press as the true turning point that made all subsequent progress possible.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "Therefore",
+      "Meanwhile",
+      "Accordingly",
+      "Instead"
+    ],
+    "correct_answer": "Meanwhile",
+    "solution_md": "The passage presents two different viewpoints held by different groups of people. 'Meanwhile' can be used to contrast two simultaneous but differing perspectives.",
+    "difficulty": "1600level",
+    "desmos_recommended": false,
+    "hint1_md": "Are these two views happening at the same time in the field of history?",
+    "hint2_md": "Yes, they are competing theories.",
+    "hint3_md": "'Meanwhile' can introduce a different, concurrent viewpoint.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Transitions",
+    "prompt_md": "The architect wanted the building to blend in with its natural surroundings. [BLANK], she chose to use local stone and wood for the exterior and included large windows to reflect the landscape.\\n\\nWhich choice completes the passage with the most logical transition?",
+    "choices": [
+      "To that end",
+      "Regardless",
+      "Nonetheless",
+      "On the other hand"
+    ],
+    "correct_answer": "To that end",
+    "solution_md": "The first sentence describes a goal. The second sentence describes the actions taken to achieve that goal. 'To that end' is a transition that specifically links a goal to the method used to reach it.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "What is the relationship between the architect's goal and her choice of materials?",
+    "hint2_md": "The materials are the way she achieves the goal.",
+    "hint3_md": "'To that end' means 'to achieve that specific goal.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "The scientist spent months gathering data from the remote island [BLANK] her findings were finally published in a prestigious journal last week.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      ";",
+      ",",
+      ":",
+      "and,"
+    ],
+    "correct_answer": ";",
+    "solution_md": "The passage consists of two independent clauses: 'The scientist spent months gathering data from the remote island' and 'her findings were finally published...' An independent clause can be joined to another independent clause by a semicolon.",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "Can both parts of the sentence stand alone as full sentences?",
+    "hint2_md": "Yes, they are both independent clauses.",
+    "hint3_md": "A semicolon or a comma plus a conjunction is needed between independent clauses.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "The team had one goal in mind [BLANK] to win the championship for the first time in the school's history.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      ":",
+      ";",
+      ",",
+      "!"
+    ],
+    "correct_answer": ":",
+    "solution_md": "A colon is used to introduce a list, a quote, or an explanation. In this case, 'to win the championship...' explains what the 'one goal' was. The part before the colon is an independent clause.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Does the second part of the sentence explain the first part?",
+    "hint2_md": "Yes, it defines the 'one goal.'",
+    "hint3_md": "Colons are used to introduce explanations or definitions.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "Although the hike was [BLANK] the view from the summit was worth every bit of effort.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      "exhausting,",
+      "exhausting;",
+      "exhausting:",
+      "exhausting"
+    ],
+    "correct_answer": "exhausting,",
+    "solution_md": "The sentence begins with a dependent clause ('Although the hike was exhausting'). When a dependent clause comes before an independent clause, it must be followed by a comma.",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "Is the first part of the sentence a complete thought?",
+    "hint2_md": "No, 'Although the hike was exhausting' is a dependent clause.",
+    "hint3_md": "Use a comma after an introductory dependent clause.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "The exhibition featured several famous [BLANK] however, the most popular piece was by a relatively unknown artist.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      "painters;",
+      "painters,",
+      "painters:",
+      "painters"
+    ],
+    "correct_answer": "painters;",
+    "solution_md": "This is a case of joining two independent clauses with a conjunctive adverb ('however'). The correct structure is: [Independent Clause]; [Conjunctive Adverb], [Independent Clause].",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Look at the word 'however.' How is it used to connect two full thoughts?",
+    "hint2_md": "It needs a semicolon before it and a comma after it when it starts a new clause.",
+    "hint3_md": "Check the punctuation before 'however.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "The novel is set in the fictional town of [BLANK] which is based on the author's childhood home in Maine.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      "Oakhaven,",
+      "Oakhaven;",
+      "Oakhaven:",
+      "Oakhaven"
+    ],
+    "correct_answer": "Oakhaven,",
+    "solution_md": "The phrase 'which is based on...' is a non-restrictive relative clause. It provides extra information but is not essential to the core meaning of the sentence. Non-restrictive clauses must be set off by commas.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Does the part starting with 'which' give essential or extra information?",
+    "hint2_md": "It's extra information about the town.",
+    "hint3_md": "Non-essential (non-restrictive) clauses need a comma before them.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "The report identified three main areas for [BLANK] infrastructure, education, and healthcare.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      "improvement:",
+      "improvement;",
+      "improvement,",
+      "improvement"
+    ],
+    "correct_answer": "improvement:",
+    "solution_md": "The list of 'infrastructure, education, and healthcare' explains or elaborates on the 'three main areas.' A colon is the correct way to introduce this list after an independent clause.",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "Is the sentence introducing a list?",
+    "hint2_md": "Yes, it lists three specific areas.",
+    "hint3_md": "Use a colon to introduce a list after a complete sentence.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "Many people enjoy traveling [BLANK] because it allows them to experience different cultures and traditions.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      "abroad",
+      "abroad,",
+      "abroad;",
+      "abroad:"
+    ],
+    "correct_answer": "abroad",
+    "solution_md": "The word 'because' starts a dependent clause that follows an independent clause. In most cases, a comma is not used before 'because' unless it is necessary for clarity or to avoid ambiguity. Here, no punctuation is needed.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Do you usually put a comma before 'because'?",
+    "hint2_md": "Only if the sentence is very long or confusing.",
+    "hint3_md": "Here, the connection is direct and doesn't need a break.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "The project was a collaborative [BLANK] involving architects, engineers, and environmental consultants.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      "effort,",
+      "effort;",
+      "effort:",
+      "effort"
+    ],
+    "correct_answer": "effort,",
+    "solution_md": "The phrase 'involving architects, engineers, and environmental consultants' is a participial phrase that provides additional information about the 'collaborative effort.' It should be set off with a comma.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Is the phrase starting with 'involving' a full sentence?",
+    "hint2_md": "No, it's a modifier describing the 'effort.'",
+    "hint3_md": "Use a comma to separate a non-essential modifying phrase from the main clause.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "It was a cold, rainy [BLANK] nevertheless, the outdoor concert went on as scheduled.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      "night;",
+      "night,",
+      "night:",
+      "night"
+    ],
+    "correct_answer": "night;",
+    "solution_md": "Similar to the 'however' example, 'nevertheless' is a conjunctive adverb connecting two independent clauses. A semicolon is required before it.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Identify the two independent clauses in the sentence.",
+    "hint2_md": "'It was a cold night' and 'the outdoor concert went on.'",
+    "hint3_md": "Use a semicolon to join them when a word like 'nevertheless' is used.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Boundaries (punctuation)",
+    "prompt_md": "The company relocated its headquarters to [BLANK] a city known for its vibrant tech scene and highly skilled workforce.\\n\\nWhich choice completes the passage with the most logical punctuation?",
+    "choices": [
+      "Austin,",
+      "Austin;",
+      "Austin:",
+      "Austin"
+    ],
+    "correct_answer": "Austin,",
+    "solution_md": "The phrase 'a city known for...' is an appositive that renames or explains 'Austin.' Appositives are typically set off by commas.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "Does the second part of the sentence describe 'Austin'?",
+    "hint2_md": "Yes, it's a noun phrase describing the city.",
+    "hint3_md": "Commas are used for appositives that provide extra information.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "Neither the lead singer nor the band members [BLANK] prepared for the sudden downpour during the outdoor festival.\\n\\nWhich choice completes the passage with the most logical verb form?",
+    "choices": [
+      "was",
+      "were",
+      "has been",
+      "is"
+    ],
+    "correct_answer": "were",
+    "solution_md": "In a 'neither/nor' construction, the verb must agree with the subject closest to it. 'Band members' is plural, so the plural verb 'were' is correct.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Identify the two subjects in the 'neither/nor' phrase.",
+    "hint2_md": "Singer (singular) and members (plural).",
+    "hint3_md": "The verb should agree with 'band members' because it is closer.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "The committee [BLANK] its final report by the end of the month, provided that all members submit their revisions on time.\\n\\nWhich choice completes the passage with the most logical verb form?",
+    "choices": [
+      "will have finished",
+      "finishes",
+      "finished",
+      "is finishing"
+    ],
+    "correct_answer": "will have finished",
+    "solution_md": "The sentence describes an action that will be completed by a specific point in the future ('by the end of the month'). The future perfect tense ('will have finished') is used for this purpose.",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Is the action happening now, in the past, or in the future?",
+    "hint2_md": "Future, specifically by a certain deadline.",
+    "hint3_md": "Future perfect tense is used for actions completed by a future time.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "Each of the participants in the study [BLANK] required to complete a detailed questionnaire about their daily habits.\\n\\nWhich choice completes the passage with the most logical verb form?",
+    "choices": [
+      "was",
+      "were",
+      "are",
+      "being"
+    ],
+    "correct_answer": "was",
+    "solution_md": "The subject of the sentence is 'Each,' which is a singular indefinite pronoun. The phrase 'of the participants' is a prepositional phrase and does not change the number of the subject. Therefore, a singular verb ('was') is needed.",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "What is the true subject of the sentence?",
+    "hint2_md": "It's 'Each,' not 'participants.'",
+    "hint3_md": "'Each' is always singular.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "If the researchers [BLANK] aware of the equipment malfunction earlier, they could have prevented the data loss.\\n\\nWhich choice completes the passage with the most logical verb form?",
+    "choices": [
+      "were",
+      "had been",
+      "would have been",
+      "are"
+    ],
+    "correct_answer": "had been",
+    "solution_md": "This is a third conditional sentence, which refers to a hypothetical past situation. The 'if' clause should be in the past perfect tense ('had been').",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "Is the sentence talking about a past reality or a past hypothetical?",
+    "hint2_md": "Hypothetical past ('could have prevented').",
+    "hint3_md": "Use the past perfect ('had been') for the 'if' part of a past hypothetical.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "To prepare for the exam, Maria spent the weekend [BLANK] her notes, practicing problems, and reviewing the textbook.\\n\\nWhich choice completes the passage with the most logical form?",
+    "choices": [
+      "organizing",
+      "to organize",
+      "organized",
+      "having organized"
+    ],
+    "correct_answer": "organizing",
+    "solution_md": "This question tests parallelism. The sentence lists three actions: 'practicing' and 'reviewing.' To maintain parallelism, the first item should also be a gerund ('organizing').",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "Look at the other items in the list.",
+    "hint2_md": "'practicing' and 'reviewing' end in -ing.",
+    "hint3_md": "Choose the option that also ends in -ing for parallel structure.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "The city's new transportation plan is more efficient than [BLANK] of the previous administration.\\n\\nWhich choice completes the passage with the most logical form?",
+    "choices": [
+      "that",
+      "those",
+      "it",
+      "them"
+    ],
+    "correct_answer": "that",
+    "solution_md": "The sentence is comparing the 'new transportation plan' to the 'plan' of the previous administration. 'That' is the singular pronoun used to refer back to 'plan.'",
+    "difficulty": "med",
+    "desmos_recommended": false,
+    "hint1_md": "What is being compared to the 'new transportation plan'?",
+    "hint2_md": "The old plan.",
+    "hint3_md": "Use 'that' for singular comparisons and 'those' for plural.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "Having worked at the company for over twenty years, [BLANK] was celebrated with a retirement party.\\n\\nWhich choice completes the passage with the most logical form?",
+    "choices": [
+      "Mr. Henderson's career",
+      "the retirement of Mr. Henderson",
+      "Mr. Henderson",
+      "the party for Mr. Henderson"
+    ],
+    "correct_answer": "Mr. Henderson",
+    "solution_md": "This question tests for dangling modifiers. The introductory phrase 'Having worked...' must logically modify the subject of the sentence. Mr. Henderson is the one who worked for twenty years, not his career or the party.",
+    "difficulty": "hard",
+    "desmos_recommended": false,
+    "hint1_md": "Who is the person who 'worked at the company for over twenty years'?",
+    "hint2_md": "Mr. Henderson.",
+    "hint3_md": "The subject immediately following the comma must be the person doing the action in the opening phrase.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "The discovery of the ancient ruins [BLANK] the historians' understanding of the civilization's trade routes.\\n\\nWhich choice completes the passage with the most logical verb form?",
+    "choices": [
+      "has altered",
+      "have altered",
+      "altering",
+      "is altered"
+    ],
+    "correct_answer": "has altered",
+    "solution_md": "The subject of the sentence is 'discovery,' which is singular. Therefore, the singular verb 'has altered' is correct. 'Historians' and 'ruins' are parts of prepositional phrases.",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "Identify the main subject of the sentence.",
+    "hint2_md": "The subject is 'discovery,' which is singular.",
+    "hint3_md": "Ignore plural words in prepositional phrases like 'of the ancient ruins.'",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "The novel's protagonist, whose motives remain [BLANK] throughout the story, is one of the most complex characters in modern literature.\\n\\nWhich choice completes the passage with the most logical word?",
+    "choices": [
+      "ambiguous",
+      "ambiguously",
+      "ambiguity",
+      "ambiguities"
+    ],
+    "correct_answer": "ambiguous",
+    "solution_md": "The word must function as an adjective to describe the 'motives.' 'Ambiguous' is the adjective form.",
+    "difficulty": "easy",
+    "desmos_recommended": false,
+    "hint1_md": "What part of speech is needed to describe 'motives'?",
+    "hint2_md": "An adjective.",
+    "hint3_md": "Ambiguous is an adjective; ambiguously is an adverb.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT",
+    "area": "RW",
+    "subtopic": "Form/structure/sense (grammar)",
+    "prompt_md": "The manager asked that every employee [BLANK] a copy of the new safety guidelines by Friday.\\n\\nWhich choice completes the passage with the most logical verb form?",
+    "choices": [
+      "receive",
+      "receives",
+      "received",
+      "should receive"
+    ],
+    "correct_answer": "receive",
+    "solution_md": "This sentence uses the subjunctive mood, which is used for requests, commands, or suggestions ('The manager asked that...'). In the subjunctive, the base form of the verb ('receive') is used regardless of the subject.",
+    "difficulty": "1600level",
+    "desmos_recommended": false,
+    "hint1_md": "Does the sentence express a request or a command?",
+    "hint2_md": "Yes, 'The manager asked that...' sets up a request.",
+    "hint3_md": "Use the base form of the verb for the subjunctive mood (no 's' on the end).",
+    "source_label": "AI Original"
+  }
+]

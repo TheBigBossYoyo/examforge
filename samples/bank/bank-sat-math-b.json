@@ -1,0 +1,502 @@
+[
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "If the ratio of cats to dogs is $3:2$ and there are $12$ cats, how many dogs are there?",
+    "choices": ["$8$", "$6$", "$18$", "$10$"],
+    "correct_answer": "$8$",
+    "solution_md": "Each ratio unit is $12/3=4$ animals. Dogs $=2\\times 4=8$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Find the value of one ratio unit.", "hint2_md": "$12\\div 3=4$.", "hint3_md": "Dogs $=2\\times 4$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "A car travels $150$ miles in $3$ hours. What is its average speed in miles per hour?",
+    "choices": ["$50$", "$45$", "$60$", "$30$"],
+    "correct_answer": "$50$",
+    "solution_md": "Speed $=\\frac{150}{3}=50$ mph.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Speed is distance over time.", "hint2_md": "$\\frac{150}{3}$.", "hint3_md": "$50$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "If $\\frac{x}{6}=\\frac{10}{15}$, what is $x$?",
+    "choices": ["$4$", "$9$", "$25$", "$2.5$"],
+    "correct_answer": "$4$",
+    "solution_md": "Cross-multiply: $15x=60$, so $x=4$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Cross-multiply.", "hint2_md": "$15x=6\\times 10$.", "hint3_md": "$x=\\frac{60}{15}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "A recipe uses $2$ cups of flour for every $3$ cookies. How many cups are needed for $12$ cookies?",
+    "choices": ["$8$", "$6$", "$18$", "$24$"],
+    "correct_answer": "$8$",
+    "solution_md": "$12$ cookies is $4$ batches of $3$. Flour $=4\\times 2=8$ cups.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "How many batches of $3$ cookies?", "hint2_md": "$12\\div 3=4$ batches.", "hint3_md": "$4\\times 2$ cups.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "If $5$ pens cost $\\$2$, how much do $20$ pens cost at the same rate?",
+    "choices": ["$\\$8$", "$\\$10$", "$\\$4$", "$\\$40$"],
+    "correct_answer": "$\\$8$",
+    "solution_md": "$20$ pens is $4$ times $5$ pens, so the cost is $4\\times\\$2=\\$8$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "$20$ is $4$ groups of $5$.", "hint2_md": "Multiply the cost by $4$.", "hint3_md": "$4\\times 2$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "A map scale is $1$ inch $=50$ miles. How many miles do $3.5$ inches represent?",
+    "choices": ["$175$", "$150$", "$200$", "$17.5$"],
+    "correct_answer": "$175$",
+    "solution_md": "$3.5\\times 50=175$ miles.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Multiply inches by miles-per-inch.", "hint2_md": "$3.5\\times 50$.", "hint3_md": "$175$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "A worker assembles $8$ units in $2$ hours. At this rate, how many units in $5$ hours?",
+    "choices": ["$20$", "$16$", "$24$", "$10$"],
+    "correct_answer": "$20$",
+    "solution_md": "Rate $=8/2=4$ units/hour. In $5$ hours: $4\\times 5=20$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Find the per-hour rate.", "hint2_md": "$8\\div 2=4$.", "hint3_md": "$4\\times 5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "The ratio $a:b=4:5$ and $b=15$. What is $a$?",
+    "choices": ["$12$", "$10$", "$20$", "$8$"],
+    "correct_answer": "$12$",
+    "solution_md": "One unit $=15/5=3$. Then $a=4\\times 3=12$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Find one ratio unit from $b$.", "hint2_md": "$15\\div 5=3$.", "hint3_md": "$a=4\\times 3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "If $3$ machines fill $600$ bottles in an hour, how many bottles do $5$ machines fill in an hour (same rate)?",
+    "choices": ["$1000$", "$900$", "$1200$", "$300$"],
+    "correct_answer": "$1000$",
+    "solution_md": "Per machine $=600/3=200$ bottles/hour. Five machines: $5\\times 200=1000$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Find bottles per machine.", "hint2_md": "$600\\div 3=200$.", "hint3_md": "$5\\times 200$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Ratios/rates/proportions",
+    "prompt_md": "A solution mixes water and syrup in ratio $7:3$. What fraction of the mixture is syrup?",
+    "choices": ["$\\tfrac{3}{10}$", "$\\tfrac{3}{7}$", "$\\tfrac{7}{10}$", "$\\tfrac{1}{3}$"],
+    "correct_answer": "$\\tfrac{3}{10}$",
+    "solution_md": "Total parts $=7+3=10$; syrup is $3$ of them, so $\\tfrac{3}{10}$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Add the parts for the whole.", "hint2_md": "$7+3=10$.", "hint3_md": "Syrup is $3$ parts.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "What is $20\\%$ of $80$?",
+    "choices": ["$16$", "$20$", "$8$", "$4$"],
+    "correct_answer": "$16$",
+    "solution_md": "$0.20\\times 80=16$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Convert $20\\%$ to $0.20$.", "hint2_md": "Multiply by $80$.", "hint3_md": "$0.2\\times 80$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "A $\\$50$ item is discounted by $30\\%$. What is the sale price?",
+    "choices": ["$\\$35$", "$\\$20$", "$\\$15$", "$\\$30$"],
+    "correct_answer": "$\\$35$",
+    "solution_md": "Discount $=0.30\\times 50=15$, so the price is $50-15=35$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Find the discount amount.", "hint2_md": "$0.30\\times 50=15$.", "hint3_md": "Subtract from $50$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "$15$ is what percent of $60$?",
+    "choices": ["$25\\%$", "$15\\%$", "$40\\%$", "$20\\%$"],
+    "correct_answer": "$25\\%$",
+    "solution_md": "$\\frac{15}{60}=0.25=25\\%$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Divide the part by the whole.", "hint2_md": "$\\frac{15}{60}$.", "hint3_md": "Convert to a percent.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "A quantity increases from $40$ to $50$. What is the percent increase?",
+    "choices": ["$25\\%$", "$20\\%$", "$10\\%$", "$5\\%$"],
+    "correct_answer": "$25\\%$",
+    "solution_md": "Increase $=10$; percent $=\\frac{10}{40}=0.25=25\\%$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Percent change uses the original value.", "hint2_md": "$\\frac{10}{40}$.", "hint3_md": "$25\\%$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "After a $25\\%$ increase, a price becomes $\\$100$. What was the original price?",
+    "choices": ["$\\$80$", "$\\$75$", "$\\$125$", "$\\$90$"],
+    "correct_answer": "$\\$80$",
+    "solution_md": "If original is $p$, then $1.25p=100$, so $p=\\frac{100}{1.25}=80$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "A $25\\%$ increase multiplies by $1.25$.", "hint2_md": "$1.25p=100$.", "hint3_md": "Divide $100$ by $1.25$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "How many centimeters are in $2.5$ meters? ($1$ m $=100$ cm)",
+    "choices": ["$250$", "$25$", "$2500$", "$0.025$"],
+    "correct_answer": "$250$",
+    "solution_md": "$2.5\\times 100=250$ cm.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Multiply meters by $100$.", "hint2_md": "$2.5\\times 100$.", "hint3_md": "$250$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "A tax of $8\\%$ is added to a $\\$200$ purchase. What is the total cost?",
+    "choices": ["$\\$216$", "$\\$208$", "$\\$224$", "$\\$160$"],
+    "correct_answer": "$\\$216$",
+    "solution_md": "Tax $=0.08\\times 200=16$, so total $=200+16=216$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Compute the tax first.", "hint2_md": "$0.08\\times 200=16$.", "hint3_md": "Add to $200$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "A runner covers $30$ km in $2.5$ hours. What is the speed in km per hour?",
+    "choices": ["$12$", "$15$", "$10$", "$75$"],
+    "correct_answer": "$12$",
+    "solution_md": "$\\frac{30}{2.5}=12$ km/h.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Divide distance by time.", "hint2_md": "$\\frac{30}{2.5}$.", "hint3_md": "$12$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "What is $150\\%$ of $40$?",
+    "choices": ["$60$", "$45$", "$80$", "$15$"],
+    "correct_answer": "$60$",
+    "solution_md": "$1.5\\times 40=60$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "$150\\%=1.5$.", "hint2_md": "Multiply by $40$.", "hint3_md": "$1.5\\times 40$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Percentages & units",
+    "prompt_md": "A shirt costs $\\$24$ after a $20\\%$ discount. What was the original price?",
+    "choices": ["$\\$30$", "$\\$28.80$", "$\\$29$", "$\\$20$"],
+    "correct_answer": "$\\$30$",
+    "solution_md": "The sale price is $80\\%$ of the original: $0.8p=24$, so $p=30$.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "After $20\\%$ off, you pay $80\\%$.", "hint2_md": "$0.8p=24$.", "hint3_md": "Divide $24$ by $0.8$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "What is the mean of $4, 8, 6, 10, 2$?",
+    "choices": ["$6$", "$8$", "$5$", "$30$"],
+    "correct_answer": "$6$",
+    "solution_md": "Sum $=30$, count $=5$, so mean $=30/5=6$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Add all values.", "hint2_md": "Sum is $30$.", "hint3_md": "Divide by $5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "What is the median of $3, 7, 9, 4, 12$?",
+    "choices": ["$7$", "$9$", "$4$", "$6$"],
+    "correct_answer": "$7$",
+    "solution_md": "Ordered: $3,4,7,9,12$. The middle value is $7$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Sort the values first.", "hint2_md": "$3,4,7,9,12$.", "hint3_md": "Take the middle one.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "What is the mode of $2, 5, 5, 7, 9, 5, 2$?",
+    "choices": ["$5$", "$2$", "$7$", "$9$"],
+    "correct_answer": "$5$",
+    "solution_md": "$5$ appears three times, more than any other value, so it is the mode.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "The mode is the most frequent value.", "hint2_md": "Count occurrences.", "hint3_md": "$5$ appears three times.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "What is the range of $12, 5, 20, 8, 15$?",
+    "choices": ["$15$", "$20$", "$12$", "$8$"],
+    "correct_answer": "$15$",
+    "solution_md": "Range $=\\max-\\min=20-5=15$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Range is max minus min.", "hint2_md": "Max $=20$, min $=5$.", "hint3_md": "$20-5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "Adding a very large outlier to a data set most affects which measure?",
+    "choices": ["The mean", "The median", "The mode", "None of them"],
+    "correct_answer": "The mean",
+    "solution_md": "The mean uses every value and is sensitive to outliers, while the median and mode are more resistant.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Which measure uses all values?", "hint2_md": "Outliers pull this average.", "hint3_md": "The mean.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "The mean of $5$ numbers is $10$. What is their sum?",
+    "choices": ["$50$", "$15$", "$2$", "$10$"],
+    "correct_answer": "$50$",
+    "solution_md": "Sum $=\\text{mean}\\times\\text{count}=10\\times 5=50$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Sum equals mean times count.", "hint2_md": "$10\\times 5$.", "hint3_md": "$50$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "Which data set has the larger standard deviation? Set A: $\\{10,10,10\\}$; Set B: $\\{2,10,18\\}$.",
+    "choices": ["Set B", "Set A", "They are equal", "Cannot be determined"],
+    "correct_answer": "Set B",
+    "solution_md": "Set A has no spread (all values equal, SD $=0$), while Set B is widely spread, so Set B has the larger standard deviation.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Standard deviation measures spread.", "hint2_md": "Set A has identical values.", "hint3_md": "Set B is more spread out.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "The median of $4, 6, 8, 10$ is:",
+    "choices": ["$7$", "$6$", "$8$", "$9$"],
+    "correct_answer": "$7$",
+    "solution_md": "With an even count, the median is the average of the two middle values: $\\frac{6+8}{2}=7$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Even count means average two middle values.", "hint2_md": "Middle values $6$ and $8$.", "hint3_md": "$\\frac{6+8}{2}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "If every value in a data set is increased by $5$, the mean:",
+    "choices": ["Increases by $5$", "Stays the same", "Doubles", "Increases by $25$"],
+    "correct_answer": "Increases by $5$",
+    "solution_md": "Adding a constant to every value shifts the mean by that same constant.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Think about shifting all data.", "hint2_md": "The average shifts equally.", "hint3_md": "Up by $5$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "One-variable statistics",
+    "prompt_md": "Four students scored $70, 80, 90$, and $x$. If the mean is $80$, what is $x$?",
+    "choices": ["$80$", "$70$", "$90$", "$320$"],
+    "correct_answer": "$80$",
+    "solution_md": "The total must be $4\\times 80=320$. So $x=320-(70+80+90)=320-240=80$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Total $=$ mean $\\times$ count.", "hint2_md": "$4\\times 80=320$.", "hint3_md": "Subtract the known scores.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "A scatterplot shows points rising from left to right. The correlation is best described as:",
+    "choices": ["Positive", "Negative", "Zero", "Undefined"],
+    "correct_answer": "Positive",
+    "solution_md": "An upward trend from left to right indicates a positive correlation.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Which way does the trend go?", "hint2_md": "Up to the right.", "hint3_md": "That is positive.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "A line of best fit is $y=2x+3$. What does it predict for $x=5$?",
+    "choices": ["$13$", "$10$", "$8$", "$25$"],
+    "correct_answer": "$13$",
+    "solution_md": "$y=2(5)+3=10+3=13$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Substitute $x=5$.", "hint2_md": "$2(5)=10$.", "hint3_md": "$10+3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "In the model $y=2x+3$, what does the slope $2$ represent?",
+    "choices": ["The change in $y$ per unit increase in $x$", "The value of $y$ when $x=0$", "The maximum of $y$", "The correlation"],
+    "correct_answer": "The change in $y$ per unit increase in $x$",
+    "solution_md": "Slope is the rate of change: $y$ increases by $2$ for each $1$-unit increase in $x$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Slope is a rate.", "hint2_md": "It measures change in $y$ per change in $x$.", "hint3_md": "$+2$ per unit $x$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "In the model $y=2x+3$, what does the $y$-intercept $3$ represent?",
+    "choices": ["The value of $y$ when $x=0$", "The slope", "The maximum $y$", "The change per unit $x$"],
+    "correct_answer": "The value of $y$ when $x=0$",
+    "solution_md": "The $y$-intercept is the predicted value of $y$ when $x=0$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "The intercept is where $x=0$.", "hint2_md": "It is the starting value.", "hint3_md": "$y=3$ at $x=0$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "A scatterplot shows points falling from left to right. The correlation is:",
+    "choices": ["Negative", "Positive", "Zero", "Perfect"],
+    "correct_answer": "Negative",
+    "solution_md": "A downward trend indicates a negative correlation.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Which way does the trend go?", "hint2_md": "Down to the right.", "hint3_md": "That is negative.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "If a correlation coefficient is close to $0$, the linear relationship between the variables is:",
+    "choices": ["Weak or none", "Strong and positive", "Strong and negative", "Perfect"],
+    "correct_answer": "Weak or none",
+    "solution_md": "A correlation near $0$ indicates little to no linear relationship.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Correlation near $0$ means little pattern.", "hint2_md": "Strong relationships are near $\\pm 1$.", "hint3_md": "Weak or none.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "A best-fit line $y=-3x+20$ predicts $y$ for $x=4$ as:",
+    "choices": ["$8$", "$12$", "$32$", "$-12$"],
+    "correct_answer": "$8$",
+    "solution_md": "$y=-3(4)+20=-12+20=8$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Substitute $x=4$.", "hint2_md": "$-3(4)=-12$.", "hint3_md": "$-12+20$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "Using a line of best fit to estimate a value within the range of the data is called:",
+    "choices": ["Interpolation", "Extrapolation", "Correlation", "Deviation"],
+    "correct_answer": "Interpolation",
+    "solution_md": "Estimating within the observed range is interpolation; estimating beyond it is extrapolation.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Within the data range.", "hint2_md": "The prefix 'inter' means between.", "hint3_md": "Interpolation.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "On a scatterplot, a single point far from the overall pattern is called:",
+    "choices": ["An outlier", "The slope", "The intercept", "A residual of zero"],
+    "correct_answer": "An outlier",
+    "solution_md": "A point that does not fit the general trend is an outlier.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "It lies away from the rest.", "hint2_md": "It breaks the pattern.", "hint3_md": "An outlier.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Two-variable data & scatterplots",
+    "prompt_md": "A best-fit line has slope $5$. If $x$ increases by $3$, the predicted $y$ changes by:",
+    "choices": ["$15$", "$5$", "$8$", "$3$"],
+    "correct_answer": "$15$",
+    "solution_md": "Change in $y=$ slope $\\times$ change in $x=5\\times 3=15$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Multiply slope by the change in $x$.", "hint2_md": "$5\\times 3$.", "hint3_md": "$15$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "A bag has $4$ red and $6$ blue marbles. What is the probability of drawing a red marble?",
+    "choices": ["$\\tfrac{2}{5}$", "$\\tfrac{3}{5}$", "$\\tfrac{1}{4}$", "$\\tfrac{4}{6}$"],
+    "correct_answer": "$\\tfrac{2}{5}$",
+    "solution_md": "$P(\\text{red})=\\frac{4}{10}=\\frac{2}{5}$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Total marbles $=10$.", "hint2_md": "$\\frac{4}{10}$.", "hint3_md": "Simplify.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "A fair die is rolled. What is the probability of rolling a number greater than $4$?",
+    "choices": ["$\\tfrac{1}{3}$", "$\\tfrac{1}{2}$", "$\\tfrac{2}{3}$", "$\\tfrac{1}{6}$"],
+    "correct_answer": "$\\tfrac{1}{3}$",
+    "solution_md": "Numbers greater than $4$ are $5$ and $6$ — two outcomes of six, so $\\frac{2}{6}=\\frac{1}{3}$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Which outcomes exceed $4$?", "hint2_md": "$5$ and $6$.", "hint3_md": "$\\frac{2}{6}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "In a survey, $30$ of $120$ people preferred tea. What proportion preferred tea?",
+    "choices": ["$0.25$", "$0.30$", "$0.40$", "$0.12$"],
+    "correct_answer": "$0.25$",
+    "solution_md": "$\\frac{30}{120}=0.25$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Divide preference by total.", "hint2_md": "$\\frac{30}{120}$.", "hint3_md": "$0.25$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "A spinner has $8$ equal sections, $3$ of which are green. What is the probability of landing on green?",
+    "choices": ["$\\tfrac{3}{8}$", "$\\tfrac{5}{8}$", "$\\tfrac{1}{8}$", "$\\tfrac{3}{5}$"],
+    "correct_answer": "$\\tfrac{3}{8}$",
+    "solution_md": "$P(\\text{green})=\\frac{3}{8}$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Favourable over total.", "hint2_md": "$3$ green of $8$.", "hint3_md": "$\\frac{3}{8}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "A sample of $200$ voters has $110$ favoring a measure. Estimating the population proportion gives:",
+    "choices": ["$0.55$", "$0.45$", "$0.11$", "$0.50$"],
+    "correct_answer": "$0.55$",
+    "solution_md": "$\\frac{110}{200}=0.55$, the best point estimate of the population proportion.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Divide favorable by sample size.", "hint2_md": "$\\frac{110}{200}$.", "hint3_md": "$0.55$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "Two coins are flipped. What is the probability of getting two heads?",
+    "choices": ["$\\tfrac{1}{4}$", "$\\tfrac{1}{2}$", "$\\tfrac{1}{3}$", "$\\tfrac{3}{4}$"],
+    "correct_answer": "$\\tfrac{1}{4}$",
+    "solution_md": "The outcomes are HH, HT, TH, TT; only HH gives two heads, so $\\frac{1}{4}$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "List all four outcomes.", "hint2_md": "Only one is HH.", "hint3_md": "$\\frac{1}{4}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "Which sampling method is most likely to give a representative sample of a school?",
+    "choices": ["Random sampling of all students", "Surveying only the math club", "Surveying only seniors", "Surveying the first 10 friends"],
+    "correct_answer": "Random sampling of all students",
+    "solution_md": "Random sampling from the whole population minimizes bias and is most representative.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Avoid biased subgroups.", "hint2_md": "Everyone should have a chance.", "hint3_md": "Random sampling of all students.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "The probability of an event is $0.3$. What is the probability it does NOT occur?",
+    "choices": ["$0.7$", "$0.3$", "$0.5$", "$1.3$"],
+    "correct_answer": "$0.7$",
+    "solution_md": "Complement: $1-0.3=0.7$.",
+    "difficulty": "easy", "desmos_recommended": true,
+    "hint1_md": "Use the complement rule.", "hint2_md": "$1-P$.", "hint3_md": "$1-0.3$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "A jar has $5$ red, $3$ green, $2$ blue. What is the probability of drawing green or blue?",
+    "choices": ["$\\tfrac{1}{2}$", "$\\tfrac{3}{10}$", "$\\tfrac{1}{5}$", "$\\tfrac{2}{5}$"],
+    "correct_answer": "$\\tfrac{1}{2}$",
+    "solution_md": "Green or blue $=3+2=5$ of $10$, so $\\frac{5}{10}=\\frac{1}{2}$.",
+    "difficulty": "med", "desmos_recommended": true,
+    "hint1_md": "Add green and blue counts.", "hint2_md": "$3+2=5$ of $10$.", "hint3_md": "$\\frac{5}{10}$.",
+    "source_label": "AI Original"
+  },
+  {
+    "exam": "SAT", "area": "Math", "subtopic": "Probability & inference",
+    "prompt_md": "A larger random sample generally produces an estimate that is:",
+    "choices": ["More precise (smaller margin of error)", "Less precise", "Always exactly correct", "Unaffected by size"],
+    "correct_answer": "More precise (smaller margin of error)",
+    "solution_md": "Increasing sample size typically reduces the margin of error, making estimates more precise.",
+    "difficulty": "hard", "desmos_recommended": true,
+    "hint1_md": "Think about margin of error.", "hint2_md": "Bigger samples reduce uncertainty.", "hint3_md": "More precise.",
+    "source_label": "AI Original"
+  }
+]
