@@ -31,22 +31,22 @@ export function Countdown({ date, tone = "tmua" }: { date: string; tone?: "tmua"
       <span className={`tabular-nums text-2xl font-bold ${color}`}>
         {String(v).padStart(2, "0")}
       </span>
-      <span className="text-[10px] uppercase tracking-wide text-ink-400">{label}</span>
+      <span className="text-[10px] uppercase tracking-wide text-content-subtle">{label}</span>
     </div>
   );
 
   if (t.past) {
-    return <div className="text-sm font-medium text-ink-500">Exam date has passed — update it in Settings.</div>;
+    return <div className="text-sm font-medium text-content-muted">Exam date has passed — update it in Settings.</div>;
   }
 
   return (
     <div className="flex items-center gap-3">
       {cell(t.days, "days")}
-      <span className="text-ink-300">:</span>
+      <span className="text-content-subtle">:</span>
       {cell(t.hours, "hrs")}
-      <span className="text-ink-300">:</span>
+      <span className="text-content-subtle">:</span>
       {cell(t.minutes, "min")}
-      <span className="text-ink-300">:</span>
+      <span className="text-content-subtle">:</span>
       {cell(t.seconds, "sec")}
     </div>
   );

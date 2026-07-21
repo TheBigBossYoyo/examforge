@@ -22,14 +22,16 @@ export function Badge({
   tone?: "ink" | "tmua" | "sat" | "green" | "amber" | "rose" | "blue";
   className?: string;
 }) {
+  // Tinted with alpha rather than a fixed pastel, so each tone sits correctly
+  // on both a white and a near-black surface without a second definition.
   const tones: Record<string, string> = {
-    ink: "bg-ink-100/80 text-ink-700 ring-1 ring-inset ring-ink-200/50",
-    tmua: "bg-tmua/10 text-tmua-dark ring-1 ring-inset ring-tmua/20",
-    sat: "bg-sat/10 text-sat-dark ring-1 ring-inset ring-sat/20",
-    green: "bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-200/60",
-    amber: "bg-amber-50 text-amber-700 ring-1 ring-inset ring-amber-200/60",
-    rose: "bg-rose-50 text-rose-700 ring-1 ring-inset ring-rose-200/60",
-    blue: "bg-sky-50 text-sky-700 ring-1 ring-inset ring-sky-200/60",
+    ink: "bg-surface-muted text-content-muted ring-1 ring-inset ring-line/60",
+    tmua: "bg-tmua/10 text-tmua-dark dark:text-tmua-soft ring-1 ring-inset ring-tmua/25",
+    sat: "bg-sat/10 text-sat-dark dark:text-sat-soft ring-1 ring-inset ring-sat/25",
+    green: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 ring-1 ring-inset ring-emerald-500/25",
+    amber: "bg-amber-500/10 text-amber-700 dark:text-amber-300 ring-1 ring-inset ring-amber-500/25",
+    rose: "bg-rose-500/10 text-rose-700 dark:text-rose-300 ring-1 ring-inset ring-rose-500/25",
+    blue: "bg-sky-500/10 text-sky-700 dark:text-sky-300 ring-1 ring-inset ring-sky-500/25",
   };
   return <span className={`badge ${tones[tone]} ${className}`}>{children}</span>;
 }
@@ -40,7 +42,8 @@ export function ProgressRing({
   size = 120,
   stroke = 10,
   color = "#6d5dfc",
-  trackColor = "#e9edf3",
+  // Theme-aware: a fixed light grey track disappears on a dark surface.
+  trackColor = "rgb(var(--line))",
   label,
   sublabel,
 }: {
@@ -74,7 +77,7 @@ export function ProgressRing({
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
         {label && <span className="text-3xl font-extrabold tracking-tight leading-none">{label}</span>}
-        {sublabel && <span className="text-[10px] font-extrabold text-ink-500 mt-1 uppercase tracking-widest">{sublabel}</span>}
+        {sublabel && <span className="text-[10px] font-extrabold text-content-muted mt-1 uppercase tracking-widest">{sublabel}</span>}
       </div>
     </div>
   );
@@ -92,20 +95,20 @@ export function StatCard({
   tone?: "ink" | "tmua" | "sat";
 }) {
   const accent: Record<string, string> = {
-    ink: "text-ink-900",
+    ink: "text-content",
     tmua: "text-tmua-dark",
     sat: "text-sat-dark",
   };
   const bgAccent: Record<string, string> = {
-    ink: "bg-ink-50/50 hover:bg-ink-50",
+    ink: "bg-surface-muted/50 hover:bg-surface-muted",
     tmua: "bg-tmua-pale/30 hover:bg-tmua-pale/50",
     sat: "bg-sat-pale/30 hover:bg-sat-pale/50",
   };
   return (
-    <div className={`rounded-2xl border border-ink-100 p-5 transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 ${bgAccent[tone]}`}>
-      <div className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400 mb-1.5">{label}</div>
+    <div className={`rounded-2xl border border-line p-5 transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 ${bgAccent[tone]}`}>
+      <div className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle mb-1.5">{label}</div>
       <div className={`text-3xl font-extrabold tracking-tight ${accent[tone]}`}>{value}</div>
-      {hint && <div className="mt-1.5 text-xs font-semibold text-ink-500">{hint}</div>}
+      {hint && <div className="mt-1.5 text-xs font-semibold text-content-muted">{hint}</div>}
     </div>
   );
 }
@@ -114,7 +117,8 @@ export function EmptyState({
   title,
   description,
   action,
-  icon = "??",
+  // Was an emoji that an encoding round-trip had turned into literal "??".
+  icon = "◎",
 }: {
   title: string;
   description?: string;
@@ -122,10 +126,10 @@ export function EmptyState({
   icon?: string;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center rounded-3xl border-2 border-dashed border-ink-200/80 bg-ink-50/30 px-6 py-14 text-center transition-colors hover:border-ink-300/80 hover:bg-ink-50/60">
+    <div className="flex flex-col items-center justify-center rounded-3xl border-2 border-dashed border-line/80 bg-surface-muted/30 px-6 py-14 text-center transition-colors hover:border-line-strong/80 hover:bg-surface-muted/60">
       <div className="text-5xl mb-4 drop-shadow-sm">{icon}</div>
-      <h3 className="text-lg font-bold tracking-tight text-ink-900">{title}</h3>
-      {description && <p className="mt-2 max-w-sm text-sm text-ink-500 leading-relaxed">{description}</p>}
+      <h3 className="text-lg font-bold tracking-tight text-content">{title}</h3>
+      {description && <p className="mt-2 max-w-sm text-sm text-content-muted leading-relaxed">{description}</p>}
       {action && <div className="mt-6">{action}</div>}
     </div>
   );
@@ -159,7 +163,7 @@ export function LinkButton({
   );
 }
 
-export function Bar({ value, color = "bg-ink-900", track = "bg-ink-100", className = "" }: {
+export function Bar({ value, color = "bg-content", track = "bg-line/50", className = "" }: {
   value: number; // 0..1
   color?: string;
   track?: string;
@@ -187,8 +191,8 @@ export function SectionHeader({
   return (
     <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <h1 className="text-3xl font-extrabold tracking-tight text-ink-900">{title}</h1>
-        {subtitle && <p className="mt-2 text-[15px] font-medium text-ink-500">{subtitle}</p>}
+        <h1 className="text-3xl font-extrabold tracking-tight text-content">{title}</h1>
+        {subtitle && <p className="mt-2 text-[15px] font-medium text-content-muted">{subtitle}</p>}
       </div>
       {right && <div>{right}</div>}
     </div>

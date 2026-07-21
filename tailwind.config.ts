@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ["class", '[data-theme="dark"]'],
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,6 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Semantic tokens driven by CSS variables, so a component written once
+        // works in both themes. `ink` below stays as the raw ramp for the rare
+        // places a fixed shade is genuinely wanted.
+        surface: "rgb(var(--surface) / <alpha-value>)",
+        "surface-raised": "rgb(var(--surface-raised) / <alpha-value>)",
+        "surface-muted": "rgb(var(--surface-muted) / <alpha-value>)",
+        content: "rgb(var(--content) / <alpha-value>)",
+        "content-muted": "rgb(var(--content-muted) / <alpha-value>)",
+        "content-subtle": "rgb(var(--content-subtle) / <alpha-value>)",
+        line: "rgb(var(--line) / <alpha-value>)",
+        "line-strong": "rgb(var(--line-strong) / <alpha-value>)",
         ink: {
           50: "#f5f7fa",
           100: "#e9edf3",

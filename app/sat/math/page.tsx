@@ -53,7 +53,7 @@ export default function SatMathPage() {
               <div className="flex items-center gap-4">
                 <div className={`h-4 w-4 rounded-full ${masteryColor(mastery)} shrink-0`} />
                 <div>
-                  <div className="font-medium text-ink-900">{t.subtopic}</div>
+                  <div className="font-medium text-content">{t.subtopic}</div>
                   <div className={`text-sm font-semibold ${masteryTextColor(mastery)}`}>{mastery}% mastery</div>
                 </div>
               </div>

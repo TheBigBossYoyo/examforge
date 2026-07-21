@@ -43,7 +43,7 @@ function contrastText(mastery: number): string {
   return "text-white";
 }
 
-export function Heatmap({ data, accentClass = "text-ink-600" }: HeatmapProps) {
+export function Heatmap({ data, accentClass = "text-content-muted" }: HeatmapProps) {
   if (data.length === 0) return null;
 
   const groups = groupByArea(data);
@@ -71,8 +71,8 @@ export function Heatmap({ data, accentClass = "text-ink-600" }: HeatmapProps) {
                   className={[
                     "group relative rounded-lg px-3 py-2 text-center text-xs font-medium",
                     "transition-transform duration-150 hover:scale-105 cursor-default",
-                    practiced ? bg : "bg-ink-100",
-                    practiced ? fg : "text-ink-400",
+                    practiced ? bg : "bg-surface-muted",
+                    practiced ? fg : "text-content-subtle",
                     "min-w-[90px] max-w-[160px]",
                   ].join(" ")}
                 >
@@ -85,14 +85,14 @@ export function Heatmap({ data, accentClass = "text-ink-600" }: HeatmapProps) {
                   <div
                     className={[
                       "mt-1 text-[10px] font-semibold opacity-90",
-                      practiced ? fg : "text-ink-400",
+                      practiced ? fg : "text-content-subtle",
                     ].join(" ")}
                   >
                     {practiced ? `${t.mastery}%` : "—"}
                   </div>
 
                   {/* Hover tooltip overlay for accessibility */}
-                  <span className="pointer-events-none absolute -top-1 left-1/2 z-10 hidden -translate-x-1/2 -translate-y-full whitespace-nowrap rounded bg-ink-900 px-2 py-1 text-[10px] text-white shadow group-hover:block">
+                  <span className="pointer-events-none absolute -top-1 left-1/2 z-10 hidden -translate-x-1/2 -translate-y-full whitespace-nowrap rounded bg-content px-2 py-1 text-[10px] text-white shadow group-hover:block">
                     {t.subtopic} · {practiced ? `${t.mastery}% mastery` : "not yet practiced"}
                   </span>
                 </div>

@@ -30,7 +30,7 @@ export default function ResourcesPage({ searchParams }: { searchParams: { [key: 
       <div className="flex flex-wrap gap-2">
         <Link 
           href={`/resources${examFilter ? `?exam=${examFilter}` : ''}`}
-          className={`px-3 py-1 text-sm rounded-full border transition-colors ${!typeFilter ? 'bg-ink-900 text-white border-ink-900' : 'bg-white text-ink-600 border-ink-200 hover:border-ink-400'}`}
+          className={`px-3 py-1 text-sm rounded-full border transition-colors ${!typeFilter ? 'bg-content text-white border-ink-900' : 'bg-surface text-content-muted border-line hover:border-ink-400'}`}
         >
           All
         </Link>
@@ -43,7 +43,7 @@ export default function ResourcesPage({ searchParams }: { searchParams: { [key: 
             <Link 
               key={t}
               href={`/resources?${params.toString()}`}
-              className={`px-3 py-1 text-sm rounded-full border transition-colors ${active ? 'bg-ink-900 text-white border-ink-900' : 'bg-white text-ink-600 border-ink-200 hover:border-ink-400'}`}
+              className={`px-3 py-1 text-sm rounded-full border transition-colors ${active ? 'bg-content text-white border-ink-900' : 'bg-surface text-content-muted border-line hover:border-ink-400'}`}
             >
               {t.replace(/_/g, " ")}
             </Link>
@@ -55,7 +55,7 @@ export default function ResourcesPage({ searchParams }: { searchParams: { [key: 
         {resources.map(r => (
           <Card key={r.id} hover className="flex flex-col">
             <div className="flex items-start justify-between gap-2">
-              <a href={r.url} target="_blank" rel="noopener noreferrer" className="font-medium text-ink-900 hover:underline">
+              <a href={r.url} target="_blank" rel="noopener noreferrer" className="font-medium text-content hover:underline">
                 {r.title}
               </a>
               <div className="flex flex-col gap-1 shrink-0 items-end">
@@ -65,20 +65,20 @@ export default function ResourcesPage({ searchParams }: { searchParams: { [key: 
             </div>
             
             {r.relevance && (
-              <div className="mt-2 text-xs text-ink-500">
+              <div className="mt-2 text-xs text-content-muted">
                 Relevance: {r.relevance}/10
               </div>
             )}
             
             {r.license_note && (
-              <div className="mt-4 pt-3 border-t border-ink-100 text-xs text-ink-400">
+              <div className="mt-4 pt-3 border-t border-line text-xs text-content-subtle">
                 <span className="font-semibold">License/Note:</span> {r.license_note}
               </div>
             )}
           </Card>
         ))}
         {resources.length === 0 && (
-          <div className="md:col-span-2 lg:col-span-3 text-center py-12 text-ink-500 bg-white/50 rounded-xl border border-dashed border-ink-200">
+          <div className="md:col-span-2 lg:col-span-3 text-center py-12 text-content-muted bg-surface/50 rounded-xl border border-dashed border-line">
             No resources found for the selected filters.
           </div>
         )}

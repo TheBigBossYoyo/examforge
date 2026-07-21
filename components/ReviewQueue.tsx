@@ -85,10 +85,10 @@ export function ReviewQueue({ dueCards, exams }: { dueCards: DueCard[]; exams: E
             <Badge tone={tone}>{exam?.name ?? "Review"}</Badge>
             {current.subtopic && <Badge tone="ink">{current.subtopic}</Badge>}
           </div>
-          <h2 className="mt-1 text-lg font-semibold text-ink-900">Due now</h2>
-          <p className="mt-1 text-sm text-ink-500">Again = reset, Hard = short interval, Good = standard interval, Easy = longer interval.</p>
+          <h2 className="mt-1 text-lg font-semibold text-content">Due now</h2>
+          <p className="mt-1 text-sm text-content-muted">Again = reset, Hard = short interval, Good = standard interval, Easy = longer interval.</p>
         </div>
-        <div className="text-right text-sm text-ink-500">
+        <div className="text-right text-sm text-content-muted">
           <div>{index + 1} / {dueCards.length}</div>
           <div>{dueCards.length - index - 1} left after this</div>
         </div>
@@ -96,8 +96,8 @@ export function ReviewQueue({ dueCards, exams }: { dueCards: DueCard[]; exams: E
 
       <Bar value={progress} color={exam?.name === "SAT" ? "bg-sat" : "bg-tmua"} />
 
-      <div className="rounded-2xl border border-ink-100 bg-white p-4 shadow-sm">
-        <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-ink-400">
+      <div className="rounded-2xl border border-line bg-surface p-4 shadow-sm">
+        <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-content-subtle">
           {current.area && <span>{current.area}</span>}
           {current.due_date && <span>Due {current.due_date}</span>}
         </div>

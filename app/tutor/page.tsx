@@ -15,12 +15,12 @@ export default function TutorPage() {
       <Card className="border-l-4 border-tmua bg-tmua/5">
         <div className="flex items-start gap-3">
           <span className="text-xl">🤖</span>
-          <div className="text-sm text-ink-700">
+          <div className="text-sm text-content-muted">
             <strong>What this tutor does:</strong> explains mathematical methods, proof techniques,
             logic, and SAT strategies. For SAT Math it highlights faster Desmos workflows. It{" "}
             <strong>never</strong> reproduces copyrighted past-paper questions — it explains{" "}
             <em>how</em> to approach problem types, not the problems themselves.
-            <span className="mt-1 block text-ink-500">
+            <span className="mt-1 block text-content-muted">
               Offline unless an AI key is set in{" "}
               <code className="rounded bg-tmua/10 px-1">.env.local</code>. Free option:{" "}
               <code className="rounded bg-tmua/10 px-1">AI_PROVIDER=gemini</code> +{" "}

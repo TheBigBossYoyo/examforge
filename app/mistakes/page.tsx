@@ -75,22 +75,22 @@ export default function MistakesPage({
       {/* Filters */}
       <div className="flex flex-wrap gap-4 print:hidden">
         <div className="flex items-center gap-1.5">
-          <span className="text-xs text-ink-400">Exam:</span>
-          <Link href={buildHref({ exam: undefined })} className={`${FILTER_LINK} ${!examFilter ? "bg-ink-900 text-white ring-ink-900" : "bg-white text-ink-500 ring-ink-200"}`}>All</Link>
-          <Link href={buildHref({ exam: "TMUA" })} className={`${FILTER_LINK} ${examFilter === "TMUA" ? "bg-tmua text-white ring-tmua" : "bg-white text-ink-500 ring-ink-200"}`}>TMUA</Link>
-          <Link href={buildHref({ exam: "SAT" })} className={`${FILTER_LINK} ${examFilter === "SAT" ? "bg-sat text-white ring-sat" : "bg-white text-ink-500 ring-ink-200"}`}>SAT</Link>
+          <span className="text-xs text-content-subtle">Exam:</span>
+          <Link href={buildHref({ exam: undefined })} className={`${FILTER_LINK} ${!examFilter ? "bg-content text-white ring-ink-900" : "bg-surface text-content-muted ring-line"}`}>All</Link>
+          <Link href={buildHref({ exam: "TMUA" })} className={`${FILTER_LINK} ${examFilter === "TMUA" ? "bg-tmua text-white ring-tmua" : "bg-surface text-content-muted ring-line"}`}>TMUA</Link>
+          <Link href={buildHref({ exam: "SAT" })} className={`${FILTER_LINK} ${examFilter === "SAT" ? "bg-sat text-white ring-sat" : "bg-surface text-content-muted ring-line"}`}>SAT</Link>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="text-xs text-ink-400">Status:</span>
+          <span className="text-xs text-content-subtle">Status:</span>
           {["open", "resolved", "all"].map((s) => (
-            <Link key={s} href={buildHref({ status: s })} className={`${FILTER_LINK} capitalize ${statusFilter === s ? "bg-ink-900 text-white ring-ink-900" : "bg-white text-ink-500 ring-ink-200"}`}>{s}</Link>
+            <Link key={s} href={buildHref({ status: s })} className={`${FILTER_LINK} capitalize ${statusFilter === s ? "bg-content text-white ring-ink-900" : "bg-surface text-content-muted ring-line"}`}>{s}</Link>
           ))}
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="text-xs text-ink-400">Type:</span>
-          <Link href={buildHref({ error: undefined })} className={`${FILTER_LINK} ${!errorType ? "bg-ink-900 text-white ring-ink-900" : "bg-white text-ink-500 ring-ink-200"}`}>Any</Link>
+          <span className="text-xs text-content-subtle">Type:</span>
+          <Link href={buildHref({ error: undefined })} className={`${FILTER_LINK} ${!errorType ? "bg-content text-white ring-ink-900" : "bg-surface text-content-muted ring-line"}`}>Any</Link>
           {(examFilter ? errorOptions : allErrorOptions).map((et) => (
-            <Link key={et} href={buildHref({ error: et })} className={`${FILTER_LINK} ${errorType === et ? "bg-ink-900 text-white ring-ink-900" : "bg-white text-ink-500 ring-ink-200"}`}>{et.replace(/_/g, " ")}</Link>
+            <Link key={et} href={buildHref({ error: et })} className={`${FILTER_LINK} ${errorType === et ? "bg-content text-white ring-ink-900" : "bg-surface text-content-muted ring-line"}`}>{et.replace(/_/g, " ")}</Link>
           ))}
         </div>
       </div>
@@ -118,27 +118,27 @@ export default function MistakesPage({
                   {m.subtopic && <Badge tone="ink">{m.subtopic}</Badge>}
                   <Badge tone="rose">{m.error_type.replace(/_/g, " ")}</Badge>
                   {m.resolved === 1 && <Badge tone="green">resolved</Badge>}
-                  <span className="ml-auto text-xs text-ink-400">{formatDate(m.created_at.slice(0, 10))}</span>
+                  <span className="ml-auto text-xs text-content-subtle">{formatDate(m.created_at.slice(0, 10))}</span>
                 </div>
 
                 <Markdown className="text-sm">{m.prompt_md}</Markdown>
 
                 <div className="mt-2 text-sm">
-                  <span className="text-xs font-medium uppercase tracking-wide text-ink-400">Correct answer: </span>
+                  <span className="text-xs font-medium uppercase tracking-wide text-content-subtle">Correct answer: </span>
                   <span className="font-medium text-emerald-700">{m.correct_answer}</span>
                 </div>
 
                 {m.solution_md && (
                   <details className="mt-2">
-                    <summary className="cursor-pointer text-sm font-semibold text-ink-600 hover:text-ink-900">Solution</summary>
-                    <div className="mt-2 rounded-lg bg-ink-50/60 px-3 py-2">
+                    <summary className="cursor-pointer text-sm font-semibold text-content-muted hover:text-content">Solution</summary>
+                    <div className="mt-2 rounded-lg bg-surface-muted/60 px-3 py-2">
                       <Markdown className="text-sm">{m.solution_md}</Markdown>
                     </div>
                   </details>
                 )}
 
                 {m.note_md && (
-                  <div className="mt-2 rounded-lg border-l-4 border-amber-300 bg-amber-50/60 px-3 py-2 text-sm text-ink-700">
+                  <div className="mt-2 rounded-lg border-l-4 border-amber-300 bg-amber-50/60 px-3 py-2 text-sm text-content-muted">
                     <span className="text-xs font-semibold uppercase tracking-wide text-amber-600">Note: </span>
                     <Markdown className="inline text-sm">{m.note_md}</Markdown>
                   </div>

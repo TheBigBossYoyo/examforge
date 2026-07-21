@@ -48,15 +48,15 @@ export function ImportPanel() {
     <div className="space-y-4">
       {/* Format selector + file upload */}
       <div className="flex items-center gap-3 flex-wrap">
-        <div className="flex overflow-hidden rounded-lg border border-ink-200 text-sm">
+        <div className="flex overflow-hidden rounded-lg border border-line text-sm">
           {(["json", "csv"] as const).map((f) => (
             <button
               key={f}
               onClick={() => setFormat(f)}
               className={`px-4 py-1.5 font-medium transition-colors ${
                 format === f
-                  ? "bg-ink-900 text-white"
-                  : "bg-white text-ink-500 hover:bg-ink-50"
+                  ? "bg-content text-white"
+                  : "bg-surface text-content-muted hover:bg-surface-muted"
               }`}
             >
               {f.toUpperCase()}

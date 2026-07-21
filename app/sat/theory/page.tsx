@@ -23,7 +23,7 @@ export default function SatTheoryIndex() {
       <div className="mt-8 space-y-12">
         <section>
           <div className="mb-4 flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-ink-900">Math</h2>
+            <h2 className="text-2xl font-bold text-content">Math</h2>
             <Badge tone="sat">Calculator Allowed</Badge>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -33,10 +33,10 @@ export default function SatTheoryIndex() {
               return (
                 <Link key={t.id} href={`/sat/theory/${slug}`}>
                   <Card hover className="h-full flex flex-col p-5">
-                    <h3 className="font-semibold text-lg mb-2 text-ink-900 group-hover:text-sat transition-colors">
+                    <h3 className="font-semibold text-lg mb-2 text-content group-hover:text-sat transition-colors">
                       {t.subtopic}
                     </h3>
-                    <p className="text-sm text-ink-500 line-clamp-2">
+                    <p className="text-sm text-content-muted line-clamp-2">
                       {theory?.explanation_md.slice(0, 100) || "Rules, formulas, and strategies for SAT Math."}...
                     </p>
                     <div className="mt-auto pt-4 flex gap-2">
@@ -52,7 +52,7 @@ export default function SatTheoryIndex() {
 
         <section>
           <div className="mb-4 flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-ink-900">Reading & Writing</h2>
+            <h2 className="text-2xl font-bold text-content">Reading & Writing</h2>
             <Badge tone="sat">Grammar & Reading</Badge>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -62,10 +62,10 @@ export default function SatTheoryIndex() {
               return (
                 <Link key={t.id} href={`/sat/theory/${slug}`}>
                   <Card hover className="h-full flex flex-col p-5">
-                    <h3 className="font-semibold text-lg mb-2 text-ink-900 group-hover:text-sat transition-colors">
+                    <h3 className="font-semibold text-lg mb-2 text-content group-hover:text-sat transition-colors">
                       {t.subtopic}
                     </h3>
-                    <p className="text-sm text-ink-500 line-clamp-2">
+                    <p className="text-sm text-content-muted line-clamp-2">
                       {theory?.explanation_md.slice(0, 100) || "Grammar rules, reading strategies, and common traps."}...
                     </p>
                     <div className="mt-auto pt-4 flex gap-2">

@@ -61,7 +61,7 @@ export default function SatHubPage() {
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-semibold text-ink-900">Math Topics</h2>
+            <h2 className="font-semibold text-content">Math Topics</h2>
             <Link href="/sat/math" className="text-xs text-sat-dark hover:underline">View all</Link>
           </div>
           <ul className="space-y-2">
@@ -71,8 +71,8 @@ export default function SatHubPage() {
               return (
                 <li key={t.id} className="flex items-center gap-3">
                   <div className={`h-2 w-2 rounded-full ${masteryColor(mastery)}`} />
-                  <span className="flex-1 truncate text-sm text-ink-700">{t.subtopic}</span>
-                  <span className="text-xs text-ink-400 w-8 text-right">{mastery}%</span>
+                  <span className="flex-1 truncate text-sm text-content-muted">{t.subtopic}</span>
+                  <span className="text-xs text-content-subtle w-8 text-right">{mastery}%</span>
                 </li>
               );
             })}
@@ -81,10 +81,10 @@ export default function SatHubPage() {
 
         <Card>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-semibold text-ink-900">Reading & Writing Topics</h2>
+            <h2 className="font-semibold text-content">Reading & Writing Topics</h2>
             <div className="flex gap-2 text-xs">
               <Link href="/sat/reading" className="text-sat-dark hover:underline">Reading</Link>
-              <span className="text-ink-300">|</span>
+              <span className="text-content-subtle">|</span>
               <Link href="/sat/writing" className="text-sat-dark hover:underline">Writing</Link>
             </div>
           </div>
@@ -95,8 +95,8 @@ export default function SatHubPage() {
               return (
                 <li key={t.id} className="flex items-center gap-3">
                   <div className={`h-2 w-2 rounded-full ${masteryColor(mastery)}`} />
-                  <span className="flex-1 truncate text-sm text-ink-700">{t.subtopic}</span>
-                  <span className="text-xs text-ink-400 w-8 text-right">{mastery}%</span>
+                  <span className="flex-1 truncate text-sm text-content-muted">{t.subtopic}</span>
+                  <span className="text-xs text-content-subtle w-8 text-right">{mastery}%</span>
                 </li>
               );
             })}
@@ -107,19 +107,19 @@ export default function SatHubPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card hover className="flex flex-col items-center justify-center p-6 text-center">
           <span className="text-2xl mb-2">📈</span>
-          <Link href="/sat/desmos" className="font-medium text-ink-800 after:absolute after:inset-0">Desmos Training</Link>
+          <Link href="/sat/desmos" className="font-medium text-content after:absolute after:inset-0">Desmos Training</Link>
         </Card>
         <Card hover className="flex flex-col items-center justify-center p-6 text-center">
           <span className="text-2xl mb-2">📚</span>
-          <Link href="/sat/theory" className="font-medium text-ink-800 after:absolute after:inset-0">Grammar Rules</Link>
+          <Link href="/sat/theory" className="font-medium text-content after:absolute after:inset-0">Grammar Rules</Link>
         </Card>
         <Card hover className="flex flex-col items-center justify-center p-6 text-center">
           <span className="text-2xl mb-2">📓</span>
-          <Link href="/mistakes?exam=SAT" className="font-medium text-ink-800 after:absolute after:inset-0">Mistakes</Link>
+          <Link href="/mistakes?exam=SAT" className="font-medium text-content after:absolute after:inset-0">Mistakes</Link>
         </Card>
         <Card hover className="flex flex-col items-center justify-center p-6 text-center">
           <span className="text-2xl mb-2">🔗</span>
-          <Link href="/resources?exam=SAT" className="font-medium text-ink-800 after:absolute after:inset-0">Resources</Link>
+          <Link href="/resources?exam=SAT" className="font-medium text-content after:absolute after:inset-0">Resources</Link>
         </Card>
       </div>
     </div>

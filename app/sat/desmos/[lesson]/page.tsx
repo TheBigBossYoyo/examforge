@@ -16,14 +16,14 @@ function DesmosQuestion({ q, index }: { q: any; index: number }) {
   return (
     <Card className="p-6">
       <div className="mb-4">
-        <span className="font-semibold mr-2 text-ink-900">Q{index + 1}.</span>
+        <span className="font-semibold mr-2 text-content">Q{index + 1}.</span>
         <Markdown>{q.prompt_md}</Markdown>
       </div>
       
       {q.choices && (
         <div className="flex gap-2 flex-wrap mb-4">
           {q.choices.map((c: string) => (
-            <div key={c} className="px-3 py-1.5 border border-ink-200 rounded-md text-sm bg-ink-50">
+            <div key={c} className="px-3 py-1.5 border border-line rounded-md text-sm bg-surface-muted">
               <Markdown>{c}</Markdown>
             </div>
           ))}
@@ -38,12 +38,12 @@ function DesmosQuestion({ q, index }: { q: any; index: number }) {
           Reveal Workflow
         </button>
       ) : (
-        <div className="mt-4 pt-4 border-t border-ink-200">
+        <div className="mt-4 pt-4 border-t border-line">
           <div className="mb-2 text-sm">
             <span className="font-semibold text-sat-dark">Correct Answer: </span>
             <span className="font-medium">{q.correct_answer}</span>
           </div>
-          <div className="text-ink-700 bg-sat/5 p-3 rounded text-sm border-l-2 border-sat">
+          <div className="text-content-muted bg-sat/5 p-3 rounded text-sm border-l-2 border-sat">
             <span className="font-semibold text-sat-dark block mb-1">Desmos Workflow:</span>
             <Markdown>{q.reveal_md}</Markdown>
           </div>
@@ -75,7 +75,7 @@ export default function DesmosLessonPage({ params }: { params: { lesson: string 
             <Badge tone="amber">Final Challenge</Badge>
           )}
         </div>
-        <h1 className="text-3xl font-bold text-ink-900">{lesson.title}</h1>
+        <h1 className="text-3xl font-bold text-content">{lesson.title}</h1>
       </div>
 
       <div className="grid lg:grid-cols-[1fr_400px] gap-8">
@@ -96,14 +96,14 @@ export default function DesmosLessonPage({ params }: { params: { lesson: string 
               </div>
             </Card>
 
-            <div className="h-[400px] lg:h-[500px] shadow-sm rounded-xl overflow-hidden border border-ink-200">
+            <div className="h-[400px] lg:h-[500px] shadow-sm rounded-xl overflow-hidden border border-line">
               <DesmosCalculator state={lesson.desmos_state_json} className="w-full h-full border-0" height={500} />
             </div>
           </section>
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-xl font-bold text-ink-900 mb-4 border-b border-ink-200 pb-2">Practice</h2>
+          <h2 className="text-xl font-bold text-content mb-4 border-b border-line pb-2">Practice</h2>
           <div className="space-y-4">
             {lesson.questions.map((q, i) => (
               <DesmosQuestion key={i} q={q} index={i} />
@@ -112,7 +112,7 @@ export default function DesmosLessonPage({ params }: { params: { lesson: string 
         </div>
       </div>
 
-      <div className="mt-12 pt-6 border-t border-ink-200 flex justify-between">
+      <div className="mt-12 pt-6 border-t border-line flex justify-between">
         {prevLesson ? (
           <Link href={`/sat/desmos/${prevLesson.slug}`} className="btn-outline flex items-center gap-2">
             &larr; {prevLesson.title}

@@ -32,7 +32,7 @@ function escapeHtml(s: string): string {
 function inlineFormat(text: string): string {
   let t = escapeHtml(text);
   // inline code
-  t = t.replace(/`([^`]+)`/g, '<code class="px-1 py-0.5 rounded bg-ink-100 text-ink-800 text-[0.9em]">$1</code>');
+  t = t.replace(/`([^`]+)`/g, '<code class="px-1 py-0.5 rounded bg-surface-muted text-content text-[0.9em]">$1</code>');
   // bold then italic
   t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   t = t.replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>');
@@ -138,7 +138,7 @@ export function Markdown({ children, className = "" }: { children: string; class
   if (!children) return null;
   return (
     <div
-      className={`prose-katex text-ink-800 ${className}`}
+      className={`prose-katex text-content ${className}`}
       dangerouslySetInnerHTML={{ __html: toHtml(children) }}
     />
   );

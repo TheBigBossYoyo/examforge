@@ -10,7 +10,7 @@ import type { Confidence } from "@/lib/types";
 
 const DesmosCalculator = dynamic(
   () => import("@/components/Desmos").then((m) => m.DesmosCalculator),
-  { ssr: false, loading: () => <div className="p-4 text-sm text-ink-400">Loading Desmos…</div> },
+  { ssr: false, loading: () => <div className="p-4 text-sm text-content-subtle">Loading Desmos…</div> },
 );
 
 const CONFIDENCE_OPTS: { value: Confidence; label: string; tone: string }[] = [
@@ -123,17 +123,17 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
   return (
     <div className="space-y-4">
       {/* Top bar: timer + pace */}
-      <div className="sticky top-0 z-20 -mx-4 flex flex-wrap items-center justify-between gap-3 border-b border-ink-100 bg-white/95 px-4 py-3 backdrop-blur">
+      <div className="sticky top-0 z-20 -mx-4 flex flex-wrap items-center justify-between gap-3 border-b border-line bg-surface/95 px-4 py-3 backdrop-blur">
         <div>
-          <div className="text-sm font-semibold text-ink-900">{config.title}</div>
-          <div className="text-xs text-ink-400">{config.subtitle}</div>
+          <div className="text-sm font-semibold text-content">{config.title}</div>
+          <div className="text-xs text-content-subtle">{config.subtitle}</div>
         </div>
         <div className="flex items-center gap-4">
           <div className="text-center">
-            <div className={`tabular-nums text-xl font-bold ${remaining != null && remaining < 60 ? "text-rose-600" : "text-ink-900"}`}>
+            <div className={`tabular-nums text-xl font-bold ${remaining != null && remaining < 60 ? "text-rose-600" : "text-content"}`}>
               {remaining != null ? formatClock(remaining) : formatClock(elapsed)}
             </div>
-            <div className="text-[10px] uppercase tracking-wide text-ink-400">
+            <div className="text-[10px] uppercase tracking-wide text-content-subtle">
               {remaining != null ? "remaining" : "elapsed"}
             </div>
           </div>
@@ -141,7 +141,7 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
             <div className={`text-sm font-bold ${onPace ? "text-emerald-600" : "text-rose-600"}`}>
               {onPace ? "On pace" : `${Math.abs(paceDelta)} behind`}
             </div>
-            <div className="text-[10px] uppercase tracking-wide text-ink-400">
+            <div className="text-[10px] uppercase tracking-wide text-content-subtle">
               ~{Math.round(config.paceSecondsPerQ)}s/Q
             </div>
           </div>
@@ -160,17 +160,17 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
         <div className="space-y-4">
           <div className="card">
             <div className="mb-3 flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-ink-400">
-                <span className="font-semibold text-ink-700">Q{current + 1}</span>
+              <div className="flex items-center gap-2 text-sm text-content-subtle">
+                <span className="font-semibold text-content-muted">Q{current + 1}</span>
                 <span>of {questions.length}</span>
                 {q.topic_subtopic && (
-                  <span className="badge bg-ink-100 text-ink-600">{q.topic_subtopic}</span>
+                  <span className="badge bg-surface-muted text-content-muted">{q.topic_subtopic}</span>
                 )}
-                {q.difficulty && <span className="badge bg-ink-100 text-ink-500">{q.difficulty}</span>}
+                {q.difficulty && <span className="badge bg-surface-muted text-content-muted">{q.difficulty}</span>}
               </div>
               <button
                 onClick={() => update({ flagged: !a.flagged })}
-                className={`text-xs ${a.flagged ? "text-amber-600 font-semibold" : "text-ink-400"}`}
+                className={`text-xs ${a.flagged ? "text-amber-600 font-semibold" : "text-content-subtle"}`}
               >
                 {a.flagged ? "★ Flagged" : "☆ Flag"}
               </button>
@@ -201,10 +201,10 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
                           ? accent === "tmua"
                             ? "border-tmua bg-tmua/5 ring-1 ring-tmua"
                             : "border-sat bg-sat/5 ring-1 ring-sat"
-                          : "border-ink-200 hover:bg-ink-50"
+                          : "border-line hover:bg-surface-muted"
                       }`}
                     >
-                      <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${selected ? (accent === "tmua" ? "bg-tmua text-white" : "bg-sat text-white") : "bg-ink-100 text-ink-500"}`}>
+                      <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${selected ? (accent === "tmua" ? "bg-tmua text-white" : "bg-sat text-white") : "bg-surface-muted text-content-muted"}`}>
                         {String.fromCharCode(65 + idx)}
                       </span>
                       <Markdown>{choice}</Markdown>
@@ -223,13 +223,13 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
 
             {/* Confidence */}
             <div className="mt-4 flex items-center gap-2">
-              <span className="text-xs font-medium text-ink-400">Confidence:</span>
+              <span className="text-xs font-medium text-content-subtle">Confidence:</span>
               {CONFIDENCE_OPTS.map((opt) => (
                 <button
                   key={opt.value}
                   onClick={() => update({ confidence: opt.value })}
                   className={`rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset ${
-                    a.confidence === opt.value ? opt.tone : "bg-white text-ink-400 ring-ink-200"
+                    a.confidence === opt.value ? opt.tone : "bg-surface text-content-subtle ring-line"
                   }`}
                 >
                   {opt.label}
@@ -241,13 +241,13 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
           {/* Hints (learning mode) */}
           {canReveal && (
             <div className="card space-y-2">
-              <div className="text-xs font-semibold uppercase tracking-wide text-ink-400">
+              <div className="text-xs font-semibold uppercase tracking-wide text-content-subtle">
                 Hints {config.strict ? "" : "(nudge → method → key step)"}
               </div>
               {[q.hint1_md, q.hint2_md, q.hint3_md].map((hint, i) =>
                 hint ? (
                   a.hintsUsed > i ? (
-                    <div key={i} className="rounded-lg bg-ink-50 px-3 py-2 text-sm">
+                    <div key={i} className="rounded-lg bg-surface-muted px-3 py-2 text-sm">
                       <Markdown>{hint}</Markdown>
                     </div>
                   ) : (
@@ -284,7 +284,7 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
             <div className="card">
               <div className="mb-2 flex items-center justify-between">
                 <span className="text-sm font-semibold text-sat-dark">Desmos calculator</span>
-                <button onClick={() => setShowDesmos(false)} className="text-xs text-ink-400">
+                <button onClick={() => setShowDesmos(false)} className="text-xs text-content-subtle">
                   Close
                 </button>
               </div>
@@ -320,7 +320,7 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
 
         {/* Navigator */}
         <div className="card h-fit lg:sticky lg:top-20">
-          <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-400">
+          <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-content-subtle">
             Navigator · {answeredCount}/{questions.length}
           </div>
           <div className="grid grid-cols-5 gap-1.5">
@@ -333,12 +333,12 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
                   onClick={() => setCurrent(i)}
                   className={`relative h-9 rounded-lg text-xs font-semibold transition-colors ${
                     i === current
-                      ? "bg-ink-900 text-white"
+                      ? "bg-content text-white"
                       : done
                         ? accent === "tmua"
                           ? "bg-tmua/15 text-tmua-dark"
                           : "bg-sat/15 text-sat-dark"
-                        : "bg-ink-100 text-ink-400"
+                        : "bg-surface-muted text-content-subtle"
                   }`}
                 >
                   {i + 1}
@@ -347,7 +347,7 @@ export function PracticeRunner({ config }: { config: RunnerConfig }) {
               );
             })}
           </div>
-          <div className="mt-3 space-y-1 text-[11px] text-ink-400">
+          <div className="mt-3 space-y-1 text-[11px] text-content-subtle">
             <div>● answered ○ unanswered ★ flagged</div>
             {config.mode === "exam" && <div className="text-amber-600">Exam mode — solutions hidden until submit.</div>}
           </div>

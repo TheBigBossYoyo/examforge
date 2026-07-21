@@ -66,18 +66,18 @@ export function TriagePanel({ items }: { items: TriageItem[] }) {
   const over = item.seconds_spent > item.budget_seconds;
 
   return (
-    <div className="rounded-2xl border border-ink-200 p-5">
+    <div className="rounded-2xl border border-line p-5">
       <div className="flex items-center justify-between gap-2">
-        <div className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+        <div className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
           Triage {index + 1} of {items.length}
           {item.subtopic ? ` · ${item.subtopic}` : ""}
         </div>
-        <div className={`text-xs font-semibold ${over ? "text-rose-600" : "text-ink-400"}`}>
+        <div className={`text-xs font-semibold ${over ? "text-rose-600" : "text-content-subtle"}`}>
           {Math.round(item.seconds_spent)}s / {Math.round(item.budget_seconds)}s budget
         </div>
       </div>
 
-      <div className="mt-3 max-h-40 overflow-y-auto rounded-lg bg-ink-50/60 p-3">
+      <div className="mt-3 max-h-40 overflow-y-auto rounded-lg bg-surface-muted/60 p-3">
         <Markdown className="text-sm">{item.prompt_md}</Markdown>
       </div>
 
@@ -85,11 +85,11 @@ export function TriagePanel({ items }: { items: TriageItem[] }) {
         <div className="text-[11px] font-extrabold uppercase tracking-widest text-sky-700">
           Suggested — not recorded until you confirm
         </div>
-        <p className="mt-1 text-sm text-ink-700">{item.suggestion.reason}</p>
+        <p className="mt-1 text-sm text-content-muted">{item.suggestion.reason}</p>
       </div>
 
       <div className="mt-4">
-        <div className="mb-2 text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+        <div className="mb-2 text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
           Why did you miss it?
         </div>
         <div className="grid gap-2 sm:grid-cols-2">
@@ -102,11 +102,11 @@ export function TriagePanel({ items }: { items: TriageItem[] }) {
                 disabled={saving}
                 className={`rounded-xl border px-3 py-2.5 text-left transition-colors disabled:opacity-50 ${
                   suggested
-                    ? "border-ink-900 bg-ink-50 ring-1 ring-ink-900"
-                    : "border-ink-200 hover:bg-ink-50"
+                    ? "border-ink-900 bg-surface-muted ring-1 ring-ink-900"
+                    : "border-line hover:bg-surface-muted"
                 }`}
               >
-                <div className="text-sm font-bold text-ink-900">
+                <div className="text-sm font-bold text-content">
                   {ROOT_CAUSE_LABELS[cause]}
                   {suggested && (
                     <span className="ml-1.5 text-[10px] font-extrabold uppercase tracking-widest text-sky-600">
@@ -114,7 +114,7 @@ export function TriagePanel({ items }: { items: TriageItem[] }) {
                     </span>
                   )}
                 </div>
-                <div className="mt-0.5 text-xs leading-snug text-ink-500">
+                <div className="mt-0.5 text-xs leading-snug text-content-muted">
                   {ROOT_CAUSE_ACTIONS[cause]}
                 </div>
               </button>
@@ -127,10 +127,10 @@ export function TriagePanel({ items }: { items: TriageItem[] }) {
         <div className="mt-3 rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-700">{error}</div>
       )}
 
-      <div className="mt-3 flex items-center justify-between text-xs text-ink-400">
+      <div className="mt-3 flex items-center justify-between text-xs text-content-subtle">
         <span>{done} triaged this session</span>
         {index < items.length - 1 && (
-          <button onClick={() => setIndex((i) => i + 1)} className="hover:text-ink-700">
+          <button onClick={() => setIndex((i) => i + 1)} className="hover:text-content-muted">
             Skip →
           </button>
         )}

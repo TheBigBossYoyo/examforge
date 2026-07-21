@@ -89,7 +89,7 @@ export function TutorChat({ exam }: { exam?: string }) {
               key={p}
               onClick={() => send(p)}
               disabled={loading}
-              className="rounded-full border border-ink-200 bg-white px-3 py-1.5 text-xs font-medium text-ink-600 transition-colors hover:border-tmua hover:text-tmua disabled:opacity-50"
+              className="rounded-full border border-line bg-surface px-3 py-1.5 text-xs font-medium text-content-muted transition-colors hover:border-tmua hover:text-tmua disabled:opacity-50"
             >
               {p}
             </button>
@@ -105,7 +105,7 @@ export function TutorChat({ exam }: { exam?: string }) {
               className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm ${
                 msg.role === "user"
                   ? "rounded-br-sm bg-tmua text-white"
-                  : "rounded-bl-sm border border-ink-100 bg-white text-ink-800 shadow-sm"
+                  : "rounded-bl-sm border border-line bg-surface text-content shadow-sm"
               }`}
             >
               {msg.role === "assistant" ? (
@@ -119,7 +119,7 @@ export function TutorChat({ exam }: { exam?: string }) {
 
         {loading && (
           <div className="flex justify-start">
-            <div className="rounded-2xl rounded-bl-sm border border-ink-100 bg-white px-4 py-2.5 text-sm text-ink-400 shadow-sm">
+            <div className="rounded-2xl rounded-bl-sm border border-line bg-surface px-4 py-2.5 text-sm text-content-subtle shadow-sm">
               <span className="animate-pulse">Thinking…</span>
             </div>
           </div>
@@ -128,9 +128,9 @@ export function TutorChat({ exam }: { exam?: string }) {
       </div>
 
       {/* Input area */}
-      <div className="flex gap-2 rounded-xl border border-ink-200 bg-white p-2 transition-colors focus-within:border-tmua">
+      <div className="flex gap-2 rounded-xl border border-line bg-surface p-2 transition-colors focus-within:border-tmua">
         <textarea
-          className="flex-1 resize-none border-0 bg-transparent px-1 text-sm outline-none placeholder:text-ink-400"
+          className="flex-1 resize-none border-0 bg-transparent px-1 text-sm outline-none placeholder:text-content-subtle"
           rows={2}
           placeholder="Ask anything about TMUA or SAT… (Enter to send, Shift+Enter for new line)"
           value={input}

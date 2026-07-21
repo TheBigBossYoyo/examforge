@@ -20,7 +20,7 @@ export default function DesmosMasteryIndex() {
       </div>
 
       <div className="mt-8 space-y-6">
-        <h2 className="text-2xl font-bold text-ink-900 mb-4">The 11 Desmos Skills</h2>
+        <h2 className="text-2xl font-bold text-content mb-4">The 11 Desmos Skills</h2>
         <div className="grid gap-4 md:grid-cols-2">
           {lessons.map((l) => (
             <Link key={l.n} href={`/sat/desmos/${l.slug}`}>
@@ -28,7 +28,7 @@ export default function DesmosMasteryIndex() {
                 <div className="flex items-center gap-3 mb-2">
                   <Badge tone="sat">Skill {l.n}</Badge>
                 </div>
-                <h3 className="font-semibold text-lg text-ink-900 group-hover:text-sat transition-colors">
+                <h3 className="font-semibold text-lg text-content group-hover:text-sat transition-colors">
                   {l.title}
                 </h3>
               </Card>
@@ -38,11 +38,11 @@ export default function DesmosMasteryIndex() {
 
         {speedDrills && (
           <div className="pt-8">
-            <h2 className="text-2xl font-bold text-ink-900 mb-4">Final Challenge</h2>
+            <h2 className="text-2xl font-bold text-content mb-4">Final Challenge</h2>
             <Link href={`/sat/desmos/${speedDrills.slug}`}>
               <Card hover className="flex flex-col p-6 border-sat-200 bg-sat/5 text-center items-center">
                 <h3 className="font-bold text-xl text-sat-dark mb-2">Desmos Speed Drills</h3>
-                <p className="text-ink-600 mb-4">Test your mastery of all 11 skills under pressure.</p>
+                <p className="text-content-muted mb-4">Test your mastery of all 11 skills under pressure.</p>
                 <div className="btn-sat inline-flex">Start Drills</div>
               </Card>
             </Link>

@@ -45,7 +45,7 @@ export function MistakeActions({
   };
 
   return (
-    <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-ink-100 pt-3 text-sm print:hidden">
+    <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-line pt-3 text-sm print:hidden">
       <button
         onClick={() => run({ id, action: resolved ? "unresolve" : "resolve" })}
         disabled={busy}
@@ -58,7 +58,7 @@ export function MistakeActions({
         value={errorType}
         disabled={busy}
         onChange={(e) => run({ id, action: "errorType", error_type: e.target.value })}
-        className="rounded-lg border border-ink-200 px-2 py-1 text-xs"
+        className="rounded-lg border border-line px-2 py-1 text-xs"
         aria-label="Error type"
       >
         {errorOptions.map((opt) => (

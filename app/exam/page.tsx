@@ -35,7 +35,7 @@ export default function ExamPage() {
           const format = getExamFormat(exam.name as ExamName);
           return (
             <div key={exam.id}>
-              <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-ink-400">
+              <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-content-subtle">
                 {exam.name}
               </h2>
               <div className="grid gap-3 sm:grid-cols-2">
@@ -47,10 +47,10 @@ export default function ExamPage() {
                     <Card key={section.code} hover>
                       <div className="flex items-start justify-between gap-2">
                         <div>
-                          <div className="font-bold tracking-tight text-ink-900">
+                          <div className="font-bold tracking-tight text-content">
                             {section.label}
                           </div>
-                          <div className="mt-1 text-xs text-ink-500">
+                          <div className="mt-1 text-xs text-content-muted">
                             {needed} questions · {sectionMinutes(section)} min ·{" "}
                             {section.modules.length === 2 ? "2 modules" : "1 paper"}
                           </div>
@@ -96,16 +96,16 @@ export default function ExamPage() {
 
       {sessions.length > 0 && (
         <div className="mt-10">
-          <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-ink-400">
+          <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-content-subtle">
             Recent sections
           </h2>
           <Card>
-            <div className="divide-y divide-ink-100">
+            <div className="divide-y divide-line">
               {sessions.map((s) => (
                 <div key={s.id} className="flex items-center justify-between gap-3 py-2.5 text-sm">
                   <div>
-                    <span className="font-semibold text-ink-800">{s.section}</span>
-                    <span className="ml-2 text-xs text-ink-400">
+                    <span className="font-semibold text-content">{s.section}</span>
+                    <span className="ml-2 text-xs text-content-subtle">
                       {s.started_at.slice(0, 16).replace("T", " ")}
                     </span>
                   </div>
@@ -115,7 +115,7 @@ export default function ExamPage() {
                         {s.routed_difficulty} route
                       </Badge>
                     )}
-                    <span className="font-bold tabular-nums text-ink-900">
+                    <span className="font-bold tabular-nums text-content">
                       {s.finished_at ? (s.scaled_score ?? "—") : "in progress"}
                     </span>
                   </div>

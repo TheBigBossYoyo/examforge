@@ -107,19 +107,19 @@ export default function ReviewPage({ params }: { params: { attemptId: string } }
           if (!q) {
             return (
               <Card key={r.id}>
-                <p className="text-sm text-ink-400">Question #{r.question_id} no longer in bank.</p>
+                <p className="text-sm text-content-subtle">Question #{r.question_id} no longer in bank.</p>
               </Card>
             );
           }
           return (
             <Card key={r.id} className={ok ? "" : "ring-1 ring-rose-200"}>
               <div className="mb-2 flex flex-wrap items-center gap-2">
-                <span className="text-sm font-semibold text-ink-700">Q{i + 1}</span>
+                <span className="text-sm font-semibold text-content-muted">Q{i + 1}</span>
                 <Badge tone={ok ? "green" : "rose"}>{ok ? "Correct" : "Incorrect"}</Badge>
                 {q.topic_subtopic && <Badge tone="ink">{q.topic_subtopic}</Badge>}
                 {q.difficulty && <Badge tone="ink">{q.difficulty}</Badge>}
                 {r.confidence && <Badge tone={CONF_TONE[r.confidence]}>{r.confidence}</Badge>}
-                <span className={`ml-auto text-xs ${overPace ? "text-rose-600 font-medium" : "text-ink-400"}`}>
+                <span className={`ml-auto text-xs ${overPace ? "text-rose-600 font-medium" : "text-content-subtle"}`}>
                   {formatClock(r.seconds_spent)} {overPace ? `(slow · ~${pace}s pace)` : `/ ~${pace}s`}
                 </span>
               </div>
@@ -128,14 +128,14 @@ export default function ReviewPage({ params }: { params: { attemptId: string } }
 
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 <div className={`rounded-lg px-3 py-2 text-sm ${ok ? "bg-emerald-50" : "bg-rose-50"}`}>
-                  <span className="text-xs font-medium uppercase tracking-wide text-ink-400">Your answer</span>
+                  <span className="text-xs font-medium uppercase tracking-wide text-content-subtle">Your answer</span>
                   <div className={`font-medium ${ok ? "text-emerald-700" : "text-rose-700"}`}>
-                    {r.given_answer ?? <span className="italic text-ink-400">blank</span>}
+                    {r.given_answer ?? <span className="italic text-content-subtle">blank</span>}
                   </div>
                 </div>
                 {!ok && (
                   <div className="rounded-lg bg-emerald-50 px-3 py-2 text-sm">
-                    <span className="text-xs font-medium uppercase tracking-wide text-ink-400">Correct answer</span>
+                    <span className="text-xs font-medium uppercase tracking-wide text-content-subtle">Correct answer</span>
                     <div className="font-medium text-emerald-700">{q.correct_answer}</div>
                   </div>
                 )}
@@ -143,10 +143,10 @@ export default function ReviewPage({ params }: { params: { attemptId: string } }
 
               {q.solution_md && (
                 <details className="mt-3 group" open={!ok}>
-                  <summary className="cursor-pointer text-sm font-semibold text-ink-600 hover:text-ink-900">
+                  <summary className="cursor-pointer text-sm font-semibold text-content-muted hover:text-content">
                     Solution
                   </summary>
-                  <div className="mt-2 rounded-lg border border-ink-100 bg-ink-50/60 px-3 py-2">
+                  <div className="mt-2 rounded-lg border border-line bg-surface-muted/60 px-3 py-2">
                     <Markdown className="text-sm">{q.solution_md}</Markdown>
                     {q.faster_method_md && (
                       <div className="mt-2 rounded bg-sat/10 px-2 py-1 text-sm text-sat-dark">
@@ -162,10 +162,10 @@ export default function ReviewPage({ params }: { params: { attemptId: string } }
       </div>
 
       <div className="flex justify-between">
-        <Link href="/" className="text-sm text-ink-400 hover:text-ink-700">
+        <Link href="/" className="text-sm text-content-subtle hover:text-content-muted">
           ← Dashboard
         </Link>
-        <Link href={`/analytics`} className="text-sm text-ink-400 hover:text-ink-700">
+        <Link href={`/analytics`} className="text-sm text-content-subtle hover:text-content-muted">
           See analytics →
         </Link>
       </div>

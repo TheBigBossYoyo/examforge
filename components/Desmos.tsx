@@ -104,12 +104,12 @@ export function DesmosCalculator({
   }, [state]);
 
   return (
-    <div className={`overflow-hidden rounded-xl border border-ink-200 ${className}`}>
+    <div className={`overflow-hidden rounded-xl border border-line ${className}`}>
       {status === "error" ? (
-        <div className="flex flex-col items-center justify-center bg-ink-50 p-6 text-center" style={{ height }}>
-          <p className="text-sm font-medium text-ink-700">Desmos couldn’t load.</p>
-          <p className="mt-1 text-xs text-ink-500">
-            Add your free key as <code className="rounded bg-ink-100 px-1">NEXT_PUBLIC_DESMOS_API_KEY</code>, or
+        <div className="flex flex-col items-center justify-center bg-surface-muted p-6 text-center" style={{ height }}>
+          <p className="text-sm font-medium text-content-muted">Desmos couldn’t load.</p>
+          <p className="mt-1 text-xs text-content-muted">
+            Add your free key as <code className="rounded bg-surface-muted px-1">NEXT_PUBLIC_DESMOS_API_KEY</code>, or
           </p>
           <a
             href="https://www.desmos.com/calculator"
@@ -123,7 +123,7 @@ export function DesmosCalculator({
       ) : (
         <div className="relative" style={{ height }}>
           {status === "loading" && (
-            <div className="absolute inset-0 z-10 flex items-center justify-center bg-ink-50 text-sm text-ink-400">
+            <div className="absolute inset-0 z-10 flex items-center justify-center bg-surface-muted text-sm text-content-subtle">
               Loading Desmos…
             </div>
           )}

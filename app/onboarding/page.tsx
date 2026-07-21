@@ -54,11 +54,11 @@ export default function OnboardingPage() {
       <div className="grid gap-3 sm:grid-cols-3">
         {STEPS.map((s) => (
           <Card key={s.n} className="space-y-1">
-            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-ink-900 text-sm font-bold text-white">
+            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-content text-sm font-bold text-white">
               {s.n}
             </div>
-            <div className="mt-1 text-sm font-semibold text-ink-900">{s.title}</div>
-            <p className="text-xs text-ink-500">{s.body}</p>
+            <div className="mt-1 text-sm font-semibold text-content">{s.title}</div>
+            <p className="text-xs text-content-muted">{s.body}</p>
           </Card>
         ))}
       </div>
@@ -68,10 +68,10 @@ export default function OnboardingPage() {
         <Card className="flex flex-col gap-3">
           <div className="flex items-center justify-between">
             <Badge tone="tmua">TMUA</Badge>
-            <span className="text-xs text-ink-400">Target 9.0 · {formatDate(effectiveExamDate(tmua))}</span>
+            <span className="text-xs text-content-subtle">Target 9.0 · {formatDate(effectiveExamDate(tmua))}</span>
           </div>
           <Countdown date={effectiveExamDate(tmua)} tone="tmua" />
-          <p className="text-sm text-ink-600">
+          <p className="text-sm text-content-muted">
             A short non-calculator diagnostic across Paper 1 (applications) and Paper 2 (reasoning &
             proof). No calculator — TMUA is non-calculator.
           </p>
@@ -83,10 +83,10 @@ export default function OnboardingPage() {
         <Card className="flex flex-col gap-3">
           <div className="flex items-center justify-between">
             <Badge tone="sat">Digital SAT</Badge>
-            <span className="text-xs text-ink-400">Target 1600 · {formatDate(effectiveExamDate(sat))}</span>
+            <span className="text-xs text-content-subtle">Target 1600 · {formatDate(effectiveExamDate(sat))}</span>
           </div>
           <Countdown date={effectiveExamDate(sat)} tone="sat" />
-          <p className="text-sm text-ink-600">
+          <p className="text-sm text-content-muted">
             A mixed Math + Reading & Writing diagnostic. Desmos is available on the Math questions,
             just like the real Digital SAT.
           </p>
@@ -96,8 +96,8 @@ export default function OnboardingPage() {
         </Card>
       </div>
 
-      <Card className="flex flex-col items-start gap-2 bg-ink-50/60">
-        <div className="text-sm text-ink-600">
+      <Card className="flex flex-col items-start gap-2 bg-surface-muted/60">
+        <div className="text-sm text-content-muted">
           Your bank holds <strong>{totalQuestions}</strong> original / imported questions. Copyright
           rules mean official past papers are linked, never stored — diagnostics draw only from your
           own bank. Add more on the Import page any time.

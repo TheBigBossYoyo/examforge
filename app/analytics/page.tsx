@@ -80,7 +80,7 @@ function ExamPanel({ exam, analytics }: { exam: Exam; analytics: ExamAnalytics }
       {/* Header */}
       <div className="flex items-center gap-3">
         <div className={`h-2 w-2 rounded-full ${accentBg}`} />
-        <h2 className="text-xl font-bold tracking-tight text-ink-900">{exam.name}</h2>
+        <h2 className="text-xl font-bold tracking-tight text-content">{exam.name}</h2>
         <Badge tone={accentBadge}>{exam.name === "TMUA" ? "TMUA" : "SAT"}</Badge>
       </div>
 
@@ -125,7 +125,7 @@ function ExamPanel({ exam, analytics }: { exam: Exam; analytics: ExamAnalytics }
               <h3 className={`mb-3 text-sm font-semibold uppercase tracking-wide ${accentText}`}>
                 Section Score Estimates
               </h3>
-              <p className="mb-3 text-xs text-ink-400">
+              <p className="mb-3 text-xs text-content-subtle">
                 Math: <strong>{prediction.math}</strong> · R&amp;W: <strong>{prediction.rw}</strong> · Total: <strong>{prediction.total}</strong>
                 {prediction.prioritise !== "Balanced" && (
                   <> · Prioritise: <strong>{prediction.prioritise}</strong></>
@@ -142,7 +142,7 @@ function ExamPanel({ exam, analytics }: { exam: Exam; analytics: ExamAnalytics }
               Topic Mastery Heatmap
             </h3>
             {analytics.accuracyByTopic.length === 0 ? (
-              <p className="text-sm text-ink-400">No topic data yet.</p>
+              <p className="text-sm text-content-subtle">No topic data yet.</p>
             ) : (
               <Heatmap
                 data={analytics.accuracyByTopic}
@@ -207,7 +207,7 @@ function ExamPanel({ exam, analytics }: { exam: Exam; analytics: ExamAnalytics }
                 <h3 className={`mb-3 text-sm font-semibold uppercase tracking-wide ${accentText}`}>
                   Confidence Calibration
                 </h3>
-                <p className="mb-2 text-xs text-ink-400">
+                <p className="mb-2 text-xs text-content-subtle">
                   Ideal: Guessed → low accuracy · Confident → high accuracy
                 </p>
                 <ConfidenceCalibrationChart data={analytics.confidenceCalibration} />

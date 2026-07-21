@@ -89,11 +89,11 @@ export function PlannerBoard({
         <Card className="space-y-3 border-l-4 border-amber-400">
           <div className="flex flex-wrap items-center gap-2">
             <Badge tone="amber">Phase 2</Badge>
-            <span className="text-sm font-semibold text-ink-900">
+            <span className="text-sm font-semibold text-content">
               SAT is done — reallocate freed SAT blocks to TMUA?
             </span>
           </div>
-          <p className="text-sm text-ink-500">
+          <p className="text-sm text-content-muted">
             Your Mon–Thu 07:00–09:00 SAT blocks are now free. Reallocating fills them with TMUA work
             until exam day. Nothing changes until you confirm.
           </p>
@@ -137,11 +137,11 @@ export function PlannerBoard({
               <div>
                 <div className="flex items-center gap-2">
                   <Badge tone={tone}>{exam.name}</Badge>
-                  <span className="text-xs text-ink-400">Study plan</span>
+                  <span className="text-xs text-content-subtle">Study plan</span>
                   {taper && <Badge tone="amber">Taper</Badge>}
                 </div>
-                <h2 className="mt-1 text-lg font-semibold text-ink-900">Agenda from today forward</h2>
-                <p className="mt-1 text-sm text-ink-500">
+                <h2 className="mt-1 text-lg font-semibold text-content">Agenda from today forward</h2>
+                <p className="mt-1 text-sm text-content-muted">
                   Tasks are filled into your fixed schedule blocks. Loads are an estimate.
                 </p>
               </div>
@@ -162,8 +162,8 @@ export function PlannerBoard({
 
             <div className="grid gap-3 md:grid-cols-[160px,1fr] md:items-center">
               <div>
-                <div className="text-xs font-semibold uppercase tracking-wide text-ink-400">Completion</div>
-                <div className="mt-1 text-2xl font-bold text-ink-900">
+                <div className="text-xs font-semibold uppercase tracking-wide text-content-subtle">Completion</div>
+                <div className="mt-1 text-2xl font-bold text-content">
                   {done}/{items.length || 0}
                 </div>
               </div>
@@ -179,17 +179,17 @@ export function PlannerBoard({
             ) : (
               <div className="space-y-4">
                 {dates.map((date) => (
-                  <section key={date} className="rounded-2xl border border-ink-100 bg-ink-50/40 p-4">
+                  <section key={date} className="rounded-2xl border border-line bg-surface-muted/40 p-4">
                     <div className="mb-3 flex flex-wrap items-center gap-2">
                       <Badge tone={tone}>{formatDate(date)}</Badge>
-                      <span className="text-xs text-ink-400">{grouped[date].length} task{grouped[date].length === 1 ? "" : "s"}</span>
+                      <span className="text-xs text-content-subtle">{grouped[date].length} task{grouped[date].length === 1 ? "" : "s"}</span>
                     </div>
                     <div className="space-y-3">
                       {grouped[date].map((item) => {
                         const itemBusy = busyKey === `toggle-${item.id}`;
                         const title = sessionTitle(item.session_code);
                         return (
-                          <div key={item.id} className="rounded-xl border border-white/80 bg-white p-3 shadow-sm">
+                          <div key={item.id} className="rounded-xl border border-white/80 bg-surface p-3 shadow-sm">
                             <div className="flex items-start gap-3">
                               <input
                                 type="checkbox"
@@ -202,19 +202,19 @@ export function PlannerBoard({
                                     done: e.target.checked,
                                   })
                                 }
-                                className="mt-1 h-4 w-4 rounded border-ink-300 text-ink-900"
+                                className="mt-1 h-4 w-4 rounded border-line-strong text-content"
                               />
                               <div className="min-w-0 flex-1">
                                 <div className="mb-2 flex flex-wrap items-center gap-2">
                                   <Badge tone={tone}>{item.type}</Badge>
                                   {title && <Badge tone="blue">{title}</Badge>}
                                   {item.start_time && (
-                                    <span className="text-xs text-ink-400">{item.start_time}</span>
+                                    <span className="text-xs text-content-subtle">{item.start_time}</span>
                                   )}
                                   {item.subtopic && <Badge tone="ink">{item.subtopic}</Badge>}
-                                  {item.area && <span className="text-xs text-ink-400">{item.area}</span>}
+                                  {item.area && <span className="text-xs text-content-subtle">{item.area}</span>}
                                   {item.est_minutes !== null && (
-                                    <span className="ml-auto text-xs text-ink-400">~{formatClock(item.est_minutes * 60)}</span>
+                                    <span className="ml-auto text-xs text-content-subtle">~{formatClock(item.est_minutes * 60)}</span>
                                   )}
                                 </div>
                                 <div className={item.done === 1 ? "opacity-60" : ""}>

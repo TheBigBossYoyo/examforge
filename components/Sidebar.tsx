@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { Icon } from "@/components/Icon";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface NavItem {
   href: string;
@@ -21,52 +23,52 @@ const GROUPS: NavGroup[] = [
     title: "Overview",
     tone: "ink",
     items: [
-      { href: "/", label: "Dashboard", icon: "?" },
-      { href: "/exam", label: "Full Sections", icon: "?" },
-      { href: "/schedule", label: "Weekly Schedule", icon: "??" },
-      { href: "/analytics", label: "Analytics", icon: "??" },
-      { href: "/insights", label: "Insights", icon: "?" },
-      { href: "/planner", label: "Study Planner", icon: "??" },
-      { href: "/mistakes", label: "Mistake Notebook", icon: "??" },
-      { href: "/resources", label: "Resource Library", icon: "??" },
+      { href: "/", label: "Dashboard", icon: "home" },
+      { href: "/exam", label: "Full Sections", icon: "exam" },
+      { href: "/schedule", label: "Weekly Schedule", icon: "calendar" },
+      { href: "/analytics", label: "Analytics", icon: "chart" },
+      { href: "/insights", label: "Insights", icon: "insights" },
+      { href: "/planner", label: "Study Planner", icon: "list" },
+      { href: "/mistakes", label: "Mistake Notebook", icon: "flag" },
+      { href: "/resources", label: "Resource Library", icon: "book" },
     ],
   },
   {
     title: "TMUA",
     tone: "tmua",
     items: [
-      { href: "/tmua", label: "TMUA Hub", icon: "?" },
-      { href: "/tmua/papers", label: "Past Papers", icon: "??" },
-      { href: "/tmua/practice", label: "Topic Practice", icon: "??" },
-      { href: "/tmua/theory", label: "Theory", icon: "??" },
+      { href: "/tmua", label: "TMUA Hub", icon: "sigma" },
+      { href: "/tmua/papers", label: "Past Papers", icon: "doc" },
+      { href: "/tmua/practice", label: "Topic Practice", icon: "target" },
+      { href: "/tmua/theory", label: "Theory", icon: "book" },
     ],
   },
   {
     title: "Digital SAT",
     tone: "sat",
     items: [
-      { href: "/sat", label: "SAT Hub", icon: "??" },
-      { href: "/sat/math", label: "Math", icon: "?" },
-      { href: "/sat/reading", label: "Reading", icon: "??" },
-      { href: "/sat/writing", label: "Writing", icon: "?" },
-      { href: "/sat/desmos", label: "Desmos Mastery", icon: "??" },
-      { href: "/sat/desmos/drills", label: "Desmos Drills", icon: "?" },
-      { href: "/sat/theory", label: "Theory", icon: "??" },
+      { href: "/sat", label: "SAT Hub", icon: "star" },
+      { href: "/sat/math", label: "Math", icon: "sigma" },
+      { href: "/sat/reading", label: "Reading", icon: "book" },
+      { href: "/sat/writing", label: "Writing", icon: "pen" },
+      { href: "/sat/desmos", label: "Desmos Mastery", icon: "graph" },
+      { href: "/sat/desmos/drills", label: "Desmos Drills", icon: "timer" },
+      { href: "/sat/theory", label: "Theory", icon: "book" },
     ],
   },
   {
     title: "Tools",
     tone: "ink",
     items: [
-      { href: "/tutor", label: "AI Tutor", icon: "??" },
-      { href: "/admin", label: "Import / Export", icon: "?" },
-      { href: "/settings", label: "Settings", icon: "??" },
+      { href: "/tutor", label: "AI Tutor", icon: "chat" },
+      { href: "/admin", label: "Import / Export", icon: "io" },
+      { href: "/settings", label: "Settings", icon: "gear" },
     ],
   },
 ];
 
 const toneDot: Record<string, string> = {
-  ink: "bg-ink-300",
+  ink: "bg-content-subtle",
   tmua: "bg-tmua shadow-[0_0_8px_rgba(109,93,252,0.4)]",
   sat: "bg-sat shadow-[0_0_8px_rgba(14,165,164,0.4)]",
 };
@@ -81,37 +83,45 @@ export function Sidebar() {
   return (
     <>
       {/* Mobile top bar */}
-      <div className="lg:hidden sticky top-0 z-30 flex items-center justify-between border-b border-ink-100 bg-white/95 px-5 py-4 backdrop-blur-md shadow-sm">
-        <Link href="/" className="flex items-center gap-1.5 font-extrabold text-ink-900 tracking-tight text-xl">
-          <span className="text-tmua drop-shadow-sm">Exam</span>
-          <span className="text-sat drop-shadow-sm">Forge</span>
-        </Link>
-        <button
-          onClick={() => setOpen((o) => !o)}
-          className="rounded-xl border border-ink-200 bg-white px-3 py-2 text-sm shadow-sm hover:bg-ink-50 active:scale-[0.95] transition-all"
-          aria-label="Toggle navigation"
+      <div className="sticky top-0 z-30 flex items-center justify-between border-b border-line bg-surface/95 px-5 py-4 shadow-sm backdrop-blur-md lg:hidden">
+        <Link
+          href="/"
+          className="flex items-center gap-1.5 text-xl font-extrabold tracking-tight text-content"
         >
-          ?
-        </button>
+          <span className="text-tmua">Exam</span>
+          <span className="text-sat">Forge</span>
+        </Link>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((o) => !o)}
+            className="rounded-xl border border-line bg-surface p-2 text-content-muted shadow-sm transition-all hover:bg-surface-muted active:scale-[0.95]"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-expanded={open}
+          >
+            <Icon name={open ? "close" : "menu"} size={20} />
+          </button>
+        </div>
       </div>
 
       <aside
         className={`${
           open ? "block shadow-2xl" : "hidden"
-        } lg:block lg:sticky lg:top-0 lg:h-screen w-full lg:w-72 shrink-0 border-r border-ink-100/80 bg-white lg:overflow-y-auto lg:bg-white/80 lg:backdrop-blur-xl z-40 transition-all`}
+        } z-40 w-full shrink-0 border-r border-line bg-surface transition-all lg:sticky lg:top-0 lg:block lg:h-screen lg:w-72 lg:overflow-y-auto lg:bg-surface/80 lg:backdrop-blur-xl`}
       >
-        <div className="hidden lg:flex items-center gap-1.5 px-8 py-8">
-          <Link href="/" className="flex items-center gap-1 font-extrabold text-2xl tracking-tight">
-            <span className="text-tmua drop-shadow-sm">Exam</span>
-            <span className="text-sat drop-shadow-sm">Forge</span>
+        <div className="hidden items-center justify-between px-8 py-8 lg:flex">
+          <Link href="/" className="flex items-center gap-1 text-2xl font-extrabold tracking-tight">
+            <span className="text-tmua">Exam</span>
+            <span className="text-sat">Forge</span>
           </Link>
+          <ThemeToggle />
         </div>
         <nav className="px-4 pb-10 space-y-8">
           {GROUPS.map((group) => (
             <div key={group.title}>
               <div className="flex items-center gap-2.5 px-4 py-2">
                 <span className={`h-2 w-2 rounded-full ${toneDot[group.tone]}`} />
-                <span className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+                <span className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
                   {group.title}
                 </span>
               </div>
@@ -123,18 +133,23 @@ export function Sidebar() {
                       <Link
                         href={item.href}
                         onClick={() => setOpen(false)}
+                        aria-current={active ? "page" : undefined}
                         className={`group flex items-center gap-3 rounded-xl px-4 py-2.5 text-[14px] font-medium transition-all duration-200 ${
                           active
                             ? group.tone === "tmua"
-                              ? "bg-tmua/10 text-tmua-dark font-bold"
+                              ? "bg-tmua/10 font-bold text-tmua dark:text-tmua-soft"
                               : group.tone === "sat"
-                              ? "bg-sat/10 text-sat-dark font-bold"
-                              : "bg-ink-900 text-white shadow-sm font-bold"
-                            : "text-ink-600 hover:bg-ink-50 hover:text-ink-900"
+                                ? "bg-sat/10 font-bold text-sat dark:text-sat-soft"
+                                : "bg-content font-bold text-surface shadow-sm"
+                            : "text-content-muted hover:bg-surface-muted hover:text-content"
                         }`}
                       >
-                        <span className={`w-5 text-center text-base transition-transform duration-200 ${active ? "scale-110" : "group-hover:scale-110 opacity-70 group-hover:opacity-100"}`}>
-                          {item.icon}
+                        <span
+                          className={`flex w-5 justify-center transition-transform duration-200 ${
+                            active ? "scale-110" : "opacity-70 group-hover:scale-110 group-hover:opacity-100"
+                          }`}
+                        >
+                          <Icon name={item.icon} />
                         </span>
                         {item.label}
                       </Link>

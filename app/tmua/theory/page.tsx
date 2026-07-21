@@ -23,7 +23,7 @@ export default function TmuaTheoryIndex() {
       <div className="mt-8 space-y-12">
         <section>
           <div className="mb-4 flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-ink-900">Paper 1: Pure Mathematics</h2>
+            <h2 className="text-2xl font-bold text-content">Paper 1: Pure Mathematics</h2>
             <Badge tone="tmua">Non-calculator</Badge>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -33,10 +33,10 @@ export default function TmuaTheoryIndex() {
               return (
                 <Link key={t.id} href={`/tmua/theory/${slug}`}>
                   <Card hover className="h-full flex flex-col p-5">
-                    <h3 className="font-semibold text-lg mb-2 text-ink-900 group-hover:text-tmua transition-colors">
+                    <h3 className="font-semibold text-lg mb-2 text-content group-hover:text-tmua transition-colors">
                       {t.subtopic}
                     </h3>
-                    <p className="text-sm text-ink-500 line-clamp-2">
+                    <p className="text-sm text-content-muted line-clamp-2">
                       {theory?.explanation_md.slice(0, 100) || "Comprehensive notes, worked examples, and exercises for this topic."}...
                     </p>
                     <div className="mt-auto pt-4 flex gap-2">
@@ -52,7 +52,7 @@ export default function TmuaTheoryIndex() {
 
         <section>
           <div className="mb-4 flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-ink-900">Paper 2: Mathematical Thinking</h2>
+            <h2 className="text-2xl font-bold text-content">Paper 2: Mathematical Thinking</h2>
             <Badge tone="tmua">Logic & Proof</Badge>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -62,10 +62,10 @@ export default function TmuaTheoryIndex() {
               return (
                 <Link key={t.id} href={`/tmua/theory/${slug}`}>
                   <Card hover className="h-full flex flex-col p-5">
-                    <h3 className="font-semibold text-lg mb-2 text-ink-900 group-hover:text-tmua transition-colors">
+                    <h3 className="font-semibold text-lg mb-2 text-content group-hover:text-tmua transition-colors">
                       {t.subtopic}
                     </h3>
-                    <p className="text-sm text-ink-500 line-clamp-2">
+                    <p className="text-sm text-content-muted line-clamp-2">
                       {theory?.explanation_md.slice(0, 100) || "Logic, proof, and reasoning strategies for this topic."}...
                     </p>
                     <div className="mt-auto pt-4 flex gap-2">

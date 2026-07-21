@@ -56,13 +56,13 @@ export default function InsightsPage() {
 
           return (
             <div key={exam.id}>
-              <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-ink-400">
+              <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-content-subtle">
                 {exam.name} — next best action
               </h2>
 
               {!hasSignal ? (
                 <Card>
-                  <p className="text-sm text-ink-500">
+                  <p className="text-sm text-content-muted">
                     Nothing to recommend yet. Sit a section or a drill and this will rank your
                     weakest topics by how much drilling them now would actually help.
                   </p>
@@ -77,11 +77,11 @@ export default function InsightsPage() {
                             {i === 0 && <Badge tone={tone}>Start here</Badge>}
                             <Badge tone="ink">{r.area}</Badge>
                           </div>
-                          <div className="mt-1.5 font-bold tracking-tight text-ink-900">
+                          <div className="mt-1.5 font-bold tracking-tight text-content">
                             {r.subtopic}
                           </div>
-                          <p className="mt-1 text-sm text-ink-500">{r.reason}</p>
-                          <div className="mt-2 flex flex-wrap gap-3 text-xs text-ink-400">
+                          <p className="mt-1 text-sm text-content-muted">{r.reason}</p>
+                          <div className="mt-2 flex flex-wrap gap-3 text-xs text-content-subtle">
                             <span>error density {pct(r.errorDensity)}</span>
                             <span>recency {pct(r.recencyWeight)}</span>
                           </div>
@@ -104,10 +104,10 @@ export default function InsightsPage() {
 
                   {actions.uncovered.length > 0 && (
                     <Card>
-                      <div className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+                      <div className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
                         Never practised — invisible to the ranking above
                       </div>
-                      <p className="mt-1 text-xs text-ink-500">
+                      <p className="mt-1 text-xs text-content-muted">
                         These have produced no errors because they have produced no attempts. A
                         top score cannot skip them.
                       </p>
@@ -116,7 +116,7 @@ export default function InsightsPage() {
                           <Link
                             key={t.topicId}
                             href={`/practice?exam=${exam.name}&topic=${t.topicId}`}
-                            className="rounded-lg border border-dashed border-ink-300 px-2.5 py-1 text-xs font-semibold text-ink-600 hover:bg-ink-50"
+                            className="rounded-lg border border-dashed border-line-strong px-2.5 py-1 text-xs font-semibold text-content-muted hover:bg-surface-muted"
                           >
                             {t.subtopic}
                           </Link>
@@ -133,7 +133,7 @@ export default function InsightsPage() {
 
       {/* ---------------- triage ---------------- */}
       <div className="mt-10">
-        <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-ink-400">
+        <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-content-subtle">
           Error log — root cause triage
         </h2>
         <TriagePanel items={triageItems} />
@@ -147,7 +147,7 @@ export default function InsightsPage() {
           if (total === 0) return null;
           return (
             <div key={exam.id}>
-              <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-ink-400">
+              <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-content-subtle">
                 {exam.name} — why you miss
               </h2>
               <Card>
@@ -160,8 +160,8 @@ export default function InsightsPage() {
                     return (
                       <div key={b.root_cause}>
                         <div className="flex items-center justify-between text-sm">
-                          <span className="font-semibold text-ink-800">{label}</span>
-                          <span className="text-ink-500">
+                          <span className="font-semibold text-content">{label}</span>
+                          <span className="text-content-muted">
                             {b.count}
                             {b.triaged < b.count && (
                               <span className="ml-1 text-xs text-amber-600">
@@ -172,7 +172,7 @@ export default function InsightsPage() {
                         </div>
                         <Bar value={b.count / total} className="mt-1" />
                         {b.root_cause !== "untriaged" && ROOT_CAUSE_ACTIONS[b.root_cause as RootCause] && (
-                          <p className="mt-1 text-xs text-ink-400">
+                          <p className="mt-1 text-xs text-content-subtle">
                             {ROOT_CAUSE_ACTIONS[b.root_cause as RootCause]}
                           </p>
                         )}
@@ -188,7 +188,7 @@ export default function InsightsPage() {
 
       {/* ---------------- pacing ---------------- */}
       <div className="mt-10">
-        <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-ink-400">
+        <h2 className="mb-3 text-sm font-extrabold uppercase tracking-widest text-content-subtle">
           Pacing — is the clock or the content the problem?
         </h2>
         <div className="grid gap-4 lg:grid-cols-2">
@@ -197,7 +197,7 @@ export default function InsightsPage() {
             if (pacing.length === 0) return null;
             return (
               <Card key={exam.id}>
-                <div className="mb-3 text-sm font-bold text-ink-900">{exam.name}</div>
+                <div className="mb-3 text-sm font-bold text-content">{exam.name}</div>
                 <div className="space-y-4">
                   {pacing.map((p) => {
                     // Similar accuracy either side of the budget means the extra
@@ -212,7 +212,7 @@ export default function InsightsPage() {
                     return (
                       <div key={p.area}>
                         <div className="flex items-center justify-between text-sm">
-                          <span className="font-semibold text-ink-800">{p.area}</span>
+                          <span className="font-semibold text-content">{p.area}</span>
                           <span
                             className={
                               p.avg_seconds > p.budget_seconds ? "text-rose-600" : "text-emerald-600"
@@ -221,12 +221,12 @@ export default function InsightsPage() {
                             {p.avg_seconds}s avg / {p.budget_seconds}s budget
                           </span>
                         </div>
-                        <div className="mt-1 flex gap-4 text-xs text-ink-500">
+                        <div className="mt-1 flex gap-4 text-xs text-content-muted">
                           <span>{pct(p.over_budget_share)} ran over</span>
                           <span>acc under budget {pct(p.accuracy_when_under)}</span>
                           <span>over budget {pct(p.accuracy_when_over)}</span>
                         </div>
-                        <p className="mt-1 text-xs leading-snug text-ink-400">{verdict}</p>
+                        <p className="mt-1 text-xs leading-snug text-content-subtle">{verdict}</p>
                       </div>
                     );
                   })}
@@ -241,7 +241,7 @@ export default function InsightsPage() {
           if (mods.length === 0) return null;
           return (
             <Card key={`mp-${exam.id}`} className="mt-4">
-              <div className="mb-3 text-sm font-bold text-ink-900">
+              <div className="mb-3 text-sm font-bold text-content">
                 {exam.name} — module pacing
               </div>
               <div className="space-y-2">
@@ -250,18 +250,18 @@ export default function InsightsPage() {
                   return (
                     <div key={`${m.session_id}-${m.module_number}-${i}`}>
                       <div className="flex items-center justify-between text-xs">
-                        <span className="font-semibold text-ink-700">
+                        <span className="font-semibold text-content-muted">
                           {m.section} · module {m.module_number}
                           {m.module_difficulty ? ` (${m.module_difficulty})` : ""}
                         </span>
-                        <span className="text-ink-500">
+                        <span className="text-content-muted">
                           {Math.round(m.seconds_total / 60)}/{Math.round(m.limit_seconds / 60)} min ·{" "}
                           {m.raw_score}/{m.questions} correct
                         </span>
                       </div>
                       <Bar
                         value={Math.min(1, used)}
-                        color={used > 0.98 ? "bg-rose-500" : "bg-ink-900"}
+                        color={used > 0.98 ? "bg-rose-500" : "bg-content"}
                         className="mt-1"
                       />
                     </div>

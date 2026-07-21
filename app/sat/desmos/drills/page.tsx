@@ -28,7 +28,7 @@ export default function DesmosDrillsPage() {
         right={
           <div className="text-right">
             <div className="text-3xl font-extrabold tracking-tight text-sat-dark">{fluency}%</div>
-            <div className="text-[10px] font-extrabold uppercase tracking-widest text-ink-400">
+            <div className="text-[10px] font-extrabold uppercase tracking-widest text-content-subtle">
               fluency
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function DesmosDrillsPage() {
       />
 
       <Card className="mb-6">
-        <div className="mb-3 text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+        <div className="mb-3 text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
           Progress — a drill counts as fluent once answered correctly inside par
         </div>
         <Bar value={fluency / 100} color="bg-sat" />
@@ -46,9 +46,9 @@ export default function DesmosDrillsPage() {
             return (
               <div
                 key={d.code}
-                className="flex items-center justify-between gap-2 rounded-lg border border-ink-100 px-3 py-2"
+                className="flex items-center justify-between gap-2 rounded-lg border border-line px-3 py-2"
               >
-                <span className="truncate text-xs font-semibold text-ink-700">{d.title}</span>
+                <span className="truncate text-xs font-semibold text-content-muted">{d.title}</span>
                 {s?.fluent ? (
                   <Badge tone="green">{s.best_seconds?.toFixed(1)}s</Badge>
                 ) : s && s.attempts > 0 ? (

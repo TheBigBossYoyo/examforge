@@ -178,7 +178,7 @@ export function SettingsForm({ initial, defaults }: SettingsFormProps) {
       {/* Score Conversion Tables */}
       <div className="card">
         <h2 className="section-title mb-1">Score Conversion Tables</h2>
-        <p className="mb-4 text-xs text-ink-400">
+        <p className="mb-4 text-xs text-content-subtle">
           All score conversions are estimates — real conversions are norm-referenced per sitting and
           vary year to year.
         </p>
@@ -188,12 +188,12 @@ export function SettingsForm({ initial, defaults }: SettingsFormProps) {
             <div className="mb-1 flex items-center justify-between">
               <label className="label mb-0" htmlFor="tmua_band_table">
                 TMUA Band Table{" "}
-                <span className="font-normal text-ink-400">(21-length numeric JSON array)</span>
+                <span className="font-normal text-content-subtle">(21-length numeric JSON array)</span>
               </label>
               <button
                 type="button"
                 onClick={() => set("tmua_band_table", defaults.tmua_band_table)}
-                className="text-xs text-ink-400 underline hover:text-ink-700"
+                className="text-xs text-content-subtle underline hover:text-content-muted"
               >
                 Reset to default
               </button>
@@ -212,12 +212,12 @@ export function SettingsForm({ initial, defaults }: SettingsFormProps) {
             <div className="mb-1 flex items-center justify-between">
               <label className="label mb-0" htmlFor="sat_math_config">
                 SAT Math Config{" "}
-                <span className="font-normal text-ink-400">(JSON object)</span>
+                <span className="font-normal text-content-subtle">(JSON object)</span>
               </label>
               <button
                 type="button"
                 onClick={() => set("sat_math_config", defaults.sat_math_config)}
-                className="text-xs text-ink-400 underline hover:text-ink-700"
+                className="text-xs text-content-subtle underline hover:text-content-muted"
               >
                 Reset to default
               </button>
@@ -236,12 +236,12 @@ export function SettingsForm({ initial, defaults }: SettingsFormProps) {
             <div className="mb-1 flex items-center justify-between">
               <label className="label mb-0" htmlFor="sat_rw_config">
                 SAT R&amp;W Config{" "}
-                <span className="font-normal text-ink-400">(JSON object)</span>
+                <span className="font-normal text-content-subtle">(JSON object)</span>
               </label>
               <button
                 type="button"
                 onClick={() => set("sat_rw_config", defaults.sat_rw_config)}
-                className="text-xs text-ink-400 underline hover:text-ink-700"
+                className="text-xs text-content-subtle underline hover:text-content-muted"
               >
                 Reset to default
               </button>
@@ -263,11 +263,11 @@ export function SettingsForm({ initial, defaults }: SettingsFormProps) {
         <label className="flex cursor-pointer items-center gap-3">
           <input
             type="checkbox"
-            className="h-4 w-4 rounded border-ink-300"
+            className="h-4 w-4 rounded border-line-strong"
             checked={values.onboarding_complete === "true"}
             onChange={(e) => set("onboarding_complete", e.target.checked ? "true" : "false")}
           />
-          <span className="text-sm text-ink-700">
+          <span className="text-sm text-content-muted">
             Onboarding complete (hides the diagnostic prompt on the dashboard)
           </span>
         </label>

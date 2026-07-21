@@ -13,9 +13,9 @@ export default function SchedulePage() {
   if (blocks.length === 0) {
     return (
       <Card>
-        <h1 className="text-lg font-semibold text-ink-900">Schedule not seeded</h1>
-        <p className="mt-2 text-sm text-ink-500">
-          Run <code className="rounded bg-ink-100 px-1.5 py-0.5">npm run seed</code> to create the
+        <h1 className="text-lg font-semibold text-content">Schedule not seeded</h1>
+        <p className="mt-2 text-sm text-content-muted">
+          Run <code className="rounded bg-surface-muted px-1.5 py-0.5">npm run seed</code> to create the
           fixed weekly schedule.
         </p>
       </Card>
@@ -39,7 +39,7 @@ export default function SchedulePage() {
       <Card className="space-y-4">
         <ScheduleLegend />
         <ScheduleGrid blocks={blocks} weekIndex={weekIndex} />
-        <p className="text-xs text-ink-400">
+        <p className="text-xs text-content-subtle">
           Wednesday TMUA and Thursday SAT alternate fortnightly between a timed past paper and a
           full mock / review (currently fortnight {fortnight}). All durations are an estimate.
         </p>

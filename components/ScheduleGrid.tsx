@@ -45,7 +45,7 @@ function StudyCell({ block, weekIndex }: { block: ScheduleBlock; weekIndex: numb
           : "border-sat/20 bg-gradient-to-br from-sat-pale/40 to-white hover:border-sat/40"
       }`}
     >
-      <div className="flex items-center justify-between gap-1 border-b border-ink-100/50 pb-2">
+      <div className="flex items-center justify-between gap-1 border-b border-line/50 pb-2">
         <span
           className={`text-[12px] font-extrabold uppercase tracking-widest ${
             isTmua ? "text-tmua-dark" : "text-sat-dark"
@@ -53,11 +53,11 @@ function StudyCell({ block, weekIndex }: { block: ScheduleBlock; weekIndex: numb
         >
           {block.category}
         </span>
-        <span className="text-[11px] font-bold text-ink-400 bg-white/60 px-1.5 py-0.5 rounded-md border border-white">
+        <span className="text-[11px] font-bold text-content-subtle bg-surface/60 px-1.5 py-0.5 rounded-md border border-white">
           {block.start_time}—{block.end_time}
         </span>
       </div>
-      <div className="text-[14px] font-extrabold leading-tight text-ink-900 drop-shadow-sm">
+      <div className="text-[14px] font-extrabold leading-tight text-content drop-shadow-sm">
         {def?.title ?? block.category}
       </div>
       <ul className="space-y-1.5 mt-auto pt-2">
@@ -67,8 +67,8 @@ function StudyCell({ block, weekIndex }: { block: ScheduleBlock; weekIndex: numb
             <li key={i} className="flex items-start gap-2">
               <span className={`mt-1 h-2 w-2 shrink-0 rounded-full ${a.dot}`} />
               <span className="min-w-0 text-[12px] leading-snug">
-                <span className="font-bold text-ink-700">{a.label}</span>
-                <span className="font-medium text-ink-400"> • {slot.minutes}m</span>
+                <span className="font-bold text-content-muted">{a.label}</span>
+                <span className="font-medium text-content-subtle"> • {slot.minutes}m</span>
               </span>
             </li>
           );
@@ -84,13 +84,13 @@ function LockedCell({ block }: { block: ScheduleBlock }) {
   return (
     <div
       className={`flex h-full flex-col justify-center rounded-2xl border-2 border-dashed px-3 py-2.5 transition-colors ${
-        muted ? "border-ink-100/60 bg-ink-50/30" : "border-ink-200/80 bg-ink-50/60 hover:bg-ink-100/40"
+        muted ? "border-line/60 bg-surface-muted/30" : "border-line/80 bg-surface-muted/60 hover:bg-surface-muted/40"
       }`}
     >
-      <span className={`text-[12px] font-bold ${muted ? "text-ink-300" : "text-ink-600"}`}>
+      <span className={`text-[12px] font-bold ${muted ? "text-content-subtle" : "text-content-muted"}`}>
         {label}
       </span>
-      <span className="text-[10px] font-semibold text-ink-400 mt-0.5">
+      <span className="text-[10px] font-semibold text-content-subtle mt-0.5">
         {block.start_time}—{block.end_time}
       </span>
     </div>
@@ -117,18 +117,18 @@ export function ScheduleGrid({
   const skip: Set<number>[] = days.map(() => new Set<number>());
 
   return (
-    <div className="overflow-x-auto rounded-[24px] border border-ink-200/60 bg-white shadow-card relative z-10">
+    <div className="overflow-x-auto rounded-[24px] border border-line/60 bg-surface shadow-card relative z-10">
       <table className="w-full min-w-[960px] border-separate border-spacing-1.5 p-2.5">
         <thead>
           <tr>
-            <th className="w-20 rounded-xl bg-ink-50 px-3 py-3.5 text-left text-[11px] font-extrabold uppercase tracking-widest text-ink-500">
+            <th className="w-20 rounded-xl bg-surface-muted px-3 py-3.5 text-left text-[11px] font-extrabold uppercase tracking-widest text-content-muted">
               Time
             </th>
             {days.map((d) => (
               <th
                 key={d}
                 className={`rounded-xl px-4 py-3.5 text-left text-[13px] font-extrabold uppercase tracking-wide transition-colors ${
-                  d >= 5 ? "bg-ink-800 text-white shadow-sm" : "bg-ink-900 text-white shadow-md"
+                  d >= 5 ? "bg-ink-800 text-white shadow-sm" : "bg-content text-white shadow-md"
                 }`}
               >
                 {weekdayLabel(d)}
@@ -139,7 +139,7 @@ export function ScheduleGrid({
         <tbody>
           {HOURS.map((hour) => (
             <tr key={hour}>
-              <td className="whitespace-nowrap rounded-xl bg-ink-50/50 px-3 py-3 align-top text-[12px] font-bold text-ink-500 border border-ink-100/50">
+              <td className="whitespace-nowrap rounded-xl bg-surface-muted/50 px-3 py-3 align-top text-[12px] font-bold text-content-muted border border-line/50">
                 {hour}h—{hour + 1}h
               </td>
               {days.map((d, di) => {
@@ -178,10 +178,10 @@ export function ScheduleLegend() {
     { label: "Desmos", dot: "bg-teal-400" },
   ];
   return (
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-3 bg-white border border-ink-200/60 px-4 py-3 rounded-2xl shadow-sm inline-flex">
-      <span className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400 border-r border-ink-200 pr-4 mr-1">Activities</span>
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-3 bg-surface border border-line/60 px-4 py-3 rounded-2xl shadow-sm inline-flex">
+      <span className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle border-r border-line pr-4 mr-1">Activities</span>
       {entries.map((e) => (
-        <span key={e.label} className="flex items-center gap-2 text-[13px] font-bold text-ink-600 hover:text-ink-900 transition-colors cursor-default">
+        <span key={e.label} className="flex items-center gap-2 text-[13px] font-bold text-content-muted hover:text-content transition-colors cursor-default">
           <span className={`h-2.5 w-2.5 rounded-full shadow-sm ${e.dot}`} />
           {e.label}
         </span>

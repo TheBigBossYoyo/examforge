@@ -15,9 +15,9 @@ export default function PlannerPage() {
   if (exams.length === 0) {
     return (
       <Card>
-        <h1 className="text-lg font-semibold text-ink-900">Database not seeded</h1>
-        <p className="mt-2 text-sm text-ink-500">
-          Run <code className="rounded bg-ink-100 px-1.5 py-0.5">npm run seed</code> to initialise exams,
+        <h1 className="text-lg font-semibold text-content">Database not seeded</h1>
+        <p className="mt-2 text-sm text-content-muted">
+          Run <code className="rounded bg-surface-muted px-1.5 py-0.5">npm run seed</code> to initialise exams,
           topics, and question data before generating a plan.
         </p>
       </Card>
@@ -59,8 +59,8 @@ export default function PlannerPage() {
                 sublabel="done"
               />
               <div>
-                <h2 className="text-lg font-semibold text-ink-900">Forward plan</h2>
-                <p className="mt-1 text-sm text-ink-500">Generated work is grouped by date and weighted toward weak topics.</p>
+                <h2 className="text-lg font-semibold text-content">Forward plan</h2>
+                <p className="mt-1 text-sm text-content-muted">Generated work is grouped by date and weighted toward weak topics.</p>
               </div>
             </div>
             <LinkButton href="/practice" variant="outline">
@@ -85,8 +85,8 @@ export default function PlannerPage() {
         <Card className="space-y-3">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <h2 className="text-lg font-semibold text-ink-900">Review queue snapshot</h2>
-              <p className="mt-1 text-sm text-ink-500">Again / Hard / Good / Easy feed the SM-2 schedule.</p>
+              <h2 className="text-lg font-semibold text-content">Review queue snapshot</h2>
+              <p className="mt-1 text-sm text-content-muted">Again / Hard / Good / Easy feed the SM-2 schedule.</p>
             </div>
             <Badge tone={dueCount > 0 ? "green" : "ink"}>{dueCount} due</Badge>
           </div>

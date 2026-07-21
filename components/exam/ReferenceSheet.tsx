@@ -56,11 +56,11 @@ export function ReferenceSheet({ onClose }: { onClose: () => void }) {
       onClick={onClose}
     >
       <div
-        className="max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white p-6 shadow-lift"
+        className="max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-surface p-6 shadow-lift"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-bold tracking-tight text-ink-900">Reference</h2>
+          <h2 className="text-lg font-bold tracking-tight text-content">Reference</h2>
           <button
             onClick={onClose}
             className="btn-ghost text-sm"
@@ -72,8 +72,8 @@ export function ReferenceSheet({ onClose }: { onClose: () => void }) {
 
         <div className="grid gap-4 sm:grid-cols-2">
           {FORMULA_GROUPS.map((g) => (
-            <div key={g.title} className="rounded-xl border border-ink-100 bg-ink-50/40 p-3">
-              <div className="mb-2 text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+            <div key={g.title} className="rounded-xl border border-line bg-surface-muted/40 p-3">
+              <div className="mb-2 text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
                 {g.title}
               </div>
               <div className="space-y-1.5">
@@ -85,15 +85,15 @@ export function ReferenceSheet({ onClose }: { onClose: () => void }) {
           ))}
         </div>
 
-        <div className="mt-4 space-y-1.5 rounded-xl border border-ink-100 p-3">
+        <div className="mt-4 space-y-1.5 rounded-xl border border-line p-3">
           {FACTS.map((f, i) => (
-            <Markdown key={i} className="text-sm text-ink-600">
+            <Markdown key={i} className="text-sm text-content-muted">
               {f}
             </Markdown>
           ))}
         </div>
 
-        <p className="mt-4 text-xs leading-relaxed text-ink-400">
+        <p className="mt-4 text-xs leading-relaxed text-content-subtle">
           Note what the real sheet does <strong>not</strong> give you: no quadratic formula, no
           slope formula, no exponent rules, no trigonometric identities beyond the special
           triangles. Those have to be known.

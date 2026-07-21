@@ -13,8 +13,8 @@ export default function TmuaHubPage() {
     return (
       <Card>
         <h1 className="text-lg font-semibold">Database not seeded</h1>
-        <p className="mt-2 text-sm text-ink-500">
-          Run <code className="rounded bg-ink-100 px-1.5 py-0.5">npm run seed</code> to initialise.
+        <p className="mt-2 text-sm text-content-muted">
+          Run <code className="rounded bg-surface-muted px-1.5 py-0.5">npm run seed</code> to initialise.
         </p>
       </Card>
     );
@@ -66,7 +66,7 @@ export default function TmuaHubPage() {
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-semibold text-ink-900">Paper 1 Topics</h2>
+            <h2 className="font-semibold text-content">Paper 1 Topics</h2>
             <Link href="/tmua/practice" className="text-xs text-tmua-dark hover:underline">View all</Link>
           </div>
           <ul className="space-y-2">
@@ -76,8 +76,8 @@ export default function TmuaHubPage() {
               return (
                 <li key={t.id} className="flex items-center gap-3">
                   <div className={`h-2 w-2 rounded-full ${masteryColor(mastery)}`} />
-                  <span className="flex-1 truncate text-sm text-ink-700">{t.subtopic}</span>
-                  <span className="text-xs text-ink-400 w-8 text-right">{mastery}%</span>
+                  <span className="flex-1 truncate text-sm text-content-muted">{t.subtopic}</span>
+                  <span className="text-xs text-content-subtle w-8 text-right">{mastery}%</span>
                 </li>
               );
             })}
@@ -86,7 +86,7 @@ export default function TmuaHubPage() {
 
         <Card>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-semibold text-ink-900">Paper 2 Topics</h2>
+            <h2 className="font-semibold text-content">Paper 2 Topics</h2>
             <Link href="/tmua/practice" className="text-xs text-tmua-dark hover:underline">View all</Link>
           </div>
           <ul className="space-y-2">
@@ -96,8 +96,8 @@ export default function TmuaHubPage() {
               return (
                 <li key={t.id} className="flex items-center gap-3">
                   <div className={`h-2 w-2 rounded-full ${masteryColor(mastery)}`} />
-                  <span className="flex-1 truncate text-sm text-ink-700">{t.subtopic}</span>
-                  <span className="text-xs text-ink-400 w-8 text-right">{mastery}%</span>
+                  <span className="flex-1 truncate text-sm text-content-muted">{t.subtopic}</span>
+                  <span className="text-xs text-content-subtle w-8 text-right">{mastery}%</span>
                 </li>
               );
             })}
@@ -108,19 +108,19 @@ export default function TmuaHubPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card hover className="flex flex-col items-center justify-center p-6 text-center">
           <span className="text-2xl mb-2">📄</span>
-          <Link href="/tmua/papers" className="font-medium text-ink-800 after:absolute after:inset-0">Past Papers</Link>
+          <Link href="/tmua/papers" className="font-medium text-content after:absolute after:inset-0">Past Papers</Link>
         </Card>
         <Card hover className="flex flex-col items-center justify-center p-6 text-center">
           <span className="text-2xl mb-2">🎯</span>
-          <Link href="/tmua/practice" className="font-medium text-ink-800 after:absolute after:inset-0">Topic Practice</Link>
+          <Link href="/tmua/practice" className="font-medium text-content after:absolute after:inset-0">Topic Practice</Link>
         </Card>
         <Card hover className="flex flex-col items-center justify-center p-6 text-center">
           <span className="text-2xl mb-2">📖</span>
-          <Link href="/tmua/theory" className="font-medium text-ink-800 after:absolute after:inset-0">Theory Notes</Link>
+          <Link href="/tmua/theory" className="font-medium text-content after:absolute after:inset-0">Theory Notes</Link>
         </Card>
         <Card hover className="flex flex-col items-center justify-center p-6 text-center">
           <span className="text-2xl mb-2">📓</span>
-          <Link href="/mistakes?exam=TMUA" className="font-medium text-ink-800 after:absolute after:inset-0">Mistakes</Link>
+          <Link href="/mistakes?exam=TMUA" className="font-medium text-content after:absolute after:inset-0">Mistakes</Link>
         </Card>
       </div>
     </div>

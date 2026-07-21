@@ -7,7 +7,7 @@ import type { DesmosDrill } from "@/lib/desmos-drills";
 
 const DesmosCalculator = dynamic(
   () => import("@/components/Desmos").then((m) => m.DesmosCalculator),
-  { ssr: false, loading: () => <div className="p-4 text-sm text-ink-400">Loading Desmos…</div> },
+  { ssr: false, loading: () => <div className="p-4 text-sm text-content-subtle">Loading Desmos…</div> },
 );
 
 /** The drill payload the client is allowed to see — no answer, no method. */
@@ -95,28 +95,28 @@ export function DesmosDrillRunner({ drills }: { drills: DrillClient[] }) {
       <div className="space-y-4">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <div className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+            <div className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
               Drill {index + 1} of {drills.length} · {drill.skill}
             </div>
-            <h2 className="mt-1 text-xl font-extrabold tracking-tight text-ink-900">
+            <h2 className="mt-1 text-xl font-extrabold tracking-tight text-content">
               {drill.title}
             </h2>
           </div>
           <div className="text-right">
             <div
               className={`tabular-nums text-2xl font-bold ${
-                !running && !result ? "text-ink-300" : overPar ? "text-rose-600" : "text-emerald-600"
+                !running && !result ? "text-content-subtle" : overPar ? "text-rose-600" : "text-emerald-600"
               }`}
             >
               {elapsed.toFixed(1)}s
             </div>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-ink-400">
+            <div className="text-[10px] font-bold uppercase tracking-widest text-content-subtle">
               par {drill.par_seconds}s
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-ink-200 p-5">
+        <div className="rounded-2xl border border-line p-5">
           <Markdown className="text-[15px]">{drill.prompt_md}</Markdown>
 
           {!running && !result && (
@@ -166,32 +166,32 @@ export function DesmosDrillRunner({ drills }: { drills: DrillClient[] }) {
                     : "Correct — but slow"
                   : "Not correct"}
               </span>
-              <span className="text-sm text-ink-500">
+              <span className="text-sm text-content-muted">
                 {result.seconds.toFixed(1)}s vs {result.parSeconds}s par
               </span>
             </div>
 
             {!result.correct && (
-              <p className="mt-1 text-sm text-ink-600">
+              <p className="mt-1 text-sm text-content-muted">
                 Answer: <strong>{result.correctAnswer}</strong>
               </p>
             )}
             {result.correct && !result.beatPar && (
-              <p className="mt-1 text-sm text-ink-600">
+              <p className="mt-1 text-sm text-content-muted">
                 Right answer, but {(result.seconds - result.parSeconds).toFixed(1)}s over. On test
                 day that time comes out of a later question.
               </p>
             )}
 
-            <div className="mt-3 border-t border-ink-200/60 pt-3">
-              <div className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+            <div className="mt-3 border-t border-line/60 pt-3">
+              <div className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
                 The fast method
               </div>
               <Markdown className="mt-1 text-sm">{result.method_md}</Markdown>
             </div>
 
-            <div className="mt-3 border-t border-ink-200/60 pt-3">
-              <div className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+            <div className="mt-3 border-t border-line/60 pt-3">
+              <div className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
                 Versus doing it by hand
               </div>
               <Markdown className="mt-1 text-sm">{result.tradeoff_md}</Markdown>
@@ -212,7 +212,7 @@ export function DesmosDrillRunner({ drills }: { drills: DrillClient[] }) {
       {/* ---- calculator ---- */}
       <div>
         <div className="sticky top-4">
-          <div className="mb-2 text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+          <div className="mb-2 text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
             Desmos — same calculator as the test
           </div>
           <DesmosCalculator state={drill.desmos_state_json ?? null} height={460} />

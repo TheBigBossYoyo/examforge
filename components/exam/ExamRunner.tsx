@@ -15,7 +15,7 @@ import type {
 
 const DesmosCalculator = dynamic(
   () => import("@/components/Desmos").then((m) => m.DesmosCalculator),
-  { ssr: false, loading: () => <div className="p-4 text-sm text-ink-400">Loading Desmos…</div> },
+  { ssr: false, loading: () => <div className="p-4 text-sm text-content-subtle">Loading Desmos…</div> },
 );
 
 /** Five minutes left is when the real test surfaces its warning. */
@@ -286,13 +286,13 @@ export function ExamRunner({
     const next = outcome.next;
     return (
       <div className="mx-auto flex min-h-[70vh] max-w-xl flex-col items-center justify-center text-center">
-        <div className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+        <div className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
           Module {next.moduleNumber} of {next.moduleCount}
         </div>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-ink-900">
+        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-content">
           {next.sectionLabel}
         </h1>
-        <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-500">
+        <p className="mt-4 max-w-md text-[15px] leading-relaxed text-content-muted">
           You answered <strong>{outcome.moduleRaw}</strong> of {outcome.moduleTotal} correctly in
           module {next.moduleNumber - 1}.
           {next.moduleDifficulty && (
@@ -304,7 +304,7 @@ export function ExamRunner({
             </>
           )}
         </p>
-        <p className="mt-2 text-sm text-ink-400">
+        <p className="mt-2 text-sm text-content-subtle">
           {next.questions.length} questions ·{" "}
           {next.timeLimitSec ? `${Math.round(next.timeLimitSec / 60)} minutes` : "untimed"}
         </p>
@@ -326,19 +326,19 @@ export function ExamRunner({
   if (phase === "done" && outcome) {
     return (
       <div className="mx-auto flex min-h-[70vh] max-w-xl flex-col items-center justify-center text-center">
-        <div className="text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+        <div className="text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
           Section complete
         </div>
-        <div className="mt-4 text-6xl font-extrabold tracking-tight text-ink-900">
+        <div className="mt-4 text-6xl font-extrabold tracking-tight text-content">
           {outcome.scaledScore ?? "—"}
         </div>
-        <p className="mt-2 text-[15px] font-medium text-ink-500">{outcome.scaledLabel}</p>
+        <p className="mt-2 text-[15px] font-medium text-content-muted">{outcome.scaledLabel}</p>
         {outcome.routedTo && (
-          <p className="mt-3 text-sm text-ink-400">
+          <p className="mt-3 text-sm text-content-subtle">
             Routed into the {outcome.routedTo === "hard" ? "harder" : "standard"} module 2.
           </p>
         )}
-        <p className="mt-6 max-w-sm text-xs leading-relaxed text-ink-400">
+        <p className="mt-6 max-w-sm text-xs leading-relaxed text-content-subtle">
           Every score here is a norm-referenced <strong>estimate</strong>. Real conversions vary per
           sitting; the tables are editable in Settings.
         </p>
@@ -358,10 +358,10 @@ export function ExamRunner({
   if (phase === "review") {
     return (
       <div className="mx-auto max-w-3xl">
-        <h1 className="text-2xl font-extrabold tracking-tight text-ink-900">
+        <h1 className="text-2xl font-extrabold tracking-tight text-content">
           Check Your Work
         </h1>
-        <p className="mt-2 text-sm text-ink-500">
+        <p className="mt-2 text-sm text-content-muted">
           {handle.sectionLabel} · Module {handle.moduleNumber} of {handle.moduleCount} — on test
           day you cannot return to a module once it is submitted.
         </p>
@@ -370,8 +370,8 @@ export function ExamRunner({
           <div className="mt-4 rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-700">{error}</div>
         )}
 
-        <div className="mt-6 rounded-2xl border border-ink-200 p-5">
-          <div className="mb-4 flex flex-wrap gap-4 text-xs text-ink-500">
+        <div className="mt-6 rounded-2xl border border-line p-5">
+          <div className="mb-4 flex flex-wrap gap-4 text-xs text-content-muted">
             <span>{answeredCount} answered</span>
             <span>{handle.questions.length - answeredCount} unanswered</span>
             <span>{answers.filter((x) => x.flagged).length} marked for review</span>
@@ -389,8 +389,8 @@ export function ExamRunner({
                   }}
                   className={`relative h-10 rounded-lg border text-sm font-bold transition-colors ${
                     done
-                      ? "border-ink-900 bg-ink-900 text-white"
-                      : "border-dashed border-ink-300 bg-white text-ink-400"
+                      ? "border-ink-900 bg-content text-white"
+                      : "border-dashed border-line-strong bg-surface text-content-subtle"
                   }`}
                   aria-label={`Question ${i + 1}${done ? ", answered" : ", unanswered"}`}
                 >
@@ -432,12 +432,12 @@ export function ExamRunner({
   const questionPane = (
     <div className="space-y-4">
       <div className="flex items-center gap-2">
-        <span className="flex h-7 w-7 items-center justify-center rounded bg-ink-900 text-sm font-bold text-white">
+        <span className="flex h-7 w-7 items-center justify-center rounded bg-content text-sm font-bold text-white">
           {current + 1}
         </span>
         <button
           onClick={() => update({ flagged: !a.flagged })}
-          className={`text-xs font-semibold ${a.flagged ? "text-amber-600" : "text-ink-400"}`}
+          className={`text-xs font-semibold ${a.flagged ? "text-amber-600" : "text-content-subtle"}`}
           aria-pressed={a.flagged}
         >
           {a.flagged ? "★ Marked for Review" : "☆ Mark for Review"}
@@ -451,14 +451,14 @@ export function ExamRunner({
                 highlightSelection(passageRef.current) ?? highlightSelection(promptRef.current);
               if (text) update({ highlights: [...a.highlights, text] });
             }}
-            className="text-xs text-ink-400 hover:text-ink-700"
+            className="text-xs text-content-subtle hover:text-content-muted"
             title="Highlight the selected text"
           >
             ✏️ Highlight
           </button>
           <button
             onClick={() => setShowNotes((s) => !s)}
-            className={`text-xs ${showNotes ? "text-ink-900" : "text-ink-400"} hover:text-ink-700`}
+            className={`text-xs ${showNotes ? "text-content" : "text-content-subtle"} hover:text-content-muted`}
           >
             🗒 Notes
           </button>
@@ -466,7 +466,7 @@ export function ExamRunner({
             <button
               onClick={() => setEliminatorOn((s) => !s)}
               className={`rounded px-2 py-0.5 text-xs font-bold ${
-                eliminatorOn ? "bg-ink-900 text-white" : "text-ink-400 hover:text-ink-700"
+                eliminatorOn ? "bg-content text-white" : "text-content-subtle hover:text-content-muted"
               }`}
               aria-pressed={eliminatorOn}
               title="Answer eliminator"
@@ -502,13 +502,13 @@ export function ExamRunner({
                   disabled={struck}
                   className={`flex flex-1 items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm transition-colors ${
                     selected
-                      ? "border-ink-900 bg-ink-50 ring-1 ring-ink-900"
-                      : "border-ink-200 hover:bg-ink-50"
+                      ? "border-ink-900 bg-surface-muted ring-1 ring-ink-900"
+                      : "border-line hover:bg-surface-muted"
                   } ${struck ? "opacity-40" : ""}`}
                 >
                   <span
                     className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold ${
-                      selected ? "border-ink-900 bg-ink-900 text-white" : "border-ink-300 text-ink-500"
+                      selected ? "border-ink-900 bg-content text-white" : "border-line-strong text-content-muted"
                     }`}
                   >
                     {String.fromCharCode(65 + idx)}
@@ -520,7 +520,7 @@ export function ExamRunner({
                 {eliminatorOn && (
                   <button
                     onClick={() => toggleEliminated(idx)}
-                    className="w-8 shrink-0 text-xs font-bold text-ink-400 hover:text-ink-900"
+                    className="w-8 shrink-0 text-xs font-bold text-content-subtle hover:text-content"
                     aria-label={`${struck ? "Restore" : "Eliminate"} choice ${String.fromCharCode(65 + idx)}`}
                   >
                     {struck ? "↩" : `${String.fromCharCode(65 + idx)}⁄`}
@@ -537,7 +537,7 @@ export function ExamRunner({
               value={a.given ?? ""}
               onChange={(e) => update({ given: e.target.value })}
             />
-            <p className="mt-1.5 text-xs text-ink-400">
+            <p className="mt-1.5 text-xs text-content-subtle">
               Fractions and decimals both accepted. No %, $ or commas.
             </p>
           </div>
@@ -549,10 +549,10 @@ export function ExamRunner({
   return (
     <div className="flex min-h-[calc(100vh-2rem)] flex-col">
       {/* ---- top bar ---- */}
-      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-ink-200 pb-3">
+      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-3">
         <div>
-          <div className="text-sm font-bold text-ink-900">{handle.sectionLabel}</div>
-          <div className="text-xs text-ink-400">
+          <div className="text-sm font-bold text-content">{handle.sectionLabel}</div>
+          <div className="text-xs text-content-subtle">
             Module {handle.moduleNumber} of {handle.moduleCount}
             {handle.moduleDifficulty && ` · ${handle.moduleDifficulty} route`}
           </div>
@@ -563,7 +563,7 @@ export function ExamRunner({
             <div className="h-7" />
           ) : (
             <div
-              className={`tabular-nums text-2xl font-bold ${warning ? "text-rose-600" : "text-ink-900"}`}
+              className={`tabular-nums text-2xl font-bold ${warning ? "text-rose-600" : "text-content"}`}
               role="timer"
               aria-live="off"
             >
@@ -572,7 +572,7 @@ export function ExamRunner({
           )}
           <button
             onClick={() => setTimerHidden((h) => !h)}
-            className="text-[11px] font-semibold text-ink-400 hover:text-ink-700"
+            className="text-[11px] font-semibold text-content-subtle hover:text-content-muted"
           >
             {timerHidden ? "Show timer" : "Hide"}
           </button>
@@ -612,14 +612,14 @@ export function ExamRunner({
       <main className="flex-1 py-5">
         {isRW ? (
           // Reading & Writing puts the passage on the left, question on the right.
-          <div className="grid gap-6 lg:grid-cols-2 lg:divide-x lg:divide-ink-200">
+          <div className="grid gap-6 lg:grid-cols-2 lg:divide-x lg:divide-line">
             <div className="lg:pr-6">
               {q.passage_md ? (
                 <div ref={passageRef} className="select-text">
                   <Markdown className="text-[15px] leading-relaxed">{q.passage_md}</Markdown>
                 </div>
               ) : (
-                <p className="text-xs text-ink-400">
+                <p className="text-xs text-content-subtle">
                   This question carries no separate passage — its stimulus is part of the question
                   text on the right.
                 </p>
@@ -642,22 +642,22 @@ export function ExamRunner({
       </main>
 
       {/* ---- bottom bar ---- */}
-      <footer className="flex items-center justify-between gap-3 border-t border-ink-200 pt-3">
-        <div className="text-xs font-semibold text-ink-400">
+      <footer className="flex items-center justify-between gap-3 border-t border-line pt-3">
+        <div className="text-xs font-semibold text-content-subtle">
           {answeredCount}/{handle.questions.length} answered
         </div>
 
         <div className="relative">
           <button
             onClick={() => setShowNavigator((s) => !s)}
-            className="rounded-lg bg-ink-900 px-4 py-2 text-sm font-bold text-white"
+            className="rounded-lg bg-content px-4 py-2 text-sm font-bold text-white"
             aria-expanded={showNavigator}
           >
             Question {current + 1} of {handle.questions.length} ▲
           </button>
           {showNavigator && (
-            <div className="absolute bottom-12 left-1/2 z-30 w-[300px] -translate-x-1/2 rounded-2xl border border-ink-200 bg-white p-4 shadow-lift">
-              <div className="mb-2 text-[11px] font-extrabold uppercase tracking-widest text-ink-400">
+            <div className="absolute bottom-12 left-1/2 z-30 w-[300px] -translate-x-1/2 rounded-2xl border border-line bg-surface p-4 shadow-lift">
+              <div className="mb-2 text-[11px] font-extrabold uppercase tracking-widest text-content-subtle">
                 Go to question
               </div>
               <div className="grid grid-cols-6 gap-1.5">
@@ -673,10 +673,10 @@ export function ExamRunner({
                       }}
                       className={`relative h-8 rounded text-xs font-bold ${
                         i === current
-                          ? "bg-ink-900 text-white"
+                          ? "bg-content text-white"
                           : done
-                            ? "bg-ink-200 text-ink-800"
-                            : "border border-dashed border-ink-300 text-ink-400"
+                            ? "bg-ink-200 text-content"
+                            : "border border-dashed border-line-strong text-content-subtle"
                       }`}
                     >
                       {i + 1}
