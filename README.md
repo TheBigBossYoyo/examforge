@@ -45,6 +45,8 @@ Copy `.env.example` to `.env.local` and fill in what you want:
 | Area | What it does |
 | --- | --- |
 | **Full sections** | Sit a complete exam section at real length and timing. For the SAT this is genuinely adaptive: module 1 is scored, and module 2's difficulty is chosen from that result exactly as the real test does. Includes Mark for Review, the answer eliminator, highlights & notes, the on-screen reference sheet, a hideable timer with a 5-minute warning, the review screen, and Desmos in Math. |
+| **Desmos drills** | Timed speed drills with a par time per skill, scored on speed as well as correctness — including one drill on when *not* to reach for the calculator. |
+| **Insights** | Ranked next-best-action by recency-weighted error density, root-cause triage of every mistake, and pacing analysis that separates "the clock is the problem" from "the content is the problem". |
 | **Dashboard** | Per-exam countdown, projected score ring (estimate), strengths/weaknesses, recent mistakes, and the single highest-leverage "next task". |
 | **Practice engine** | Paper-mode & drill-mode runner with a live timer, pace tracker, question navigator, per-question confidence, auto-marking for bank questions, hints (learning mode) and full review. |
 | **Review** | Per-question breakdown: your answer vs correct, time vs pace, solution + faster method, confidence calibration, and one-click **redo-wrong**. |
@@ -183,6 +185,42 @@ and `lib/test-session.ts` is the database lifecycle around them.
 Questions sent to the browser during a module are stripped of
 `correct_answer`, solutions and hints — marking happens server-side, so the
 answer key never reaches devtools.
+
+### Generating questions
+
+`npm run generate` supports Gemini, OpenAI and **OpenRouter** (one key, many
+models, with a free tier). Set in `.env.local`:
+
+```
+AI_PROVIDER=openrouter
+OPENROUTER_API_KEY=sk-or-v1-...
+AI_MODEL=nvidia/nemotron-3-ultra-550b-a55b:free
+```
+
+Benchmarked on the actual task, not on reputation. Of the free models:
+Nemotron 3 Ultra 550B passed 5/5, gpt-oss-20b 4/5, Gemma 4 31B was rate-limited
+upstream, Nemotron Super truncated. DeepSeek R1 is no longer offered free.
+
+Two things worth knowing:
+
+- **Reasoning models bill their scratchpad against the same token budget as the
+  answer.** Nemotron Ultra at default effort spent 14k tokens thinking and
+  returned an *empty* answer. Generation therefore requests low reasoning
+  effort, and an empty answer after N characters of reasoning is reported as
+  exactly that.
+- **Free-tier OpenRouter models are capped per day** (roughly 50 requests
+  without purchased credits). A full-bank run needs several days, or credits.
+
+Flags: `--exam`, `--per-topic`, `--topic`, `--model`, `--delay`, `--retries`,
+`--dry-run`. Rejections are reported by reason; see `lib/question-quality.ts`.
+
+### Theming
+
+Both themes are defined once in `app/globals.css` as semantic CSS variables
+(`--surface`, `--content`, `--line`) that flip on `[data-theme]`. Components use
+the Tailwind tokens `surface` / `content` / `line`, not raw shades, so they work
+in both themes without a `dark:` variant. The theme is applied before first
+paint by an inline script to avoid a flash.
 
 ### Tests
 
