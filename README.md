@@ -1,17 +1,38 @@
 # ExamForge
 
-A local-first, single-user revision platform for two exams at once:
+A local-first revision app I built to prepare for two admissions exams at once: the TMUA and the Digital SAT.
 
-- **TMUA** — Test of Mathematics for University Admission · target **9.0** · 13 Oct 2026
-- **Digital SAT** — target **1600** · 22 Aug 2026
+## Why I built it
 
-Everything runs on your machine. Your question bank, attempts, mistakes and
-progress live in a local SQLite file (`data/examforge.db`) — no account, no cloud,
-no telemetry.
+Both exams need the same three things: a large bank of practice questions, realistic timed conditions, and a way to see which topics are actually costing me marks instead of just "doing more questions". I couldn't find one tool that did all three for both exams without an account, a subscription, or my data living on someone else's server, so I built one that runs entirely on my own machine. Everything (the question bank, attempts, mistakes, progress) lives in a local SQLite file (`data/examforge.db`). No account, no cloud sync, no telemetry.
 
----
+## What it does
 
-## Quick start
+- **Full timed sections.** Sit a complete section at real length and timing. The SAT side is genuinely adaptive: module 1 is scored and module 2's difficulty is chosen from that result, the way the real test does it. Includes Mark for Review, an answer eliminator, highlights/notes, the on-screen reference sheet, and Desmos in Math.
+- **Desmos drills.** Timed speed drills with a par time per skill, including one drill specifically about *not* reaching for the calculator when it's slower.
+- **A dashboard and insights.** Per-exam countdown, a projected score estimate, and a ranked "next best action" based on recency-weighted error rates per topic, plus pacing analysis that tries to separate "I ran out of time" from "I don't know this".
+- **A mistake notebook.** Every wrong answer is logged automatically, filterable and editable, with a one-click "redo all unresolved".
+- **Theory notes** for every TMUA/SAT subtopic, and an 11-lesson Desmos curriculum on the calculator workflows that are actually fast on test day.
+- **A day-by-day study planner** toward each exam date, plus a spaced-repetition (SM-2) review queue.
+- **Import/export and an admin page** to bring in your own questions or generate more (see below).
+
+## How it works
+
+**Data layer.** Storage uses Node's built-in `node:sqlite` (`DatabaseSync`), not `better-sqlite3`, so there's no native module to compile: `npm install` is enough on Node ≥ 22.5. `lib/schema.ts` only bootstraps a fresh database (`CREATE TABLE IF NOT EXISTS` can't alter an existing table), so every change after that is a numbered migration in `lib/migrations.ts`, applied once and recorded in `schema_migrations`. I never edit a shipped migration, only add new ones, and `npm run db:status` shows what state a given database file is in.
+
+**Exam structure as data.** Module counts, per-module timing, calculator rules and answer format live in `lib/exam-format.ts` as plain data rather than `if (exam === "TMUA")` branches scattered through the codebase. Adding a third exam track would mean adding one format entry, not hunting down conditionals. The adaptive routing decision and question selection are pure functions in `lib/routing.ts` (no I/O, fully unit-testable); `lib/test-session.ts` wraps them with the actual database lifecycle. Questions sent to the browser during a live module have `correct_answer`, solutions and hints stripped out server-side, so the answer key never reaches devtools.
+
+**Filling the question bank.** There are three ways to get questions in: a shipped starter bank of about 440 AI-generated originals (`npm run load:bank`), on-demand generation per topic against Gemini, OpenAI, or OpenRouter (`npm run generate`), or importing your own questions from JSON/CSV. Generated and imported questions go through a quality gate (`lib/question-quality.ts`) that rejects anything with a missing/duplicate answer choice, an answer not among the choices, unbalanced LaTeX, or a solution that's just one hand-wavy sentence. An LLM will happily produce all of these, and a bad item is worse than no item because it corrupts the difficulty statistics the router depends on.
+
+**Copyright.** The app never scrapes, stores or reproduces copyrighted TMUA/SAT/MAT/STEP/AEA/UKMT questions. Official past papers are linked to the publisher, never copied; for TMUA papers you sit the official PDF and enter your raw mark, which the app bands into an estimate without ever storing the questions themselves.
+
+**Scoring.** Every score (TMUA band, SAT section/total, projected score, readiness %) is a norm-referenced estimate, not an official conversion — real conversions vary per sitting. The conversion tables are editable in Settings and persisted to the database. Scoring logic (`lib/scoring.ts`) is deliberately pure with no database access, specifically so a scoring bug shows up in a unit test rather than in a live attempt.
+
+**Theming.** Both light and dark themes are defined once as CSS variables that flip on a `[data-theme]` attribute, so components use semantic Tailwind tokens instead of a `dark:` variant scattered everywhere.
+
+## Running it locally
+
+Requires Node ≥ 22.5 (for `node:sqlite`).
 
 ```bash
 npm install
@@ -19,214 +40,36 @@ npm run seed     # creates data/examforge.db + topics, resources, sample questio
 npm run dev      # http://localhost:3000
 ```
 
-That's it. `npm run seed` is idempotent — safe to re-run.
+`npm run seed` is idempotent, so it's safe to re-run. To get a real question bank rather than just samples:
 
-> **Requirements:** Node **≥ 22.5** (the app uses the built-in `node:sqlite`
-> module, so there is **no native build step** and nothing to compile).
+```bash
+npm run load:bank    # imports the shipped ~440-question AI-original starter bank
+```
 
-### Optional environment variables
-
-Copy `.env.example` to `.env.local` and fill in what you want:
+Optional environment variables (copy `.env.example` to `.env.local`):
 
 | Variable | Purpose | Without it |
 | --- | --- | --- |
-| `NEXT_PUBLIC_DESMOS_API_KEY` | Official Desmos Graphing Calculator (free key from <https://www.desmos.com/api/>) | Falls back to a shared demo key / a link to desmos.com |
-| `AI_PROVIDER` + `GEMINI_API_KEY` | Live AI tutor via Google **Gemini** — a **free** key (no billing/card) from <https://aistudio.google.com/app/apikey> | Tutor runs as a fully-offline local stub |
+| `NEXT_PUBLIC_DESMOS_API_KEY` | Official Desmos Graphing Calculator key (free from desmos.com/api) | Falls back to a shared demo key / a link to desmos.com |
+| `AI_PROVIDER` + `GEMINI_API_KEY` (or `OPENAI_API_KEY` / `OPENROUTER_API_KEY`) | Enables the AI tutor and `npm run generate` | Tutor runs as an offline local stub; generation is unavailable |
 
-> **Free AI tutor in 30s:** set `AI_PROVIDER=gemini` and paste a free Gemini key
-> from Google AI Studio into `GEMINI_API_KEY`. No credit card, no subscription.
-> Prefer OpenAI instead? Set `AI_PROVIDER=openai` with an `OPENAI_API_KEY`
-> (paid, and separate from any ChatGPT subscription). Keys are read server-side only.
-
----
-
-## What's inside
-
-| Area | What it does |
-| --- | --- |
-| **Full sections** | Sit a complete exam section at real length and timing. For the SAT this is genuinely adaptive: module 1 is scored, and module 2's difficulty is chosen from that result exactly as the real test does. Includes Mark for Review, the answer eliminator, highlights & notes, the on-screen reference sheet, a hideable timer with a 5-minute warning, the review screen, and Desmos in Math. |
-| **Desmos drills** | Timed speed drills with a par time per skill, scored on speed as well as correctness — including one drill on when *not* to reach for the calculator. |
-| **Insights** | Ranked next-best-action by recency-weighted error density, root-cause triage of every mistake, and pacing analysis that separates "the clock is the problem" from "the content is the problem". |
-| **Dashboard** | Per-exam countdown, projected score ring (estimate), strengths/weaknesses, recent mistakes, and the single highest-leverage "next task". |
-| **Practice engine** | Paper-mode & drill-mode runner with a live timer, pace tracker, question navigator, per-question confidence, auto-marking for bank questions, hints (learning mode) and full review. |
-| **Review** | Per-question breakdown: your answer vs correct, time vs pace, solution + faster method, confidence calibration, and one-click **redo-wrong**. |
-| **Mistake notebook** | Auto-logged from wrong answers, filterable by exam / status / error type, editable notes, mark-resolved, **redo all unresolved**, printable. |
-| **Analytics** | Accuracy by topic & difficulty, time-vs-pace, improvement over time, confidence calibration, error-type breakdown, score prediction & a readiness % (formula documented in `lib/analytics.ts`). |
-| **Theory** | Concise, exam-mapped notes for every TMUA & SAT subtopic with worked examples, mini-exercises, common traps and strategy. |
-| **Desmos Mastery** | An 11-lesson curriculum with interactive embedded calculators teaching fast SAT-Math Desmos workflows — and *when not* to reach for it. |
-| **Planner + spaced repetition** | Generates a day-by-day study plan toward each exam date, plus an SM-2 review queue. |
-| **Resource library** | Curated links to official specs, past papers and tools — every entry carries its exact licence note. |
-| **Admin / Settings / Tutor** | Import your own questions (JSON/CSV), export all your data, edit dates / targets / pace / scoring tables, and chat with the (optional) AI tutor. |
-
----
-
-## Copyright (read this)
-
-ExamForge **never scrapes, bulk-downloads, stores or reproduces** copyrighted
-TMUA / SAT / MAT / STEP / AEA / UKMT questions.
-
-- Official past papers are **linked** (to the publisher's PDF/page), never copied.
-  For TMUA papers you sit the official PDF and enter your raw mark — ExamForge
-  bands it into an estimate without storing any question.
-- The question bank is filled **only** from: your own imports, AI-generated
-  originals, or the small set of shipped original sample questions
-  (`origin = 'user_import' | 'ai_generated'`).
-- Every seeded resource link is stored verbatim with its source URL and an
-  exact licence note.
-
-## Scores are estimates
-
-Every score (TMUA band, SAT section/total, projections, readiness) is a
-**norm-referenced estimate** — real conversions vary per sitting. All scoring
-tables are editable in **Settings** and persisted to the database.
-
-The Desmos calculator is available on **all SAT Math** questions and is **never**
-shown in TMUA mode (TMUA is non-calculator).
-
----
-
-## Project layout
-
-```
-app/            Next.js App Router pages + API routes (route handlers)
-  api/          attempt, selfscore, mistake, plan, srs, import, export, settings, tutor, onboarding
-components/     Shared UI, the practice runner, Desmos embed, KaTeX Markdown
-lib/            Data layer (db, schema, types, queries), scoring, importer,
-                attempt lifecycle, runner config, analytics, planner, SM-2, seed/
-scripts/seed.ts Idempotent seeder
-samples/        questions.sample.json / .csv — the import format
-data/           SQLite database (git-ignored, created by `npm run seed`)
-```
-
-- **Data:** Node's built-in `node:sqlite` (`DatabaseSync`) — zero native deps.
-- **Math:** KaTeX via a small server-safe `Markdown` component (`$...$`, `$$...$$`).
-- **Charts:** Recharts. **Calculator:** official Desmos API v1.10.
-
----
-
-## Filling the practice bank
-
-Three ways to get topic practice questions into the bank:
-
-1. **Shipped AI-original starter bank (~440 questions, 10 per topic).** After
-   seeding, load it with one command (no API key needed):
-
-   ```
-   npm run seed         # topics must exist first
-   npm run load:bank    # imports samples/bank/*.json as origin=ai_generated
-   ```
-
-   Re-run with `npm run load:bank -- --force` to reload (only removes previously
-   loaded, *un-attempted* bank questions; your attempted ones are kept).
-
-2. **Generate more with AI, per topic.** Uses the same free **Gemini** key as the
-   tutor (`AI_PROVIDER=gemini`, `GEMINI_API_KEY` in `.env.local`). Produces fresh
-   **original** questions — it never reproduces copyrighted exam questions:
-
-   ```
-   npm run generate                         # 10/topic for every topic
-   npm run generate -- --exam SAT --per-topic 5
-   npm run generate -- --topic "quadratics" # only matching subtopics
-   npm run generate -- --dry-run            # preview, do not insert
-   ```
-
-   Flags: `--exam TMUA|SAT|all`, `--per-topic N`, `--topic <substring>`,
-   `--model <name>`, `--dry-run`. Desmos is auto-enabled for SAT Math only and
-   never for TMUA.
-
-3. **Import your own.** Real official questions can only enter the bank via your
-   own import (the app never scrapes/stores them for you) — see below.
-
----
-
-## Importing your own questions
-
-See `samples/questions.sample.json` and `samples/questions.sample.csv` for the
-exact format, or paste/upload them on the **Admin** page. Rows map to a topic by
-`(exam, area, subtopic)`; unmatched rows are reported, not silently dropped.
-
-```
-exam=TMUA|SAT  area=P1|P2|Math|RW  subtopic=<taxonomy subtopic>
-prompt_md, correct_answer (required) · choices (pipe-separated in CSV) optional
-solution_md, hint1..3_md, difficulty, desmos_recommended, desmos_state_json, faster_method_md
-```
-
----
+Keys are read server-side only and never reach the browser.
 
 ## Scripts
 
 | Command | Description |
 | --- | --- |
-| `npm run dev` | Start the dev server |
-| `npm run build` / `npm start` | Production build / serve |
-| `npm run seed` | Create & populate the local database (idempotent) |
-| `npm run load:bank` | Import the shipped AI-original starter bank (`samples/bank/*.json`) |
-| `npm run generate` | Generate AI-original questions per topic (needs an AI key) |
-| `npm run db:status` | Migrations applied, row counts, and integrity checks |
-| `npm test` | Run the unit tests (`npm run test:watch` to watch) |
+| `npm run dev` / `build` / `start` | Dev server / production build / serve |
+| `npm run seed` | Create and populate the local database (idempotent) |
+| `npm run load:bank` | Import the shipped starter question bank |
+| `npm run generate` | Generate AI-original questions per topic (needs an API key) |
+| `npm run db:status` | Show migrations applied, row counts, integrity checks |
+| `npm test` | Run unit tests (`npm run test:watch` to watch) |
 | `npm run lint` | Lint |
 
-### Schema changes
+## Limitations / what I'd do next
 
-`lib/schema.ts` bootstraps a **fresh** database only — `CREATE TABLE IF NOT
-EXISTS` can never alter a table that already exists. Every change after that
-goes in `lib/migrations.ts` as a new numbered migration, applied once and
-recorded in `schema_migrations`. Never edit a migration that has already
-shipped; add another one. `npm run db:status` shows what a database has.
-
-### Exam structure
-
-Module counts, per-module timing, calculator rules and answer shape live in
-`lib/exam-format.ts` as data, not as `if (exam === "TMUA")` branches. Adding a
-third exam track means adding a format entry, not hunting for conditionals.
-`lib/routing.ts` holds the adaptive decision and question selection (pure),
-and `lib/test-session.ts` is the database lifecycle around them.
-
-Questions sent to the browser during a module are stripped of
-`correct_answer`, solutions and hints — marking happens server-side, so the
-answer key never reaches devtools.
-
-### Generating questions
-
-`npm run generate` supports Gemini, OpenAI and **OpenRouter** (one key, many
-models, with a free tier). Set in `.env.local`:
-
-```
-AI_PROVIDER=openrouter
-OPENROUTER_API_KEY=sk-or-v1-...
-AI_MODEL=nvidia/nemotron-3-ultra-550b-a55b:free
-```
-
-Benchmarked on the actual task, not on reputation. Of the free models:
-Nemotron 3 Ultra 550B passed 5/5, gpt-oss-20b 4/5, Gemma 4 31B was rate-limited
-upstream, Nemotron Super truncated. DeepSeek R1 is no longer offered free.
-
-Two things worth knowing:
-
-- **Reasoning models bill their scratchpad against the same token budget as the
-  answer.** Nemotron Ultra at default effort spent 14k tokens thinking and
-  returned an *empty* answer. Generation therefore requests low reasoning
-  effort, and an empty answer after N characters of reasoning is reported as
-  exactly that.
-- **Free-tier OpenRouter models are capped per day** (roughly 50 requests
-  without purchased credits). A full-bank run needs several days, or credits.
-
-Flags: `--exam`, `--per-topic`, `--topic`, `--model`, `--delay`, `--retries`,
-`--dry-run`. Rejections are reported by reason; see `lib/question-quality.ts`.
-
-### Theming
-
-Both themes are defined once in `app/globals.css` as semantic CSS variables
-(`--surface`, `--content`, `--line`) that flip on `[data-theme]`. Components use
-the Tailwind tokens `surface` / `content` / `line`, not raw shades, so they work
-in both themes without a `dark:` variant. The theme is applied before first
-paint by an inline script to avoid a flash.
-
-### Tests
-
-Scoring and marking are unit-tested (`lib/*.test.ts`) because a scoring bug is
-worse than a missing feature. `lib/scoring.ts` is deliberately pure — the
-database-backed table overrides live in `lib/scoring-config.ts` — so the maths
-can be tested without a database.
-
-Built for one student, two boulders. Roll them daily.
+- It's built for one user on one machine. There's no multi-user support and it isn't meant to be deployed as a shared service.
+- The generated question bank quality depends on which model you use; I benchmarked a few free OpenRouter models on the actual task rather than trusting their reputation, and free tiers are rate-limited (roughly 50 requests/day without credits), so filling the whole bank that way takes a few days.
+- The score estimates are just that: estimates calibrated against published percentiles, not official conversion tables, so I still treat real past papers as the ground truth.
+- I'd like to add more worked examples to the theory notes for the harder TMUA topics, and calibrate the readiness percentage against more real attempts.
