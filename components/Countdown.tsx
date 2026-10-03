@@ -28,7 +28,8 @@ export function Countdown({ date, tone = "tmua" }: { date: string; tone?: "tmua"
   const color = tone === "tmua" ? "text-tmua-dark" : "text-sat-dark";
   const cell = (v: number, label: string) => (
     <div className="flex flex-col items-center">
-      <span className={`tabular-nums text-2xl font-bold ${color}`}>
+      {/* The server and client clocks can differ by a tick; the interval corrects it. */}
+      <span suppressHydrationWarning className={`tabular-nums text-2xl font-bold ${color}`}>
         {String(v).padStart(2, "0")}
       </span>
       <span className="text-[10px] uppercase tracking-wide text-content-subtle">{label}</span>
