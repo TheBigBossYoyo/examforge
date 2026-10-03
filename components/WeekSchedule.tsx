@@ -128,7 +128,7 @@ export function WeekSchedule({
           </p>
         </div>
         <LinkButton href="/planner" variant="outline" className="shadow-sm">
-          Open planner ?
+          Open planner →
         </LinkButton>
       </div>
 
@@ -164,7 +164,7 @@ export function WeekSchedule({
                     <span className="text-base font-extrabold tracking-tight text-content">{sessionTitle(code)}</span>
                     {mins > 0 && (
                       <span className="ml-auto flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-content-subtle bg-surface-muted px-2 py-1 rounded-md">
-                        ? {formatClock(mins * 60)}
+                        {formatClock(mins * 60)}
                       </span>
                     )}
                   </div>

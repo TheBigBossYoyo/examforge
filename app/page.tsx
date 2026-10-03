@@ -50,7 +50,7 @@ function ExamPanel({ d, tone }: { d: ExamDashboard; tone: "tmua" | "sat" }) {
           <p className="mt-1 text-sm font-medium text-content-muted">Exam date • {formatDate(d.examDate)}</p>
         </div>
         <Link href={hubHref} className="text-sm font-bold text-content-muted hover:text-content transition-colors bg-surface-muted px-3 py-1.5 rounded-xl hover:bg-surface-muted shadow-sm border border-line/50">
-          Open hub ?
+          Open hub →
         </Link>
       </div>
 
@@ -123,7 +123,7 @@ function ExamPanel({ d, tone }: { d: ExamDashboard; tone: "tmua" | "sat" }) {
             Recent mistakes
           </span>
           <Link href="/mistakes" className="text-xs font-bold text-content-muted hover:text-content transition-colors">
-            View all ?
+            View all →
           </Link>
         </div>
         {d.recentMistakes.length ? (
@@ -158,7 +158,7 @@ function ExamPanel({ d, tone }: { d: ExamDashboard; tone: "tmua" | "sat" }) {
           <div className="mt-1.5 text-xl font-extrabold tracking-tight text-content">{d.recommendation.title}</div>
           <p className="mt-1 text-sm font-medium text-content-muted leading-relaxed max-w-md">{d.recommendation.detail}</p>
           <LinkButton href={d.recommendation.href} variant={tone} className="mt-5 shadow-sm">
-            {d.recommendation.cta} ?
+            {d.recommendation.cta} →
           </LinkButton>
         </div>
       </div>
@@ -204,7 +204,7 @@ export default function HomePage() {
         </div>
         {!onboarded && (
           <LinkButton href="/onboarding" variant="primary" className="shadow-md hover:shadow-lg">
-            ? Take the 5-minute diagnostic
+            Take the 5-minute diagnostic
           </LinkButton>
         )}
       </div>
