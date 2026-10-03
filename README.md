@@ -2,6 +2,8 @@
 
 A local-first revision app I built to prepare for two admissions exams at once: the TMUA and the Digital SAT.
 
+![The ExamForge dashboard, with a projected score and weakest topics for each exam](docs/screenshots/dashboard.png)
+
 ## Why I built it
 
 Both exams need the same three things: a large bank of practice questions, realistic timed conditions, and a way to see which topics are actually costing me marks instead of just "doing more questions". I couldn't find one tool that did all three for both exams without an account, a subscription, or my data living on someone else's server, so I built one that runs entirely on my own machine. Everything (the question bank, attempts, mistakes, progress) lives in a local SQLite file (`data/examforge.db`). No account, no cloud sync, no telemetry.
@@ -29,6 +31,22 @@ Both exams need the same three things: a large bank of practice questions, reali
 **Scoring.** Every score (TMUA band, SAT section/total, projected score, readiness %) is a norm-referenced estimate, not an official conversion — real conversions vary per sitting. The conversion tables are editable in Settings and persisted to the database. Scoring logic (`lib/scoring.ts`) is deliberately pure with no database access, specifically so a scoring bug shows up in a unit test rather than in a live attempt.
 
 **Theming.** Both light and dark themes are defined once as CSS variables that flip on a `[data-theme]` attribute, so components use semantic Tailwind tokens instead of a `dark:` variant scattered everywhere.
+
+## Screenshots
+
+These were taken against a fresh database with only the sample content that ships with the repo.
+
+![A timed SAT Math module with a countdown, Mark for Review and the reference and calculator buttons](docs/screenshots/timed-sat-math.png)
+
+A timed SAT Math module, with the countdown, Mark for Review and the calculator.
+
+![The insights page ranking topics by how much they are costing me](docs/screenshots/insights.png)
+
+Insights ranks the topics I should drill next from my recent mistakes.
+
+![A Desmos speed drill with a par time next to the embedded calculator](docs/screenshots/desmos-drill.png)
+
+A Desmos speed drill, timed against a par for the skill.
 
 ## Running it locally
 
